@@ -1391,3 +1391,212 @@ video {
   border: 1px solid var(--border);
   margin-top: 1.5rem;
 }
+
+/* ─── St James Gala — Browser mockup grid ──────────────────────────── */
+
+.cs-browser-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 640px) {
+  .cs-browser-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cs-browser-frame {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.5rem 0.75rem;
+  background: color-mix(in srgb, var(--bg-elevated) 80%, var(--border) 20%);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.cs-browser-dots {
+  display: flex;
+  gap: 0.3125rem;
+  flex-shrink: 0;
+}
+
+.cs-browser-dots span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--text-faint);
+  opacity: 0.4;
+}
+
+.cs-browser-dots span:nth-child(1) { background: #ff5f57; opacity: 0.8; }
+.cs-browser-dots span:nth-child(2) { background: #febc2e; opacity: 0.8; }
+.cs-browser-dots span:nth-child(3) { background: #28c840; opacity: 0.8; }
+
+.cs-browser-url {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  color: var(--text-faint);
+  background: color-mix(in srgb, var(--bg) 60%, transparent);
+  border-radius: 0.25rem;
+  padding: 0.1875rem 0.5rem;
+  margin: 0 0.5rem;
+}
+
+.cs-browser-img {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.cs-browser-label {
+  display: block;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  padding: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ─── St James Gala — AI Workflow Timeline ──────────────────────────── */
+
+.ai-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 2rem;
+}
+
+.ai-arrow {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--text-faint);
+  line-height: 1;
+  padding: 0.375rem 0;
+  opacity: 0.5;
+}
+
+.ai-phase {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+
+.ai-phase--final {
+  border-color: var(--green);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--green) 20%, transparent),
+              0 4px 24px color-mix(in srgb, var(--green) 8%, transparent);
+}
+
+.ai-phase-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-elevated) 60%, var(--bg) 40%);
+}
+
+.ai-phase--final .ai-phase-header {
+  background: color-mix(in srgb, var(--green) 6%, var(--bg-elevated) 94%);
+}
+
+.ai-phase-num {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  opacity: 0.6;
+}
+
+.ai-phase-tool {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ai-phase--final .ai-phase-tool {
+  color: var(--green);
+}
+
+.ai-phase-body {
+  padding: 1.25rem;
+}
+
+.ai-phase-body .cs-body {
+  margin-bottom: 1rem;
+}
+
+.ai-phase-checks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.ai-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.ai-check-icon {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: 1rem;
+  margin-top: 0.1rem;
+}
+
+.ai-check--pro .ai-check-icon {
+  color: var(--green);
+}
+
+.ai-check--con .ai-check-icon {
+  color: color-mix(in srgb, var(--text) 40%, transparent);
+}
+
+.ai-phase-verdict {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+.ai-phase-verdict--moved {
+  background: color-mix(in srgb, var(--text-faint) 12%, transparent);
+  color: var(--text-faint);
+}
+
+.ai-phase-verdict--final {
+  background: color-mix(in srgb, var(--green) 15%, transparent);
+  color: var(--green);
+}
