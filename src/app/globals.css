@@ -2,49 +2,80 @@
 @import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap");
 @import "tailwindcss";
 
-:root {
-  /* Colors */
-  --bg:          #0d0d0d;
-  --bg-subtle:   #141414;
+/* ─── Dark theme (default) ─────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:          #0a0a0a;
+  --bg-subtle:   #111111;
   --bg-elevated: #1a1a1a;
-  --border:      #2a2a2a;
+  --border:      #252525;
+
   --text:        #f0ece4;
-  --text-muted:  #8a8478;
-  --text-faint:  #4a4540;
+  --text-muted:  #7a7570;
+  --text-faint:  #3a3530;
+
   --accent:      #c8b89a;
   --accent-warm: #d4a574;
 
-  /* Typography */
+  --green:        #4ade80;
+  --green-bg:     rgba(74, 222, 128, 0.08);
+  --green-border: rgba(74, 222, 128, 0.20);
+}
+
+/* ─── Light theme ──────────────────────────────────────────────────── */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg:          #faf7f2;
+  --bg-subtle:   #f2ede4;
+  --bg-elevated: #ffffff;
+  --border:      #e4ddd2;
+
+  --text:        #1a1a18;
+  --text-muted:  #6b6358;
+  --text-faint:  #c0b8ae;
+
+  --accent:      #8b6840;
+  --accent-warm: #a07840;
+
+  --green:        #15803d;
+  --green-bg:     rgba(21, 128, 61, 0.08);
+  --green-border: rgba(21, 128, 61, 0.20);
+}
+
+/* ─── Typography tokens ────────────────────────────────────────────── */
+:root {
   --font-serif: "Instrument Serif", Georgia, serif;
   --font-sans:  "Satoshi", system-ui, sans-serif;
+}
 
-  /* Spacing scale */
-  --space-xs:  0.25rem;
-  --space-sm:  0.5rem;
-  --space-md:  1rem;
-  --space-lg:  2rem;
-  --space-xl:  4rem;
-  --space-2xl: 8rem;
-
-  /* Layout */
-  --max-w: 72rem;
+/* ─── Layout tokens ────────────────────────────────────────────────── */
+:root {
+  --max-w:  72rem;
   --gutter: 1.5rem;
 }
 
+/* ─── Tailwind token bridge ────────────────────────────────────────── */
 @theme inline {
-  --color-bg:          var(--bg);
-  --color-bg-subtle:   var(--bg-subtle);
-  --color-bg-elevated: var(--bg-elevated);
-  --color-border:      var(--border);
-  --color-text:        var(--text);
-  --color-text-muted:  var(--text-muted);
-  --color-text-faint:  var(--text-faint);
-  --color-accent:      var(--accent);
-  --color-accent-warm: var(--accent-warm);
-  --font-serif:        var(--font-serif);
-  --font-sans:         var(--font-sans);
+  --color-bg:           var(--bg);
+  --color-bg-subtle:    var(--bg-subtle);
+  --color-bg-elevated:  var(--bg-elevated);
+  --color-border:       var(--border);
+  --color-text:         var(--text);
+  --color-text-muted:   var(--text-muted);
+  --color-text-faint:   var(--text-faint);
+  --color-accent:       var(--accent);
+  --color-accent-warm:  var(--accent-warm);
+  --color-green:        var(--green);
+  --color-green-bg:     var(--green-bg);
+  --color-green-border: var(--green-border);
+  --font-serif:         var(--font-serif);
+  --font-sans:          var(--font-sans);
 }
 
+/* ─── Base reset ───────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -54,7 +85,6 @@
 }
 
 html {
-  color-scheme: dark;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -67,6 +97,7 @@ body {
   font-size: 1rem;
   line-height: 1.7;
   min-height: 100dvh;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection {
