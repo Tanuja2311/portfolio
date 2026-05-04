@@ -1017,3 +1017,244 @@ video {
   gap: 0.3rem;
   margin-top: 0.2rem;
 }
+
+/* ─── Image placeholder (shown when source file is missing) ────────── */
+.img-ph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--bg-elevated);
+  border: 1.5px dashed var(--border);
+  border-radius: inherit;
+  padding: 2rem;
+  text-align: center;
+}
+
+.img-ph-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--text-faint);
+}
+
+.img-ph-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  max-width: 28ch;
+}
+
+.img-ph-hint {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  color: var(--text-faint);
+}
+
+/* ─── Case study: Narrative hook ───────────────────────────────────── */
+.cs-hook {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--text);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: var(--bg-elevated);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  max-width: 62ch;
+}
+
+/* ─── Case study: Process subsections ─────────────────────────────── */
+.cs-subsection {
+  margin-top: 3.5rem;
+}
+
+.cs-subsection-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  margin-bottom: 0.625rem;
+}
+
+.cs-subsection-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.cs-subsection-body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  max-width: 65ch;
+}
+
+/* ─── Case study: Solution feature blocks ──────────────────────────── */
+.cs-feature {
+  margin-top: 3.5rem;
+  padding-top: 3.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.cs-feature:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.cs-feature-img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+.cs-feature-name {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  margin-bottom: 0.5rem;
+}
+
+.cs-feature-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 3vw, 1.85rem);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 0.875rem;
+}
+
+.cs-feature-body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  max-width: 65ch;
+}
+
+.cs-feature-decision {
+  border-left: 3px solid var(--accent);
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.cs-feature-decision-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.cs-feature-decision-text {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* ─── Projected metric card variant ────────────────────────────────── */
+.cs-metric--projected {
+  opacity: 0.72;
+  border-style: dashed;
+}
+
+.cs-metric--projected::before {
+  background: linear-gradient(to right, var(--text-faint), transparent);
+}
+
+.cs-metric--projected .cs-metric-value {
+  color: var(--text-muted);
+}
+
+.cs-metric-projected-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text-faint);
+  border: 1px dashed var(--text-faint);
+  border-radius: 100px;
+  padding: 0.15rem 0.5rem;
+  width: fit-content;
+  margin-top: 0.35rem;
+}
+
+/* ─── Impact section grouping ──────────────────────────────────────── */
+.cs-impact-group {
+  margin-top: 2.5rem;
+}
+
+.cs-impact-group-label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  margin-bottom: 1rem;
+}
+
+/* ─── What I'd do differently ──────────────────────────────────────── */
+.cs-wid {
+  margin-top: 3.5rem;
+  padding-top: 3.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.cs-wid-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
+}
+
+.cs-wid-body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  max-width: 65ch;
+  margin-bottom: 1.25rem;
+}
+
+.cs-wid-body strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.cs-wid-body:last-child {
+  margin-bottom: 0;
+}

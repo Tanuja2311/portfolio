@@ -16,7 +16,7 @@ export const FEATURED_PROJECTS: Project[] = [
     coverColor:  "#1a1410",
     stat:        "Designed a recognition system adopted across 3 org sizes.",
     tags:        ["Product Design", "Enterprise", "Figma"],
-    href:        "/work/rewards-recognition",
+    href:        "/work/rewards-and-recognition",
   },
   {
     slug:        "urbanpark",
