@@ -41,8 +41,8 @@ export function Footer() {
         {/* Bottom row */}
         <div className="footer-bottom">
           <span className="footer-copy">© {year}</span>
-          <span className="footer-available">
-            <span className="footer-dot" aria-hidden />
+          <span className="badge-available">
+            <span className="badge-dot" aria-hidden />
             Available for work
           </span>
         </div>

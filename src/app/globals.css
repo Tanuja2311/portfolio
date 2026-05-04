@@ -23,6 +23,8 @@
   --green:        #4ade80;
   --green-bg:     rgba(74, 222, 128, 0.08);
   --green-border: rgba(74, 222, 128, 0.20);
+
+  --shadow-card:  rgba(0, 0, 0, 0.45);
 }
 
 /* ─── Light theme ──────────────────────────────────────────────────── */
@@ -45,6 +47,8 @@
   --green:        #15803d;
   --green-bg:     rgba(21, 128, 61, 0.08);
   --green-border: rgba(21, 128, 61, 0.20);
+
+  --shadow-card:  rgba(0, 0, 0, 0.10);
 }
 
 /* ─── Typography tokens ────────────────────────────────────────────── */
@@ -288,28 +292,7 @@ video {
   color: var(--text-faint);
 }
 
-.footer-available {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--green);
-  background: var(--green-bg);
-  border: 1px solid var(--green-border);
-  padding: 0.25rem 0.625rem;
-  border-radius: 100px;
-}
-
-.footer-dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--green);
-  animation: pulse 2.5s ease-in-out infinite;
-}
+/* .badge-available and .badge-dot are defined in the Homepage section below */
 
 @keyframes pulse {
   0%, 100% { opacity: 1; }
@@ -734,4 +717,303 @@ video {
   font-family: var(--font-sans);
   font-size: 0.78rem;
   color: var(--text-muted);
+}
+
+/* ─── Homepage: Hero ───────────────────────────────────────────────── */
+.hero {
+  padding: clamp(5rem, 14vh, 10rem) var(--gutter) clamp(4rem, 10vh, 8rem);
+}
+
+.hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Available for work badge — reusable, also used in footer */
+.badge-available {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--green);
+  background: var(--green-bg);
+  border: 1px solid var(--green-border);
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  width: fit-content;
+  margin-bottom: 2rem;
+}
+
+.badge-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.hero-name {
+  font-family: var(--font-serif);
+  font-size: clamp(3.25rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: 1.0;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.hero-role {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-bio {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 52ch;
+}
+
+/* ─── Homepage: Section wrapper ────────────────────────────────────── */
+.home-section {
+  padding: clamp(3rem, 6vh, 5rem) 0 clamp(4rem, 8vh, 7rem);
+  border-top: 1px solid var(--border);
+}
+
+.home-section-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+  margin-bottom: 2rem;
+}
+
+/* ─── Featured cards ───────────────────────────────────────────────── */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feat-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.875rem;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow  0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease;
+}
+
+.feat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 56px var(--shadow-card);
+  border-color: var(--accent);
+}
+
+/* Image area */
+.feat-card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Slightly oversized so parallax translate doesn't expose edges */
+.feat-card-img-wrap {
+  position: absolute;
+  inset: -5%;
+  will-change: transform;
+}
+
+.feat-card-img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.feat-card-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    rgba(0, 0, 0, 0.22) 100%
+  );
+  pointer-events: none;
+}
+
+/* Info row */
+.feat-card-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.feat-card-num {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  padding-top: 0.2rem;
+  flex-shrink: 0;
+  min-width: 1.8rem;
+}
+
+.feat-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.feat-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.feat-card-stat {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.feat-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: 0.25rem;
+}
+
+.feat-card-arrow {
+  font-size: 1rem;
+  color: var(--text-faint);
+  flex-shrink: 0;
+  transition: color 0.15s ease, transform 0.2s ease;
+  padding-top: 0.1rem;
+}
+
+.feat-card:hover .feat-card-arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+/* ─── Tag pill ─────────────────────────────────────────────────────── */
+.tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.67rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0.18rem 0.55rem;
+  white-space: nowrap;
+}
+
+/* ─── Other work cards ─────────────────────────────────────────────── */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 1rem;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.2s ease, box-shadow 0.25s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px var(--shadow-card);
+}
+
+.work-card-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.work-card-img {
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s ease;
+}
+
+.work-card:hover .work-card-img {
+  transform: scale(1.04);
+}
+
+.work-card-info {
+  padding: 1rem 1.1rem 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.work-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.work-card-stat {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.work-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.2rem;
 }
