@@ -1,0 +1,52 @@
+const SOCIAL_LINKS = [
+  { href: "mailto:hello@example.com",           label: "Email" },
+  { href: "https://linkedin.com/in/yourhandle", label: "LinkedIn" },
+  { href: "https://github.com/yourhandle",      label: "GitHub" },
+] as const;
+
+export function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="footer">
+      <div className="footer-inner">
+        {/* Top row */}
+        <div className="footer-top">
+          <p className="footer-display">
+            Let&rsquo;s make something<br />
+            worth remembering.
+          </p>
+
+          <nav aria-label="Social and contact links">
+            <ul className="footer-links" role="list">
+              {SOCIAL_LINKS.map(({ href, label }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    target={href.startsWith("mailto") ? undefined : "_blank"}
+                    rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+                    className="footer-link"
+                  >
+                    {label}
+                    {!href.startsWith("mailto") && (
+                      <span className="footer-link-arrow" aria-hidden>↗</span>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        {/* Bottom row */}
+        <div className="footer-bottom">
+          <span className="footer-copy">© {year}</span>
+          <span className="footer-available">
+            <span className="footer-dot" aria-hidden />
+            Available for work
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
+}

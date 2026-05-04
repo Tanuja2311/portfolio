@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
+import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
+import { PageTransition } from "@/components/page-transition";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -34,10 +37,15 @@ export default async function RootLayout({
   return (
     <html lang="en" data-theme={theme} suppressHydrationWarning>
       <head>
-        {/* Inline script runs before CSS paints — eliminates theme flash */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body>{children}</body>
+      <body style={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
+        <Nav />
+        <PageTransition>
+          {children}
+        </PageTransition>
+        <Footer />
+      </body>
     </html>
   );
 }
