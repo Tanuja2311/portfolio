@@ -1917,3 +1917,21 @@ video {
   border-color: var(--accent);
   color: var(--accent);
 }
+
+/* ─── Image fade-in on load ─────────────────────────────────────────── */
+
+.img-fade {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.img-fade.img-loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-fade {
+    opacity: 1;
+    transition: none;
+  }
+}

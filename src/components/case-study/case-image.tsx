@@ -4,12 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import type { ImageProps } from "next/image";
 
-type Props = Omit<ImageProps, "onError"> & {
+type Props = Omit<ImageProps, "onError" | "onLoad"> & {
   description?: string;
 };
 
 export function CaseImage({ src, alt, description, className, ...rest }: Props) {
   const [failed, setFailed] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   if (failed) {
     return (
@@ -25,7 +26,8 @@ export function CaseImage({ src, alt, description, className, ...rest }: Props) 
     <Image
       src={src}
       alt={String(alt)}
-      className={className}
+      className={`img-fade${loaded ? " img-loaded" : ""}${className ? ` ${className}` : ""}`}
+      onLoad={() => setLoaded(true)}
       onError={() => setFailed(true)}
       {...rest}
     />

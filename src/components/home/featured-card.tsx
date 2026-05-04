@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Project } from "@/lib/projects";
@@ -13,6 +13,7 @@ interface Props {
 export function FeaturedCard({ project, index }: Props) {
   const cardRef = useRef<HTMLAnchorElement>(null);
   const imgRef  = useRef<HTMLDivElement>(null);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   function handleMouseMove(e: React.MouseEvent<HTMLAnchorElement>) {
     const card = cardRef.current;
@@ -20,7 +21,7 @@ export function FeaturedCard({ project, index }: Props) {
     if (!card || !img) return;
 
     const rect = card.getBoundingClientRect();
-    const dx   = ((e.clientX - rect.left)  / rect.width  - 0.5) * 2; // –1 → 1
+    const dx   = ((e.clientX - rect.left)  / rect.width  - 0.5) * 2;
     const dy   = ((e.clientY - rect.top)   / rect.height - 0.5) * 2;
 
     img.style.transition = "transform 0.12s ease-out";
@@ -45,7 +46,6 @@ export function FeaturedCard({ project, index }: Props) {
       onMouseLeave={handleMouseLeave}
       aria-label={`${project.title} — case study`}
     >
-      {/* Thumbnail */}
       <div
         className="feat-card-media"
         style={{ background: project.coverColor }}
@@ -53,17 +53,16 @@ export function FeaturedCard({ project, index }: Props) {
         <div ref={imgRef} className="feat-card-img-wrap">
           <Image
             src={project.thumbnail}
-            alt={project.title}
+            alt={`${project.title} — project thumbnail`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="feat-card-img"
+            className={`feat-card-img img-fade${imgLoaded ? " img-loaded" : ""}`}
+            onLoad={() => setImgLoaded(true)}
           />
         </div>
-        {/* Subtle vignette */}
         <div className="feat-card-vignette" aria-hidden />
       </div>
 
-      {/* Info row */}
       <div className="feat-card-info">
         <span className="feat-card-num" aria-hidden>{num}</span>
 
