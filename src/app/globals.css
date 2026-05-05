@@ -140,23 +140,27 @@ video {
 .nav {
   position: fixed;
   top: 16px;
-  left: 16px;
-  right: 16px;
+  left: 0;
+  right: 0;
   z-index: 50;
-  border-radius: 10px;
-  background: var(--nav-bg);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid var(--nav-border);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  padding: 0 16px; /* minimum gap from viewport edges on small screens */
 }
 
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 14px 24px;
   gap: 1.5rem;
+  /* Visual pill */
+  border-radius: 999px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--nav-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-name {
