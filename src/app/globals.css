@@ -416,40 +416,53 @@ video {
   display: none;
 }
 
-/* ─── Case Study: Static Scroll Links ─────────────────────────────── */
-.cs-scroll-links {
+/* ─── Case Study: Floating Bottom Section Nav ──────────────────────── */
+.cs-float-nav {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  row-gap: 0.5rem;
-  padding: 0.875rem var(--gutter);
-  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--nav-border);
 }
 
-.cs-scroll-link {
+.cs-float-link {
   font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 400;
-  color: var(--text-muted);
+  color: var(--nav-link);
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 2px 8px;
   line-height: 1;
   letter-spacing: 0.01em;
   transition: color 0.15s ease;
 }
 
-.cs-scroll-link:hover {
+.cs-float-link:hover {
   color: var(--text);
 }
 
-.cs-scroll-sep {
+.cs-float-link--active {
+  color: #B794F4;
+}
+
+.cs-float-sep {
   color: var(--text-faint);
-  font-size: 0.875rem;
-  padding: 0 0.5rem;
+  font-size: 1rem;
+  opacity: 0.4;
   user-select: none;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .cs-toc-pill {
