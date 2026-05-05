@@ -19,7 +19,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
       {
         duration: 380,
         easing: "cubic-bezier(0.16, 1, 0.3, 1)",
-        fill: "forwards",
+        fill: "none",
       }
     );
 
