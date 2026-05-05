@@ -840,7 +840,7 @@ video {
 .feat-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 24px 56px var(--shadow-card);
-  border-color: var(--accent);
+  border-color: #B794F4;
 }
 
 /* Image area */
@@ -932,7 +932,7 @@ video {
 }
 
 .feat-card:hover .feat-card-arrow {
-  color: var(--accent);
+  color: #B794F4;
   transform: translate(2px, -2px);
 }
 
@@ -972,7 +972,7 @@ video {
 
 .work-card:hover {
   transform: translateY(-3px);
-  border-color: var(--accent);
+  border-color: #B794F4;
   box-shadow: 0 12px 32px var(--shadow-card);
 }
 
