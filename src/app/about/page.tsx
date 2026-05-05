@@ -122,14 +122,14 @@ export default function AboutPage() {
             </p>
             <div className="about-contact-inline">
               <a
-                href="mailto:tanuja@example.com"
+                href="mailto:tanuja375@gmail.com"
                 className="about-contact-link"
               >
-                tanuja@example.com
+                tanuja375@gmail.com
               </a>
               <span className="about-contact-sep" aria-hidden>·</span>
               <a
-                href="https://linkedin.com/in/tanujabodas"
+                href="https://www.linkedin.com/in/tanujabodas23/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="about-contact-link"
@@ -225,13 +225,13 @@ export default function AboutPage() {
         <Reveal delay={120}>
           <div className="about-contact-actions">
             <a
-              href="mailto:tanuja@example.com"
+              href="mailto:tanuja375@gmail.com"
               className="about-cta about-cta--primary"
             >
               Send an email
             </a>
             <a
-              href="https://linkedin.com/in/tanujabodas"
+              href="https://www.linkedin.com/in/tanujabodas23/"
               target="_blank"
               rel="noopener noreferrer"
               className="about-cta about-cta--secondary"
