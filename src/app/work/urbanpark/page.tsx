@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PillTOC }   from "@/components/case-study/pill-toc";
+import { CsScrollLinks } from "@/components/case-study/scroll-links";
 import { Reveal }    from "@/components/case-study/reveal";
 import { CaseImage } from "@/components/case-study/case-image";
 
@@ -59,7 +59,7 @@ export default function UrbanParkCaseStudy() {
         </div>
       </section>
 
-      <PillTOC sections={SECTIONS} />
+      <CsScrollLinks sections={SECTIONS} />
 
       <div className="cs-body">
         {/* ── Challenge ──────────────────────────────────────────────── */}

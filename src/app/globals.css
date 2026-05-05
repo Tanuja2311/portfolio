@@ -416,6 +416,42 @@ video {
   display: none;
 }
 
+/* ─── Case Study: Static Scroll Links ─────────────────────────────── */
+.cs-scroll-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+  padding: 0.875rem var(--gutter);
+  border-bottom: 1px solid var(--border);
+}
+
+.cs-scroll-link {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  transition: color 0.15s ease;
+}
+
+.cs-scroll-link:hover {
+  color: var(--text);
+}
+
+.cs-scroll-sep {
+  color: var(--text-faint);
+  font-size: 0.875rem;
+  padding: 0 0.5rem;
+  user-select: none;
+  line-height: 1;
+}
+
 .cs-toc-pill {
   font-family: var(--font-sans);
   font-size: 0.8rem;
@@ -1969,18 +2005,6 @@ video {
   width: 3px;
   background: #B794F4;
   border-radius: 2px;
-}
-
-/* TOC: active pill in purple */
-.rr-study .cs-toc-pill--active {
-  color: #B794F4;
-  background-color: rgba(183, 148, 244, 0.12);
-  border-color: rgba(183, 148, 244, 0.3);
-}
-
-.rr-study .cs-toc-pill:hover {
-  color: #B794F4;
-  border-color: rgba(183, 148, 244, 0.2);
 }
 
 /* Metric values: large purple numbers */

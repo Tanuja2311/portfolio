@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { PillTOC }    from "@/components/case-study/pill-toc";
-import { Reveal }     from "@/components/case-study/reveal";
-import { MetricCard } from "@/components/case-study/metric-card";
-import { CaseImage }  from "@/components/case-study/case-image";
+import { CsScrollLinks } from "@/components/case-study/scroll-links";
+import { Reveal }         from "@/components/case-study/reveal";
+import { MetricCard }     from "@/components/case-study/metric-card";
+import { CaseImage }      from "@/components/case-study/case-image";
+
+const SECTIONS = [
+  { id: "challenge", label: "Challenge" },
+  { id: "process",   label: "Process"   },
+  { id: "solution",  label: "Solution"  },
+  { id: "impact",    label: "Impact"    },
+];
 
 export const metadata: Metadata = {
   title: "Rewards & Recognition",
@@ -53,7 +60,7 @@ export default function RRCaseStudy() {
         </div>
       </section>
 
-      <PillTOC />
+      <CsScrollLinks sections={SECTIONS} />
 
       <div className="cs-body">
         {/* ── Challenge ──────────────────────────────────────────────── */}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { PillTOC } from "@/components/case-study/pill-toc";
+import { CsScrollLinks } from "@/components/case-study/scroll-links";
 import { Reveal } from "@/components/case-study/reveal";
 import { CaseImage } from "@/components/case-study/case-image";
 
@@ -99,7 +99,7 @@ export default function StJamesGalaPage() {
       </div>
 
       {/* ── TOC ──────────────────────────────────────────────────────── */}
-      <PillTOC sections={SECTIONS} />
+      <CsScrollLinks sections={SECTIONS} />
 
       {/* ── Content ──────────────────────────────────────────────────── */}
       <div className="cs-content">
