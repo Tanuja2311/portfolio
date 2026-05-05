@@ -1,7 +1,7 @@
 const SOCIAL_LINKS = [
-  { href: "mailto:hello@example.com",           label: "Email" },
-  { href: "https://linkedin.com/in/yourhandle", label: "LinkedIn" },
-  { href: "https://github.com/yourhandle",      label: "GitHub" },
+  { href: "mailto:tanuja375@gmail.com",                        label: "Email" },
+  { href: "https://www.linkedin.com/in/tanujabodas23/",        label: "LinkedIn" },
+  { href: "https://github.com/Tanuja2311",                     label: "GitHub" },
 ] as const;
 
 export function Footer() {
