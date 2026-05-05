@@ -14,7 +14,7 @@ const IMG = (name: string) => `/images/rewards-recognition/${name}`;
 
 export default function RRCaseStudy() {
   return (
-    <>
+    <div className="rr-study">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="cs-hero">
         <div className="cs-hero-media" style={{ background: "#1a1410" }}>
@@ -453,6 +453,6 @@ export default function RRCaseStudy() {
           </Reveal>
         </section>
       </div>
-    </>
+    </div>
   );
 }

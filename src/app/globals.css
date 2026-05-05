@@ -396,7 +396,9 @@ video {
   top: 80px; /* sits directly below the fixed floating nav */
   z-index: 40;
   background-color: var(--bg);
+  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
   transition: background-color 0.2s ease;
 }
 
@@ -1030,32 +1032,41 @@ video {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.625rem;
   background: var(--bg-elevated);
-  border: 1.5px dashed var(--border);
+  border: 1px solid var(--border);
   border-radius: inherit;
   padding: 2rem;
   text-align: center;
 }
 
 .img-ph-icon {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   line-height: 1;
   color: var(--text-faint);
+  opacity: 0.5;
 }
 
 .img-ph-label {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 500;
   color: var(--text-muted);
-  max-width: 28ch;
+  max-width: 32ch;
+  line-height: 1.4;
 }
 
 .img-ph-hint {
   font-family: var(--font-sans);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--text-faint);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0.2rem 0.625rem;
 }
 
 /* ─── Case study: Narrative hook ───────────────────────────────────── */
@@ -1938,4 +1949,83 @@ video {
     opacity: 1;
     transition: none;
   }
+}
+
+/* ─── R&R Case Study overrides ──────────────────────────────────────── */
+
+/* Section headings: purple with left accent bar */
+.rr-study .cs-section-heading {
+  color: #B794F4;
+  padding-left: 1.125rem;
+  position: relative;
+}
+
+.rr-study .cs-section-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  bottom: 0.12em;
+  width: 3px;
+  background: #B794F4;
+  border-radius: 2px;
+}
+
+/* TOC: active pill in purple */
+.rr-study .cs-toc-pill--active {
+  color: #B794F4;
+  background-color: rgba(183, 148, 244, 0.12);
+  border-color: rgba(183, 148, 244, 0.3);
+}
+
+.rr-study .cs-toc-pill:hover {
+  color: #B794F4;
+  border-color: rgba(183, 148, 244, 0.2);
+}
+
+/* Metric values: large purple numbers */
+.rr-study .cs-metric-value {
+  color: #B794F4;
+  font-size: 3rem;
+}
+
+/* Design decision label: purple */
+.rr-study .cs-feature-decision-label {
+  color: #B794F4;
+}
+
+/* Blockquote hook: purple left border */
+.rr-study .cs-hook {
+  border-left-color: #B794F4;
+}
+
+/* Subsection step labels: purple tint */
+.rr-study .cs-subsection-label {
+  color: #B794F4;
+  opacity: 0.85;
+}
+
+/* Subsection headings: slightly larger and more prominent */
+.rr-study .cs-subsection-heading {
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+}
+
+/* Feature name label: purple tint */
+.rr-study .cs-feature-name {
+  color: #B794F4;
+  opacity: 0.85;
+}
+
+/* "What I'd do differently" heading: purple */
+.rr-study .cs-wid-heading {
+  color: #B794F4;
+}
+
+/* Impact group labels */
+.rr-study .cs-impact-group-label {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }

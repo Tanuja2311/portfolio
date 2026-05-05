@@ -14,8 +14,8 @@ const DEFAULT_SECTIONS: TocSection[] = [
   { id: "impact",    label: "Impact"    },
 ];
 
-// Nav height (3.5rem) + TOC height (~46px) + margin
-const SCROLL_OFFSET = 56 + 46 + 16;
+// Floating nav (16px top + ~52px height) + TOC height (~46px) + breathing room
+const SCROLL_OFFSET = 68 + 46 + 16;
 
 export function PillTOC({ sections = DEFAULT_SECTIONS }: { sections?: TocSection[] }) {
   const [active, setActive] = useState<string>(sections[0]?.id ?? "");

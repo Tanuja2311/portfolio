@@ -17,7 +17,7 @@ export function CaseImage({ src, alt, description, className, ...rest }: Props) 
       <div className="img-ph" role="img" aria-label={description ?? String(alt)}>
         <span className="img-ph-icon" aria-hidden>⬚</span>
         <span className="img-ph-label">{description ?? String(alt)}</span>
-        <span className="img-ph-hint">Drop image into public/images/…</span>
+        <span className="img-ph-hint">Mockup coming soon</span>
       </div>
     );
   }
