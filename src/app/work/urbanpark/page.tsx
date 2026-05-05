@@ -48,7 +48,7 @@ export default function UrbanParkCaseStudy() {
               ["Role",    "Product Designer"],
               ["Context", "Academic Project · MS Coursework"],
               ["Scope",   "End-to-end design + design system"],
-              ["Year",    "2023"],
+              ["Year",    "2025"],
             ].map(([label, value]) => (
               <div key={label} className="cs-meta-item">
                 <span className="cs-meta-label">{label}</span>
