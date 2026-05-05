@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 export interface ScrollSection {
   id: string;
@@ -10,6 +11,10 @@ export interface ScrollSection {
 export function CsScrollLinks({ sections }: { sections: ScrollSection[] }) {
   const [active,  setActive]  = useState<string>(sections[0]?.id ?? "");
   const [visible, setVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Mount guard — createPortal needs document.body (unavailable during SSR)
+  useEffect(() => { setMounted(true); }, []);
 
   // Track which section is in view → active link
   useEffect(() => {
@@ -24,24 +29,22 @@ export function CsScrollLinks({ sections }: { sections: ScrollSection[] }) {
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
         if (hit.length > 0) setActive(hit[0].target.id);
       },
-      { rootMargin: "-10% 0px -60% 0px", threshold: 0 }
+      { rootMargin: "-10% 0px -60% 0px", threshold: 0 },
     );
 
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, [sections]);
 
-  // Show pill once the first section has entered the viewport; hide at top
+  // Show pill once the first section enters the viewport; hide when above it
   useEffect(() => {
     function check() {
       const firstEl = document.getElementById(sections[0]?.id ?? "");
       if (!firstEl) { setVisible(false); return; }
-      // Becomes visible when the first section's top edge is within the viewport
       setVisible(firstEl.getBoundingClientRect().top <= window.innerHeight);
     }
-
     window.addEventListener("scroll", check, { passive: true });
-    check(); // run once on mount
+    check();
     return () => window.removeEventListener("scroll", check);
   }, [sections]);
 
@@ -52,7 +55,11 @@ export function CsScrollLinks({ sections }: { sections: ScrollSection[] }) {
     window.scrollTo({ top, behavior: "smooth" });
   }
 
-  return (
+  if (!mounted) return null;
+
+  // Portal into document.body so position:fixed is relative to the viewport,
+  // not any ancestor that has a transform (e.g. PageTransition).
+  return createPortal(
     <nav
       className={`cs-float-nav${visible ? " cs-float-nav--visible" : ""}`}
       aria-label="Page sections"
@@ -73,6 +80,7 @@ export function CsScrollLinks({ sections }: { sections: ScrollSection[] }) {
           )}
         </Fragment>
       ))}
-    </nav>
+    </nav>,
+    document.body,
   );
 }
