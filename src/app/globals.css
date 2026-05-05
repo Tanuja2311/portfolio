@@ -419,9 +419,8 @@ video {
 /* ─── Case Study: Floating Bottom Section Nav ──────────────────────── */
 .cs-float-nav {
   position: fixed;
-  bottom: 22px;
+  bottom: 24px;
   left: 50%;
-  transform: translateX(-50%);
   z-index: 50;
   display: flex;
   align-items: center;
@@ -432,6 +431,17 @@ video {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--nav-border);
+  /* hidden by default — slides up and fades in */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cs-float-nav--visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
 }
 
 .cs-float-link {
