@@ -11,28 +11,20 @@ export const metadata: Metadata = {
 
 const EXPERIENCE = [
   {
-    company: "ZingHR",
-    role: "Senior Product Designer",
-    duration: "2022 – Present",
+    company: "Triibe",
+    role: "Product Designer",
+    duration: "Mar 2025 – Present",
     description:
-      "Redesigned the recognition and performance modules used by HR teams across 200+ enterprise clients.",
-    href: "/work/rewards-and-recognition",
-  },
-  {
-    company: "Freelance",
-    role: "Designer & Developer",
-    duration: "2023 – Present",
-    description:
-      "Built client sites end-to-end — from brand identity to shipped code — for nonprofits and small businesses.",
+      "Mentoring designers, managing client stakeholders, and leading continuous improvement of the Triibe website. Currently leading design and requirements for the annual Wren Gala project for American Friends of St James.",
     href: null,
   },
   {
-    company: "Academic Projects",
-    role: "UX Design Lead",
-    duration: "2020 – 2022",
+    company: "ZingHR",
+    role: "UX Designer",
+    duration: "Jan 2020 – Aug 2023",
     description:
-      "Led design for UrbanPark, a C2C parking platform — from user research through a 12-component design system.",
-    href: "/work/urbanpark",
+      "Redesigned the recognition and performance modules used by HR teams across 200+ enterprise clients.",
+    href: "/work/rewards-and-recognition",
   },
 ];
 
