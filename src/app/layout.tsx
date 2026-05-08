@@ -7,13 +7,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s — Portfolio",
+    template: "%s - Portfolio",
     default: "Portfolio",
   },
   description: "Designer and developer building thoughtful digital experiences.",
 };
 
-// Runs synchronously before first paint — prevents flash of wrong theme.
+// Runs synchronously before first paint - prevents flash of wrong theme.
 const themeScript = `
 (function () {
   try {

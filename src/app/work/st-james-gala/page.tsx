@@ -5,7 +5,7 @@ import { Reveal } from "@/components/case-study/reveal";
 import { CaseImage } from "@/components/case-study/case-image";
 
 export const metadata: Metadata = {
-  title: "St James Royal Gala — Tanuja Bodas",
+  title: "St James Royal Gala - Tanuja Bodas",
   description:
     "A luxury event website built entirely with AI tools in under a week.",
 };
@@ -114,7 +114,7 @@ export default function StJamesGalaPage() {
             <p className="cs-body">
               St James Church Piccadilly hosts an annual black-tie fundraising
               gala for 500 guests. For the 2024 edition, they needed a website
-              that matched the event's prestige — something that felt like it
+              that matched the event's prestige - something that felt like it
               was designed by a boutique studio, not knocked together on a
               template builder. The catch: they needed it in under a week and
               the budget was close to zero.
@@ -136,7 +136,7 @@ export default function StJamesGalaPage() {
               Four pages: a cinematic landing page with a full-screen video
               loop, an event details page with venue and schedule information,
               a ticket purchase page with tiered pricing, and a gallery
-              celebrating past galas. All pages needed to feel coherent —
+              celebrating past galas. All pages needed to feel coherent -
               dark, editorial, gold accents, the kind of website a luxury
               hotel would launch.
             </p>
@@ -182,7 +182,7 @@ export default function StJamesGalaPage() {
             <p className="cs-body">
               This is the part I get asked about most. I didn't hand-type a
               single line of code. But that doesn't mean I wasn't making
-              decisions — it means I was making them faster, and at a higher
+              decisions - it means I was making them faster, and at a higher
               level. The process went through three distinct phases before I
               landed on something that actually worked.
             </p>
@@ -200,7 +200,7 @@ export default function StJamesGalaPage() {
                 <div className="ai-phase-body">
                   <p className="cs-body">
                     I started in Figma Make, converting my existing Figma
-                    designs into code. The layout translation was fast — almost
+                    designs into code. The layout translation was fast - almost
                     shockingly so. Spacing, typography, column structure: it
                     nailed the static scaffolding.
                   </p>
@@ -211,11 +211,11 @@ export default function StJamesGalaPage() {
                     </li>
                     <li className="ai-check ai-check--pro">
                       <span className="ai-check-icon">✓</span>
-                      Design token fidelity — respected font sizes and spacing
+                      Design token fidelity - respected font sizes and spacing
                     </li>
                     <li className="ai-check ai-check--con">
                       <span className="ai-check-icon">✗</span>
-                      No animation support — everything was static
+                      No animation support - everything was static
                     </li>
                     <li className="ai-check ai-check--con">
                       <span className="ai-check-icon">✗</span>
@@ -239,14 +239,14 @@ export default function StJamesGalaPage() {
                 <div className="ai-phase-body">
                   <p className="cs-body">
                     Lovable brought the page to life. Real scroll animations,
-                    parallax, the full-screen video loop on the landing page —
+                    parallax, the full-screen video loop on the landing page -
                     things that make a luxury site feel alive. I could describe
                     interactions in plain English and watch them appear.
                   </p>
                   <ul className="ai-phase-checks">
                     <li className="ai-check ai-check--pro">
                       <span className="ai-check-icon">✓</span>
-                      Real motion — scroll-triggered reveals, parallax, video
+                      Real motion - scroll-triggered reveals, parallax, video
                     </li>
                     <li className="ai-check ai-check--pro">
                       <span className="ai-check-icon">✓</span>
@@ -254,7 +254,7 @@ export default function StJamesGalaPage() {
                     </li>
                     <li className="ai-check ai-check--con">
                       <span className="ai-check-icon">✗</span>
-                      Running on a budget model — started hallucinating structure
+                      Running on a budget model - started hallucinating structure
                     </li>
                     <li className="ai-check ai-check--con">
                       <span className="ai-check-icon">✗</span>
@@ -287,7 +287,7 @@ export default function StJamesGalaPage() {
                   <ul className="ai-phase-checks">
                     <li className="ai-check ai-check--pro">
                       <span className="ai-check-icon">✓</span>
-                      Full control — I could read and guide every decision
+                      Full control - I could read and guide every decision
                     </li>
                     <li className="ai-check ai-check--pro">
                       <span className="ai-check-icon">✓</span>
@@ -295,7 +295,7 @@ export default function StJamesGalaPage() {
                     </li>
                     <li className="ai-check ai-check--pro">
                       <span className="ai-check-icon">✓</span>
-                      No tool cost — Claude API via subscription
+                      No tool cost - Claude API via subscription
                     </li>
                     <li className="ai-check ai-check--pro">
                       <span className="ai-check-icon">✓</span>
@@ -314,7 +314,7 @@ export default function StJamesGalaPage() {
           <Reveal delay={120}>
             <blockquote className="cs-hook">
               I didn&apos;t hand-type a single line of code. Every pixel you
-              see was described, reviewed, and refined — just not written by
+              see was described, reviewed, and refined - just not written by
               hand. That distinction matters more than it sounds.
             </blockquote>
           </Reveal>
@@ -333,7 +333,7 @@ export default function StJamesGalaPage() {
               background, a muted gold (#C9A84C) as the single accent, Cormorant
               Garamond for display headings to signal heritage, and Inter for
               all body text for clarity. The goal was to feel like a Michelin
-              restaurant's website — restrained but unmistakably premium.
+              restaurant's website - restrained but unmistakably premium.
             </p>
           </Reveal>
 
@@ -344,7 +344,7 @@ export default function StJamesGalaPage() {
                 The landing page opens on a full-screen looping video of the
                 church nave lit for a formal dinner. The headline sits centered
                 in Cormorant Garamond, letter-spaced, with a subtle fade-in.
-                Scroll and the video recedes — the page content slides up over
+                Scroll and the video recedes - the page content slides up over
                 it. No hero section has ever felt more like an invitation.
               </p>
               <div className="cs-feature-decision">
@@ -362,7 +362,7 @@ export default function StJamesGalaPage() {
               <h3 className="cs-feature-title">Ticket page</h3>
               <p className="cs-body">
                 Three tiers: Patron (£150), Benefactor (£300), and Chairman's
-                Circle (£600). Each tier had a different card weight — lightest
+                Circle (£600). Each tier had a different card weight - lightest
                 for Patron, heavier border and gold accent for Chairman's
                 Circle. The goal was to make the £300 tier feel like the
                 obvious choice without saying so. Classic pricing psychology,
@@ -382,14 +382,14 @@ export default function StJamesGalaPage() {
               <h3 className="cs-feature-title">Gallery page</h3>
               <p className="cs-body">
                 A masonry grid of photography from the previous three galas.
-                Images loaded with a staggered fade-in — each column offset by
+                Images loaded with a staggered fade-in - each column offset by
                 100ms from the last. Clicking any photo opened a full-screen
                 lightbox with keyboard navigation. The photography did the
                 selling; I just gave it room to breathe.
               </p>
               <div className="cs-feature-decision">
                 <strong>Design decision:</strong> I deliberately kept the
-                gallery unfiltered — no category tags, no search, no year
+                gallery unfiltered - no category tags, no search, no year
                 selector. Filtering would have introduced UI complexity that
                 wasn't needed for a 3-year archive. Let people scroll and
                 remember.
@@ -408,7 +408,7 @@ export default function StJamesGalaPage() {
             <p className="cs-body">
               Halfway through the build, I brought in a junior designer who had
               been asking how to get into design-adjacent development. I walked
-              her through the entire workflow — how I was prompting Claude, how
+              her through the entire workflow - how I was prompting Claude, how
               I was reviewing the output, and crucially, how I was making
               decisions that the AI couldn't make for me.
             </p>
@@ -418,7 +418,7 @@ export default function StJamesGalaPage() {
             <p className="cs-body">
               The thing I wanted her to understand is that AI tools shift the
               bottleneck, not remove it. Before these tools, the bottleneck was
-              implementation — turning a design into working code took hours.
+              implementation - turning a design into working code took hours.
               Now the bottleneck is judgment: knowing what to ask for, knowing
               when the output is wrong even if it looks right, knowing when
               "good enough" is actually good enough and when it isn't.
@@ -427,8 +427,8 @@ export default function StJamesGalaPage() {
 
           <Reveal delay={120}>
             <p className="cs-body">
-              She shipped her first real feature — a dynamic seat counter on
-              the ticket page — by the end of the session. Watching someone go
+              She shipped her first real feature - a dynamic seat counter on
+              the ticket page - by the end of the session. Watching someone go
               from "I don't code" to "I just shipped a feature" in an afternoon
               was the best part of this whole project.
             </p>
@@ -453,7 +453,7 @@ export default function StJamesGalaPage() {
             <p className="cs-body">
               The site launched on time, was received well by the organising
               committee, and handled ticket sales without issue. I don't have
-              conversion numbers — this wasn't an instrumented product launch,
+              conversion numbers - this wasn't an instrumented product launch,
               it was a charity event for a church. What I do have is the
               knowledge that something that would have taken a small agency
               two weeks and several thousand pounds was built in four days at
@@ -466,7 +466,7 @@ export default function StJamesGalaPage() {
               More than the site itself, this project gave me a framework for
               thinking about AI-assisted design work that I've carried into
               every project since. The tools are only as good as the decisions
-              you bring to them. Design judgment doesn't get automated — it
+              you bring to them. Design judgment doesn't get automated - it
               gets amplified.
             </p>
           </Reveal>

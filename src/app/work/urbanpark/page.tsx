@@ -27,7 +27,7 @@ export default function UrbanParkCaseStudy() {
           <CaseImage
             src={IMG("hero.jpg")}
             alt="UrbanPark app screens"
-            description="UrbanPark — key app screens montage, 1440px"
+            description="UrbanPark - key app screens montage, 1440px"
             fill
             priority
             sizes="100vw"
@@ -70,7 +70,7 @@ export default function UrbanParkCaseStudy() {
             <p className="cs-stat-highlight">
               Drivers spend an average of 17 minutes searching for parking per
               trip in dense urban areas. That circling accounts for roughly 30%
-              of downtown traffic — and generates an estimated 900,000 tons of
+              of downtown traffic - and generates an estimated 900,000 tons of
               CO₂ annually across U.S. cities.
             </p>
 
@@ -78,7 +78,7 @@ export default function UrbanParkCaseStudy() {
               UrbanPark starts with the other side of that equation: the empty
               driveway. Most homeowners who commute by transit or work from home
               have a concrete pad sitting unused from 8 AM to 6 PM. The
-              opportunity is a two-sided marketplace connecting the two — drivers
+              opportunity is a two-sided marketplace connecting the two - drivers
               who need a reliable, reserved spot, and homeowners with idle space
               and no friction-free way to monetize it.
             </p>
@@ -87,7 +87,7 @@ export default function UrbanParkCaseStudy() {
               The product challenge isn&rsquo;t matching supply to demand. That
               part is a database query. The real challenge is building trust
               between strangers over something as personal as their car and their
-              home — in real time, under time pressure, with money changing
+              home - in real time, under time pressure, with money changing
               hands.
             </p>
           </Reveal>
@@ -102,7 +102,7 @@ export default function UrbanParkCaseStudy() {
           {/* Interviews */}
           <Reveal delay={80}>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">01 — User Interviews</span>
+              <span className="cs-subsection-label">01 - User Interviews</span>
               <h3 className="cs-subsection-heading">
                 16 interviews. Two completely different definitions of safety.
               </h3>
@@ -124,7 +124,7 @@ export default function UrbanParkCaseStudy() {
                 <strong style={{ color: "var(--text)", fontWeight: 500 }}>
                   Homeowners:
                 </strong>{" "}
-                the barrier wasn&rsquo;t platform trust — it was stranger trust.
+                the barrier wasn&rsquo;t platform trust - it was stranger trust.
                 &ldquo;What if they block my garage?&rdquo; &ldquo;What if
                 something happens to my property?&rdquo; Insurance,
                 accountability, and cancellation policies surfaced in 7 of 8
@@ -138,7 +138,7 @@ export default function UrbanParkCaseStudy() {
               <CaseImage
                 src={IMG("research-interviews.jpg")}
                 alt="Interview synthesis board"
-                description="Interview synthesis — affinity map, 16 sessions"
+                description="Interview synthesis - affinity map, 16 sessions"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -149,7 +149,7 @@ export default function UrbanParkCaseStudy() {
           {/* Competitive Analysis */}
           <Reveal delay={80}>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">02 — Competitive Analysis</span>
+              <span className="cs-subsection-label">02 - Competitive Analysis</span>
               <h3 className="cs-subsection-heading">
                 Six apps. None solved the trust handoff.
               </h3>
@@ -160,8 +160,8 @@ export default function UrbanParkCaseStudy() {
                 didn&rsquo;t need to solve person-to-person trust. Apps with P2P
                 supply (JustPark, Neighbor) had the right model but shallow
                 verification and no in-app handoff communication. Rover&rsquo;s
-                trust architecture — background checks, review systems, in-app
-                messaging, and structured meet & greet flows — was the closest
+                trust architecture - background checks, review systems, in-app
+                messaging, and structured meet & greet flows - was the closest
                 analogue to what UrbanPark needed.
               </p>
             </div>
@@ -172,7 +172,7 @@ export default function UrbanParkCaseStudy() {
               <CaseImage
                 src={IMG("competitive-analysis.jpg")}
                 alt="Competitive analysis matrix"
-                description="Competitive matrix — 6 apps × 10 criteria"
+                description="Competitive matrix - 6 apps × 10 criteria"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -183,13 +183,13 @@ export default function UrbanParkCaseStudy() {
           {/* Personas */}
           <Reveal delay={80}>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">03 — Personas</span>
+              <span className="cs-subsection-label">03 - Personas</span>
               <h3 className="cs-subsection-heading">Two users. Opposite anxieties.</h3>
               <p className="cs-subsection-body">
                 <strong style={{ color: "var(--text)", fontWeight: 500 }}>
                   Maya, 31
                 </strong>{" "}
-                — software engineer, commutes to campus three days a week.
+                - software engineer, commutes to campus three days a week.
                 She&rsquo;s used parking apps before and abandoned spots that
                 didn&rsquo;t match their photos. Core need: reliability. Willing
                 to pay a premium for a guaranteed, confirmed spot.
@@ -198,7 +198,7 @@ export default function UrbanParkCaseStudy() {
                 <strong style={{ color: "var(--text)", fontWeight: 500 }}>
                   David, 55
                 </strong>{" "}
-                — homeowner, car in the shop two days a week, interested in
+                - homeowner, car in the shop two days a week, interested in
                 passive income. His driveway sits empty. Core barrier: liability
                 and damage. Needs to feel in control of who accesses his
                 property and what recourse he has if something goes wrong.
@@ -212,7 +212,7 @@ export default function UrbanParkCaseStudy() {
                 <CaseImage
                   src={IMG("persona-maya.jpg")}
                   alt="Maya persona card"
-                  description="Maya persona — driver, 31, software engineer"
+                  description="Maya persona - driver, 31, software engineer"
                   fill
                   sizes="(max-width: 640px) 100vw, 50vw"
                   className="cs-hero-img"
@@ -222,7 +222,7 @@ export default function UrbanParkCaseStudy() {
                 <CaseImage
                   src={IMG("persona-david.jpg")}
                   alt="David persona card"
-                  description="David persona — homeowner, 55, passive income seeker"
+                  description="David persona - homeowner, 55, passive income seeker"
                   fill
                   sizes="(max-width: 640px) 100vw, 50vw"
                   className="cs-hero-img"
@@ -234,14 +234,14 @@ export default function UrbanParkCaseStudy() {
           {/* Journey Maps */}
           <Reveal delay={80}>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">04 — Journey Maps</span>
+              <span className="cs-subsection-label">04 - Journey Maps</span>
               <h3 className="cs-subsection-heading">
                 The trust gap lives at the handoff moment.
               </h3>
               <p className="cs-subsection-body">
                 Mapping the full journey for both users surfaced a critical
                 insight: the highest-anxiety moment for both sides wasn&rsquo;t
-                payment — it was arrival. When a renter shows up and the
+                payment - it was arrival. When a renter shows up and the
                 driveway is blocked, or when an owner hears someone on their
                 property without warning, neither party has a reliable channel
                 to resolve it. That single insight shaped the entire
@@ -255,7 +255,7 @@ export default function UrbanParkCaseStudy() {
               <CaseImage
                 src={IMG("journey-map.jpg")}
                 alt="Journey maps for Maya and David"
-                description="Journey maps — Maya (renter) and David (homeowner), end-to-end"
+                description="Journey maps - Maya (renter) and David (homeowner), end-to-end"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -270,7 +270,7 @@ export default function UrbanParkCaseStudy() {
             <h2 className="cs-section-heading">Design System</h2>
             <p className="cs-section-body">
               Before designing screens, I built the component library. This
-              isn&rsquo;t how academic projects typically work — students usually
+              isn&rsquo;t how academic projects typically work - students usually
               skip straight to high-fidelity. I did it first because
               I&rsquo;d learned from a previous project that designing without a
               system produces inconsistent work that&rsquo;s painful to maintain
@@ -284,10 +284,10 @@ export default function UrbanParkCaseStudy() {
               <span className="cs-nda-note-label">Context</span>
               <p>
                 I built a similar enterprise-grade design system at ZingHR for
-                their B2B HR platform serving 500,000+ daily transactions — but
+                their B2B HR platform serving 500,000+ daily transactions - but
                 that work is under NDA. UrbanPark demonstrates the same
                 methodology: component-level thinking, systematic state
-                documentation, and token-based design — applied to a consumer
+                documentation, and token-based design - applied to a consumer
                 product I can show.
               </p>
             </div>
@@ -306,7 +306,7 @@ export default function UrbanParkCaseStudy() {
                   <CaseImage
                     src={IMG("ds-buttons.jpg")}
                     alt="Button component states"
-                    description="All button states — 5 variants × 3 sizes"
+                    description="All button states - 5 variants × 3 sizes"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="cs-hero-img"
@@ -323,7 +323,7 @@ export default function UrbanParkCaseStudy() {
                   <CaseImage
                     src={IMG("ds-inputs.jpg")}
                     alt="Input field states"
-                    description="Input states — with accessible focus rings and validation"
+                    description="Input states - with accessible focus rings and validation"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="cs-hero-img"
@@ -340,7 +340,7 @@ export default function UrbanParkCaseStudy() {
                   <CaseImage
                     src={IMG("ds-controls.jpg")}
                     alt="Form control components"
-                    description="Selects, toggles, checkboxes — all states"
+                    description="Selects, toggles, checkboxes - all states"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="cs-hero-img"
@@ -357,7 +357,7 @@ export default function UrbanParkCaseStudy() {
                   <CaseImage
                     src={IMG("ds-cards.jpg")}
                     alt="Card component variants"
-                    description="Listing, booking, confirmation cards — hover + selected states"
+                    description="Listing, booking, confirmation cards - hover + selected states"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="cs-hero-img"
@@ -374,7 +374,7 @@ export default function UrbanParkCaseStudy() {
                   <CaseImage
                     src={IMG("ds-modals.jpg")}
                     alt="Modal component variants"
-                    description="Confirmation, error, payment modals — all states"
+                    description="Confirmation, error, payment modals - all states"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="cs-hero-img"
@@ -391,7 +391,7 @@ export default function UrbanParkCaseStudy() {
                   <CaseImage
                     src={IMG("ds-feedback.jpg")}
                     alt="Feedback components"
-                    description="Toasts, tooltips, empty states — all variants"
+                    description="Toasts, tooltips, empty states - all variants"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="cs-hero-img"
@@ -408,8 +408,8 @@ export default function UrbanParkCaseStudy() {
           <Reveal>
             <h2 className="cs-section-heading">Solution</h2>
             <p className="cs-section-body">
-              Three distinct flows — homeowner onboarding, renter search and
-              booking, and the verification layer that sits beneath both — each
+              Three distinct flows - homeowner onboarding, renter search and
+              booking, and the verification layer that sits beneath both - each
               designed as a standalone journey that shares a common trust
               architecture.
             </p>
@@ -427,14 +427,14 @@ export default function UrbanParkCaseStudy() {
                 override by date), set your price (with a suggested range
                 derived from nearby verified listings), and complete identity
                 verification. The listing goes live only after ID verification
-                clears — a gate that reduced fraudulent listings in our
+                clears - a gate that reduced fraudulent listings in our
                 prototype testing to zero.
               </p>
               <div className="cs-feature-img-wrap">
                 <CaseImage
                   src={IMG("homeowner-flow.jpg")}
                   alt="Homeowner listing flow"
-                  description="Homeowner flow — address, photos, schedule, pricing, verification"
+                  description="Homeowner flow - address, photos, schedule, pricing, verification"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
@@ -446,7 +446,7 @@ export default function UrbanParkCaseStudy() {
                   The pricing step shows a suggested range before asking the
                   owner to enter a number. Anchoring against real data from
                   nearby listings increased confidence and reduced
-                  &ldquo;analysis paralysis&rdquo; in testing — owners who saw
+                  &ldquo;analysis paralysis&rdquo; in testing - owners who saw
                   the range set a price 40% faster than owners shown a blank
                   input.
                 </p>
@@ -465,7 +465,7 @@ export default function UrbanParkCaseStudy() {
                 walking distance from destination, and verification status.
                 Ratings and amenities are secondary filters collapsed by
                 default. The booking confirmation screen is the longest in the
-                app — it deliberately surfaces every relevant detail (cancellation
+                app - it deliberately surfaces every relevant detail (cancellation
                 policy, check-in instructions, owner contact) before payment
                 commits, because that&rsquo;s when both sides need the most
                 clarity.
@@ -474,7 +474,7 @@ export default function UrbanParkCaseStudy() {
                 <CaseImage
                   src={IMG("renter-flow.jpg")}
                   alt="Renter search and booking flow"
-                  description="Renter flow — map search, listing detail, booking, payment, navigation"
+                  description="Renter flow - map search, listing detail, booking, payment, navigation"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
@@ -504,7 +504,7 @@ export default function UrbanParkCaseStudy() {
                 face match), vehicle (plate number, make and model), and
                 property (address confirmation via Street View match). None of
                 these are novel individually. The design challenge was sequencing
-                them so they didn&rsquo;t feel like interrogation — and
+                them so they didn&rsquo;t feel like interrogation - and
                 communicating to both sides exactly what the other party has
                 verified. A renter seeing a &ldquo;3-layer verified&rdquo; badge
                 on a listing knows specifically what that means.
@@ -513,7 +513,7 @@ export default function UrbanParkCaseStudy() {
                 <CaseImage
                   src={IMG("verification-flow.jpg")}
                   alt="Verification flow screens"
-                  description="Verification — ID upload, vehicle registration, property confirmation"
+                  description="Verification - ID upload, vehicle registration, property confirmation"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
@@ -523,7 +523,7 @@ export default function UrbanParkCaseStudy() {
                 <span className="cs-feature-decision-label">Design decision</span>
                 <p className="cs-feature-decision-text">
                   The verification badge is broken into three visible tiers on
-                  the listing page — not a single binary &ldquo;Verified&rdquo;
+                  the listing page - not a single binary &ldquo;Verified&rdquo;
                   checkmark. Transparency about what each layer verifies
                   increased renter confidence in testing more than the
                   verification itself did. People trust what they understand.
@@ -551,7 +551,7 @@ export default function UrbanParkCaseStudy() {
                 homeowners. A verification step that builds trust for renters
                 feels invasive to homeowners if it&rsquo;s not framed carefully.
                 The tension between the two sides was the actual design problem
-                — not the individual screens.
+                - not the individual screens.
               </p>
 
               <p className="cs-wid-body">
@@ -572,7 +572,7 @@ export default function UrbanParkCaseStudy() {
                 <strong>The in-app messaging feature was designed but not
                 prototyped.</strong> That was a mistake. In testing, the
                 highest-anxiety moment for both sides was the physical
-                handoff — the renter arriving, the owner not sure what car to
+                handoff - the renter arriving, the owner not sure what car to
                 expect. A simple message thread with vehicle photo confirmation
                 would have addressed this directly. I ran out of time to build
                 it properly and shipped the conceptual spec without the
@@ -582,7 +582,7 @@ export default function UrbanParkCaseStudy() {
               <p className="cs-wid-body">
                 <strong>I&rsquo;d test with actual strangers earlier.</strong>
                 Our usability participants were recruited from the university
-                community — people who know each other, share campus, and have
+                community - people who know each other, share campus, and have
                 an implicit baseline of trust. The trust barriers for true
                 strangers in a dense city are higher. I suspect the verification
                 flow would have looked different if we&rsquo;d tested with
@@ -600,7 +600,7 @@ export default function UrbanParkCaseStudy() {
               <p className="cs-wid-body">
                 UrbanPark was the first time I built a design system from the
                 ground up. At ZingHR, I applied the same methodology at
-                enterprise scale — systematic tokens, exhaustive state
+                enterprise scale - systematic tokens, exhaustive state
                 documentation, and edge case coverage for a platform handling
                 500,000+ HR transactions daily. That system is under NDA, but
                 the thinking is the same. Consumer and enterprise design systems
@@ -613,7 +613,7 @@ export default function UrbanParkCaseStudy() {
                 stakeholder alignment. Enterprise HR tools are two-sided
                 products: HR admins configure them, employees use them. The same
                 tension exists. The Rewards & Recognition project at ZingHR
-                required the same discipline — designing for the person filling
+                required the same discipline - designing for the person filling
                 in the catalog and the person browsing it simultaneously, with
                 genuinely different needs and opposite anxieties.
               </p>

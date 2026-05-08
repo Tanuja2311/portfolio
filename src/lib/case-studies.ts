@@ -52,7 +52,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     solution: {
-      body: "A lightweight recognition layer integrated directly into the company's existing Slack workspace. Employees send kudos cards with a custom tag and emoji — the card lands in a shared #recognition channel and gets stored in the recipient's personal highlights feed.",
+      body: "A lightweight recognition layer integrated directly into the company's existing Slack workspace. Employees send kudos cards with a custom tag and emoji - the card lands in a shared #recognition channel and gets stored in the recipient's personal highlights feed.",
       images: [
         { src: "/images/rewards-recognition/solution-1.jpg", alt: "Recognition card UI",      caption: "Kudos card composer"      },
         { src: "/images/rewards-recognition/solution-2.jpg", alt: "Highlights feed",          caption: "Personal highlights feed" },
@@ -82,7 +82,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       tools:    ["Figma", "Mapbox", "Framer"],
     },
     challenge: {
-      body: "City parks are underutilized because residents don't know what's happening in them. There was no unified way to discover events, check amenity availability, or plan visits — leaving valuable green infrastructure invisible to the people it serves.",
+      body: "City parks are underutilized because residents don't know what's happening in them. There was no unified way to discover events, check amenity availability, or plan visits - leaving valuable green infrastructure invisible to the people it serves.",
     },
     process: {
       body: "Contextual research in 5 parks, intercept interviews with 24 visitors, and a content audit of existing city apps. We prototyped three distinct navigation paradigms and tested them with participants across different age groups and mobility levels.",
@@ -92,7 +92,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     solution: {
-      body: "An interactive park map with a live events layer, amenity status indicators, and a route planner optimized for accessibility. A 'Nearby now' feed surfaces time-sensitive information — open tennis courts, farmers markets, live music — within a configurable radius.",
+      body: "An interactive park map with a live events layer, amenity status indicators, and a route planner optimized for accessibility. A 'Nearby now' feed surfaces time-sensitive information - open tennis courts, farmers markets, live music - within a configurable radius.",
       images: [
         { src: "/images/urbanpark/solution-1.jpg", alt: "Park map interface",    caption: "Interactive map with event layer" },
         { src: "/images/urbanpark/solution-2.jpg", alt: "Nearby now feed",       caption: "Time-sensitive discovery feed"    },

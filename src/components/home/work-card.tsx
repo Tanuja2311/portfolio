@@ -12,7 +12,7 @@ export function WorkCard({ project }: { project: Project }) {
     <Link
       href={project.href}
       className="work-card"
-      aria-label={`${project.title} — case study`}
+      aria-label={`${project.title} - case study`}
     >
       <div
         className="work-card-media"
@@ -20,7 +20,7 @@ export function WorkCard({ project }: { project: Project }) {
       >
         <Image
           src={project.thumbnail}
-          alt={`${project.title} — project thumbnail`}
+          alt={`${project.title} - project thumbnail`}
           fill
           sizes="(max-width: 640px) 100vw, 33vw"
           className={`work-card-img img-fade${imgLoaded ? " img-loaded" : ""}`}

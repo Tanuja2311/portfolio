@@ -5,7 +5,7 @@ import { WorkCard }     from "@/components/home/work-card";
 import { Reveal }       from "@/components/case-study/reveal";
 
 export const metadata: Metadata = {
-  title: "Tanuja Bodas — Senior Product Designer",
+  title: "Tanuja Bodas - Senior Product Designer",
   description:
     "I turn complex enterprise problems into intuitive workflows that people actually want to use.",
 };

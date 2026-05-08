@@ -4,7 +4,7 @@ import { Reveal } from "@/components/case-study/reveal";
 import { CaseImage } from "@/components/case-study/case-image";
 
 export const metadata: Metadata = {
-  title: "About — Tanuja Bodas",
+  title: "About - Tanuja Bodas",
   description:
     "Senior Product Designer making enterprise software feel less like enterprise software.",
 };
@@ -102,7 +102,7 @@ export default function AboutPage() {
               I&apos;m a product designer who&apos;s spent the last few years
               making enterprise software feel less like enterprise software. I
               care about the moment a user stops thinking about the tool and
-              just does their work — that invisible threshold is where good
+              just does their work - that invisible threshold is where good
               design lives.
             </p>
             <p className="about-bio-text">
@@ -211,7 +211,7 @@ export default function AboutPage() {
         <Reveal delay={60}>
           <p className="about-contact-blurb">
             Whether it&apos;s a role, a project, or just a good design
-            conversation — my inbox is open.
+            conversation - my inbox is open.
           </p>
         </Reveal>
         <Reveal delay={120}>

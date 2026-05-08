@@ -433,7 +433,7 @@ video {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--nav-border);
-  /* hidden by default — slides up and fades in */
+  /* hidden by default - slides up and fades in */
   opacity: 0;
   pointer-events: none;
   transform: translateX(-50%) translateY(10px);
@@ -799,7 +799,7 @@ video {
   gap: 0;
 }
 
-/* Available for work badge — reusable, also used in footer */
+/* Available for work badge - reusable, also used in footer */
 .badge-available {
   display: inline-flex;
   align-items: center;
@@ -1468,7 +1468,7 @@ video {
   margin-top: 1.5rem;
 }
 
-/* ─── St James Gala — Browser mockup grid ──────────────────────────── */
+/* ─── St James Gala - Browser mockup grid ──────────────────────────── */
 
 .cs-browser-grid {
   display: grid;
@@ -1550,7 +1550,7 @@ video {
   border-top: 1px solid var(--border);
 }
 
-/* ─── St James Gala — AI Workflow Timeline ──────────────────────────── */
+/* ─── St James Gala - AI Workflow Timeline ──────────────────────────── */
 
 .ai-timeline {
   display: flex;

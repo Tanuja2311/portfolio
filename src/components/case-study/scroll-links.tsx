@@ -13,7 +13,7 @@ export function CsScrollLinks({ sections }: { sections: ScrollSection[] }) {
   const [visible, setVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // Mount guard — createPortal needs document.body (unavailable during SSR)
+  // Mount guard - createPortal needs document.body (unavailable during SSR)
   useEffect(() => { setMounted(true); }, []);
 
   // Track which section is in view → active link

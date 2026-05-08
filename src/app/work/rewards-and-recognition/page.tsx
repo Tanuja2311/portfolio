@@ -28,7 +28,7 @@ export default function RRCaseStudy() {
           <CaseImage
             src={IMG("hero.jpg")}
             alt="Rewards & Recognition dashboard"
-            description="R&R dashboard — full mockup, 1440px"
+            description="R&R dashboard - full mockup, 1440px"
             fill
             priority
             sizes="100vw"
@@ -80,10 +80,10 @@ export default function RRCaseStudy() {
             <p className="cs-section-body">
               ZingHR serves enterprise HR teams across India and Southeast Asia.
               Recognition existed as a feature request across multiple client
-              accounts — but what clients actually used were either bolted-on Slack
+              accounts - but what clients actually used were either bolted-on Slack
               bots (informal, ephemeral) or annual award ceremonies (formal,
               infrequent, disconnected from the daily work experience). The middle
-              ground — lightweight, meaningful, persistent — was empty.
+              ground - lightweight, meaningful, persistent - was empty.
             </p>
 
             <p className="cs-section-body">
@@ -92,7 +92,7 @@ export default function RRCaseStudy() {
               recognition to lower voluntary attrition. But available tools forced
               a false choice: either bureaucratic and formal (nobody uses it), or
               casual and disposable (leaves no record, carries no weight).
-              ZingHR&rsquo;s clients were losing talent — and the systems they were
+              ZingHR&rsquo;s clients were losing talent - and the systems they were
               paying for weren&rsquo;t helping.
             </p>
           </Reveal>
@@ -107,7 +107,7 @@ export default function RRCaseStudy() {
           {/* Research */}
           <Reveal delay={80}>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">01 — Research</span>
+              <span className="cs-subsection-label">01 - Research</span>
               <h3 className="cs-subsection-heading">
                 24 interviews. Three completely different answers.
               </h3>
@@ -115,11 +115,11 @@ export default function RRCaseStudy() {
                 We interviewed 24 employees across three org sizes: startups
                 (12–80 people), mid-size companies (200–800), and enterprise
                 accounts (1,000+). The contrast was stark. At startups, people
-                wanted public, spontaneous visibility — something that felt like a
+                wanted public, spontaneous visibility - something that felt like a
                 reply, not an HR form. At mid-size companies, the ask was for
                 structure: a way to tie recognition to company values and make it
                 trackable over time. At enterprise, the conversation shifted
-                entirely toward data — managers wanted to see patterns, flag
+                entirely toward data - managers wanted to see patterns, flag
                 disengagement, and connect recognition to performance reviews.
               </p>
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
@@ -136,7 +136,7 @@ export default function RRCaseStudy() {
               <CaseImage
                 src={IMG("research.jpg")}
                 alt="Research synthesis board"
-                description="Affinity map — 24 interviews across 3 org sizes"
+                description="Affinity map - 24 interviews across 3 org sizes"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -147,7 +147,7 @@ export default function RRCaseStudy() {
           {/* Competitive Audit */}
           <Reveal delay={80}>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">02 — Competitive Audit</span>
+              <span className="cs-subsection-label">02 - Competitive Audit</span>
               <h3 className="cs-subsection-heading">
                 8 platforms. None did all three things well.
               </h3>
@@ -168,7 +168,7 @@ export default function RRCaseStudy() {
               <CaseImage
                 src={IMG("competitive-audit.jpg")}
                 alt="Competitive audit matrix"
-                description="Comparison matrix — 8 platforms × 12 criteria"
+                description="Comparison matrix - 8 platforms × 12 criteria"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -179,7 +179,7 @@ export default function RRCaseStudy() {
           {/* IA */}
           <Reveal delay={80}>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">03 — Information Architecture</span>
+              <span className="cs-subsection-label">03 - Information Architecture</span>
               <h3 className="cs-subsection-heading">
                 Recognition data had to live where HR already worked.
               </h3>
@@ -188,7 +188,7 @@ export default function RRCaseStudy() {
                 structure: employee profiles, org hierarchy, performance cycles, and
                 payroll (for points redemption). The key constraint was that
                 recognition data needed to be queryable during performance
-                reviews — which meant it couldn&rsquo;t live in a silo. The
+                reviews - which meant it couldn&rsquo;t live in a silo. The
                 architectural decision that unlocked the rest of the design:
                 recognition events are attached to employees, not conversations.
                 Historical recognition surfaces in a profile without managers
@@ -202,7 +202,7 @@ export default function RRCaseStudy() {
               <CaseImage
                 src={IMG("ia-diagram.jpg")}
                 alt="Information architecture diagram"
-                description="IA — recognition module connections to HR data model"
+                description="IA - recognition module connections to HR data model"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -217,7 +217,7 @@ export default function RRCaseStudy() {
             <h2 className="cs-section-heading">Solution</h2>
             <p className="cs-section-body">
               The final system has four interconnected surfaces. Each was designed
-              to serve a different actor — peers, managers, HR admins — while
+              to serve a different actor - peers, managers, HR admins - while
               sharing a single underlying recognition event model.
             </p>
           </Reveal>
@@ -230,7 +230,7 @@ export default function RRCaseStudy() {
               <p className="cs-feature-body">
                 Three steps maximum: select a recipient, write a message, attach a
                 value tag. We tested four- and five-step flows in usability
-                sessions — completion rates dropped measurably with each
+                sessions - completion rates dropped measurably with each
                 additional step. The value tag system is deliberately limited to
                 eight company-configurable values. Early designs offered fifteen
                 options; testing revealed that too many choices caused hesitation
@@ -241,7 +241,7 @@ export default function RRCaseStudy() {
                 <CaseImage
                   src={IMG("peer-recognition.jpg")}
                   alt="Peer recognition flow"
-                  description="Peer recognition flow — composer, value tag picker, confirmation"
+                  description="Peer recognition flow - composer, value tag picker, confirmation"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
@@ -251,7 +251,7 @@ export default function RRCaseStudy() {
                 <span className="cs-feature-decision-label">Design decision</span>
                 <p className="cs-feature-decision-text">
                   The message field is free-form but has a 280-character soft
-                  limit shown as a counter — not enforced, but visible. Enterprise
+                  limit shown as a counter - not enforced, but visible. Enterprise
                   clients wanted recognition to feel personal, not templated.
                   Removing the character limit entirely produced vague, generic
                   messages in testing. The counter nudged specificity without
@@ -268,7 +268,7 @@ export default function RRCaseStudy() {
               <h3 className="cs-feature-title">Manager dashboard</h3>
               <p className="cs-feature-body">
                 The dashboard surfaces team recognition activity, trend lines over
-                time, and — most carefully — employees who haven&rsquo;t received
+                time, and - most carefully - employees who haven&rsquo;t received
                 any recognition in the past 30 days. The disengagement signal was
                 the most debated design decision in the project. Early designs
                 surfaced it as a prominent alert. After testing with twelve
@@ -279,7 +279,7 @@ export default function RRCaseStudy() {
                 <CaseImage
                   src={IMG("manager-dashboard.jpg")}
                   alt="Manager dashboard"
-                  description="Manager dashboard — team activity, trends, attention queue"
+                  description="Manager dashboard - team activity, trends, attention queue"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
@@ -309,7 +309,7 @@ export default function RRCaseStudy() {
                 Leaderboards are opt-in by default. This came directly from
                 research: several employees, particularly in enterprise accounts,
                 expressed anxiety about being ranked publicly. Opting out
-                doesn&rsquo;t affect the recognition received — it only removes
+                doesn&rsquo;t affect the recognition received - it only removes
                 the person from the visible ranking. Leaderboards are also
                 configurable at three scopes: team, department, or company-wide.
                 A department leaderboard visible only to department members was
@@ -319,7 +319,7 @@ export default function RRCaseStudy() {
                 <CaseImage
                   src={IMG("leaderboards.jpg")}
                   alt="Leaderboard views"
-                  description="Leaderboard — team, department, and company-wide scopes"
+                  description="Leaderboard - team, department, and company-wide scopes"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
@@ -331,7 +331,7 @@ export default function RRCaseStudy() {
                   We considered making leaderboards opt-out (visible by default,
                   with the ability to hide). Two rounds of usability testing with
                   introverted participants changed that. Opt-in produced better
-                  engagement overall — employees who chose to participate were
+                  engagement overall - employees who chose to participate were
                   more active, and employees who opted out reported higher
                   comfort with the tool in general.
                 </p>
@@ -346,7 +346,7 @@ export default function RRCaseStudy() {
               <h3 className="cs-feature-title">Rewards marketplace</h3>
               <p className="cs-feature-body">
                 The catalog is entirely company-managed. HR admins build and
-                maintain the offering — gift cards, experiences, company merch,
+                maintain the offering - gift cards, experiences, company merch,
                 charitable donations, time off. We deliberately avoided locking
                 clients into a platform-curated catalog: every enterprise account
                 we spoke to had existing vendor relationships and procurement
@@ -359,7 +359,7 @@ export default function RRCaseStudy() {
                 <CaseImage
                   src={IMG("marketplace.jpg")}
                   alt="Rewards marketplace"
-                  description="Rewards marketplace — catalog, points balance, redemption flow"
+                  description="Rewards marketplace - catalog, points balance, redemption flow"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
@@ -370,7 +370,7 @@ export default function RRCaseStudy() {
                 <p className="cs-feature-decision-text">
                   The points-to-currency conversion is shown in the catalog item
                   description, not at checkout. Showing the monetary value
-                  earlier — before the employee has decided to redeem — tested
+                  earlier - before the employee has decided to redeem - tested
                   better across every user group. It reduced abandoned
                   redemptions by making the perceived value concrete before
                   commitment.
@@ -395,7 +395,7 @@ export default function RRCaseStudy() {
           {/* Real metrics */}
           <Reveal delay={80}>
             <div className="cs-impact-group">
-              <p className="cs-impact-group-label">Measured — 90-day pilot</p>
+              <p className="cs-impact-group-label">Measured - 90-day pilot</p>
               <div className="cs-metrics">
                 {[
                   { value: "87%",  label: "Weekly active users",       context: "After 6 weeks, sustained through week 12"    },
@@ -412,7 +412,7 @@ export default function RRCaseStudy() {
           {/* Projected metrics */}
           <Reveal delay={120}>
             <div className="cs-impact-group">
-              <p className="cs-impact-group-label">Projected — 12-month outlook</p>
+              <p className="cs-impact-group-label">Projected - 12-month outlook</p>
               <div className="cs-metrics">
                 {[
                   { value: "−15%", label: "Voluntary attrition",      context: "Based on industry benchmarks for tools with >80% WAU" },
@@ -432,7 +432,7 @@ export default function RRCaseStudy() {
               <p className="cs-wid-body">
                 <strong>Push for mobile-first earlier.</strong> The initial design
                 was desktop-led because the client&rsquo;s IT policy restricted
-                native app installs — so we built a responsive web app. Analytics
+                native app installs - so we built a responsive web app. Analytics
                 from the pilot showed 43% of kudos were written from mobile
                 browsers. The responsive experience held up, but it was clearly
                 secondary. Starting from mobile would have produced better
@@ -441,10 +441,10 @@ export default function RRCaseStudy() {
 
               <p className="cs-wid-body">
                 <strong>Invest more in the blank-state experience.</strong> New
-                employees took an average of 12 days to send their first kudos —
+                employees took an average of 12 days to send their first kudos -
                 longer than we wanted. The problem: when you join a tool with no
                 social graph yet, the right onboarding nudge is non-obvious. We
-                shipped a generic empty state. It needed to be contextual —
+                shipped a generic empty state. It needed to be contextual -
                 surfacing teammates the new employee had already interacted with,
                 not a blank canvas.
               </p>
@@ -454,7 +454,7 @@ export default function RRCaseStudy() {
                 too long designing for end users and brought HR admins into
                 testing late. They surfaced catalog management edge cases in
                 week 8 that should have been in scope from week 2. Their workflow
-                is the backbone of the marketplace — not an afterthought.
+                is the backbone of the marketplace - not an afterthought.
               </p>
             </div>
           </Reveal>
