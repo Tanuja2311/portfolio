@@ -68,6 +68,7 @@ export function FeaturedCard({ project, index }: Props) {
 
         <div className="feat-card-body">
           <h3 className="feat-card-title">{project.title}</h3>
+          {project.role && <p className="feat-card-role">{project.role}</p>}
           <p className="feat-card-stat">{project.stat}</p>
           <div className="feat-card-tags" aria-label="Tags">
             {project.tags.map((tag) => (

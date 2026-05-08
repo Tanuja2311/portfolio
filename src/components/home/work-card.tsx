@@ -30,6 +30,7 @@ export function WorkCard({ project }: { project: Project }) {
 
       <div className="work-card-info">
         <h3 className="work-card-title">{project.title}</h3>
+        {project.role && <p className="work-card-role">{project.role}</p>}
         <p className="work-card-stat">{project.stat}</p>
         <div className="work-card-tags" aria-label="Tags">
           {project.tags.map((tag) => (
