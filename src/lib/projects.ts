@@ -68,12 +68,12 @@ export const OTHER_PROJECTS: Project[] = [
   },
   {
     slug:       "genai-pharmacy",
-    title:      "GenAI for Pharmacy Research",
+    title:      "GenAI in Pharmacy Research",
     thumbnail:  "/images/genai-pharmacy/hero.jpg",
     coverColor: "#12100e",
     stat:       "Investigated pharmacy students' hesitation to use GenAI chatbots for academic research.",
     tags:       ["UX Research", "AI in Education"],
-    href:       "/work/genai-for-pharmacy-research",
+    href:       "/work/genai-pharmacy-research",
     role:       "UX Researcher",
   },
   {
