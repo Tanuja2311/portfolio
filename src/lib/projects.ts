@@ -38,7 +38,7 @@ export const OTHER_PROJECTS: Project[] = [
     title:      "Employee Dossier",
     thumbnail:  "/images/employee-dossier/hero.jpg",
     coverColor: "#0e1520",
-    stat:       "Redesigned ZingHR's employee information module for faster access and clearer navigation.",
+    stat:       "Redesigned ZingHR's centralized employee record into a single, scannable page.",
     tags:       ["Product Design", "Enterprise", "B2B"],
     href:       "/work/employee-dossier",
     role:       "UX Designer",
