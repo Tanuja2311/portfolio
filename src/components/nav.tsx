@@ -13,6 +13,7 @@ const NAV_LINKS: { href: string; label: string; external?: true }[] = [
 
 function isActive(href: string, pathname: string): boolean {
   if (href === "/work") return pathname === "/work" || pathname.startsWith("/work/");
+  if (href === "/built-with-ai") return pathname === "/built-with-ai" || pathname.startsWith("/built-with-ai/");
   return pathname === href;
 }
 

@@ -32,6 +32,19 @@ export const FEATURED_PROJECTS: Project[] = [
   },
 ];
 
+export const AI_PROJECTS: Project[] = [
+  {
+    slug:       "wren-gala",
+    title:      "The Wren Gala",
+    thumbnail:  "/images/wren-gala/hero.jpg",
+    coverColor: "#100d14",
+    stat:       "A luxury charity event website designed and shipped in under a week. Zero hand-written code.",
+    tags:       ["AI Workflow", "Client Work"],
+    href:       "/built-with-ai/wren-gala",
+    role:       "Lead Designer & Developer",
+  },
+];
+
 export const OTHER_PROJECTS: Project[] = [
   {
     slug:       "employee-dossier",

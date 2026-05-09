@@ -2101,6 +2101,73 @@ video {
   letter-spacing: 0.08em;
 }
 
+/* ─── Work card disabled / coming-soon state ────────────────────────── */
+.work-card--disabled {
+  opacity: 0.42;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ─── Case study: live site link ────────────────────────────────────── */
+.cs-live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  transition: text-decoration-color 0.15s ease, color 0.15s ease;
+}
+
+.cs-live-link:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* ─── Case study: next project nav ──────────────────────────────────── */
+.cs-next-project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.cs-next-project:not(.cs-next-project--disabled):hover {
+  opacity: 0.7;
+}
+
+.cs-next-project--disabled {
+  opacity: 0.38;
+  cursor: default;
+  pointer-events: none;
+}
+
+.cs-next-project-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  margin-bottom: 0.375rem;
+}
+
+.cs-next-project-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.2;
+}
+
 /* ─── Work index page header ───────────────────────────────────────── */
 .work-page-header {
   padding: clamp(7.5rem, 14vh, 10rem) 0 clamp(5rem, 10vh, 7rem);
