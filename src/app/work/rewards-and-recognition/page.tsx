@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CsScrollLinks } from "@/components/case-study/scroll-links";
-import { Reveal }         from "@/components/case-study/reveal";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { MetricCard }     from "@/components/case-study/metric-card";
 import { CaseImage }      from "@/components/case-study/case-image";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
@@ -66,7 +66,7 @@ export default function RRCaseStudy() {
       <div className="cs-body">
         {/* ── Challenge ──────────────────────────────────────────────── */}
         <section id="challenge" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Challenge</h2>
 
             <blockquote className="cs-hook">
@@ -96,17 +96,17 @@ export default function RRCaseStudy() {
               ZingHR&rsquo;s clients were losing talent - and the systems they were
               paying for weren&rsquo;t helping.
             </p>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Process ────────────────────────────────────────────────── */}
         <section id="process" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Process</h2>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Research */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">01 - Research</span>
               <h3 className="cs-subsection-heading">
@@ -130,9 +130,9 @@ export default function RRCaseStudy() {
                 a workflow that didn&rsquo;t fit.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("research.jpg")}
@@ -143,10 +143,10 @@ export default function RRCaseStudy() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Competitive Audit */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">02 - Competitive Audit</span>
               <h3 className="cs-subsection-heading">
@@ -162,9 +162,9 @@ export default function RRCaseStudy() {
                 within a configurable system. That gap was the opportunity.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("competitive-audit.jpg")}
@@ -175,10 +175,10 @@ export default function RRCaseStudy() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* IA */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">03 - Information Architecture</span>
               <h3 className="cs-subsection-heading">
@@ -196,9 +196,9 @@ export default function RRCaseStudy() {
                 having to manually curate it.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("ia-diagram.jpg")}
@@ -209,22 +209,22 @@ export default function RRCaseStudy() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Solution ───────────────────────────────────────────────── */}
         <section id="solution" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Solution</h2>
             <p className="cs-section-body">
               The final system has four interconnected surfaces. Each was designed
               to serve a different actor - peers, managers, HR admins - while
               sharing a single underlying recognition event model.
             </p>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 1 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 01</span>
               <h3 className="cs-feature-title">Peer-to-peer recognition flow</h3>
@@ -260,10 +260,10 @@ export default function RRCaseStudy() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 2 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 02</span>
               <h3 className="cs-feature-title">Manager dashboard</h3>
@@ -299,10 +299,10 @@ export default function RRCaseStudy() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 3 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 03</span>
               <h3 className="cs-feature-title">Leaderboards</h3>
@@ -338,10 +338,10 @@ export default function RRCaseStudy() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 4 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 04</span>
               <h3 className="cs-feature-title">Rewards marketplace</h3>
@@ -378,12 +378,12 @@ export default function RRCaseStudy() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Impact ─────────────────────────────────────────────────── */}
         <section id="impact" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Impact</h2>
             <p className="cs-section-body">
               The following reflects a 90-day pilot with one enterprise client,
@@ -391,10 +391,10 @@ export default function RRCaseStudy() {
               based on industry benchmarks for sustained adoption at the 12-month
               mark and are labeled clearly below.
             </p>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Real metrics */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-impact-group">
               <p className="cs-impact-group-label">Measured - 90-day pilot</p>
               <div className="cs-metrics">
@@ -408,10 +408,10 @@ export default function RRCaseStudy() {
                 ))}
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Projected metrics */}
-          <Reveal delay={120}>
+          <ScrollReveal>
             <div className="cs-impact-group">
               <p className="cs-impact-group-label">Projected - 12-month outlook</p>
               <div className="cs-metrics">
@@ -423,10 +423,10 @@ export default function RRCaseStudy() {
                 ))}
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* What I'd do differently */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid">
               <h3 className="cs-wid-heading">What I&rsquo;d do differently</h3>
 
@@ -458,7 +458,7 @@ export default function RRCaseStudy() {
                 is the backbone of the marketplace - not an afterthought.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
       </div>
     </div>

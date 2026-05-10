@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CsScrollLinks } from "@/components/case-study/scroll-links";
-import { Reveal }         from "@/components/case-study/reveal";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { CaseImage }      from "@/components/case-study/case-image";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
@@ -67,7 +67,7 @@ export default function GenAIPharmacyPage() {
 
         {/* ── Context ──────────────────────────────────────────────────── */}
         <section id="context" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Context</h2>
 
             <p className="cs-section-body">
@@ -89,9 +89,9 @@ export default function GenAIPharmacyPage() {
             <p className="cs-section-body">
               This project set out to answer three questions:
             </p>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-questions">
               {[
                 "How do pharmacy students currently use GenAI chatbots in their research workflows?",
@@ -104,26 +104,26 @@ export default function GenAIPharmacyPage() {
                 </div>
               ))}
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <p className="cs-section-body">
               The goal was not to design a product. It was to build a research
               foundation that could inform one: a clear map of behaviors, pain
               points, and opportunities grounded in primary data from the people
               who would actually use these tools.
             </p>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Process ──────────────────────────────────────────────────── */}
         <section id="process" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Process</h2>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 01 — Desk Research */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">01</span>
               <h3 className="cs-subsection-heading">Desk Research</h3>
@@ -149,10 +149,10 @@ export default function GenAIPharmacyPage() {
                 research.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 02 — Competitor Scan */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">02</span>
               <h3 className="cs-subsection-heading">Competitor Scan</h3>
@@ -177,10 +177,10 @@ export default function GenAIPharmacyPage() {
                 limitation that came up repeatedly in later interviews.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 03 — Survey */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">03</span>
               <h3 className="cs-subsection-heading">Survey</h3>
@@ -204,10 +204,10 @@ export default function GenAIPharmacyPage() {
                 cited plagiarism and accuracy as the primary barriers.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 04 — Interviews */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">04</span>
               <h3 className="cs-subsection-heading">Interviews</h3>
@@ -239,17 +239,17 @@ export default function GenAIPharmacyPage() {
                 Key Insights.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Findings ─────────────────────────────────────────────────── */}
         <section id="findings" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Findings</h2>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Finding 01 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Finding 01</span>
               <h3 className="cs-feature-title">How students actually use AI</h3>
@@ -268,10 +268,10 @@ export default function GenAIPharmacyPage() {
                 push AI into a supplementary role rather than a primary one.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Finding 02 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Finding 02</span>
               <h3 className="cs-feature-title">What is not working</h3>
@@ -298,10 +298,10 @@ export default function GenAIPharmacyPage() {
                 creates friction and erodes trust.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Finding 03 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Finding 03</span>
               <h3 className="cs-feature-title">What would build trust</h3>
@@ -317,10 +317,10 @@ export default function GenAIPharmacyPage() {
                 stored or used for model training.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Stakeholder Perspective */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature-decision" style={{ marginTop: "2.5rem" }}>
               <span className="cs-feature-decision-label">Stakeholder Perspective</span>
               <p className="cs-feature-decision-text">
@@ -332,10 +332,10 @@ export default function GenAIPharmacyPage() {
                 AI as a risk to academic rigor rather than an accelerant.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Problem Definition */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-problem-stmt">
               <span className="cs-problem-stmt-label">Problem Definition</span>
               <p className="cs-problem-stmt-text">
@@ -345,16 +345,16 @@ export default function GenAIPharmacyPage() {
                 plagiarism prevention.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Reflection ───────────────────────────────────────────────── */}
         <section id="reflection" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Reflection</h2>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
               <h3 className="cs-wid-heading">What I learned</h3>
 
@@ -375,9 +375,9 @@ export default function GenAIPharmacyPage() {
                 different skill from synthesizing transcripts after the fact.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid">
               <h3 className="cs-wid-heading">What I&rsquo;d do differently</h3>
 
@@ -404,7 +404,7 @@ export default function GenAIPharmacyPage() {
                 add a layer the interview data could not.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
       </div>

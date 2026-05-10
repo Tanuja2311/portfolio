@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CsScrollLinks } from "@/components/case-study/scroll-links";
-import { Reveal }         from "@/components/case-study/reveal";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { CaseImage }      from "@/components/case-study/case-image";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
@@ -67,7 +67,7 @@ export default function CoreCrushPage() {
 
         {/* ── Challenge ──────────────────────────────────────────────── */}
         <section id="challenge" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Challenge</h2>
 
             <p className="cs-section-body">
@@ -98,9 +98,9 @@ export default function CoreCrushPage() {
               to build a polished product. It was to validate whether the core
               value proposition had demand before investing in design execution.
             </p>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("competitive-landscape.jpg")}
@@ -111,17 +111,17 @@ export default function CoreCrushPage() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Process ────────────────────────────────────────────────── */}
         <section id="process" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Process</h2>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 01 - Competitive Analysis */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">01 - Competitive Analysis</span>
               <h3 className="cs-subsection-heading">
@@ -156,10 +156,10 @@ export default function CoreCrushPage() {
                 />
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 02 - User Research */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">02 - User Research</span>
               <h3 className="cs-subsection-heading">
@@ -205,10 +205,10 @@ export default function CoreCrushPage() {
                 />
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 03 - Hypothesis Formation and Business Strategy */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">03 - Hypothesis Formation and Business Strategy</span>
               <h3 className="cs-subsection-heading">
@@ -263,17 +263,17 @@ export default function CoreCrushPage() {
                 />
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Validation ─────────────────────────────────────────────── */}
         <section id="validation" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Validation</h2>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 04 - Fake Front Door Test */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">04 - Experiment 1: Fake Front Door Test</span>
               <h3 className="cs-subsection-heading">
@@ -338,10 +338,10 @@ export default function CoreCrushPage() {
                 />
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 05 - Mechanical Turk Test */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">05 - Experiment 2: Mechanical Turk Test</span>
               <h3 className="cs-subsection-heading">
@@ -383,10 +383,10 @@ export default function CoreCrushPage() {
                 />
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 06 - Prioritization and Wireframes */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">06 - Prioritization and Wireframes</span>
               <h3 className="cs-subsection-heading">
@@ -431,16 +431,16 @@ export default function CoreCrushPage() {
                 />
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Reflection ─────────────────────────────────────────────── */}
         <section id="reflection" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Reflection</h2>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
               <h3 className="cs-wid-heading">What I learned</h3>
 
@@ -453,9 +453,9 @@ export default function CoreCrushPage() {
                 speculative design with evidence.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid">
               <h3 className="cs-wid-heading">What I&rsquo;d do differently</h3>
 
@@ -478,7 +478,7 @@ export default function CoreCrushPage() {
                 signal more actionable.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
       </div>

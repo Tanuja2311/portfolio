@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CsScrollLinks } from "@/components/case-study/scroll-links";
-import { Reveal }         from "@/components/case-study/reveal";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { CaseImage }      from "@/components/case-study/case-image";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
@@ -67,7 +67,7 @@ export default function WrenGalaPage() {
 
         {/* ── Context ──────────────────────────────────────────────────── */}
         <section id="context" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Context</h2>
 
             <p className="cs-section-body">
@@ -99,9 +99,9 @@ export default function WrenGalaPage() {
               The constraint was time. The entire site needed to ship in under
               a week.
             </p>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("context-comparison.jpg")}
@@ -112,17 +112,17 @@ export default function WrenGalaPage() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Process ──────────────────────────────────────────────────── */}
         <section id="process" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Process</h2>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 01 — Visual Direction */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">01</span>
               <h3 className="cs-subsection-heading">Visual Direction</h3>
@@ -141,9 +141,9 @@ export default function WrenGalaPage() {
                 client could see real pages, not static comps, from day one.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-decision">
               <span className="cs-feature-decision-label">Design decision</span>
               <p className="cs-feature-decision-text">
@@ -153,9 +153,9 @@ export default function WrenGalaPage() {
                 behavior, not a flat mockup.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("visual-direction.jpg")}
@@ -166,10 +166,10 @@ export default function WrenGalaPage() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 02 — AI Tool Evaluation */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">02</span>
               <h3 className="cs-subsection-heading">AI Tool Evaluation</h3>
@@ -180,9 +180,9 @@ export default function WrenGalaPage() {
                 tradeoffs.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="ai-timeline">
 
               <div className="ai-phase">
@@ -293,9 +293,9 @@ export default function WrenGalaPage() {
               </div>
 
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-decision" style={{ marginTop: "2rem" }}>
               <span className="cs-feature-decision-label">Design decision</span>
               <p className="cs-feature-decision-text">
@@ -307,10 +307,10 @@ export default function WrenGalaPage() {
                 switch tools is itself a design skill.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 03 — Content Strategy */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">03</span>
               <h3 className="cs-subsection-heading">Content Strategy</h3>
@@ -331,9 +331,9 @@ export default function WrenGalaPage() {
                 transaction.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("content-hierarchy.jpg")}
@@ -344,10 +344,10 @@ export default function WrenGalaPage() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 04 — Mentoring Through the Process */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">04</span>
               <h3 className="cs-subsection-heading">Mentoring Through the Process</h3>
@@ -368,10 +368,10 @@ export default function WrenGalaPage() {
                 introduce risk.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 05 — Payment Platform Evaluation */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">05</span>
               <h3 className="cs-subsection-heading">Payment Platform Evaluation</h3>
@@ -405,9 +405,9 @@ export default function WrenGalaPage() {
                 the site&rsquo;s visual language.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-decision">
               <span className="cs-feature-decision-label">Design decision</span>
               <p className="cs-feature-decision-text">
@@ -417,9 +417,9 @@ export default function WrenGalaPage() {
                 convenience. A luxury event cannot have a generic checkout.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("payment-comparison.jpg")}
@@ -430,12 +430,12 @@ export default function WrenGalaPage() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Solution ─────────────────────────────────────────────────── */}
         <section id="solution" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Solution</h2>
             <p className="cs-section-body">
               Four pages, each with a specific persuasion job. The visual
@@ -443,10 +443,10 @@ export default function WrenGalaPage() {
               gold accents, serif display type, and generous whitespace that
               signals occasion rather than urgency.
             </p>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 01 — Homepage */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 01</span>
               <h3 className="cs-feature-title">Homepage</h3>
@@ -483,10 +483,10 @@ export default function WrenGalaPage() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 02 — Changemaker Cohort */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 02</span>
               <h3 className="cs-feature-title">Changemaker Cohort Page</h3>
@@ -523,10 +523,10 @@ export default function WrenGalaPage() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 03 — Story of St James */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 03</span>
               <h3 className="cs-feature-title">Story of St James</h3>
@@ -563,10 +563,10 @@ export default function WrenGalaPage() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 04 — Tickets */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 04</span>
               <h3 className="cs-feature-title">Tickets Page &amp; Purchase Flow</h3>
@@ -616,16 +616,16 @@ export default function WrenGalaPage() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Reflection ───────────────────────────────────────────────── */}
         <section id="reflection" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Reflection</h2>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
               <h3 className="cs-wid-heading">What I learned</h3>
 
@@ -655,9 +655,9 @@ export default function WrenGalaPage() {
                 communicating tradeoffs.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid">
               <h3 className="cs-wid-heading">What I&rsquo;d do differently</h3>
 
@@ -677,10 +677,10 @@ export default function WrenGalaPage() {
                 it possible to share meaningful data regardless of timing.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Live site + next project */}
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div style={{ marginTop: "3rem" }}>
               <a
                 href="https://sjpgalany.org"
@@ -699,7 +699,7 @@ export default function WrenGalaPage() {
               </div>
               <span style={{ fontSize: "1.25rem", color: "var(--text-faint)" }}>&#8594;</span>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
       </div>

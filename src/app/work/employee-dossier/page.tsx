@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CsScrollLinks } from "@/components/case-study/scroll-links";
-import { Reveal }         from "@/components/case-study/reveal";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { CaseImage }      from "@/components/case-study/case-image";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
@@ -67,7 +67,7 @@ export default function EmployeeDossierPage() {
 
         {/* ── Challenge ──────────────────────────────────────────────── */}
         <section id="challenge" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Challenge</h2>
 
             <p className="cs-section-body">
@@ -106,9 +106,9 @@ export default function EmployeeDossierPage() {
               in reviews, and employees depend on for paycheck accuracy, that
               distrust was not a cosmetic problem. It was an operational one.
             </p>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("before.jpg")}
@@ -119,17 +119,17 @@ export default function EmployeeDossierPage() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Process ────────────────────────────────────────────────── */}
         <section id="process" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Process</h2>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 01 - Usability Audit */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">01 - Usability Audit</span>
               <h3 className="cs-subsection-heading">
@@ -151,10 +151,10 @@ export default function EmployeeDossierPage() {
                 trying to do.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 02 - Internal Interviews */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">02 - Internal Interviews</span>
               <h3 className="cs-subsection-heading">
@@ -190,10 +190,10 @@ export default function EmployeeDossierPage() {
                 to communicate on first contact.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 03 - First Exploration */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">03 - First Exploration: Tabbed Navigation</span>
               <h3 className="cs-subsection-heading">
@@ -231,9 +231,9 @@ export default function EmployeeDossierPage() {
                 twenty, with no layout changes between them.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("tabbed-exploration.jpg")}
@@ -244,10 +244,10 @@ export default function EmployeeDossierPage() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* 04 - Final Direction */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">04 - Final Direction: Single-Page Scroll</span>
               <h3 className="cs-subsection-heading">
@@ -284,12 +284,12 @@ export default function EmployeeDossierPage() {
                 client configurations, and user permissions.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Solution ───────────────────────────────────────────────── */}
         <section id="solution" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Solution</h2>
             <p className="cs-section-body">
               The final design consolidates every piece of employee
@@ -297,10 +297,10 @@ export default function EmployeeDossierPage() {
               top function as anchor links that scroll the user to the
               relevant section rather than swapping content between views.
             </p>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 01 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 01</span>
               <h3 className="cs-feature-title">
@@ -350,10 +350,10 @@ export default function EmployeeDossierPage() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 02 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 02</span>
               <h3 className="cs-feature-title">
@@ -404,10 +404,10 @@ export default function EmployeeDossierPage() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 03 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 03</span>
               <h3 className="cs-feature-title">Bilingual field labels</h3>
@@ -442,10 +442,10 @@ export default function EmployeeDossierPage() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 04 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 04</span>
               <h3 className="cs-feature-title">
@@ -468,10 +468,10 @@ export default function EmployeeDossierPage() {
                 qualifications.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Feature 05 */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 05</span>
               <h3 className="cs-feature-title">
@@ -490,16 +490,16 @@ export default function EmployeeDossierPage() {
                 pattern.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Impact ─────────────────────────────────────────────────── */}
         <section id="impact" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Impact</h2>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
               <p className="cs-wid-body">
                 The redesigned Employee Dossier shipped as a default module
@@ -516,16 +516,16 @@ export default function EmployeeDossierPage() {
                 launch. No structural redesign has followed.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Reflection ─────────────────────────────────────────────── */}
         <section className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Reflection</h2>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
               <h3 className="cs-wid-heading">What I learned</h3>
 
@@ -552,9 +552,9 @@ export default function EmployeeDossierPage() {
                 &ldquo;did it do what you expected?&rdquo; does.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid">
               <h3 className="cs-wid-heading">What I&rsquo;d do differently</h3>
 
@@ -576,7 +576,7 @@ export default function EmployeeDossierPage() {
                 until later.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
       </div>

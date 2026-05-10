@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CsScrollLinks } from "@/components/case-study/scroll-links";
-import { Reveal }    from "@/components/case-study/reveal";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { CaseImage } from "@/components/case-study/case-image";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
@@ -65,7 +65,7 @@ export default function UrbanParkCaseStudy() {
       <div className="cs-body">
         {/* ── Challenge ──────────────────────────────────────────────── */}
         <section id="challenge" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Challenge</h2>
 
             <p className="cs-stat-highlight">
@@ -91,17 +91,17 @@ export default function UrbanParkCaseStudy() {
               home - in real time, under time pressure, with money changing
               hands.
             </p>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Research ───────────────────────────────────────────────── */}
         <section id="research" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Research</h2>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Interviews */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">01 - User Interviews</span>
               <h3 className="cs-subsection-heading">
@@ -132,9 +132,9 @@ export default function UrbanParkCaseStudy() {
                 homeowner interviews before we asked about them.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("research-interviews.jpg")}
@@ -145,10 +145,10 @@ export default function UrbanParkCaseStudy() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Competitive Analysis */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">02 - Competitive Analysis</span>
               <h3 className="cs-subsection-heading">
@@ -166,9 +166,9 @@ export default function UrbanParkCaseStudy() {
                 analogue to what UrbanPark needed.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("competitive-analysis.jpg")}
@@ -179,10 +179,10 @@ export default function UrbanParkCaseStudy() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Personas */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">03 - Personas</span>
               <h3 className="cs-subsection-heading">Two users. Opposite anxieties.</h3>
@@ -205,9 +205,9 @@ export default function UrbanParkCaseStudy() {
                 property and what recourse he has if something goes wrong.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-two-col" style={{ marginTop: "1.5rem" }}>
               <div className="cs-portrait-img">
                 <CaseImage
@@ -230,10 +230,10 @@ export default function UrbanParkCaseStudy() {
                 />
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Journey Maps */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-subsection">
               <span className="cs-subsection-label">04 - Journey Maps</span>
               <h3 className="cs-subsection-heading">
@@ -249,9 +249,9 @@ export default function UrbanParkCaseStudy() {
                 verification and communication design.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={100}>
+          <ScrollReveal>
             <div className="cs-wide-img">
               <CaseImage
                 src={IMG("journey-map.jpg")}
@@ -262,12 +262,12 @@ export default function UrbanParkCaseStudy() {
                 className="cs-hero-img"
               />
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Design System ──────────────────────────────────────────── */}
         <section id="design-system" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Design System</h2>
             <p className="cs-section-body">
               Before designing screens, I built the component library. This
@@ -292,10 +292,10 @@ export default function UrbanParkCaseStudy() {
                 product I can show.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Component grid */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-ds-grid">
 
               <div className="cs-ds-group">
@@ -401,12 +401,12 @@ export default function UrbanParkCaseStudy() {
               </div>
 
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Solution ───────────────────────────────────────────────── */}
         <section id="solution" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Solution</h2>
             <p className="cs-section-body">
               Three distinct flows - homeowner onboarding, renter search and
@@ -414,10 +414,10 @@ export default function UrbanParkCaseStudy() {
               designed as a standalone journey that shares a common trust
               architecture.
             </p>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Homeowner flow */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Flow 01</span>
               <h3 className="cs-feature-title">Homeowner: List your driveway</h3>
@@ -453,10 +453,10 @@ export default function UrbanParkCaseStudy() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Renter flow */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Flow 02</span>
               <h3 className="cs-feature-title">Renter: Search, book, and navigate</h3>
@@ -493,10 +493,10 @@ export default function UrbanParkCaseStudy() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
           {/* Verification flow */}
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Flow 03</span>
               <h3 className="cs-feature-title">Verification: Building trust in layers</h3>
@@ -531,16 +531,16 @@ export default function UrbanParkCaseStudy() {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
         {/* ── Reflection ─────────────────────────────────────────────── */}
         <section id="reflection" className="cs-section">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="cs-section-heading">Reflection</h2>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
               <h3 className="cs-wid-heading">What I learned</h3>
 
@@ -563,9 +563,9 @@ export default function UrbanParkCaseStudy() {
                 product. This was the most transferable lesson from the project.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid">
               <h3 className="cs-wid-heading">What I&rsquo;d change</h3>
 
@@ -590,9 +590,9 @@ export default function UrbanParkCaseStudy() {
                 participants who had no social overlap.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid">
               <h3 className="cs-wid-heading">
                 How this informed my professional work
@@ -619,7 +619,7 @@ export default function UrbanParkCaseStudy() {
                 genuinely different needs and opposite anxieties.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
       </div>
     </>
