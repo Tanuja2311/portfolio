@@ -78,6 +78,17 @@ export const OTHER_PROJECTS: Project[] = [
     role:       "UX Researcher",
   },
   {
+    slug:       "google-drive-emerging",
+    title:      "Google Drive for Emerging Interfaces",
+    thumbnail:  "/images/google-drive-emerging/hero.jpg",
+    coverColor: "#0e1018",
+    stat:       "Adapting cloud file management for a Tesla in-car display and a Smart TV.",
+    tags:       ["Speculative Design", "Multimodal", "Emerging Interfaces"],
+    href:       "/work/google-drive-emerging-interfaces",
+    role:       "UX Designer",
+    hidden:     true,
+  },
+  {
     slug:       "corecrush",
     title:      "CoreCrush",
     thumbnail:  "/images/corecrush/hero.jpg",
