@@ -38,14 +38,14 @@ export default function BuiltWithAIPage() {
           </Reveal>
 
           <div className="work-grid">
-            {AI_PROJECTS.map((project, i) => (
+            {AI_PROJECTS.filter(p => !p.hidden).map((project, i) => (
               <Reveal key={project.slug} delay={i * 80}>
                 <WorkCard project={project} />
               </Reveal>
             ))}
 
             {/* Coming soon card — not a link, visually greyed out */}
-            <Reveal delay={AI_PROJECTS.length * 80}>
+            <Reveal delay={AI_PROJECTS.filter(p => !p.hidden).length * 80}>
               <div
                 className="work-card work-card--disabled"
                 aria-label="Rise & Shine Foundation — coming soon"

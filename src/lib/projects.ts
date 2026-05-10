@@ -7,6 +7,7 @@ export interface Project {
   tags: string[];
   href: string;
   role?: string;
+  hidden?: boolean;
 }
 
 export const FEATURED_PROJECTS: Project[] = [
