@@ -86,5 +86,6 @@ export const OTHER_PROJECTS: Project[] = [
     tags:       ["Product Strategy", "HealthTech", "Mobile"],
     href:       "/work/corecrush",
     role:       "Product Designer",
+    hidden:     true,
   },
 ];
