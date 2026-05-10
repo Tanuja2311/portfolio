@@ -3,6 +3,7 @@ import { FEATURED_PROJECTS, OTHER_PROJECTS } from "@/lib/projects";
 import { FeaturedCard } from "@/components/home/featured-card";
 import { WorkCard }     from "@/components/home/work-card";
 import { Reveal }       from "@/components/case-study/reveal";
+import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export const metadata: Metadata = {
   title: "Work - Tanuja Bodas",
@@ -13,16 +14,16 @@ export default function WorkPage() {
     <main className="home">
       {/* ── Page header ───────────────────────────────────────────── */}
       <section className="work-page-header">
-        <div className="work-page-header-inner">
-          <Reveal>
+        <StaggerContainer className="work-page-header-inner">
+          <StaggerItem>
             <h1 className="work-page-title">Work</h1>
-          </Reveal>
-          <Reveal delay={60}>
+          </StaggerItem>
+          <StaggerItem>
             <p className="work-page-subtitle">
               Selected projects across product design, UX research, and systems thinking.
             </p>
-          </Reveal>
-        </div>
+          </StaggerItem>
+        </StaggerContainer>
       </section>
 
       {/* ── Featured Work ─────────────────────────────────────────── */}

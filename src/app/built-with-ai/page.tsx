@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AI_PROJECTS } from "@/lib/projects";
 import { WorkCard }    from "@/components/home/work-card";
 import { Reveal }      from "@/components/case-study/reveal";
+import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export const metadata: Metadata = {
   title: "Built with AI - Tanuja Bodas",
@@ -14,18 +15,18 @@ export default function BuiltWithAIPage() {
     <main className="home">
       {/* ── Page header ───────────────────────────────────────────────── */}
       <section className="work-page-header">
-        <div className="work-page-header-inner">
-          <Reveal>
+        <StaggerContainer className="work-page-header-inner">
+          <StaggerItem>
             <h1 className="work-page-title">Built with AI</h1>
-          </Reveal>
-          <Reveal delay={60}>
+          </StaggerItem>
+          <StaggerItem>
             <p className="work-page-subtitle">
               Projects designed and shipped end-to-end using AI-assisted
               workflows. Every line of code was generated through AI tools,
               guided by design thinking.
             </p>
-          </Reveal>
-        </div>
+          </StaggerItem>
+        </StaggerContainer>
       </section>
 
       {/* ── Projects ──────────────────────────────────────────────────── */}

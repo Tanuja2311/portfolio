@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CsScrollLinks } from "@/components/case-study/scroll-links";
 import { Reveal }         from "@/components/case-study/reveal";
 import { CaseImage }      from "@/components/case-study/case-image";
+import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 const SECTIONS = [
   { id: "problem",    label: "Problem"    },
@@ -22,8 +23,8 @@ export default function GoogleDriveEmergingPage() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="cs-hero">
-        <div className="cs-hero-media" style={{ background: "#0e1018" }}>
+      <StaggerContainer as="section" className="cs-hero">
+        <StaggerItem className="cs-hero-media" style={{ background: "#0e1018" }}>
           <CaseImage
             src={IMG("hero.jpg")}
             alt="Google Drive for Emerging Interfaces"
@@ -42,9 +43,9 @@ export default function GoogleDriveEmergingPage() {
               interfaces rely on.
             </p>
           </div>
-        </div>
+        </StaggerItem>
 
-        <div className="cs-meta-bar">
+        <StaggerItem className="cs-meta-bar">
           <div className="cs-meta-inner">
             {[
               ["Role",     "UX Designer"],
@@ -58,8 +59,8 @@ export default function GoogleDriveEmergingPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </StaggerItem>
+      </StaggerContainer>
 
       <CsScrollLinks sections={SECTIONS} />
 

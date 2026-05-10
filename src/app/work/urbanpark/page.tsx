@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CsScrollLinks } from "@/components/case-study/scroll-links";
 import { Reveal }    from "@/components/case-study/reveal";
 import { CaseImage } from "@/components/case-study/case-image";
+import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export const metadata: Metadata = {
   title: "UrbanPark",
@@ -22,8 +23,8 @@ export default function UrbanParkCaseStudy() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="cs-hero">
-        <div className="cs-hero-media" style={{ background: "#0d1a0f" }}>
+      <StaggerContainer as="section" className="cs-hero">
+        <StaggerItem className="cs-hero-media" style={{ background: "#0d1a0f" }}>
           <CaseImage
             src={IMG("hero.jpg")}
             alt="UrbanPark app screens"
@@ -40,9 +41,9 @@ export default function UrbanParkCaseStudy() {
               A peer-to-peer marketplace for unused driveways.
             </p>
           </div>
-        </div>
+        </StaggerItem>
 
-        <div className="cs-meta-bar">
+        <StaggerItem className="cs-meta-bar">
           <div className="cs-meta-inner">
             {[
               ["Role",    "Product Designer"],
@@ -56,8 +57,8 @@ export default function UrbanParkCaseStudy() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </StaggerItem>
+      </StaggerContainer>
 
       <CsScrollLinks sections={SECTIONS} />
 

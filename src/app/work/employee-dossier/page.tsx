@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CsScrollLinks } from "@/components/case-study/scroll-links";
 import { Reveal }         from "@/components/case-study/reveal";
 import { CaseImage }      from "@/components/case-study/case-image";
+import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 const SECTIONS = [
   { id: "challenge", label: "Challenge" },
@@ -22,8 +23,8 @@ export default function EmployeeDossierPage() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="cs-hero">
-        <div className="cs-hero-media" style={{ background: "#0e1520" }}>
+      <StaggerContainer as="section" className="cs-hero">
+        <StaggerItem className="cs-hero-media" style={{ background: "#0e1520" }}>
           <CaseImage
             src={IMG("hero.jpg")}
             alt="Employee Dossier redesign"
@@ -41,9 +42,9 @@ export default function EmployeeDossierPage() {
               single, scannable page.
             </p>
           </div>
-        </div>
+        </StaggerItem>
 
-        <div className="cs-meta-bar">
+        <StaggerItem className="cs-meta-bar">
           <div className="cs-meta-inner">
             {[
               ["Role",     "UX Designer"],
@@ -57,8 +58,8 @@ export default function EmployeeDossierPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </StaggerItem>
+      </StaggerContainer>
 
       <CsScrollLinks sections={SECTIONS} />
 

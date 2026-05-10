@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/case-study/reveal";
 import { CaseImage } from "@/components/case-study/case-image";
+import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export const metadata: Metadata = {
   title: "About - Tanuja Bodas",
@@ -81,8 +82,8 @@ export default function AboutPage() {
     <main className="about-page">
 
       {/* ── Intro ───────────────────────────────────────────────────── */}
-      <section className="about-intro">
-        <Reveal>
+      <StaggerContainer as="section" className="about-intro">
+        <StaggerItem>
           <div className="about-photo-wrap">
             <CaseImage
               src="/images/about/portrait.jpg"
@@ -93,9 +94,9 @@ export default function AboutPage() {
               sizes="(max-width: 768px) 100vw, 480px"
             />
           </div>
-        </Reveal>
+        </StaggerItem>
 
-        <Reveal delay={80}>
+        <StaggerItem>
           <div className="about-bio">
             <h1 className="about-name">Tanuja Bodas</h1>
             <p className="about-bio-text">
@@ -130,8 +131,8 @@ export default function AboutPage() {
               </a>
             </div>
           </div>
-        </Reveal>
-      </section>
+        </StaggerItem>
+      </StaggerContainer>
 
       {/* ── Experience ──────────────────────────────────────────────── */}
       <section className="about-section">

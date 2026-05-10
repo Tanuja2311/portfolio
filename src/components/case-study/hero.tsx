@@ -1,11 +1,12 @@
 import Image from "next/image";
 import type { CaseStudy } from "@/lib/case-studies";
+import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export function CaseStudyHero({ study }: { study: CaseStudy }) {
   return (
-    <section className="cs-hero">
+    <StaggerContainer as="section" className="cs-hero">
       {/* Full-width image banner */}
-      <div className="cs-hero-media" style={{ background: study.coverColor }}>
+      <StaggerItem className="cs-hero-media" style={{ background: study.coverColor }}>
         <Image
           src={study.hero}
           alt={study.title}
@@ -19,10 +20,10 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
           <h1 className="cs-hero-title">{study.title}</h1>
           <p className="cs-hero-subtitle">{study.subtitle}</p>
         </div>
-      </div>
+      </StaggerItem>
 
       {/* Metadata bar */}
-      <div className="cs-meta-bar">
+      <StaggerItem className="cs-meta-bar">
         <div className="cs-meta-inner">
           <MetaItem label="Role"     value={study.meta.role}     />
           <MetaItem label="Duration" value={study.meta.duration} />
@@ -32,8 +33,8 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
             <span className="cs-meta-value">{study.meta.tools.join(", ")}</span>
           </div>
         </div>
-      </div>
-    </section>
+      </StaggerItem>
+    </StaggerContainer>
   );
 }
 

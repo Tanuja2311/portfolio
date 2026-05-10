@@ -3,6 +3,7 @@ import { CsScrollLinks } from "@/components/case-study/scroll-links";
 import { Reveal }         from "@/components/case-study/reveal";
 import { MetricCard }     from "@/components/case-study/metric-card";
 import { CaseImage }      from "@/components/case-study/case-image";
+import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 const SECTIONS = [
   { id: "challenge", label: "Challenge" },
@@ -23,8 +24,8 @@ export default function RRCaseStudy() {
   return (
     <div className="rr-study">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="cs-hero">
-        <div className="cs-hero-media" style={{ background: "#1a1410" }}>
+      <StaggerContainer as="section" className="cs-hero">
+        <StaggerItem className="cs-hero-media" style={{ background: "#1a1410" }}>
           <CaseImage
             src={IMG("hero.jpg")}
             alt="Rewards & Recognition dashboard"
@@ -41,9 +42,9 @@ export default function RRCaseStudy() {
               Designing a culture of visibility for enterprise teams.
             </p>
           </div>
-        </div>
+        </StaggerItem>
 
-        <div className="cs-meta-bar">
+        <StaggerItem className="cs-meta-bar">
           <div className="cs-meta-inner">
             {[
               ["Role",     "Lead Product Designer"],
@@ -57,8 +58,8 @@ export default function RRCaseStudy() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </StaggerItem>
+      </StaggerContainer>
 
       <CsScrollLinks sections={SECTIONS} />
 
