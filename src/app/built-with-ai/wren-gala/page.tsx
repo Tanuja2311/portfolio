@@ -31,6 +31,7 @@ export default function WrenGalaPage() {
             description="Browser mockup of the Wren Gala homepage — sjpgalany.org"
             fill
             priority
+            noCurtain
             sizes="100vw"
             className="cs-hero-img"
           />

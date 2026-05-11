@@ -32,6 +32,7 @@ export default function RRCaseStudy() {
             description="R&R dashboard - full mockup, 1440px"
             fill
             priority
+            noCurtain
             sizes="100vw"
             className="cs-hero-img"
           />

@@ -31,6 +31,7 @@ export default function GenAIPharmacyPage() {
             description="GenAI in Pharmacy Research — hero image"
             fill
             priority
+            noCurtain
             sizes="100vw"
             className="cs-hero-img"
           />

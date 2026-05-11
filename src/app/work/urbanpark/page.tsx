@@ -31,6 +31,7 @@ export default function UrbanParkCaseStudy() {
             description="UrbanPark - key app screens montage, 1440px"
             fill
             priority
+            noCurtain
             sizes="100vw"
             className="cs-hero-img"
           />

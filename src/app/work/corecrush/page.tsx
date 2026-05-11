@@ -32,6 +32,7 @@ export default function CoreCrushPage() {
             description="CoreCrush - fitness app for gym beginners"
             fill
             priority
+            noCurtain
             sizes="100vw"
             className="cs-hero-img"
           />

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CsScrollLinks } from "@/components/case-study/scroll-links";
 import { Reveal }         from "@/components/case-study/reveal";
 import { CaseImage }      from "@/components/case-study/case-image";
@@ -31,6 +31,7 @@ export default function GoogleDriveEmergingPage() {
             description="Google Drive adapted for Tesla in-car display and Smart TV"
             fill
             priority
+            noCurtain
             sizes="100vw"
             className="cs-hero-img"
           />

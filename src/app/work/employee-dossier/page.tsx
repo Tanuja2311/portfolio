@@ -31,6 +31,7 @@ export default function EmployeeDossierPage() {
             description="Employee Dossier - redesigned single-page profile view"
             fill
             priority
+            noCurtain
             sizes="100vw"
             className="cs-hero-img"
           />
