@@ -3,6 +3,7 @@ import { CsScrollLinks } from "@/components/case-study/scroll-links";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { CaseImage }      from "@/components/case-study/case-image";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
+import { AnimatedNumber } from "@/components/animated-number";
 
 const SECTIONS = [
   { id: "challenge",  label: "Challenge"  },
@@ -293,17 +294,17 @@ export default function CoreCrushPage() {
               </p>
               <div className="cs-metrics">
                 <div className="cs-metric">
-                  <span className="cs-metric-value">96</span>
+                  <span className="cs-metric-value"><AnimatedNumber value={96} /></span>
                   <span className="cs-metric-label">Page views</span>
                   <span className="cs-metric-context">Total traffic to the landing page</span>
                 </div>
                 <div className="cs-metric">
-                  <span className="cs-metric-value">18</span>
+                  <span className="cs-metric-value"><AnimatedNumber value={18} /></span>
                   <span className="cs-metric-label">Email signups</span>
                   <span className="cs-metric-context">Unique early access requests</span>
                 </div>
                 <div className="cs-metric">
-                  <span className="cs-metric-value">18.75%</span>
+                  <span className="cs-metric-value"><AnimatedNumber value={18.75} suffix="%" decimals={2} /></span>
                   <span className="cs-metric-label">Conversion rate</span>
                   <span className="cs-metric-context">Nearly double the 10% target</span>
                 </div>
