@@ -70,6 +70,86 @@ export default function MyRCloudCaseStudy() {
         <section id="challenge" className="cs-section">
           <ScrollReveal>
             <h2 className="cs-section-heading">Challenge</h2>
+
+            <blockquote className="cs-hook">
+              When I joined the project, their entire operation ran on Google
+              Sheets. Account managers tracked requisitions in spreadsheets.
+              Partner assignments were managed through email. Candidate progress
+              through interview stages existed in someone&rsquo;s head or in a
+              shared document that was always out of date.
+            </blockquote>
+
+            <p className="cs-section-body">
+              MyRCloud (Reccloud Technologies Private Limited) is a recruitment
+              agency that connects corporate clients with recruiting partners to
+              fill open positions. They partnered with EMA Partners and ZingHR
+              to build a digital platform for their operations.
+            </p>
+
+            <p className="cs-section-body">
+              The core challenge was not just putting spreadsheets into a web
+              app. It was understanding how an entire recruitment operation works
+              across multiple people with different roles, permissions, and
+              goals, and then translating that into a coherent digital system.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
+              <CaseImage
+                src={IMG("challenge-before-after.jpg")}
+                alt="Before/after: Google Sheets workflow vs MyRCloud dashboard"
+                description="Before/after - Google Sheets operation vs MyRCloud platform"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <p className="cs-section-body">
+              The platform needed to serve six distinct user types
+              simultaneously: Corporate Clients who create requisitions and hire
+              candidates. Recruiting Partners (independent recruiters or
+              agencies) who source and submit candidates. Candidates whose
+              profiles and interview progress are tracked through the system.
+              Client Success Managers (CSMs) who manage client relationships and
+              oversee candidate movement. Partner Success Managers (PSMs) who
+              onboard, verify, and manage recruiting partners. And a Quality
+              Check (QC) Team who screen candidates before they reach clients.
+            </p>
+
+            <p className="cs-section-body">
+              Each persona needed a different dashboard, different navigation,
+              and different available actions, but their workflows were deeply
+              interconnected. A requisition created by a CSM gets published to
+              Partners, who submit candidates that are screened by QC, reviewed
+              by the Client, and tracked by the CSM throughout.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
+              <CaseImage
+                src={IMG("challenge-persona-ecosystem.jpg")}
+                alt="Persona ecosystem diagram showing how all six roles connect"
+                description="Persona ecosystem - six roles and how their workflows interconnect"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <p className="cs-section-body">
+              The business had never been digitized before. The people running
+              it understood their workflows intuitively but had never had to
+              articulate them as structured processes. Translating this tribal
+              knowledge into explicit system logic was the central design
+              challenge.
+            </p>
           </ScrollReveal>
         </section>
 
