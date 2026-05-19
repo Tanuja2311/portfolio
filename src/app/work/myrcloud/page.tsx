@@ -308,6 +308,257 @@ export default function MyRCloudCaseStudy() {
           <ScrollReveal>
             <h2 className="cs-section-heading">Solution</h2>
           </ScrollReveal>
+
+          {/* Feature 01 — Create Requisition */}
+          <ScrollReveal>
+            <div className="cs-feature">
+              <span className="cs-feature-name">Feature 01</span>
+              <h3 className="cs-feature-title">Create Requisition</h3>
+              <p className="cs-feature-body">
+                The requisition creation flow is the backbone of the entire
+                platform. It is a multi-step form that captures everything
+                needed to define a job opening and match it with the right
+                partners and candidates.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                The first step captures position properties, job description
+                with three input options (manual entry, file upload with
+                auto-parsing that fills all fields automatically, or a video JD
+                where candidates can watch a recorded job description), work
+                experience requirements, education, skills categorized as
+                essential, important, and good-to-have with drag-to-prioritize,
+                language skills, compensation with flexible salary modes
+                covering yearly, monthly, weekly, daily, hourly, and per unit,
+                and roles and responsibilities.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                The second step covers assessments: screening questions that
+                admins create per position, an instruction input matrix covering
+                work arrangement, sourcing keywords, notice period, and
+                education requirements, and interview process configuration with
+                customizable and reorderable stages.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                The third step consolidates everything into a single reviewable
+                preview before the requisition goes live.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap">
+              <CaseImage
+                src={IMG("solution-create-requisition.jpg")}
+                alt="Create requisition preview screen"
+                description="Create requisition - full preview step showing the scope of captured information"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
+              <CaseImage
+                src={IMG("solution-skills-prioritization.jpg")}
+                alt="Skills prioritization with three-tier tag system"
+                description="Skills input - essential, important, and good-to-have tiers with drag-to-prioritize"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          {/* Feature 02 — Partner Requisition Pipeline */}
+          <ScrollReveal>
+            <div className="cs-feature">
+              <span className="cs-feature-name">Feature 02</span>
+              <h3 className="cs-feature-title">Partner Requisition Pipeline</h3>
+              <p className="cs-feature-body">
+                Once a requisition is published, partners see it in their
+                pipeline dashboard. The pipeline has three states: Published for
+                new requisitions to review, Accepted for requisitions actively
+                being worked on, and Rejected.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                The published view shows each requisition as a card with the
+                job title, client, location, function, education requirement,
+                number of positions, CV limit with a progress bar, CTC range,
+                experience range, potential revenue, and a call to action to
+                view the requisition and accept it. Partners can filter and sort
+                by CTC, priority, and other criteria.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                The accepted view is where the real complexity lives. Each
+                requisition card shows a horizontal candidate funnel with counts
+                at every stage: Sourcing, Screening, Submitted, Round 1 through
+                Round 3, Interview Pending, HR Round, Offered, Accepted, and
+                Joined. Rejections are split by who rejected, either QC or
+                Client. A status badge on each card shows whether the
+                requisition is Open, On Hold, or Closed. This gives partners
+                instant visibility into where their candidates stand without
+                clicking into each requisition individually.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                Partners can also share open positions via email, WhatsApp,
+                print, copy link, or QR code.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap">
+              <CaseImage
+                src={IMG("solution-published-requisitions.jpg")}
+                alt="Published requisitions dashboard card layout"
+                description="Partner pipeline - published requisitions with card layout and filters"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
+              <CaseImage
+                src={IMG("solution-accepted-requisitions.jpg")}
+                alt="Accepted requisitions dashboard with horizontal candidate funnel"
+                description="Partner pipeline - accepted requisitions showing per-stage candidate counts"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          {/* Feature 03 — Role-Based Dashboards */}
+          <ScrollReveal>
+            <div className="cs-feature">
+              <span className="cs-feature-name">Feature 03</span>
+              <h3 className="cs-feature-title">Role-Based Dashboards</h3>
+              <p className="cs-feature-body">
+                Every persona gets a dashboard tailored to their specific needs,
+                but all dashboards draw from the same underlying data.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                The Head CSM Dashboard is the most comprehensive, covering four
+                areas. Demand shows client counts, position counts, requisition
+                summary, requisition ageing buckets, sector-wise top clients,
+                position priority breakdown, and requisitions with interviews
+                scheduled. Business Health shows joined ratio, rejection ratio,
+                time to hire, joinings per month, number of offers, fill-up
+                ratio, total revenue, average revenue per hire, and partner
+                payout. Supply shows partner counts split by independent and
+                agency, partner requisition summary, a stagewise funnel
+                visualization from Sourcing through Joined, QC approval ratio,
+                CV submissions by partner type, and distribution tables for
+                partner activity. Productivity shows requisition movement,
+                delivery team productivity, and top rejection reasons.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                The CSM dashboard is nearly identical but removes the delivery
+                team productivity widget, since individual CSMs do not need
+                visibility into other team members&rsquo; performance.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                The Partner Dashboard focuses on what partners care about:
+                potential revenue per requisition, accepted requisitions with
+                candidate progress through stages, and tools to share job
+                openings.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                The Customer Summary Dashboard shows account-specific metrics:
+                upcoming interviews, average time to hire, a recruitment funnel
+                visualization, role-wise open positions, new hire gender
+                diversity, channels versus conversion, and bottom-line numbers
+                like cost per hire, fill-up ratio, and acceptance ratio.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap">
+              <CaseImage
+                src={IMG("solution-head-csm-dashboard.jpg")}
+                alt="Head CSM dashboard"
+                description="Head CSM dashboard - demand, business health, supply, and productivity panels"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
+              <CaseImage
+                src={IMG("solution-partner-dashboard.jpg")}
+                alt="Partner dashboard"
+                description="Partner dashboard - revenue potential, requisition pipeline, and sharing tools"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
+              <CaseImage
+                src={IMG("solution-customer-dashboard.jpg")}
+                alt="Customer summary dashboard with recruitment funnel"
+                description="Customer dashboard - recruitment funnel, open positions, and cost metrics"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          {/* Feature 04 — Working With Developers */}
+          <ScrollReveal>
+            <div className="cs-feature">
+              <span className="cs-feature-name">Feature 04</span>
+              <h3 className="cs-feature-title">Working With Developers</h3>
+              <p className="cs-feature-body">
+                I did not hand off Figma files and wait for questions. When
+                development started, I sat with the dev team in a conference
+                room for days at a time. The flows had been split among three to
+                four developers, but because everything was interconnected,
+                every developer needed to understand how the other flows worked.
+                I would explain a flow to one developer while the others
+                listened, building shared context across the team. When logic
+                questions came up during implementation, we resolved them in
+                real time.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                After features were built, I tracked UI issues in a shared
+                spreadsheet organized by flow and persona. I logged issues down
+                to specific CSS values, exact hex color codes, font sizes in
+                rem, and border radius values. The developers would mark items
+                as done, and I would verify each fix. Over 200 issues were
+                tracked and resolved this way across six sheets covering mobile,
+                partner web, PSM login, create requisition, CSM web, and
+                candidate movement.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap">
+              <CaseImage
+                src={IMG("solution-ui-tracker.jpg")}
+                alt="UI issues tracker spreadsheet"
+                description="UI tracker - 200+ implementation issues logged by flow, persona, and CSS specifics"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
         </section>
 
         {/* ── Impact ─────────────────────────────────────────────────── */}
