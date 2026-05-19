@@ -31,6 +31,16 @@ export const FEATURED_PROJECTS: Project[] = [
     href:       "/work/urbanpark",
     role:       "Product Designer",
   },
+  {
+    slug:       "myrcloud",
+    title:      "MyRCloud",
+    thumbnail:  "/images/myrcloud/hero.jpg",
+    coverColor: "#0d1118",
+    stat:       "Designed a multi-sided recruitment marketplace from Google Sheets to a live platform with 600+ partners.",
+    tags:       ["Enterprise", "Recruitment", "Marketplace"],
+    href:       "/work/myrcloud",
+    role:       "Solo UX Designer",
+  },
 ];
 
 export const AI_PROJECTS: Project[] = [
