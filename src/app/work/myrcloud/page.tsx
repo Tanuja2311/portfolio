@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CsScrollLinks } from "@/components/case-study/scroll-links";
 import { ScrollReveal }  from "@/components/scroll-reveal";
+import { MetricCard }    from "@/components/case-study/metric-card";
 import { CaseImage }     from "@/components/case-study/case-image";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
@@ -565,6 +566,80 @@ export default function MyRCloudCaseStudy() {
         <section id="impact" className="cs-section">
           <ScrollReveal>
             <h2 className="cs-section-heading">Impact</h2>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-impact-group">
+              <p className="cs-impact-group-label">Platform at launch · March 2023</p>
+              <div className="cs-metrics">
+                {[
+                  { value: "100+",     label: "Clients Onboarded",             context: "Corporate clients on the platform"                        },
+                  { value: "600+",     label: "Active Partners",               context: "Recruiting partners across independent agencies and firms" },
+                  { value: "3,000+",   label: "Positions Closed",              context: "Roles filled through the platform"                        },
+                  { value: "6",        label: "User Types Designed For",       context: "CSM, Head CSM, PSM, Partner, Client, and Candidate"       },
+                  { value: "~400",     label: "Screens Across Web and Mobile", context: "Across six portals covering web and mobile"               },
+                  { value: "8 months", label: "Design Timeline",               context: "From first workshop to shipped product"                   },
+                ].map((m, i) => (
+                  <MetricCard key={m.label} metric={m} index={i} />
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <p className="cs-section-body">
+              MyRCloud launched in March 2023 and is live today at
+              myrcloud.com. The platform replaced a fully manual Google Sheets
+              operation with a structured digital workflow, enabling real-time
+              visibility into candidate pipeline status across all stakeholders.
+              The system includes AI/ML-based candidate fitment scoring, resume
+              parsing, and an intelligent partner matching algorithm. Clients on
+              the platform include companies like Vedanta and DMart.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-wid">
+              <h3 className="cs-wid-heading">Reflection</h3>
+
+              <p className="cs-wid-body">
+                If I were to do this project again, I would invest time in
+                independent research on how recruitment agencies operate before
+                the first workshop. This was my first major project out of
+                college, and I was entirely dependent on stakeholder
+                explanations to build my mental model of the domain. If I had
+                spoken to recruiters outside of MyRCloud or studied how
+                platforms like Naukri or LinkedIn Recruiter handle similar
+                workflows, I might have asked better questions earlier and
+                identified missing flows sooner.
+              </p>
+
+              <p className="cs-wid-body">
+                That said, the approach I took, asking hard questions during
+                design, facilitating workshops to resolve ambiguity, and sitting
+                with developers during implementation, these are practices I
+                still use today. This project taught me that designing
+                enterprise software is less about visual craft and more about
+                understanding systems: how people, data, and decisions flow
+                through an organization, and how to translate that into
+                something a machine can support.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-wid">
+              <h3 className="cs-wid-heading">A Note on Confidentiality</h3>
+
+              <p className="cs-wid-body">
+                This project was designed while I was employed at ZingHR, which
+                served as the technology partner for MyRCloud (Reccloud
+                Technologies Private Limited). Select screens shown here
+                represent publicly accessible portions of the platform. Internal
+                portal screens have been represented through process diagrams,
+                sitemaps, and flow documentation where applicable.
+              </p>
+            </div>
           </ScrollReveal>
         </section>
       </div>
