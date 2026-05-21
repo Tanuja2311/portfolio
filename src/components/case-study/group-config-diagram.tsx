@@ -26,40 +26,40 @@ export function GroupConfigDiagram() {
         <circle cx={372} cy={168} r={108} fill="rgba(183,148,244,0.10)" stroke="#B794F4" strokeWidth="1.2" opacity="0.7"/>
         <circle cx={280} cy={296} r={108} fill="rgba(183,148,244,0.10)" stroke="#B794F4" strokeWidth="1.2" opacity="0.7"/>
 
-        {/* ── Circle labels ──────────────────────────────────── */}
-        {/* Location: top-left of its circle, left-aligned */}
-        <text x="118" y="92" textAnchor="start" fontSize="13" fill="currentColor"
+        {/* ── Circle labels — each group centered in its circle ── */}
+        {/* Location: cx=188, cy=168 — 4 lines, span ~45px, start at cy-22 */}
+        <text x="188" y="146" textAnchor="middle" fontSize="13" fill="currentColor"
           fontWeight="600" fontFamily="var(--font-sans), sans-serif">
           Location
         </text>
         {["Mumbai", "Delhi", "Bangalore"].map((t, i) => (
-          <text key={t} x="118" y={108 + i * 14} textAnchor="start" fontSize="10.5"
+          <text key={t} x="188" y={162 + i * 15} textAnchor="middle" fontSize="10.5"
             fill="currentColor" opacity="0.45"
             fontFamily="var(--font-sans), sans-serif">
             {t}
           </text>
         ))}
 
-        {/* Function: top-right of its circle, right-aligned */}
-        <text x="442" y="92" textAnchor="end" fontSize="13" fill="currentColor"
+        {/* Function: cx=372, cy=168 — same layout */}
+        <text x="372" y="146" textAnchor="middle" fontSize="13" fill="currentColor"
           fontWeight="600" fontFamily="var(--font-sans), sans-serif">
           Function
         </text>
         {["Design", "Engineering", "Sales"].map((t, i) => (
-          <text key={t} x="442" y={108 + i * 14} textAnchor="end" fontSize="10.5"
+          <text key={t} x="372" y={162 + i * 15} textAnchor="middle" fontSize="10.5"
             fill="currentColor" opacity="0.45"
             fontFamily="var(--font-sans), sans-serif">
             {t}
           </text>
         ))}
 
-        {/* Team: bottom-center of its circle, centered */}
-        <text x="280" y="332" textAnchor="middle" fontSize="13" fill="currentColor"
+        {/* Team: cx=280, cy=296 — 3 lines, span ~30px, start at cy-15 */}
+        <text x="280" y="281" textAnchor="middle" fontSize="13" fill="currentColor"
           fontWeight="600" fontFamily="var(--font-sans), sans-serif">
           Team
         </text>
         {["Project Alpha", "Project Beta"].map((t, i) => (
-          <text key={t} x="280" y={348 + i * 15} textAnchor="middle" fontSize="10.5"
+          <text key={t} x="280" y={297 + i * 15} textAnchor="middle" fontSize="10.5"
             fill="currentColor" opacity="0.45"
             fontFamily="var(--font-sans), sans-serif">
             {t}
