@@ -15,7 +15,7 @@ export const FEATURED_PROJECTS: Project[] = [
   {
     slug:       "rewards-recognition",
     title:      "Rewards & Recognition",
-    thumbnail:  "/images/rewards-recognition/preview.png",
+    thumbnail:  "/images/rewards-recognition/hero.png",
     coverColor: "#1a1410",
     stat:       "Designed a recognition system adopted across 3 org sizes.",
     tags:       ["Product Design", "Enterprise", "B2B"],
