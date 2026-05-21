@@ -11,7 +11,7 @@ export function GroupConfigDiagram() {
       className="rr-diagram"
       aria-label="Group-based award configuration: awards can target Location groups, Function groups, Team groups, or any combination, independent of reporting hierarchy"
     >
-      <svg viewBox="0 0 560 420" width="100%" height="auto" fill="none" aria-hidden="true">
+      <svg viewBox="0 0 560 448" width="100%" height="auto" fill="none" aria-hidden="true">
 
         {/* ── Circles ────────────────────────────────────────── */}
         <circle cx={188} cy={168} r={108} fill="rgba(183,148,244,0.10)" stroke="#B794F4" strokeWidth="1.2" opacity="0.7"/>
@@ -60,7 +60,7 @@ export function GroupConfigDiagram() {
 
 
         {/* ── Caption ────────────────────────────────────────── */}
-        <text x="280" y="413" textAnchor="middle" fontSize="11"
+        <text x="280" y="441" textAnchor="middle" fontSize="11"
           fill="currentColor" opacity="0.45"
           fontFamily="var(--font-sans), sans-serif">
           Awards can target any group or combination, independent of reporting hierarchy.
