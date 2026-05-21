@@ -7,10 +7,8 @@ export function JuryModelDiagram() {
     { x: 402, y: 252, w: 130, h: 44, label: "Heads of Product" },
   ];
 
-  const chroMidX  = chro.x + chro.w / 2;           // 280
-  const chroBot   = chro.y + chro.h;                // 90
-  const connY     = 178;                             // horizontal connector y
-  const arrowTipY = chroBot + 1;                     // where arrow meets CHRO
+  const chroMidX = chro.x + chro.w / 2;  // 280
+  const chroBot  = chro.y + chro.h;      // 90
 
   return (
     <figure
@@ -19,34 +17,14 @@ export function JuryModelDiagram() {
     >
       <svg viewBox="0 0 560 370" width="100%" height="auto" fill="none" aria-hidden="true">
 
-        {/* ── Tree connector ─────────────────────────────────── */}
-        {/* Vertical stems from each bottom box to connector line */}
-        {bottom.map((b) => {
-          const bx = b.x + b.w / 2;
-          return (
-            <line key={b.label}
-              x1={bx} y1={b.y} x2={bx} y2={connY}
-              stroke="#B794F4" strokeWidth="1.5" opacity="0.45"
-            />
-          );
-        })}
-        {/* Horizontal connector */}
-        <line
-          x1={bottom[0].x + bottom[0].w / 2} y1={connY}
-          x2={bottom[2].x + bottom[2].w / 2} y2={connY}
-          stroke="#B794F4" strokeWidth="1.5" opacity="0.45"
-        />
-        {/* Vertical trunk to CHRO */}
-        <line
-          x1={chroMidX} y1={connY}
-          x2={chroMidX} y2={arrowTipY}
-          stroke="#B794F4" strokeWidth="1.5" opacity="0.7"
-        />
-        {/* Arrow tip at CHRO bottom */}
-        <polygon
-          points={`${chroMidX},${chro.y} ${chroMidX - 6},${chro.y + 12} ${chroMidX + 6},${chro.y + 12}`}
-          fill="#B794F4" opacity="0.7"
-        />
+        {/* ── Lines from each box top to CHRO bottom ─────────── */}
+        {bottom.map((b) => (
+          <line key={b.label}
+            x1={b.x + b.w / 2} y1={b.y}
+            x2={chroMidX}       y2={chroBot}
+            stroke="#B794F4" strokeWidth="1.5" opacity="0.45"
+          />
+        ))}
 
         {/* ── CHRO box (purple) ──────────────────────────────── */}
         <rect
@@ -79,12 +57,6 @@ export function JuryModelDiagram() {
             </text>
           </g>
         ))}
-
-        {/* ── "Nominates" label on trunk ─────────────────────── */}
-        <text x={chroMidX + 10} y={connY - 12} fontSize="11"
-          fill="#B794F4" opacity="0.6" fontFamily="var(--font-sans), sans-serif">
-          Nominates
-        </text>
 
         {/* ── Caption below bottom row ───────────────────────── */}
         <text x="280" y="314" textAnchor="middle" fontSize="11.5"
