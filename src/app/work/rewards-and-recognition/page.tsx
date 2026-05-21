@@ -4,7 +4,6 @@ import { CaseStudySummary }   from "@/components/case-study/summary";
 import { CsScrollLinks }      from "@/components/case-study/scroll-links";
 import { ScrollReveal }       from "@/components/scroll-reveal";
 import { BeforeStateDiagram } from "@/components/case-study/before-state-diagram";
-import { CompetitiveMatrix }  from "@/components/case-study/competitive-matrix";
 import { JuryModelDiagram }   from "@/components/case-study/jury-model-diagram";
 import { GroupConfigDiagram } from "@/components/case-study/group-config-diagram";
 import { PivotFlowDiagram }   from "@/components/case-study/pivot-flow-diagram";
@@ -161,9 +160,6 @@ export default function RRCaseStudy() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <CompetitiveMatrix />
-          </ScrollReveal>
         </section>
 
         {/* ── Solution ───────────────────────────────────────────────── */}
