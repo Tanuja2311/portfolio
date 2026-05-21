@@ -1,8 +1,9 @@
 ﻿import type { Metadata } from "next";
-import { CsScrollLinks } from "@/components/case-study/scroll-links";
-import { ScrollReveal } from "@/components/scroll-reveal";
-import { CaseImage }      from "@/components/case-study/case-image";
-import { StaggerContainer, StaggerItem } from "@/components/stagger";
+import { CaseStudyHero }    from "@/components/case-study/hero";
+import { CaseStudySummary } from "@/components/case-study/summary";
+import { CsScrollLinks }    from "@/components/case-study/scroll-links";
+import { ScrollReveal }     from "@/components/scroll-reveal";
+import { CaseImage }        from "@/components/case-study/case-image";
 
 const SECTIONS = [
   { id: "context",    label: "Context"    },
@@ -22,45 +23,24 @@ const IMG = (name: string) => `/images/wren-gala/${name}`;
 export default function WrenGalaPage() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <StaggerContainer as="section" className="cs-hero">
-        <StaggerItem className="cs-hero-media" style={{ background: "#100d14" }}>
-          <CaseImage
-            src={IMG("hero.jpg")}
-            alt="The Wren Gala website shown in a browser mockup"
-            description="Browser mockup of the Wren Gala homepage — sjpgalany.org"
-            fill
-            priority
-            noCurtain
-            sizes="100vw"
-            className="cs-hero-img"
-          />
-          <div className="cs-hero-overlay" aria-hidden />
-          <div className="cs-hero-text">
-            <h1 className="cs-hero-title">The Wren Gala</h1>
-            <p className="cs-hero-subtitle">
-              Designing and shipping a luxury charity event website in under
-              a week, with zero hand-written code.
-            </p>
-          </div>
-        </StaggerItem>
-
-        <StaggerItem className="cs-meta-bar">
-          <div className="cs-meta-inner">
-            {[
-              ["Role",     "Lead Designer & Developer"],
-              ["Duration", "Under 1 week"],
-              ["Client",   "St James Church Piccadilly"],
-              ["Tech",     "React · Tailwind · Vercel"],
-            ].map(([label, value]) => (
-              <div key={label} className="cs-meta-item">
-                <span className="cs-meta-label">{label}</span>
-                <span className="cs-meta-value">{value}</span>
-              </div>
-            ))}
-          </div>
-        </StaggerItem>
-      </StaggerContainer>
+      <CaseStudyHero study={{
+        hero:       "",
+        coverColor: "#100d14",
+        tags:       ["Web Design", "Built with AI"],
+        title:      "The Wren Gala",
+        subtitle:   "A luxury charity gala website for a historic London church, designed and shipped in under a week using AI-assisted development.",
+        meta: {
+          role:     "Lead Designer & Developer",
+          duration: "Under 1 week",
+          year:     "2025",
+        },
+      }} />
+      <CaseStudySummary summary={{
+        problem:  "A historic London church needed a high-end digital presence for their annual New York fundraising gala. The team was distributed across London, Singapore, and New York with no dedicated digital operations resource on the US side.",
+        role:     "Solo designer-developer and de facto product owner: visual direction, content strategy, AI tool evaluation, payment infrastructure, data management, email workflows, client communication, and mentoring a junior designer.",
+        timeline: "Under 1 week from first client call to deployed site, evaluating three AI development approaches along the way.",
+        outcome:  "A 4-page luxury event website with custom ACH payment flow, automated email workflows, and guest data management, deployed on Vercel. Zero hand-written code.",
+      }} />
 
       <CsScrollLinks sections={SECTIONS} />
 
