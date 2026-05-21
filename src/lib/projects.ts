@@ -22,16 +22,6 @@ export const FEATURED_PROJECTS: Project[] = [
     role:       "Product Designer",
   },
   {
-    slug:       "urbanpark",
-    title:      "UrbanPark",
-    thumbnail:  "/images/urbanpark/hero.jpg",
-    coverColor: "#0d1a0f",
-    stat:       "End-to-end C2C platform with a 12-component design system.",
-    tags:       ["UX Design", "Mobile", "Design System"],
-    href:       "/work/urbanpark",
-    role:       "Product Designer",
-  },
-  {
     slug:       "myrcloud",
     title:      "MyRCloud",
     thumbnail:  "/images/myrcloud/hero.jpg",
@@ -57,6 +47,16 @@ export const AI_PROJECTS: Project[] = [
 ];
 
 export const OTHER_PROJECTS: Project[] = [
+  {
+    slug:       "urbanpark",
+    title:      "UrbanPark",
+    thumbnail:  "/images/urbanpark/hero.jpg",
+    coverColor: "#0d1a0f",
+    stat:       "End-to-end C2C platform with a 12-component design system.",
+    tags:       ["UX Design", "Mobile", "Design System"],
+    href:       "/work/urbanpark",
+    role:       "Product Designer",
+  },
   {
     slug:       "employee-dossier",
     title:      "Employee Dossier",
