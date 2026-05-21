@@ -16,9 +16,11 @@ export interface CaseStudy {
   subtitle: string;
   hero: string;
   coverColor: string;
+  tags?: string[];
   meta: {
     role: string;
     duration: string;
+    year?: string;
     team: string;
     tools: string[];
   };
@@ -35,9 +37,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     subtitle: "Redesigning how teams celebrate each other at scale.",
     hero: "/images/rewards-recognition/hero.jpg",
     coverColor: "#1a1410",
+    tags: ["Product Design", "Enterprise", "B2B"],
     meta: {
       role:     "Product Designer",
       duration: "3 months",
+      year:     "2024",
       team:     "4 people",
       tools:    ["Figma", "Protopie", "Notion"],
     },
@@ -75,9 +79,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     subtitle: "A digital layer for discovering city green spaces.",
     hero: "/images/urbanpark/hero.jpg",
     coverColor: "#0d1a0f",
+    tags: ["UX Design", "Mobile", "Design System"],
     meta: {
       role:     "Lead Designer",
       duration: "5 months",
+      year:     "2024",
       team:     "3 people",
       tools:    ["Figma", "Mapbox", "Framer"],
     },
