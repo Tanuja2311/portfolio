@@ -66,14 +66,9 @@ export function BeforeStateDiagram() {
         </text>
 
         {/* ── Converging dashed lines ──────────────────────────── */}
-        <line x1="115" y1="86" x2="308" y2="168" stroke="#B794F4" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5"/>
-        <line x1="320" y1="86" x2="320" y2="168" stroke="#B794F4" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5"/>
-        <line x1="525" y1="88" x2="333" y2="168" stroke="#B794F4" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5"/>
-
-        {/* Arrow tips */}
-        <polygon points="308,168 302,158 315,161" fill="#B794F4" opacity="0.5"/>
-        <polygon points="320,168 315,158 325,158" fill="#B794F4" opacity="0.5"/>
-        <polygon points="333,168 323,161 327,154" fill="#B794F4" opacity="0.5"/>
+        <line x1="115" y1="90" x2="320" y2="181" stroke="#B794F4" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5"/>
+        <line x1="320" y1="90" x2="320" y2="181" stroke="#B794F4" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5"/>
+        <line x1="525" y1="96" x2="320" y2="181" stroke="#B794F4" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.5"/>
 
         {/* ── Person silhouette ──────────────────────────────── */}
         <circle cx="320" cy="194" r="13" stroke="currentColor" strokeWidth="1.5"/>
