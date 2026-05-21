@@ -17,10 +17,10 @@ export const FEATURED_PROJECTS: Project[] = [
     title:      "Rewards & Recognition",
     thumbnail:  "/images/rewards-recognition/hero.png",
     coverColor: "#1a1410",
-    stat:       "Designed a recognition system adopted across 3 org sizes.",
+    stat:       "Built a scalable award management system for enterprise HR teams.",
     tags:       ["Product Design", "Enterprise", "B2B"],
     href:       "/work/rewards-and-recognition",
-    role:       "Product Designer",
+    role:       "UX Designer, Sole Designer",
   },
   {
     slug:       "myrcloud",
