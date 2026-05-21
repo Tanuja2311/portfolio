@@ -567,7 +567,7 @@ export default function MyRCloudCaseStudy() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <p className="cs-section-body">
+            <p className="cs-section-body" style={{ marginTop: "4rem" }}>
               MyRCloud launched in March 2023 and is live today at
               myrcloud.com. The platform replaced a fully manual Google Sheets
               operation with a structured digital workflow, enabling real-time
