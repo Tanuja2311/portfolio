@@ -354,6 +354,26 @@ video {
   pointer-events: none;
 }
 
+/* Gradient placeholder shown when no cover image is set */
+.cs-hero-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-hero-placeholder-label {
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
 /* Content block sits below the cover */
 .cs-hero-content {
   max-width: var(--max-w);

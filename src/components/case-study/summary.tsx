@@ -25,9 +25,8 @@ export function CaseStudySummary({ summary }: { summary: CaseStudySummaryData })
             key={key}
             className="cs-summary-cell"
             initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 + i * 0.1 }}
           >
             <p className="cs-summary-label">{label}</p>
             <p className="cs-summary-body">{summary[key]}</p>
@@ -39,7 +38,7 @@ export function CaseStudySummary({ summary }: { summary: CaseStudySummaryData })
 
       <div className="cs-summary-hint">
         <span className="cs-summary-hint-circle" aria-hidden>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path
               d="M2 4l4 4 4-4"
               stroke="currentColor"

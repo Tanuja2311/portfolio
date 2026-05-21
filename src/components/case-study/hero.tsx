@@ -26,28 +26,36 @@ const fadeUp = (delay: number) => ({
 
 export function CaseStudyHero({ study }: { study: HeroStudy }) {
   const metadata = buildMeta(study);
+  const hasImage = Boolean(study.hero);
 
   return (
     <section className="cs-hero">
       {/* ── Cover ─────────────────────────────────────────────── */}
-      <div className="cs-hero-cover" style={{ background: study.coverColor }}>
-        <motion.div
-          className="cs-hero-img-wrap"
-          initial={{ scale: 1.03 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          {study.hero && (
+      <div
+        className="cs-hero-cover"
+        style={hasImage ? { background: study.coverColor } : undefined}
+      >
+        {hasImage ? (
+          <motion.div
+            className="cs-hero-img-wrap"
+            initial={{ scale: 1.03 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <Image
-              src={study.hero}
+              src={study.hero!}
               alt={study.title}
               fill
               priority
               sizes="100vw"
               className="cs-hero-img"
             />
-          )}
-        </motion.div>
+          </motion.div>
+        ) : (
+          <div className="cs-hero-placeholder" aria-hidden>
+            <span className="cs-hero-placeholder-label">Project cover image</span>
+          </div>
+        )}
         <div className="cs-hero-dim" aria-hidden />
       </div>
 
@@ -87,8 +95,8 @@ function buildMeta(study: HeroStudy): { label: string; value: string }[] {
     { label: "Role",     value: study.meta.role },
     { label: "Timeline", value: study.meta.duration },
   ];
-  if (study.meta.year)    items.push({ label: "Year",    value: study.meta.year });
-  if (study.meta.company) items.push({ label: "Company", value: study.meta.company });
-  else if (study.meta.team) items.push({ label: "Team",  value: study.meta.team });
+  if (study.meta.year)      items.push({ label: "Year",    value: study.meta.year });
+  if (study.meta.company)   items.push({ label: "Company", value: study.meta.company });
+  else if (study.meta.team) items.push({ label: "Team",    value: study.meta.team });
   return items;
 }
