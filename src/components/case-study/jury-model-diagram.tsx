@@ -62,7 +62,7 @@ export function JuryModelDiagram() {
         <text x="280" y="314" textAnchor="middle" fontSize="11.5"
           fill="currentColor" opacity="0.5"
           fontFamily="var(--font-sans), sans-serif">
-          Preliminary judges · Nominate candidates within their group scope
+          Preliminary judges. Nominate candidates within their group scope.
         </text>
 
         {/* ── Side annotation ────────────────────────────────── */}
