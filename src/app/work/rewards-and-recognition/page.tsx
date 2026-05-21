@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { CaseStudyHero }    from "@/components/case-study/hero";
-import { CaseStudySummary } from "@/components/case-study/summary";
-import { CsScrollLinks }    from "@/components/case-study/scroll-links";
-import { ScrollReveal }     from "@/components/scroll-reveal";
+import { CaseStudyHero }      from "@/components/case-study/hero";
+import { CaseStudySummary }   from "@/components/case-study/summary";
+import { CsScrollLinks }      from "@/components/case-study/scroll-links";
+import { ScrollReveal }       from "@/components/scroll-reveal";
+import { BeforeStateDiagram } from "@/components/case-study/before-state-diagram";
+import { CompetitiveMatrix }  from "@/components/case-study/competitive-matrix";
+import { JuryModelDiagram }   from "@/components/case-study/jury-model-diagram";
+import { GroupConfigDiagram } from "@/components/case-study/group-config-diagram";
+import { PivotFlowDiagram }   from "@/components/case-study/pivot-flow-diagram";
 
 const SECTIONS = [
   { id: "challenge",  label: "Challenge"  },
@@ -96,6 +101,10 @@ export default function RRCaseStudy() {
               sales conversations.
             </p>
           </ScrollReveal>
+
+          <ScrollReveal>
+            <BeforeStateDiagram />
+          </ScrollReveal>
         </section>
 
         {/* ── Process ────────────────────────────────────────────────── */}
@@ -150,6 +159,10 @@ export default function RRCaseStudy() {
                 that gap.
               </p>
             </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <CompetitiveMatrix />
           </ScrollReveal>
         </section>
 
@@ -213,6 +226,10 @@ export default function RRCaseStudy() {
             </div>
           </ScrollReveal>
 
+          <ScrollReveal>
+            <JuryModelDiagram />
+          </ScrollReveal>
+
           {/* Feature 03 — Group-Based Award Configuration */}
           <ScrollReveal>
             <div className="cs-feature">
@@ -236,6 +253,10 @@ export default function RRCaseStudy() {
             </div>
           </ScrollReveal>
 
+          <ScrollReveal>
+            <GroupConfigDiagram />
+          </ScrollReveal>
+
           {/* Mid-Project Pivot */}
           <ScrollReveal>
             <div className="cs-subsection">
@@ -255,6 +276,10 @@ export default function RRCaseStudy() {
                 genuinely configurable for varied enterprise org structures.
               </p>
             </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <PivotFlowDiagram />
           </ScrollReveal>
 
           {/* Additional Features */}

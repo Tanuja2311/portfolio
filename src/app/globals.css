@@ -34,6 +34,8 @@
   --cs-summary-body:        rgba(240, 236, 228, 0.70);
   --cs-summary-hint:        rgba(240, 236, 228, 0.25);
   --cs-summary-divider:     rgba(255, 255, 255, 0.06);
+  --diag-box-fill:          rgba(255, 255, 255, 0.05);
+  --diag-box-stroke:        rgba(255, 255, 255, 0.15);
 }
 
 /* ─── Light theme ──────────────────────────────────────────────────── */
@@ -68,6 +70,8 @@
   --cs-summary-body:        rgba(26, 26, 24, 0.70);
   --cs-summary-hint:        rgba(26, 26, 24, 0.25);
   --cs-summary-divider:     rgba(0, 0, 0, 0.06);
+  --diag-box-fill:          rgba(0, 0, 0, 0.04);
+  --diag-box-stroke:        rgba(0, 0, 0, 0.13);
 }
 
 /* ─── Typography tokens ────────────────────────────────────────────── */
@@ -2206,6 +2210,107 @@ video {
   flex-shrink: 0;
   line-height: 1.5;
   min-width: 1.25rem;
+}
+
+/* ─── R&R Conceptual Diagrams ───────────────────────────────────────── */
+.rr-diagram {
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 720px;
+}
+
+.rr-diagram svg {
+  display: block;
+  color: var(--text);
+}
+
+/* Competitive matrix */
+.rr-diagram--table {
+  max-width: 100%;
+}
+
+.rr-comp-wrap {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.rr-comp-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rr-comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  min-width: 500px;
+}
+
+.rr-comp-th {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-subtle);
+  white-space: nowrap;
+}
+
+.rr-comp-th--feature {
+  text-align: left;
+  min-width: 190px;
+}
+
+.rr-comp-th--before {
+  color: var(--text-faint);
+}
+
+.rr-comp-row:not(:last-child) td {
+  border-bottom: 1px solid var(--border);
+}
+
+.rr-comp-td {
+  padding: 0.65rem 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.rr-comp-td--feature {
+  text-align: left;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.rr-comp-td--before {
+  opacity: 0.55;
+}
+
+.rr-comp-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rr-comp-footer {
+  font-family: var(--font-sans);
+  font-size: 0.775rem;
+  color: var(--text-faint);
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border);
+  font-style: italic;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .rr-diagram {
+    margin: 1.5rem 0;
+  }
 }
 
 /* ─── Problem statement callout ──────────────────────────────────────── */
