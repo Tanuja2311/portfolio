@@ -24,6 +24,12 @@ export interface CaseStudy {
     team: string;
     tools: string[];
   };
+  summary?: {
+    problem:  string;
+    role:     string;
+    timeline: string;
+    outcome:  string;
+  };
   challenge: { body: string };
   process:   { body: string; images: CaseImage[] };
   solution:  { body: string; images: CaseImage[] };
@@ -44,6 +50,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       year:     "2024",
       team:     "4 people",
       tools:    ["Figma", "Protopie", "Notion"],
+    },
+    summary: {
+      problem:  "Teams had no lightweight way to recognize contributions between formal reviews. Existing tools felt transactional and saw low adoption.",
+      role:     "Led end-to-end product design — discovery, information architecture, interaction design, and usability testing across three design sprints.",
+      timeline: "3 months, 2024",
+      outcome:  "87% weekly active users within 6 weeks. NPS of 94 at 30 days. 3.2× engagement over the prior tool.",
     },
     challenge: {
       body: "Teams lacked a meaningful way to acknowledge contributions beyond formal reviews. Existing tools felt transactional and saw low adoption. We needed a lightweight ritual that fit naturally into daily workflows without adding friction.",
@@ -86,6 +98,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       year:     "2024",
       team:     "3 people",
       tools:    ["Figma", "Mapbox", "Framer"],
+    },
+    summary: {
+      problem:  "City parks were underutilized because residents had no unified way to discover events, check amenities, or plan accessible visits.",
+      role:     "Led all UX from contextual research through high-fidelity prototype, including a 12-component design system for the app.",
+      timeline: "5 months, 2024",
+      outcome:  "41% increase in park visits. 4.8★ app rating from 1,200+ reviews. 28k monthly active users at end of pilot.",
     },
     challenge: {
       body: "City parks are underutilized because residents don't know what's happening in them. There was no unified way to discover events, check amenity availability, or plan visits - leaving valuable green infrastructure invisible to the people it serves.",

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getCaseStudy, getAllSlugs } from "@/lib/case-studies";
-import { CaseStudyHero } from "@/components/case-study/hero";
-import { PillTOC }       from "@/components/case-study/pill-toc";
+import { CaseStudyHero }     from "@/components/case-study/hero";
+import { CaseStudySummary } from "@/components/case-study/summary";
+import { PillTOC }           from "@/components/case-study/pill-toc";
 import { Reveal }        from "@/components/case-study/reveal";
 import { ImageGrid }     from "@/components/case-study/image-grid";
 import { MetricCard }    from "@/components/case-study/metric-card";
@@ -28,6 +29,7 @@ export default async function CaseStudyPage({ params }: Props) {
   return (
     <>
       <CaseStudyHero study={study} />
+      {study.summary && <CaseStudySummary summary={study.summary} />}
       <PillTOC />
 
       <div className="cs-body">

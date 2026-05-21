@@ -28,6 +28,12 @@
   --cs-hero-desc:        rgba(240, 236, 228, 0.55);
   --cs-hero-meta-label:  rgba(240, 236, 228, 0.30);
   --cs-hero-meta-value:  rgba(240, 236, 228, 0.80);
+
+  --cs-summary-cell-bg:     rgba(255, 255, 255, 0.03);
+  --cs-summary-cell-border: rgba(255, 255, 255, 0.06);
+  --cs-summary-body:        rgba(240, 236, 228, 0.70);
+  --cs-summary-hint:        rgba(240, 236, 228, 0.25);
+  --cs-summary-divider:     rgba(255, 255, 255, 0.06);
 }
 
 /* ─── Light theme ──────────────────────────────────────────────────── */
@@ -56,6 +62,12 @@
   --cs-hero-desc:        rgba(26, 26, 24, 0.55);
   --cs-hero-meta-label:  rgba(26, 26, 24, 0.30);
   --cs-hero-meta-value:  rgba(26, 26, 24, 0.80);
+
+  --cs-summary-cell-bg:     rgba(0, 0, 0, 0.03);
+  --cs-summary-cell-border: rgba(0, 0, 0, 0.06);
+  --cs-summary-body:        rgba(26, 26, 24, 0.70);
+  --cs-summary-hint:        rgba(26, 26, 24, 0.25);
+  --cs-summary-divider:     rgba(0, 0, 0, 0.06);
 }
 
 /* ─── Typography tokens ────────────────────────────────────────────── */
@@ -422,6 +434,82 @@ video {
   }
   .cs-hero-meta {
     gap: 20px 24px;
+  }
+}
+
+/* ─── Case Study: Summary block ────────────────────────────────────── */
+.cs-summary {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 48px 48px 0;
+}
+
+.cs-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.cs-summary-cell {
+  padding: 24px;
+  background: var(--cs-summary-cell-bg);
+  border-radius: 12px;
+  border: 0.5px solid var(--cs-summary-cell-border);
+}
+
+.cs-summary-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #B794F4;
+  margin-bottom: 12px;
+}
+
+.cs-summary-body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--cs-summary-body);
+}
+
+.cs-summary-divider {
+  height: 0.5px;
+  background: var(--cs-summary-divider);
+  margin-top: 40px;
+}
+
+.cs-summary-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 16px;
+  padding-bottom: 48px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--cs-summary-hint);
+}
+
+.cs-summary-hint-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--cs-summary-cell-border);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .cs-summary {
+    padding: 32px 24px 0;
+  }
+  .cs-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
