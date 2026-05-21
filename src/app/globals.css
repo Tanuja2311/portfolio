@@ -126,6 +126,11 @@ body {
   padding-top: 80px; /* clearance for fixed floating nav (16px top + ~48px bar + 16px gap) */
 }
 
+/* Case study pages: hero starts at y:0 behind the nav, so no body padding needed */
+body:has(.cs-hero) {
+  padding-top: 0;
+}
+
 ::selection {
   background: var(--accent);
   color: var(--bg);
@@ -325,7 +330,6 @@ video {
 /* ─── Case Study: Hero ─────────────────────────────────────────────── */
 .cs-hero {
   width: 100%;
-  margin-top: -80px; /* cancel body padding-top so cover starts at y:0 behind the fixed nav */
 }
 
 /* Cover — full-bleed, fixed height band */
