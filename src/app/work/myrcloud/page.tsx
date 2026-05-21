@@ -551,14 +551,14 @@ export default function MyRCloudCaseStudy() {
           <ScrollReveal>
             <div className="cs-impact-group">
               <p className="cs-impact-group-label">Platform at launch · March 2023</p>
-              <div className="cs-metrics">
+              <div className="cs-metrics cs-metrics--3col">
                 {[
-                  { value: "100+",     label: "Clients Onboarded",             context: "Corporate clients on the platform"                        },
-                  { value: "600+",     label: "Active Partners",               context: "Recruiting partners across independent agencies and firms" },
-                  { value: "3,000+",   label: "Positions Closed",              context: "Roles filled through the platform"                        },
-                  { value: "6",        label: "User Types Designed For",       context: "CSM, Head CSM, PSM, Partner, Client, and Candidate"       },
-                  { value: "~400",     label: "Screens Across Web and Mobile", context: "Across six portals covering web and mobile"               },
-                  { value: "8 months", label: "Design Timeline",               context: "From first workshop to shipped product"                   },
+                  { value: "100+",     label: "Clients Onboarded"  },
+                  { value: "600+",     label: "Active Partners"    },
+                  { value: "3,000+",   label: "Positions Closed"   },
+                  { value: "6",        label: "User Personas"      },
+                  { value: "~400",     label: "Screens Designed"   },
+                  { value: "8 months", label: "Design Timeline"    },
                 ].map((m, i) => (
                   <MetricCard key={m.label} metric={m} index={i} />
                 ))}

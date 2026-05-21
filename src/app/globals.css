@@ -891,6 +891,10 @@ video {
   margin-top: 2rem;
 }
 
+.cs-metrics--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .cs-metric {
   background: var(--bg-elevated);
   border: 1px solid var(--border);

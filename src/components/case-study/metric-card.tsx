@@ -29,7 +29,7 @@ export function MetricCard({ metric, index = 0, projected = false }: Props) {
         )}
       </span>
       <span className="cs-metric-label">{metric.label}</span>
-      <span className="cs-metric-context">{metric.context}</span>
+      {metric.context && <span className="cs-metric-context">{metric.context}</span>}
       {projected && (
         <span className="cs-metric-projected-tag" aria-label="Projected metric">
           Projected

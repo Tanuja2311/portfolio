@@ -7,7 +7,7 @@ export interface CaseImage {
 export interface Metric {
   value: string;
   label: string;
-  context: string;
+  context?: string;
 }
 
 export interface CaseStudy {
