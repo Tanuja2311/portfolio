@@ -1464,6 +1464,7 @@ video {
 /* ─── Impact section grouping ──────────────────────────────────────── */
 .cs-impact-group {
   margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .cs-impact-group-label {
