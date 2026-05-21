@@ -59,7 +59,11 @@ export function CsScrollLinks({ sections }: { sections: ScrollSection[] }) {
 
   // Portal into document.body so position:fixed is relative to the viewport,
   // not any ancestor that has a transform (e.g. PageTransition).
-  return createPortal(
+  return (
+    <>
+      {/* In-flow anchor so #cs-toc scroll target exists for the summary hint */}
+      <div id="cs-toc" style={{ height: 0 }} aria-hidden />
+      {createPortal(
     <nav
       className={`cs-float-nav${visible ? " cs-float-nav--visible" : ""}`}
       aria-label="Page sections"
@@ -82,5 +86,7 @@ export function CsScrollLinks({ sections }: { sections: ScrollSection[] }) {
       ))}
     </nav>,
     document.body,
+  )}
+    </>
   );
 }

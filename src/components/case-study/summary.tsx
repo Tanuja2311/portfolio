@@ -36,7 +36,13 @@ export function CaseStudySummary({ summary }: { summary: CaseStudySummaryData })
 
       <div className="cs-summary-divider" aria-hidden />
 
-      <div className="cs-summary-hint">
+      <button
+        className="cs-summary-hint"
+        onClick={() =>
+          document.getElementById("cs-toc")?.scrollIntoView({ behavior: "smooth" })
+        }
+        aria-label="Scroll to case study navigation"
+      >
         <span className="cs-summary-hint-circle" aria-hidden>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path
@@ -49,7 +55,7 @@ export function CaseStudySummary({ summary }: { summary: CaseStudySummaryData })
           </svg>
         </span>
         <span>Scroll for the full case study</span>
-      </div>
+      </button>
     </div>
   );
 }

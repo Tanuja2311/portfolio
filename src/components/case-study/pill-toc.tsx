@@ -56,7 +56,7 @@ export function PillTOC({ sections = DEFAULT_SECTIONS }: { sections?: TocSection
   }
 
   return (
-    <div className="cs-toc" role="navigation" aria-label="Case study sections">
+    <div id="cs-toc" className="cs-toc" role="navigation" aria-label="Case study sections">
       <div ref={tocRef} className="cs-toc-inner">
         {sections.map(({ id, label }) => (
           <button
