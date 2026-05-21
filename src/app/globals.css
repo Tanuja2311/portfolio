@@ -906,7 +906,7 @@ video {
 /* Image area */
 .feat-card-media {
   position: relative;
-  height: 280px;
+  height: 240px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -1052,7 +1052,7 @@ video {
 
 .work-card-media {
   position: relative;
-  height: 200px;
+  height: 240px;
   overflow: hidden;
 }
 
