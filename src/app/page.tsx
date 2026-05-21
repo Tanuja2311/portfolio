@@ -67,7 +67,7 @@ export default function HomePage() {
           </Reveal>
 
           <div className="work-grid">
-            {OTHER_PROJECTS.filter(p => !p.hidden).map((project, i) => (
+            {OTHER_PROJECTS.filter(p => !p.hidden && !p.homepageHidden).map((project, i) => (
               <Reveal key={project.slug} delay={i * 80}>
                 <WorkCard project={project} />
               </Reveal>

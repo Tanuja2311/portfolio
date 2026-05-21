@@ -8,6 +8,7 @@ export interface Project {
   href: string;
   role?: string;
   hidden?: boolean;
+  homepageHidden?: boolean;
 }
 
 export const FEATURED_PROJECTS: Project[] = [
@@ -56,6 +57,7 @@ export const OTHER_PROJECTS: Project[] = [
     tags:       ["UX Design", "Mobile", "Design System"],
     href:       "/work/urbanpark",
     role:       "Product Designer",
+    homepageHidden: true,
   },
   {
     slug:       "employee-dossier",
@@ -86,6 +88,7 @@ export const OTHER_PROJECTS: Project[] = [
     tags:       ["UX Research", "AI in Education"],
     href:       "/work/genai-pharmacy-research",
     role:       "UX Researcher",
+    homepageHidden: true,
   },
   {
     slug:       "google-drive-emerging",
