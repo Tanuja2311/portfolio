@@ -23,7 +23,7 @@ const IMG = (name: string) => `/images/myrcloud/${name}`;
 
 export default function MyRCloudCaseStudy() {
   return (
-    <div className="myrcloud-study">
+    <div>
       <CaseStudyHero study={{
         hero:       "",
         coverColor: "#0d1118",

@@ -2101,16 +2101,16 @@ video {
   }
 }
 
-/* ─── R&R Case Study overrides ──────────────────────────────────────── */
+/* ─── Case Study shared accent styles ───────────────────────────────── */
 
 /* Section headings: purple with left accent bar */
-.rr-study .cs-section-heading {
+.cs-body .cs-section-heading {
   color: #B794F4;
   padding-left: 1.125rem;
   position: relative;
 }
 
-.rr-study .cs-section-heading::before {
+.cs-body .cs-section-heading::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2122,45 +2122,45 @@ video {
 }
 
 /* Metric values: large purple numbers */
-.rr-study .cs-metric-value {
+.cs-body .cs-metric-value {
   color: #B794F4;
   font-size: 3rem;
 }
 
 /* Design decision label: purple */
-.rr-study .cs-feature-decision-label {
+.cs-body .cs-feature-decision-label {
   color: #B794F4;
 }
 
 /* Blockquote hook: purple left border */
-.rr-study .cs-hook {
+.cs-body .cs-hook {
   border-left-color: #B794F4;
 }
 
 /* Subsection step labels: purple tint */
-.rr-study .cs-subsection-label {
+.cs-body .cs-subsection-label {
   color: #B794F4;
   opacity: 0.85;
 }
 
 /* Subsection headings: slightly larger and more prominent */
-.rr-study .cs-subsection-heading {
+.cs-body .cs-subsection-heading {
   font-size: clamp(1.25rem, 2.5vw, 1.65rem);
 }
 
 /* Feature name label: purple tint */
-.rr-study .cs-feature-name {
+.cs-body .cs-feature-name {
   color: #B794F4;
   opacity: 0.85;
 }
 
 /* "What I'd do differently" heading: purple */
-.rr-study .cs-wid-heading {
+.cs-body .cs-wid-heading {
   color: #B794F4;
 }
 
 /* Impact group labels */
-.rr-study .cs-impact-group-label {
+.cs-body .cs-impact-group-label {
   color: var(--text-muted);
   font-size: 0.78rem;
   font-weight: 600;

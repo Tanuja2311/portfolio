@@ -23,7 +23,7 @@ const IMG = (name: string) => `/images/rewards-recognition/${name}`;
 
 export default function RRCaseStudy() {
   return (
-    <div className="rr-study">
+    <div>
       <CaseStudyHero study={{
         hero:       "",
         coverColor: "#1a1410",
