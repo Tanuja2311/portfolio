@@ -27,7 +27,7 @@ export default function RRCaseStudy() {
   return (
     <div>
       <CaseStudyHero study={{
-        hero:       "",
+        hero:       "/images/rewards-recognition/hero.png",
         coverColor: "#1a1410",
         tags:       ["Product Design", "Enterprise B2B"],
         title:      "Rewards & Recognition.",
