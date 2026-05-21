@@ -1,8 +1,9 @@
 ﻿import type { Metadata } from "next";
-import { CsScrollLinks } from "@/components/case-study/scroll-links";
-import { ScrollReveal } from "@/components/scroll-reveal";
-import { CaseImage }      from "@/components/case-study/case-image";
-import { StaggerContainer, StaggerItem } from "@/components/stagger";
+import { CaseStudyHero }    from "@/components/case-study/hero";
+import { CaseStudySummary } from "@/components/case-study/summary";
+import { CsScrollLinks }    from "@/components/case-study/scroll-links";
+import { ScrollReveal }     from "@/components/scroll-reveal";
+import { CaseImage }        from "@/components/case-study/case-image";
 
 const SECTIONS = [
   { id: "challenge", label: "Challenge" },
@@ -22,45 +23,25 @@ const IMG = (name: string) => `/images/employee-dossier/${name}`;
 export default function EmployeeDossierPage() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <StaggerContainer as="section" className="cs-hero">
-        <StaggerItem className="cs-hero-media" style={{ background: "#0e1520" }}>
-          <CaseImage
-            src={IMG("hero.jpg")}
-            alt="Employee Dossier redesign"
-            description="Employee Dossier - redesigned single-page profile view"
-            fill
-            priority
-            noCurtain
-            sizes="100vw"
-            className="cs-hero-img"
-          />
-          <div className="cs-hero-overlay" aria-hidden />
-          <div className="cs-hero-text">
-            <h1 className="cs-hero-title">Employee Dossier</h1>
-            <p className="cs-hero-subtitle">
-              Redesigning ZingHR&rsquo;s centralized employee record into a
-              single, scannable page.
-            </p>
-          </div>
-        </StaggerItem>
-
-        <StaggerItem className="cs-meta-bar">
-          <div className="cs-meta-inner">
-            {[
-              ["Role",     "UX Designer"],
-              ["Duration", "5 weeks"],
-              ["Company",  "ZingHR"],
-              ["Team",     "1 designer · 1 design manager · 1 tech lead"],
-            ].map(([label, value]) => (
-              <div key={label} className="cs-meta-item">
-                <span className="cs-meta-label">{label}</span>
-                <span className="cs-meta-value">{value}</span>
-              </div>
-            ))}
-          </div>
-        </StaggerItem>
-      </StaggerContainer>
+      <CaseStudyHero study={{
+        hero:       "",
+        coverColor: "#0e1520",
+        tags:       ["Product Design", "Enterprise B2B"],
+        title:      "Employee Dossier",
+        subtitle:   "Redesigning ZingHR's centralized employee record into a single, scannable page that HR teams could actually use.",
+        meta: {
+          role:     "Product Designer",
+          duration: "8 weeks",
+          year:     "2023",
+          company:  "ZingHR",
+        },
+      }} />
+      <CaseStudySummary summary={{
+        problem:  "HR teams were navigating through multiple tabs and nested menus to access basic employee information. Critical data was buried, causing delays in everyday HR workflows and frustration across the organization.",
+        role:     "Product designer responsible for restructuring the information architecture, redesigning the page layout, and simplifying navigation for ZingHR's most-used module.",
+        timeline: "8-week redesign sprint from audit and user interviews through high-fidelity prototypes and developer handoff.",
+        outcome:  "A single, scannable employee record page that consolidated previously fragmented data, reducing the number of clicks to access key information and improving daily HR workflow efficiency.",
+      }} />
 
       <CsScrollLinks sections={SECTIONS} />
 

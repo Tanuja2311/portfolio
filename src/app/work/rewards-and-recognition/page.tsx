@@ -1,9 +1,10 @@
 ﻿import type { Metadata } from "next";
-import { CsScrollLinks } from "@/components/case-study/scroll-links";
-import { ScrollReveal } from "@/components/scroll-reveal";
-import { MetricCard }     from "@/components/case-study/metric-card";
-import { CaseImage }      from "@/components/case-study/case-image";
-import { StaggerContainer, StaggerItem } from "@/components/stagger";
+import { CaseStudyHero }    from "@/components/case-study/hero";
+import { CaseStudySummary } from "@/components/case-study/summary";
+import { CsScrollLinks }    from "@/components/case-study/scroll-links";
+import { ScrollReveal }     from "@/components/scroll-reveal";
+import { MetricCard }       from "@/components/case-study/metric-card";
+import { CaseImage }        from "@/components/case-study/case-image";
 
 const SECTIONS = [
   { id: "challenge", label: "Challenge" },
@@ -23,44 +24,24 @@ const IMG = (name: string) => `/images/rewards-recognition/${name}`;
 export default function RRCaseStudy() {
   return (
     <div className="rr-study">
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <StaggerContainer as="section" className="cs-hero">
-        <StaggerItem className="cs-hero-media" style={{ background: "#1a1410" }}>
-          <CaseImage
-            src={IMG("hero.jpg")}
-            alt="Rewards & Recognition dashboard"
-            description="R&R dashboard - full mockup, 1440px"
-            fill
-            priority
-            noCurtain
-            sizes="100vw"
-            className="cs-hero-img"
-          />
-          <div className="cs-hero-overlay" aria-hidden />
-          <div className="cs-hero-text">
-            <h1 className="cs-hero-title">Rewards &amp; Recognition</h1>
-            <p className="cs-hero-subtitle">
-              Designing a culture of visibility for enterprise teams.
-            </p>
-          </div>
-        </StaggerItem>
-
-        <StaggerItem className="cs-meta-bar">
-          <div className="cs-meta-inner">
-            {[
-              ["Role",     "Lead Product Designer"],
-              ["Duration", "4 months"],
-              ["Company",  "ZingHR"],
-              ["Team",     "1 designer · 2 engineers · 1 PM"],
-            ].map(([label, value]) => (
-              <div key={label} className="cs-meta-item">
-                <span className="cs-meta-label">{label}</span>
-                <span className="cs-meta-value">{value}</span>
-              </div>
-            ))}
-          </div>
-        </StaggerItem>
-      </StaggerContainer>
+      <CaseStudyHero study={{
+        hero:       "",
+        coverColor: "#1a1410",
+        tags:       ["Product Design", "Enterprise B2B"],
+        title:      "Rewards & Recognition",
+        subtitle:   "Designing a culture of visibility for enterprise teams where employee contributions were going unnoticed.",
+        meta: {
+          role:     "Lead Product Designer",
+          duration: "12 weeks",
+          year:     "2024",
+        },
+      }} />
+      <CaseStudySummary summary={{
+        problem:  "Employees across organizations felt invisible. Recognition was informal, inconsistent, and disconnected from company values, leading to disengagement and high attrition.",
+        role:     "End-to-end product design for a new HR module: user research across 3 org sizes, information architecture, interaction design, visual design, and stakeholder alignment.",
+        timeline: "12-week design cycle from discovery research through high-fidelity prototypes, usability testing, and developer handoff.",
+        outcome:  "A complete recognition system with peer-to-peer kudos, manager dashboards, leaderboards, and a rewards marketplace, designed for 3 different organization sizes.",
+      }} />
 
       <CsScrollLinks sections={SECTIONS} />
 

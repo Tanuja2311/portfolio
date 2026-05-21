@@ -21,7 +21,8 @@ export interface CaseStudy {
     role: string;
     duration: string;
     year?: string;
-    team: string;
+    team?: string;
+    company?: string;
     tools: string[];
   };
   summary?: {

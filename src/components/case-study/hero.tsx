@@ -2,7 +2,21 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import type { CaseStudy } from "@/lib/case-studies";
+
+export interface HeroStudy {
+  hero?: string;
+  coverColor: string;
+  tags?: string[];
+  title: string;
+  subtitle: string;
+  meta: {
+    role: string;
+    duration: string;
+    year?: string;
+    team?: string;
+    company?: string;
+  };
+}
 
 const fadeUp = (delay: number) => ({
   initial:    { opacity: 0, y: 20 },
@@ -10,7 +24,7 @@ const fadeUp = (delay: number) => ({
   transition: { duration: 0.6, ease: "easeOut" as const, delay },
 });
 
-export function CaseStudyHero({ study }: { study: CaseStudy }) {
+export function CaseStudyHero({ study }: { study: HeroStudy }) {
   const metadata = buildMeta(study);
 
   return (
@@ -68,12 +82,13 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
   );
 }
 
-function buildMeta(study: CaseStudy): { label: string; value: string }[] {
+function buildMeta(study: HeroStudy): { label: string; value: string }[] {
   const items: { label: string; value: string }[] = [
     { label: "Role",     value: study.meta.role },
     { label: "Timeline", value: study.meta.duration },
   ];
-  if (study.meta.year) items.push({ label: "Year", value: study.meta.year });
-  if (study.meta.team) items.push({ label: "Team", value: study.meta.team });
+  if (study.meta.year)    items.push({ label: "Year",    value: study.meta.year });
+  if (study.meta.company) items.push({ label: "Company", value: study.meta.company });
+  else if (study.meta.team) items.push({ label: "Team",  value: study.meta.team });
   return items;
 }
