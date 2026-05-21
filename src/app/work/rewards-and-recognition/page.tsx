@@ -1,25 +1,22 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { CaseStudyHero }    from "@/components/case-study/hero";
 import { CaseStudySummary } from "@/components/case-study/summary";
 import { CsScrollLinks }    from "@/components/case-study/scroll-links";
 import { ScrollReveal }     from "@/components/scroll-reveal";
-import { MetricCard }       from "@/components/case-study/metric-card";
-import { CaseImage }        from "@/components/case-study/case-image";
 
 const SECTIONS = [
-  { id: "challenge", label: "Challenge" },
-  { id: "process",   label: "Process"   },
-  { id: "solution",  label: "Solution"  },
-  { id: "impact",    label: "Impact"    },
+  { id: "challenge",  label: "Challenge"  },
+  { id: "process",    label: "Process"    },
+  { id: "solution",   label: "Solution"   },
+  { id: "impact",     label: "Impact"     },
+  { id: "reflection", label: "Reflection" },
 ];
 
 export const metadata: Metadata = {
   title: "Rewards & Recognition",
   description:
-    "Designing a culture of visibility for enterprise teams at ZingHR.",
+    "Building a scalable award management system for enterprise HR teams at ZingHR.",
 };
-
-const IMG = (name: string) => `/images/rewards-recognition/${name}`;
 
 export default function RRCaseStudy() {
   return (
@@ -28,55 +25,75 @@ export default function RRCaseStudy() {
         hero:       "",
         coverColor: "#1a1410",
         tags:       ["Product Design", "Enterprise B2B"],
-        title:      "Rewards & Recognition",
-        subtitle:   "Designing a culture of visibility for enterprise teams where employee contributions were going unnoticed.",
+        title:      "Rewards & Recognition.",
+        subtitle:   "Building a scalable award management system for enterprise HR teams.",
         meta: {
-          role:     "Lead Product Designer",
-          duration: "12 weeks",
-          year:     "2024",
+          role:     "UX Designer, Sole Designer",
+          duration: "1.5 months",
+          company:  "ZingHR",
         },
       }} />
       <CaseStudySummary summary={{
-        problem:  "Employees across organizations felt invisible. Recognition was informal, inconsistent, and disconnected from company values, leading to disengagement and high attrition.",
-        role:     "End-to-end product design for a new HR module: user research across 3 org sizes, information architecture, interaction design, visual design, and stakeholder alignment.",
-        timeline: "12-week design cycle from discovery research through high-fidelity prototypes, usability testing, and developer handoff.",
-        outcome:  "A complete recognition system with peer-to-peer kudos, manager dashboards, leaderboards, and a rewards marketplace, designed for 3 different organization sizes.",
+        problem:  "ZingHR's entire recognition system lived in one admin's phone calendar, a physical diary, and 13 years of memory — one resignation away from total collapse.",
+        role:     "Sole UX designer: discovery research, user flows for five distinct roles, information architecture, interaction design, and stakeholder alignment across a 1.5-month engagement.",
+        timeline: "1.5 months, running alongside a parallel project, from initial brief through handoff.",
+        outcome:  "A structured award management module with 6 award types, 5 user roles, a configurable group-based permission model, and an Award Calendar — adopted across ZingHR's enterprise customer base.",
       }} />
 
       <CsScrollLinks sections={SECTIONS} />
 
       <div className="cs-body">
+
         {/* ── Challenge ──────────────────────────────────────────────── */}
         <section id="challenge" className="cs-section">
           <ScrollReveal>
             <h2 className="cs-section-heading">Challenge</h2>
 
             <blockquote className="cs-hook">
-              During a site visit to a client office in Pune, I noticed a spiral
-              notebook sitting open on an HR manager&rsquo;s desk. Inside, in neat
-              handwriting, was a running list: names, dates, a sentence about what
-              each person had done. She&rsquo;d been maintaining it for nearly a
-              year. There was no field in their existing system to capture this.
-              So she kept a notebook.
+              ZingHR&rsquo;s recognition system was a single point of failure
+              locked inside one person&rsquo;s memory.
             </blockquote>
 
             <p className="cs-section-body">
-              ZingHR serves enterprise HR teams across India and Southeast Asia.
-              Recognition existed as a feature request across multiple client
-              accounts - but what clients actually used were either bolted-on Slack
-              bots (informal, ephemeral) or annual award ceremonies (formal,
-              infrequent, disconnected from the daily work experience). The middle
-              ground - lightweight, meaningful, persistent - was empty.
+              When I began researching the admin workflow, I had to navigate
+              internal resistance just to identify who the admin was. The
+              admin&rsquo;s identity was deliberately obscured within the company
+              for security reasons. After escalating through HR and my manager,
+              I finally spoke to the person who had been managing ZingHR&rsquo;s
+              internal recognition system for 13 years.
             </p>
 
             <p className="cs-section-body">
-              For enterprise HR, recognition isn&rsquo;t just a feel-good feature.
-              It&rsquo;s a retention mechanism. Research consistently links peer
-              recognition to lower voluntary attrition. But available tools forced
-              a false choice: either bureaucratic and formal (nobody uses it), or
-              casual and disposable (leaves no record, carries no weight).
-              ZingHR&rsquo;s clients were losing talent - and the systems they were
-              paying for weren&rsquo;t helping.
+              He opened his phone calendar and a diary. That was the system.
+              500 employees, 5 regions, 5 award types, all tracked through
+              reminders on a personal phone and notes in a physical diary, with
+              the rest held in memory built over 13 years.
+            </p>
+
+            <p className="cs-section-body">
+              He acknowledged it himself: because he had been present when the
+              structure was built, he could hold it all in his head. But if he
+              left the company and someone had to replace him, a knowledge
+              transfer using a phone calendar, a diary, and memory would be
+              impossible.
+            </p>
+
+            <p className="cs-section-body">
+              This surfaced two distinct problems. On the admin side: no
+              structured system to track award timelines, nomination windows,
+              deadlines, or responsible nominators across regions. The entire
+              operation was undocumented tribal knowledge, one resignation away
+              from collapse. On the employee side: because awards had no visible
+              structure or timeline, recognition felt arbitrary and random. There
+              was no clarity on how awards worked, who could nominate, or when
+              decisions were made.
+            </p>
+
+            <p className="cs-section-body">
+              There was also a competitive problem: ZingHR had no formal
+              R&amp;R module while Darwinbox, Keka, Zoho, and GreytHR already had
+              structured recognition features, creating a feature parity gap in
+              sales conversations.
             </p>
           </ScrollReveal>
         </section>
@@ -87,109 +104,51 @@ export default function RRCaseStudy() {
             <h2 className="cs-section-heading">Process</h2>
           </ScrollReveal>
 
-          {/* Research */}
+          {/* 01 — Primary Research */}
           <ScrollReveal>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">01 - Research</span>
-              <h3 className="cs-subsection-heading">
-                24 interviews. Three completely different answers.
-              </h3>
+              <span className="cs-subsection-label">01 - Primary Research</span>
+              <h3 className="cs-subsection-heading">Finding the admin.</h3>
               <p className="cs-subsection-body">
-                We interviewed 24 employees across three org sizes: startups
-                (12–80 people), mid-size companies (200–800), and enterprise
-                accounts (1,000+). The contrast was stark. At startups, people
-                wanted public, spontaneous visibility - something that felt like a
-                reply, not an HR form. At mid-size companies, the ask was for
-                structure: a way to tie recognition to company values and make it
-                trackable over time. At enterprise, the conversation shifted
-                entirely toward data - managers wanted to see patterns, flag
-                disengagement, and connect recognition to performance reviews.
+                I started from scratch with a brief asking me to replicate how
+                award functions work in a corporate setting. My first task was
+                finding the person who actually ran the system. The admin&rsquo;s
+                identity was deliberately obscured within the company for
+                security reasons. I had to escalate through HR and my manager
+                before I could arrange a conversation.
               </p>
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                This told us we weren&rsquo;t designing one feature. We were
-                designing a configurable system that needed to serve three
-                fundamentally different cultures without forcing any of them into
-                a workflow that didn&rsquo;t fit.
+                That conversation became the most important research session of
+                the project. The phone calendar and physical diary revealed that
+                there was no system at all in a transferable sense — only
+                institutional knowledge accumulated over 13 years. I then mapped
+                the workflows of all five user roles (Admin, Regular Employee,
+                Nominator, Department Head, CHRO) to understand what each person
+                needed the system to do.
               </p>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
-              <CaseImage
-                src={IMG("research.jpg")}
-                alt="Research synthesis board"
-                description="Affinity map - 24 interviews across 3 org sizes"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
-          </ScrollReveal>
-
-          {/* Competitive Audit */}
+          {/* 02 — Secondary Research */}
           <ScrollReveal>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">02 - Competitive Audit</span>
-              <h3 className="cs-subsection-heading">
-                8 platforms. None did all three things well.
-              </h3>
+              <span className="cs-subsection-label">02 - Secondary Research</span>
+              <h3 className="cs-subsection-heading">Jury systems and competitive gaps.</h3>
               <p className="cs-subsection-body">
-                We audited Bonusly, Lattice, Culture Amp, Achievers, Workday
-                Peakon, Kudos, 15Five, and Slack&rsquo;s native reaction system.
-                The pattern was consistent: consumer-grade tools had the engagement
-                but not the depth; enterprise tools had the depth but killed
-                engagement with complexity. No platform delivered low-friction
-                interaction, rich analytics, and a customizable rewards catalog
-                within a configurable system. That gap was the opportunity.
+                I studied how real-world corporate award ceremonies and jury
+                systems are structured. This became the conceptual foundation
+                for the permission model — understanding how recognition
+                authority is delegated in practice before designing the digital
+                version.
               </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
-              <CaseImage
-                src={IMG("competitive-audit.jpg")}
-                alt="Competitive audit matrix"
-                description="Comparison matrix - 8 platforms × 12 criteria"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
-          </ScrollReveal>
-
-          {/* IA */}
-          <ScrollReveal>
-            <div className="cs-subsection">
-              <span className="cs-subsection-label">03 - Information Architecture</span>
-              <h3 className="cs-subsection-heading">
-                Recognition data had to live where HR already worked.
-              </h3>
-              <p className="cs-subsection-body">
-                We mapped the recognition flow to ZingHR&rsquo;s existing module
-                structure: employee profiles, org hierarchy, performance cycles, and
-                payroll (for points redemption). The key constraint was that
-                recognition data needed to be queryable during performance
-                reviews - which meant it couldn&rsquo;t live in a silo. The
-                architectural decision that unlocked the rest of the design:
-                recognition events are attached to employees, not conversations.
-                Historical recognition surfaces in a profile without managers
-                having to manually curate it.
+              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
+                I also conducted competitive analysis of Darwinbox, Keka, Zoho,
+                and GreytHR. A key finding: simpler R&amp;R tools used flat org
+                structures for award eligibility. This would not scale for
+                ZingHR&rsquo;s enterprise customers with complex org hierarchies.
+                The group-based permission model became the direct response to
+                that gap.
               </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
-              <CaseImage
-                src={IMG("ia-diagram.jpg")}
-                alt="Information architecture diagram"
-                description="IA - recognition module connections to HR data model"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
             </div>
           </ScrollReveal>
         </section>
@@ -199,166 +158,120 @@ export default function RRCaseStudy() {
           <ScrollReveal>
             <h2 className="cs-section-heading">Solution</h2>
             <p className="cs-section-body">
-              The final system has four interconnected surfaces. Each was designed
-              to serve a different actor - peers, managers, HR admins - while
-              sharing a single underlying recognition event model.
+              The module was designed around six award types — nomination-based,
+              value-based, behavioral, team-based, CEO On-Spot, and
+              tenure-based (triggered automatically by joining date milestones)
+              — and five distinct user roles, each with a dedicated interface
+              and workflow.
             </p>
           </ScrollReveal>
 
-          {/* Feature 1 */}
+          {/* Feature 01 — Award Calendar */}
           <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 01</span>
-              <h3 className="cs-feature-title">Peer-to-peer recognition flow</h3>
+              <h3 className="cs-feature-title">The Award Calendar</h3>
               <p className="cs-feature-body">
-                Three steps maximum: select a recipient, write a message, attach a
-                value tag. We tested four- and five-step flows in usability
-                sessions - completion rates dropped measurably with each
-                additional step. The value tag system is deliberately limited to
-                eight company-configurable values. Early designs offered fifteen
-                options; testing revealed that too many choices caused hesitation
-                and lower completion. Fewer, clearer values also made the analytics
-                downstream significantly more meaningful.
+                The most important design decision came directly from the admin
+                interview. The phone calendar and diary were symptoms of a
+                system with no structural home. The Award Calendar converted
+                undocumented institutional knowledge into a structured,
+                transferable admin tool.
               </p>
-              <div className="cs-feature-img-wrap">
-                <CaseImage
-                  src={IMG("peer-recognition.jpg")}
-                  alt="Peer recognition flow"
-                  description="Peer recognition flow - composer, value tag picker, confirmation"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
-                />
-              </div>
-              <div className="cs-feature-decision">
-                <span className="cs-feature-decision-label">Design decision</span>
-                <p className="cs-feature-decision-text">
-                  The message field is free-form but has a 280-character soft
-                  limit shown as a counter - not enforced, but visible. Enterprise
-                  clients wanted recognition to feel personal, not templated.
-                  Removing the character limit entirely produced vague, generic
-                  messages in testing. The counter nudged specificity without
-                  imposing a ceiling.
-                </p>
-              </div>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                Any future admin could pick up the system without a single
+                knowledge transfer conversation. It allowed admins to schedule
+                all awards across all regions, set nomination start and end
+                dates, assign nominators per award, and send reminders. The
+                central insight from the research had a direct structural answer
+                in the design.
+              </p>
             </div>
           </ScrollReveal>
 
-          {/* Feature 2 */}
+          {/* Feature 02 — Jury Mental Model */}
           <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 02</span>
-              <h3 className="cs-feature-title">Manager dashboard</h3>
+              <h3 className="cs-feature-title">The Jury Mental Model</h3>
               <p className="cs-feature-body">
-                The dashboard surfaces team recognition activity, trend lines over
-                time, and - most carefully - employees who haven&rsquo;t received
-                any recognition in the past 30 days. The disengagement signal was
-                the most debated design decision in the project. Early designs
-                surfaced it as a prominent alert. After testing with twelve
-                managers, we moved it to a separate &ldquo;Attention needed&rdquo;
-                tab: visible to the manager but not framed as an alarm.
+                The most complex design challenge was making a multi-role
+                permission system feel intuitive. The module had five award
+                types, three levels of nominators, and a CHRO as the final
+                approver.
               </p>
-              <div className="cs-feature-img-wrap">
-                <CaseImage
-                  src={IMG("manager-dashboard.jpg")}
-                  alt="Manager dashboard"
-                  description="Manager dashboard - team activity, trends, attention queue"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
-                />
-              </div>
-              <div className="cs-feature-decision">
-                <span className="cs-feature-decision-label">Design decision</span>
-                <p className="cs-feature-decision-text">
-                  We debated whether to show the 30-day flag to managers at all.
-                  The HR admins wanted it; several managers in testing were
-                  uncomfortable with it. The resolution: the flag is visible by
-                  default but HR can disable it per manager role. The goal was to
-                  give managers context for one-on-ones without creating a
-                  surveillance dynamic or penalizing quiet employees who receive
-                  recognition less publicly.
-                </p>
-              </div>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                I mapped the permission structure onto a jury system: managers,
+                product owners, and heads of product act as preliminary judges
+                who nominate candidates within their scope. The CHRO acts as
+                the final jury. This grounded the hierarchy in a real-world
+                analogy rather than an abstract permission tree. For users who
+                had never configured an HRIS module before, that mental model
+                reduced the cognitive load of understanding a complex multi-role
+                workflow.
+              </p>
             </div>
           </ScrollReveal>
 
-          {/* Feature 3 */}
+          {/* Feature 03 — Group-Based Award Configuration */}
           <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Feature 03</span>
-              <h3 className="cs-feature-title">Leaderboards</h3>
+              <h3 className="cs-feature-title">Group-Based Award Configuration</h3>
               <p className="cs-feature-body">
-                Leaderboards are opt-in by default. This came directly from
-                research: several employees, particularly in enterprise accounts,
-                expressed anxiety about being ranked publicly. Opting out
-                doesn&rsquo;t affect the recognition received - it only removes
-                the person from the visible ranking. Leaderboards are also
-                configurable at three scopes: team, department, or company-wide.
-                A department leaderboard visible only to department members was
-                the most common configuration in pilot testing.
+                The admin could create groups sliced any way the organization
+                needed: by location, by function, by team, or by any
+                combination. Each award could then be assigned to one or more
+                groups.
               </p>
-              <div className="cs-feature-img-wrap">
-                <CaseImage
-                  src={IMG("leaderboards.jpg")}
-                  alt="Leaderboard views"
-                  description="Leaderboard - team, department, and company-wide scopes"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
-                />
-              </div>
-              <div className="cs-feature-decision">
-                <span className="cs-feature-decision-label">Design decision</span>
-                <p className="cs-feature-decision-text">
-                  We considered making leaderboards opt-out (visible by default,
-                  with the ability to hide). Two rounds of usability testing with
-                  introverted participants changed that. Opt-in produced better
-                  engagement overall - employees who chose to participate were
-                  more active, and employees who opted out reported higher
-                  comfort with the tool in general.
-                </p>
-              </div>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                A location-based group could receive a region-specific award.
+                A function-based group like all designers could be scoped to a
+                specific nomination. A cross-functional team group could be
+                nominated together regardless of reporting lines. Flat org
+                structures used by competing tools would have made all of this
+                impossible. Group-based configuration was the direct
+                differentiator for enterprise customers.
+              </p>
             </div>
           </ScrollReveal>
 
-          {/* Feature 4 */}
+          {/* Mid-Project Pivot */}
           <ScrollReveal>
-            <div className="cs-feature">
-              <span className="cs-feature-name">Feature 04</span>
-              <h3 className="cs-feature-title">Rewards marketplace</h3>
-              <p className="cs-feature-body">
-                The catalog is entirely company-managed. HR admins build and
-                maintain the offering - gift cards, experiences, company merch,
-                charitable donations, time off. We deliberately avoided locking
-                clients into a platform-curated catalog: every enterprise account
-                we spoke to had existing vendor relationships and procurement
-                policies that a closed catalog would have violated. Points
-                accumulate per recognition received and can be redeemed in the
-                marketplace. Redemption triggers a lightweight approval flow if
-                the item exceeds a configurable threshold.
+            <div className="cs-subsection">
+              <span className="cs-subsection-label">Mid-Project Pivot</span>
+              <h3 className="cs-subsection-heading">Redesigning the nomination flow.</h3>
+              <p className="cs-subsection-body">
+                The original nomination flow gave all control to the CHRO, who
+                was both nominator and approver. Midway through the project, the
+                product team identified that this single-actor flow would not
+                scale across ZingHR&rsquo;s diverse B2B customer base.
               </p>
-              <div className="cs-feature-img-wrap">
-                <CaseImage
-                  src={IMG("marketplace.jpg")}
-                  alt="Rewards marketplace"
-                  description="Rewards marketplace - catalog, points balance, redemption flow"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
-                />
-              </div>
-              <div className="cs-feature-decision">
-                <span className="cs-feature-decision-label">Design decision</span>
-                <p className="cs-feature-decision-text">
-                  The points-to-currency conversion is shown in the catalog item
-                  description, not at checkout. Showing the monetary value
-                  earlier - before the employee has decided to redeem - tested
-                  better across every user group. It reduced abandoned
-                  redemptions by making the perceived value concrete before
-                  commitment.
-                </p>
-              </div>
+              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
+                The flow was redesigned to introduce nominators as a separate
+                role with three permission levels, each scoped to their relevant
+                group. The CHRO was retained as final approver. This change
+                added an entire role and permission layer but made the module
+                genuinely configurable for varied enterprise org structures.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Additional Features */}
+          <ScrollReveal>
+            <div className="cs-subsection">
+              <span className="cs-subsection-label">Additional Features</span>
+              <h3 className="cs-subsection-heading">Supporting the full award lifecycle.</h3>
+              <p className="cs-subsection-body">
+                Beyond the core award management architecture, the module
+                included: a multi-step nomination and approval wizard consistent
+                across all award types and roles; budget management built into
+                the CHRO approval flow with real-time spend tracking; a badge
+                and certificate library for visual selection; Advantage Club
+                integration for external point redemption; notification
+                customization with predefined and personalized templates; and a
+                public recognition feed on the company dashboard.
+              </p>
             </div>
           </ScrollReveal>
         </section>
@@ -368,80 +281,66 @@ export default function RRCaseStudy() {
           <ScrollReveal>
             <h2 className="cs-section-heading">Impact</h2>
             <p className="cs-section-body">
-              The following reflects a 90-day pilot with one enterprise client,
-              340 employees across two office locations. Projected metrics are
-              based on industry benchmarks for sustained adoption at the 12-month
-              mark and are labeled clearly below.
+              The module launched and was adopted across ZingHR&rsquo;s customer
+              base, replacing an informal system with a structured, auditable
+              recognition workflow.
             </p>
           </ScrollReveal>
 
-          {/* Real metrics */}
           <ScrollReveal>
-            <div className="cs-impact-group">
-              <p className="cs-impact-group-label">Measured - 90-day pilot</p>
-              <div className="cs-metrics">
-                {[
-                  { value: "87%",  label: "Weekly active users",       context: "After 6 weeks, sustained through week 12"    },
-                  { value: "3.2×", label: "Recognition events",        context: "vs. the prior tool over the same period"     },
-                  { value: "94",   label: "NPS score",                 context: "Collected at the 30-day mark via in-app survey"},
-                  { value: "12.4", label: "Minutes to first kudos",    context: "Median time for a new employee to receive recognition"},
-                ].map((m, i) => (
-                  <MetricCard key={m.label} metric={m} index={i} />
-                ))}
-              </div>
-            </div>
+            <p className="cs-section-body">
+              The most significant signal came after launch: the R&amp;R module
+              was selected as the foundation for a customized engagement with a
+              large public sector enterprise client in India, one of the largest
+              institutions of its kind in the country. That engagement required
+              feature modifications to suit the client&rsquo;s organizational
+              structure, but the core architecture, permission model, and design
+              system held.
+            </p>
           </ScrollReveal>
 
-          {/* Projected metrics */}
           <ScrollReveal>
-            <div className="cs-impact-group">
-              <p className="cs-impact-group-label">Projected - 12-month outlook</p>
-              <div className="cs-metrics">
-                {[
-                  { value: "−15%", label: "Voluntary attrition",      context: "Based on industry benchmarks for tools with >80% WAU" },
-                  { value: "2",    label: "Accounts confirmed for review integration", context: "Pending renewal conversation, not yet live" },
-                ].map((m, i) => (
-                  <MetricCard key={m.label} metric={m} index={i} projected />
-                ))}
-              </div>
-            </div>
+            <p className="cs-section-body">
+              Quantitative adoption metrics are being sought from the module owners.
+            </p>
+          </ScrollReveal>
+        </section>
+
+        {/* ── Reflection ─────────────────────────────────────────────── */}
+        <section id="reflection" className="cs-section">
+          <ScrollReveal>
+            <h2 className="cs-section-heading">Reflection</h2>
           </ScrollReveal>
 
-          {/* What I'd do differently */}
           <ScrollReveal>
-            <div className="cs-wid">
-              <h3 className="cs-wid-heading">What I&rsquo;d do differently</h3>
-
+            <div className="cs-wid" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
               <p className="cs-wid-body">
-                <strong>Push for mobile-first earlier.</strong> The initial design
-                was desktop-led because the client&rsquo;s IT policy restricted
-                native app installs - so we built a responsive web app. Analytics
-                from the pilot showed 43% of kudos were written from mobile
-                browsers. The responsive experience held up, but it was clearly
-                secondary. Starting from mobile would have produced better
-                interaction density on the composer and the feed.
+                The most valuable moment was the admin interview. What started
+                as an attempt to understand a configuration workflow turned into
+                the central insight of the entire project. The diary and phone
+                calendar were not a minor inconvenience. They were the entire
+                system, and it was one resignation away from collapse.
               </p>
 
               <p className="cs-wid-body">
-                <strong>Invest more in the blank-state experience.</strong> New
-                employees took an average of 12 days to send their first kudos -
-                longer than we wanted. The problem: when you join a tool with no
-                social graph yet, the right onboarding nudge is non-obvious. We
-                shipped a generic empty state. It needed to be contextual -
-                surfacing teammates the new employee had already interacted with,
-                not a blank canvas.
+                The Award Calendar is the feature I am most confident had real
+                operational impact because it was designed around a documented,
+                specific, and urgent problem rather than an assumed one.
               </p>
 
               <p className="cs-wid-body">
-                <strong>Involve HR admins in testing earlier.</strong> We spent
-                too long designing for end users and brought HR admins into
-                testing late. They surfaced catalog management edge cases in
-                week 8 that should have been in scope from week 2. Their workflow
-                is the backbone of the marketplace - not an afterthought.
+                The jury mental model is the design decision I am most proud of
+                conceptually. It required stepping outside the product and
+                understanding how recognition works in the real world, then
+                translating that into a permission architecture that felt natural
+                rather than technical. For users who had never configured an HRIS
+                module before, that mental model reduced the cognitive load of
+                understanding a complex multi-role workflow.
               </p>
             </div>
           </ScrollReveal>
         </section>
+
       </div>
     </div>
   );
