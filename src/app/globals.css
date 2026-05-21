@@ -906,7 +906,7 @@ video {
 /* Image area */
 .feat-card-media {
   position: relative;
-  aspect-ratio: 16 / 10;
+  height: 280px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -1052,7 +1052,7 @@ video {
 
 .work-card-media {
   position: relative;
-  aspect-ratio: 16 / 9;
+  height: 200px;
   overflow: hidden;
 }
 
