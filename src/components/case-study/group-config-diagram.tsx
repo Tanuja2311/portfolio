@@ -6,14 +6,6 @@ export function GroupConfigDiagram() {
     { cx: 280, cy: 296, r: 108, label: "Team",       examples: ["Project Alpha", "Project Beta"], ex_y: [300, 318] },
   ] as const;
 
-  // Approximate centers of overlap regions for award icons
-  const overlaps = [
-    { x: 280, y: 168 },   // Location ∩ Function
-    { x: 215, y: 248 },   // Location ∩ Team
-    { x: 345, y: 248 },   // Function ∩ Team
-    { x: 280, y: 238 },   // All three (triple)
-  ];
-
   return (
     <figure
       className="rr-diagram"
@@ -66,16 +58,6 @@ export function GroupConfigDiagram() {
           </text>
         ))}
 
-        {/* ── Award icons in overlap regions (simple star) ───── */}
-        {overlaps.map((o, i) => (
-          <g key={i} transform={`translate(${o.x}, ${o.y})`}>
-            {/* 5-pointed star, small */}
-            <polygon
-              points="0,-7 1.7,-2.3 6.6,-2.3 2.7,0.9 4.1,5.9 0,3.1 -4.1,5.9 -2.7,0.9 -6.6,-2.3 -1.7,-2.3"
-              fill="#B794F4" opacity="0.65"
-            />
-          </g>
-        ))}
 
         {/* ── Caption ────────────────────────────────────────── */}
         <text x="280" y="413" textAnchor="middle" fontSize="11"
