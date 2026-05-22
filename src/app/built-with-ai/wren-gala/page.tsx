@@ -290,6 +290,19 @@ export default function WrenGalaPage() {
             </div>
           </ScrollReveal>
 
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
+              <CaseImage
+                src={IMG("ai-tool-timeline.png")}
+                alt="AI tool evaluation timeline: Figma Make to Lovable to Claude plus VS Code"
+                description="AI tool evaluation timeline: Figma Make to Lovable to Claude plus VS Code"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
           {/* 03 — Content Strategy */}
           <ScrollReveal>
             <div className="cs-subsection">
@@ -348,6 +361,19 @@ export default function WrenGalaPage() {
                 a working mental model for when AI tools are useful and when they
                 introduce risk.
               </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
+              <CaseImage
+                src={IMG("mentoring.jpg")}
+                alt="Mentoring session: junior designer observing AI-assisted development workflow"
+                description="Mentoring session: junior designer observing AI-assisted development workflow"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
             </div>
           </ScrollReveal>
 
