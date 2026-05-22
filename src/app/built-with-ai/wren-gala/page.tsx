@@ -32,7 +32,7 @@ export default function WrenGalaPage() {
         meta: {
           role:     "Lead Designer & Developer",
           duration: "Under 1 week",
-          year:     "2025",
+          year:     "2026",
         },
       }} />
       <CaseStudySummary summary={{
