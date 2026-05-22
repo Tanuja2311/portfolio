@@ -446,9 +446,9 @@ export default function WrenGalaPage() {
               </p>
               <div className="cs-feature-img-wrap">
                 <CaseImage
-                  src={IMG("homepage.jpg")}
-                  alt="Wren Gala homepage — desktop and mobile"
-                  description="Homepage — desktop and mobile"
+                  src={IMG("homepage-desktop-mobile.png")}
+                  alt="Wren Gala homepage on desktop and mobile"
+                  description="Wren Gala homepage on desktop and mobile"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
@@ -486,7 +486,7 @@ export default function WrenGalaPage() {
               </p>
               <div className="cs-feature-img-wrap">
                 <CaseImage
-                  src={IMG("changemaker.jpg")}
+                  src={IMG("changemaker-page.png")}
                   alt="Changemaker Cohort page with profile cards"
                   description="Changemaker Cohort page with profile cards"
                   fill
@@ -526,9 +526,9 @@ export default function WrenGalaPage() {
               </p>
               <div className="cs-feature-img-wrap">
                 <CaseImage
-                  src={IMG("story.jpg")}
-                  alt="Story of St James — narrative scroll"
-                  description="Story of St James — narrative scroll"
+                  src={IMG("story-page.png")}
+                  alt="Story of St James scrolling narrative"
+                  description="Story of St James scrolling narrative"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
@@ -575,9 +575,9 @@ export default function WrenGalaPage() {
               </p>
               <div className="cs-feature-img-wrap">
                 <CaseImage
-                  src={IMG("tickets.jpg")}
-                  alt="Tickets page: custom purchase flow"
-                  description="Tickets page: custom purchase flow"
+                  src={IMG("tickets-page.png")}
+                  alt="Tickets page with custom ACH purchase flow"
+                  description="Tickets page with custom ACH purchase flow"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
