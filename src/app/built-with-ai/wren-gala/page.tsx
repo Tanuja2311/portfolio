@@ -317,9 +317,9 @@ export default function WrenGalaPage() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("content-hierarchy.jpg")}
-                alt="Content hierarchy: page flow from homepage to ticket purchase"
-                description="Content hierarchy: page flow from homepage to ticket purchase"
+                src={IMG("content-hierarchy.png")}
+                alt="Content hierarchy: four-page flow from homepage to ticket purchase"
+                description="Content hierarchy: four-page flow from homepage to ticket purchase"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
