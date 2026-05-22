@@ -403,9 +403,9 @@ export default function WrenGalaPage() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("payment-comparison.jpg")}
-                alt="Payment platform evaluation: Givebutter embedded UI vs. custom ticket flow"
-                description="Payment platform evaluation: Givebutter embedded UI vs. custom ticket flow"
+                src={IMG("payment-comparison.png")}
+                alt="Payment comparison: Givebutter embed versus custom ACH flow"
+                description="Payment comparison: Givebutter embed versus custom ACH flow"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
