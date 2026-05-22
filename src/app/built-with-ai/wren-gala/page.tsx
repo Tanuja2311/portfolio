@@ -24,7 +24,7 @@ export default function WrenGalaPage() {
   return (
     <>
       <CaseStudyHero study={{
-        hero:       "",
+        hero:       "/images/wren-gala/hero.png",
         coverColor: "#100d14",
         tags:       ["Web Design", "Built with AI"],
         title:      "The Wren Gala",
@@ -85,7 +85,7 @@ export default function WrenGalaPage() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("context-comparison.jpg")}
+                src={IMG("context-before-after.png")}
                 alt="Side-by-side: existing church site vs. Wren Gala homepage"
                 description="Side-by-side: existing church site vs. Wren Gala homepage"
                 fill
@@ -139,7 +139,7 @@ export default function WrenGalaPage() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("visual-direction.jpg")}
+                src={IMG("visual-direction.png")}
                 alt="Visual direction: color palette, typography, mood references"
                 description="Visual direction: color palette, typography, mood references"
                 fill
