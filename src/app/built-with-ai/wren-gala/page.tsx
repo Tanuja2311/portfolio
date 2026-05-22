@@ -351,19 +351,6 @@ export default function WrenGalaPage() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
-              <CaseImage
-                src={IMG("mentoring.jpg")}
-                alt="Mentoring session: junior designer observing AI-assisted development workflow"
-                description="Mentoring session: junior designer observing AI-assisted development workflow"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
-          </ScrollReveal>
-
           {/* 05 — Payment Platform Evaluation */}
           <ScrollReveal>
             <div className="cs-subsection">
