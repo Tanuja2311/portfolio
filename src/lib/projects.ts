@@ -38,7 +38,7 @@ export const AI_PROJECTS: Project[] = [
   {
     slug:       "wren-gala",
     title:      "The Wren Gala",
-    thumbnail:  "/images/wren-gala/hero.jpg",
+    thumbnail:  "/images/wren-gala/hero.png",
     coverColor: "#100d14",
     stat:       "Luxury charity event website designed and shipped in under a week.",
     tags:       ["AI Workflow", "Client Work"],
@@ -72,7 +72,7 @@ export const OTHER_PROJECTS: Project[] = [
   {
     slug:       "wren-gala",
     title:      "The Wren Gala",
-    thumbnail:  "/images/wren-gala/hero.jpg",
+    thumbnail:  "/images/wren-gala/hero.png",
     coverColor: "#100d14",
     stat:       "Luxury charity event website designed and shipped in under a week.",
     tags:       ["AI Workflow", "Client Work"],
