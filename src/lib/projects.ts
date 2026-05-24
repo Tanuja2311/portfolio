@@ -25,7 +25,7 @@ export const FEATURED_PROJECTS: Project[] = [
   {
     slug:       "myrcloud",
     title:      "MyRCloud",
-    thumbnail:  "/images/myrcloud/hero.jpg",
+    thumbnail:  "/images/myrcloud/hero.png",
     coverColor: "#0d1118",
     stat:       "Recruitment marketplace replacing Google Sheets for 600+ partners.",
     tags:       ["Enterprise", "Recruitment", "Marketplace"],

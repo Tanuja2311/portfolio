@@ -25,7 +25,7 @@ export default function MyRCloudCaseStudy() {
   return (
     <div>
       <CaseStudyHero study={{
-        hero:       "",
+        hero:       "/images/myrcloud/hero.png",
         coverColor: "#0d1118",
         tags:       ["Enterprise", "Recruitment", "Marketplace"],
         title:      "MyRCloud.",
@@ -78,7 +78,7 @@ export default function MyRCloudCaseStudy() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("challenge-before-after.jpg")}
+                src={IMG("before-after.png")}
                 alt="Before/after: Google Sheets workflow vs MyRCloud dashboard"
                 description="Before/after - Google Sheets operation vs MyRCloud platform"
                 fill
@@ -113,7 +113,7 @@ export default function MyRCloudCaseStudy() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("challenge-persona-ecosystem.jpg")}
+                src={IMG("persona-ecosystem.png")}
                 alt="Persona ecosystem diagram showing how all six roles connect"
                 description="Persona ecosystem - six roles and how their workflows interconnect"
                 fill
@@ -172,20 +172,7 @@ export default function MyRCloudCaseStudy() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("process-sitemaps.jpg")}
-                alt="Persona-wise sitemaps for CSM, PSM, and Partner"
-                description="Sitemaps - CSM, PSM, and Partner portal information architecture"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
-              <CaseImage
-                src={IMG("process-flow-diagram.jpg")}
+                src={IMG("process-flow.png")}
                 alt="End-to-end product flow diagram"
                 description="Product flow - how requisitions, partners, candidates, and CSMs connect"
                 fill
@@ -273,7 +260,7 @@ export default function MyRCloudCaseStudy() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("process-dashboard-priority.jpg")}
+                src={IMG("dashboard-priority.png")}
                 alt="Dashboard priority-wise view and ageing heatmap"
                 description="Dashboard - priority view and ageing heatmap with design rationale"
                 fill
@@ -329,7 +316,7 @@ export default function MyRCloudCaseStudy() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap">
               <CaseImage
-                src={IMG("solution-create-requisition.jpg")}
+                src={IMG("create-requisition-preview.png")}
                 alt="Create requisition preview screen"
                 description="Create requisition - full preview step showing the scope of captured information"
                 fill
@@ -342,7 +329,7 @@ export default function MyRCloudCaseStudy() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("solution-skills-prioritization.jpg")}
+                src={IMG("skills-prioritization.png")}
                 alt="Skills prioritization with three-tier tag system"
                 description="Skills input - essential, important, and good-to-have tiers with drag-to-prioritize"
                 fill
@@ -390,22 +377,9 @@ export default function MyRCloudCaseStudy() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="cs-feature-img-wrap">
-              <CaseImage
-                src={IMG("solution-published-requisitions.jpg")}
-                alt="Published requisitions dashboard card layout"
-                description="Partner pipeline - published requisitions with card layout and filters"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("solution-accepted-requisitions.jpg")}
+                src={IMG("pipeline-accepted.png")}
                 alt="Accepted requisitions dashboard with horizontal candidate funnel"
                 description="Partner pipeline - accepted requisitions showing per-stage candidate counts"
                 fill
@@ -460,45 +434,6 @@ export default function MyRCloudCaseStudy() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <div className="cs-feature-img-wrap">
-              <CaseImage
-                src={IMG("solution-head-csm-dashboard.jpg")}
-                alt="Head CSM dashboard"
-                description="Head CSM dashboard - demand, business health, supply, and productivity panels"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
-              <CaseImage
-                src={IMG("solution-partner-dashboard.jpg")}
-                alt="Partner dashboard"
-                description="Partner dashboard - revenue potential, requisition pipeline, and sharing tools"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
-              <CaseImage
-                src={IMG("solution-customer-dashboard.jpg")}
-                alt="Customer summary dashboard with recruitment funnel"
-                description="Customer dashboard - recruitment funnel, open positions, and cost metrics"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
-          </ScrollReveal>
-
           {/* Feature 04 — Working With Developers */}
           <ScrollReveal>
             <div className="cs-feature">
@@ -531,7 +466,7 @@ export default function MyRCloudCaseStudy() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap">
               <CaseImage
-                src={IMG("solution-ui-tracker.jpg")}
+                src={IMG("ui-issues-tracker.png")}
                 alt="UI issues tracker spreadsheet"
                 description="UI tracker - 200+ implementation issues logged by flow, persona, and CSS specifics"
                 fill
