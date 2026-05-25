@@ -53,7 +53,7 @@ export function FeaturedCard({ project, index }: Props) {
         <div ref={imgRef} className="feat-card-img-wrap">
           <Image
             src={project.thumbnail}
-            alt={`${project.title} - project thumbnail`}
+            alt={project.thumbnailAlt ?? `${project.title} - project thumbnail`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className={`feat-card-img img-fade${imgLoaded ? " img-loaded" : ""}`}

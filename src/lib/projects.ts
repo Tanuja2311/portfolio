@@ -2,6 +2,7 @@ export interface Project {
   slug: string;
   title: string;
   thumbnail: string;
+  thumbnailAlt?: string;
   coverColor: string;
   stat: string;
   tags: string[];
@@ -62,7 +63,8 @@ export const OTHER_PROJECTS: Project[] = [
   {
     slug:       "employee-dossier",
     title:      "Employee Dossier",
-    thumbnail:  "/images/employee-dossier/hero.jpg",
+    thumbnail:    "/images/employee-dossier/hero.png",
+    thumbnailAlt: "Employee Dossier — project thumbnail",
     coverColor: "#0e1520",
     stat:       "Redesigned ZingHR's centralized employee record into a single, scannable page.",
     tags:       ["Product Design", "Enterprise"],

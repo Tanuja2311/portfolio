@@ -20,7 +20,7 @@ export function WorkCard({ project }: { project: Project }) {
       >
         <Image
           src={project.thumbnail}
-          alt={`${project.title} - project thumbnail`}
+          alt={project.thumbnailAlt ?? `${project.title} - project thumbnail`}
           fill
           sizes="(max-width: 640px) 100vw, 33vw"
           className={`work-card-img img-fade${imgLoaded ? " img-loaded" : ""}`}
