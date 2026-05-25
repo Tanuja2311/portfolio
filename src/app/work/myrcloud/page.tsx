@@ -31,7 +31,7 @@ const IMG = (name: string) => `/images/myrcloud/${name}`;
 
 export default function MyRCloudCaseStudy() {
   return (
-    <div>
+    <main>
       <CaseStudyHero study={{
         hero:       "/images/myrcloud/hero.png",
         coverColor: "#0d1118",
@@ -56,9 +56,9 @@ export default function MyRCloudCaseStudy() {
 
       <div className="cs-body">
         {/* ── Challenge ──────────────────────────────────────────────── */}
-        <section id="challenge" className="cs-section">
+        <section id="challenge" className="cs-section" aria-labelledby="challenge-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Challenge</h2>
+            <h2 id="challenge-heading" className="cs-section-heading">Challenge</h2>
 
             <blockquote className="cs-hook">
               When I joined the project, their entire operation ran on Google
@@ -143,9 +143,9 @@ export default function MyRCloudCaseStudy() {
         </section>
 
         {/* ── Process ────────────────────────────────────────────────── */}
-        <section id="process" className="cs-section">
+        <section id="process" className="cs-section" aria-labelledby="process-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Process</h2>
+            <h2 id="process-heading" className="cs-section-heading">Process</h2>
           </ScrollReveal>
 
           {/* Research Through Workshops */}
@@ -280,9 +280,9 @@ export default function MyRCloudCaseStudy() {
         </section>
 
         {/* ── Solution ───────────────────────────────────────────────── */}
-        <section id="solution" className="cs-section">
+        <section id="solution" className="cs-section" aria-labelledby="solution-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Solution</h2>
+            <h2 id="solution-heading" className="cs-section-heading">Solution</h2>
           </ScrollReveal>
 
           {/* Feature 01 — Create Requisition */}
@@ -486,9 +486,9 @@ export default function MyRCloudCaseStudy() {
         </section>
 
         {/* ── Impact ─────────────────────────────────────────────────── */}
-        <section id="impact" className="cs-section">
+        <section id="impact" className="cs-section" aria-labelledby="impact-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Impact</h2>
+            <h2 id="impact-heading" className="cs-section-heading">Impact</h2>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -566,6 +566,6 @@ export default function MyRCloudCaseStudy() {
           </ScrollReveal>
         </section>
       </div>
-    </div>
+    </main>
   );
 }

@@ -30,7 +30,7 @@ const IMG = (name: string) => `/images/wren-gala/${name}`;
 
 export default function WrenGalaPage() {
   return (
-    <>
+    <main>
       <CaseStudyHero study={{
         hero:       "/images/wren-gala/hero.png",
         coverColor: "#100d14",
@@ -55,9 +55,9 @@ export default function WrenGalaPage() {
       <div className="cs-body">
 
         {/* ── Context ──────────────────────────────────────────────────── */}
-        <section id="context" className="cs-section">
+        <section id="context" className="cs-section" aria-labelledby="context-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Context</h2>
+            <h2 id="context-heading" className="cs-section-heading">Context</h2>
 
             <p className="cs-section-body">
               St James Church in Piccadilly, London, hosts an annual charity
@@ -105,9 +105,9 @@ export default function WrenGalaPage() {
         </section>
 
         {/* ── Process ──────────────────────────────────────────────────── */}
-        <section id="process" className="cs-section">
+        <section id="process" className="cs-section" aria-labelledby="process-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Process</h2>
+            <h2 id="process-heading" className="cs-section-heading">Process</h2>
           </ScrollReveal>
 
           {/* 01 — Visual Direction */}
@@ -423,9 +423,9 @@ export default function WrenGalaPage() {
         </section>
 
         {/* ── Solution ─────────────────────────────────────────────────── */}
-        <section id="solution" className="cs-section">
+        <section id="solution" className="cs-section" aria-labelledby="solution-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Solution</h2>
+            <h2 id="solution-heading" className="cs-section-heading">Solution</h2>
             <p className="cs-section-body">
               Four pages, each with a specific persuasion job. The visual
               language holds through every surface: dark navy background, warm
@@ -609,9 +609,9 @@ export default function WrenGalaPage() {
         </section>
 
         {/* ── Reflection ───────────────────────────────────────────────── */}
-        <section id="reflection" className="cs-section">
+        <section id="reflection" className="cs-section" aria-labelledby="reflection-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Reflection</h2>
+            <h2 id="reflection-heading" className="cs-section-heading">Reflection</h2>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -692,6 +692,6 @@ export default function WrenGalaPage() {
         </section>
 
       </div>
-    </>
+    </main>
   );
 }

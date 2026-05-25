@@ -30,7 +30,7 @@ const SECTIONS = [
 
 export default function UrbanParkCaseStudy() {
   return (
-    <>
+    <main>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <StaggerContainer as="section" className="cs-hero">
         <StaggerItem className="cs-hero-media" style={{ background: "#0d1a0f" }}>
@@ -74,9 +74,9 @@ export default function UrbanParkCaseStudy() {
 
       <div className="cs-body">
         {/* ── Challenge ──────────────────────────────────────────────── */}
-        <section id="challenge" className="cs-section">
+        <section id="challenge" className="cs-section" aria-labelledby="challenge-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Challenge</h2>
+            <h2 id="challenge-heading" className="cs-section-heading">Challenge</h2>
 
             <p className="cs-stat-highlight">
               Drivers spend an average of 17 minutes searching for parking per
@@ -105,9 +105,9 @@ export default function UrbanParkCaseStudy() {
         </section>
 
         {/* ── Research ───────────────────────────────────────────────── */}
-        <section id="research" className="cs-section">
+        <section id="research" className="cs-section" aria-labelledby="research-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Research</h2>
+            <h2 id="research-heading" className="cs-section-heading">Research</h2>
           </ScrollReveal>
 
           {/* Interviews */}
@@ -276,9 +276,9 @@ export default function UrbanParkCaseStudy() {
         </section>
 
         {/* ── Design System ──────────────────────────────────────────── */}
-        <section id="design-system" className="cs-section">
+        <section id="design-system" className="cs-section" aria-labelledby="design-system-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Design System</h2>
+            <h2 id="design-system-heading" className="cs-section-heading">Design System</h2>
             <p className="cs-section-body">
               Before designing screens, I built the component library. This
               isn&rsquo;t how academic projects typically work - students usually
@@ -415,9 +415,9 @@ export default function UrbanParkCaseStudy() {
         </section>
 
         {/* ── Solution ───────────────────────────────────────────────── */}
-        <section id="solution" className="cs-section">
+        <section id="solution" className="cs-section" aria-labelledby="solution-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Solution</h2>
+            <h2 id="solution-heading" className="cs-section-heading">Solution</h2>
             <p className="cs-section-body">
               Three distinct flows - homeowner onboarding, renter search and
               booking, and the verification layer that sits beneath both - each
@@ -545,9 +545,9 @@ export default function UrbanParkCaseStudy() {
         </section>
 
         {/* ── Reflection ─────────────────────────────────────────────── */}
-        <section id="reflection" className="cs-section">
+        <section id="reflection" className="cs-section" aria-labelledby="reflection-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Reflection</h2>
+            <h2 id="reflection-heading" className="cs-section-heading">Reflection</h2>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -632,6 +632,6 @@ export default function UrbanParkCaseStudy() {
           </ScrollReveal>
         </section>
       </div>
-    </>
+    </main>
   );
 }

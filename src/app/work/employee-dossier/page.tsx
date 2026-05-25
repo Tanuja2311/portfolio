@@ -30,7 +30,7 @@ const IMG = (name: string) => `/images/employee-dossier/${name}`;
 
 export default function EmployeeDossierPage() {
   return (
-    <>
+    <main>
       <CaseStudyHero study={{
         hero:       IMG("hero.png"),
         heroAlt:    "Redesigned Employee Dossier profile page showing employee header, timeline, and sidebar.",
@@ -57,9 +57,9 @@ export default function EmployeeDossierPage() {
       <div className="cs-body">
 
         {/* ── Challenge ──────────────────────────────────────────────── */}
-        <section id="challenge" className="cs-section">
+        <section id="challenge" className="cs-section" aria-labelledby="challenge-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Challenge</h2>
+            <h2 id="challenge-heading" className="cs-section-heading">Challenge</h2>
 
             <p className="cs-section-body">
               The Employee Dossier is one of the most-visited modules in
@@ -114,9 +114,9 @@ export default function EmployeeDossierPage() {
         </section>
 
         {/* ── Process ────────────────────────────────────────────────── */}
-        <section id="process" className="cs-section">
+        <section id="process" className="cs-section" aria-labelledby="process-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Process</h2>
+            <h2 id="process-heading" className="cs-section-heading">Process</h2>
           </ScrollReveal>
 
           {/* 01 - Usability Audit */}
@@ -279,9 +279,9 @@ export default function EmployeeDossierPage() {
         </section>
 
         {/* ── Solution ───────────────────────────────────────────────── */}
-        <section id="solution" className="cs-section">
+        <section id="solution" className="cs-section" aria-labelledby="solution-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Solution</h2>
+            <h2 id="solution-heading" className="cs-section-heading">Solution</h2>
             <p className="cs-section-body">
               The final design consolidates every piece of employee
               information onto one continuous page. Horizontal tabs at the
@@ -505,9 +505,9 @@ export default function EmployeeDossierPage() {
         </section>
 
         {/* ── Impact ─────────────────────────────────────────────────── */}
-        <section id="impact" className="cs-section">
+        <section id="impact" className="cs-section" aria-labelledby="impact-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Impact</h2>
+            <h2 id="impact-heading" className="cs-section-heading">Impact</h2>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -531,9 +531,9 @@ export default function EmployeeDossierPage() {
         </section>
 
         {/* ── Reflection ─────────────────────────────────────────────── */}
-        <section className="cs-section">
+        <section id="reflection" className="cs-section" aria-labelledby="reflection-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Reflection</h2>
+            <h2 id="reflection-heading" className="cs-section-heading">Reflection</h2>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -591,6 +591,6 @@ export default function EmployeeDossierPage() {
         </section>
 
       </div>
-    </>
+    </main>
   );
 }

@@ -29,7 +29,7 @@ const IMG = (name: string) => `/images/genai-pharmacy/${name}`;
 
 export default function GenAIPharmacyPage() {
   return (
-    <>
+    <main>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <StaggerContainer as="section" className="cs-hero">
         <StaggerItem className="cs-hero-media" style={{ background: "#12100e" }}>
@@ -75,9 +75,9 @@ export default function GenAIPharmacyPage() {
       <div className="cs-body">
 
         {/* ── Context ──────────────────────────────────────────────────── */}
-        <section id="context" className="cs-section">
+        <section id="context" className="cs-section" aria-labelledby="context-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Context</h2>
+            <h2 id="context-heading" className="cs-section-heading">Context</h2>
 
             <p className="cs-section-body">
               Pharmacy students at Thomas Jefferson University use generative AI
@@ -126,9 +126,9 @@ export default function GenAIPharmacyPage() {
         </section>
 
         {/* ── Process ──────────────────────────────────────────────────── */}
-        <section id="process" className="cs-section">
+        <section id="process" className="cs-section" aria-labelledby="process-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Process</h2>
+            <h2 id="process-heading" className="cs-section-heading">Process</h2>
           </ScrollReveal>
 
           {/* 01 — Desk Research */}
@@ -252,9 +252,9 @@ export default function GenAIPharmacyPage() {
         </section>
 
         {/* ── Findings ─────────────────────────────────────────────────── */}
-        <section id="findings" className="cs-section">
+        <section id="findings" className="cs-section" aria-labelledby="findings-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Findings</h2>
+            <h2 id="findings-heading" className="cs-section-heading">Findings</h2>
           </ScrollReveal>
 
           {/* Finding 01 */}
@@ -358,9 +358,9 @@ export default function GenAIPharmacyPage() {
         </section>
 
         {/* ── Reflection ───────────────────────────────────────────────── */}
-        <section id="reflection" className="cs-section">
+        <section id="reflection" className="cs-section" aria-labelledby="reflection-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Reflection</h2>
+            <h2 id="reflection-heading" className="cs-section-heading">Reflection</h2>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -417,6 +417,6 @@ export default function GenAIPharmacyPage() {
         </section>
 
       </div>
-    </>
+    </main>
   );
 }

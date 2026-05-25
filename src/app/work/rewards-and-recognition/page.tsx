@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RRCaseStudy() {
   return (
-    <div>
+    <main>
       <CaseStudyHero study={{
         hero:       "/images/rewards-recognition/hero.png",
         coverColor: "#1a1410",
@@ -57,9 +57,9 @@ export default function RRCaseStudy() {
       <div className="cs-body">
 
         {/* ── Challenge ──────────────────────────────────────────────── */}
-        <section id="challenge" className="cs-section">
+        <section id="challenge" className="cs-section" aria-labelledby="challenge-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Challenge</h2>
+            <h2 id="challenge-heading" className="cs-section-heading">Challenge</h2>
 
             <blockquote className="cs-hook">
               ZingHR&rsquo;s recognition system was a single point of failure
@@ -115,9 +115,9 @@ export default function RRCaseStudy() {
         </section>
 
         {/* ── Process ────────────────────────────────────────────────── */}
-        <section id="process" className="cs-section">
+        <section id="process" className="cs-section" aria-labelledby="process-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Process</h2>
+            <h2 id="process-heading" className="cs-section-heading">Process</h2>
           </ScrollReveal>
 
           {/* 01 — Primary Research */}
@@ -171,9 +171,9 @@ export default function RRCaseStudy() {
         </section>
 
         {/* ── Solution ───────────────────────────────────────────────── */}
-        <section id="solution" className="cs-section">
+        <section id="solution" className="cs-section" aria-labelledby="solution-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Solution</h2>
+            <h2 id="solution-heading" className="cs-section-heading">Solution</h2>
             <p className="cs-section-body">
               The module was designed around six award types — nomination-based,
               value-based, behavioral, team-based, CEO On-Spot, and
@@ -306,9 +306,9 @@ export default function RRCaseStudy() {
         </section>
 
         {/* ── Impact ─────────────────────────────────────────────────── */}
-        <section id="impact" className="cs-section">
+        <section id="impact" className="cs-section" aria-labelledby="impact-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Impact</h2>
+            <h2 id="impact-heading" className="cs-section-heading">Impact</h2>
             <p className="cs-section-body">
               The module launched and was adopted across ZingHR&rsquo;s customer
               base, replacing an informal system with a structured, auditable
@@ -336,9 +336,9 @@ export default function RRCaseStudy() {
         </section>
 
         {/* ── Reflection ─────────────────────────────────────────────── */}
-        <section id="reflection" className="cs-section">
+        <section id="reflection" className="cs-section" aria-labelledby="reflection-heading">
           <ScrollReveal>
-            <h2 className="cs-section-heading">Reflection</h2>
+            <h2 id="reflection-heading" className="cs-section-heading">Reflection</h2>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -371,6 +371,6 @@ export default function RRCaseStudy() {
         </section>
 
       </div>
-    </div>
+    </main>
   );
 }
