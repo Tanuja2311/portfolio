@@ -56,7 +56,9 @@ export function WorkCard({ project }: { project: Project }) {
     return (
       <div
         className="work-card work-card--coming-soon"
-        aria-label={`${project.title} - coming soon`}
+        aria-label={`${project.title} — coming soon`}
+        aria-disabled="true"
+        role="group"
       >
         {content}
       </div>

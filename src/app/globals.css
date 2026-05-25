@@ -12,7 +12,7 @@
   --border:      #252525;
 
   --text:        #f0ece4;
-  --text-muted:  #7a7570;
+  --text-muted:  #857e77;
   --text-faint:  #3a3530;
 
   --accent:      #c8b89a;
@@ -24,14 +24,14 @@
 
   --shadow-card:  rgba(0, 0, 0, 0.45);
 
-  --cs-hero-desc:        rgba(240, 236, 228, 0.55);
-  --cs-hero-meta-label:  rgba(240, 236, 228, 0.30);
+  --cs-hero-desc:        rgba(240, 236, 228, 0.65);
+  --cs-hero-meta-label:  rgba(240, 236, 228, 0.55);
   --cs-hero-meta-value:  rgba(240, 236, 228, 0.80);
 
   --cs-summary-cell-bg:     rgba(255, 255, 255, 0.03);
   --cs-summary-cell-border: rgba(255, 255, 255, 0.06);
   --cs-summary-body:        rgba(240, 236, 228, 0.70);
-  --cs-summary-hint:        rgba(240, 236, 228, 0.25);
+  --cs-summary-hint:        rgba(240, 236, 228, 0.55);
   --cs-summary-divider:     rgba(255, 255, 255, 0.06);
   --diag-box-fill:          rgba(255, 255, 255, 0.05);
   --diag-box-stroke:        rgba(255, 255, 255, 0.15);
@@ -60,14 +60,14 @@
 
   --shadow-card:  rgba(0, 0, 0, 0.10);
 
-  --cs-hero-desc:        rgba(26, 26, 24, 0.55);
-  --cs-hero-meta-label:  rgba(26, 26, 24, 0.30);
+  --cs-hero-desc:        rgba(26, 26, 24, 0.65);
+  --cs-hero-meta-label:  rgba(26, 26, 24, 0.55);
   --cs-hero-meta-value:  rgba(26, 26, 24, 0.80);
 
   --cs-summary-cell-bg:     rgba(0, 0, 0, 0.03);
   --cs-summary-cell-border: rgba(0, 0, 0, 0.06);
   --cs-summary-body:        rgba(26, 26, 24, 0.70);
-  --cs-summary-hint:        rgba(26, 26, 24, 0.25);
+  --cs-summary-hint:        rgba(26, 26, 24, 0.55);
   --cs-summary-divider:     rgba(0, 0, 0, 0.06);
   --diag-box-fill:          rgba(0, 0, 0, 0.04);
   --diag-box-stroke:        rgba(0, 0, 0, 0.13);
@@ -95,6 +95,37 @@
   --color-green-border: var(--green-border);
   --font-serif:         var(--font-serif);
   --font-sans:          var(--font-sans);
+}
+
+/* ─── Skip to main content ──────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #B794F4;
+  color: #0a0a0a;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: top 0.1s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid #9b72ef;
+  outline-offset: 2px;
+}
+
+/* ─── Focus indicators ───────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #B794F4;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* ─── Base reset ───────────────────────────────────────────────────── */
@@ -221,6 +252,7 @@ video {
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
+  min-height: 44px;
 }
 
 .nav-link:hover {
@@ -292,6 +324,7 @@ video {
   align-items: center;
   gap: 0.2rem;
   transition: color 0.15s ease;
+  min-height: 44px;
 }
 
 .footer-link:hover {
@@ -611,6 +644,9 @@ video {
   line-height: 1;
   letter-spacing: 0.01em;
   transition: color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .cs-float-link:hover {
@@ -644,6 +680,9 @@ video {
   white-space: nowrap;
   transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .cs-toc-pill:hover {

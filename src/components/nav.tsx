@@ -39,6 +39,7 @@ export function Nav() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="nav-link"
+                    aria-label={`${label} (opens in new tab)`}
                   >
                     {label}
                     <span className="nav-link-arrow" aria-hidden>↗</span>
@@ -47,6 +48,7 @@ export function Nav() {
                   <Link
                     href={href}
                     className={`nav-link${isActive(href, pathname) ? " nav-link--active" : ""}`}
+                    aria-current={isActive(href, pathname) ? "page" : undefined}
                   >
                     {label}
                   </Link>

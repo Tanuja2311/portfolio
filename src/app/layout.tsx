@@ -1,3 +1,4 @@
+// WCAG 2.1 AA compliance applied 2026-05-25
 import type { Metadata } from "next";
 import { DM_Serif_Display, DM_Sans } from "next/font/google";
 import { cookies } from "next/headers";
@@ -78,10 +79,13 @@ export default async function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body style={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <Nav />
-        <PageTransition>
-          {children}
-        </PageTransition>
+        <div id="main-content" tabIndex={-1} style={{ outline: "none" }}>
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </div>
         <Footer />
       </body>
     </html>

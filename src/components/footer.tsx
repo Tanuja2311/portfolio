@@ -26,6 +26,7 @@ export function Footer() {
                     target={href.startsWith("mailto") ? undefined : "_blank"}
                     rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                     className="footer-link"
+                    aria-label={href.startsWith("mailto") ? label : `${label} (opens in new tab)`}
                   >
                     {label}
                     {!href.startsWith("mailto") && (

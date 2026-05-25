@@ -66,7 +66,7 @@ export function CsScrollLinks({ sections }: { sections: ScrollSection[] }) {
       {createPortal(
     <nav
       className={`cs-float-nav${visible ? " cs-float-nav--visible" : ""}`}
-      aria-label="Page sections"
+      aria-label="Table of contents"
       aria-hidden={!visible}
     >
       {sections.map(({ id, label }, i) => (

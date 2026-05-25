@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export interface CaseStudySummaryData {
   problem:  string;
@@ -17,22 +17,24 @@ const CELLS: { key: keyof CaseStudySummaryData; label: string }[] = [
 ];
 
 export function CaseStudySummary({ summary }: { summary: CaseStudySummaryData }) {
+  const reduced = useReducedMotion();
+
   return (
     <div className="cs-summary">
-      <div className="cs-summary-grid">
+      <dl className="cs-summary-grid">
         {CELLS.map(({ key, label }, i) => (
           <motion.div
             key={key}
             className="cs-summary-cell"
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: reduced ? 1 : 0, y: reduced ? 0 : 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 + i * 0.1 }}
+            transition={{ duration: reduced ? 0 : 0.5, ease: "easeOut", delay: reduced ? 0 : 0.2 + i * 0.1 }}
           >
-            <p className="cs-summary-label">{label}</p>
-            <p className="cs-summary-body">{summary[key]}</p>
+            <dt className="cs-summary-label">{label}</dt>
+            <dd className="cs-summary-body">{summary[key]}</dd>
           </motion.div>
         ))}
-      </div>
+      </dl>
 
       <div className="cs-summary-divider" aria-hidden />
 
