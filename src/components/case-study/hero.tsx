@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 export interface HeroStudy {
   hero?: string;
+  heroAlt?: string;
   coverColor: string;
   tags?: string[];
   title: string;
@@ -44,7 +45,7 @@ export function CaseStudyHero({ study }: { study: HeroStudy }) {
           >
             <Image
               src={study.hero!}
-              alt={study.title}
+              alt={study.heroAlt ?? study.title}
               fill
               priority
               sizes="100vw"

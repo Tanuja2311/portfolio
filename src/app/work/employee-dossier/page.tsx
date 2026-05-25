@@ -24,7 +24,8 @@ export default function EmployeeDossierPage() {
   return (
     <>
       <CaseStudyHero study={{
-        hero:       "",
+        hero:       IMG("hero.png"),
+        heroAlt:    "Redesigned Employee Dossier profile page showing employee header, timeline, and sidebar.",
         coverColor: "#0e1520",
         tags:       ["Product Design", "Enterprise B2B"],
         title:      "Employee Dossier",
@@ -93,8 +94,8 @@ export default function EmployeeDossierPage() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("before.jpg")}
-                alt="Legacy Employee Dossier interface"
+                src={IMG("before-state.png")}
+                alt="Original Employee Dossier interface with vertical tabs and cluttered navigation."
                 description="Legacy dossier - two-axis tab navigation, before state"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
@@ -218,8 +219,8 @@ export default function EmployeeDossierPage() {
           <ScrollReveal>
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
-                src={IMG("tabbed-exploration.jpg")}
-                alt="First design exploration - tabbed navigation"
+                src={IMG("tabbed-exploration.png")}
+                alt="First design exploration using horizontal tabs and left navigation."
                 description="First exploration - tabbed navigation direction, discarded"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
@@ -310,8 +311,8 @@ export default function EmployeeDossierPage() {
               </p>
               <div className="cs-feature-img-wrap">
                 <CaseImage
-                  src={IMG("profile-header.jpg")}
-                  alt="Profile header component"
+                  src={IMG("profile-header.png")}
+                  alt="Profile header with employee photo, designation, performance rating, QR code, and organizational context."
                   description="Profile header - persistent summary with identity, org context, and QR code"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
@@ -353,8 +354,8 @@ export default function EmployeeDossierPage() {
               </p>
               <div className="cs-feature-img-wrap">
                 <CaseImage
-                  src={IMG("edit-interaction.jpg")}
-                  alt="Per-section edit interaction"
+                  src={IMG("edit-interaction.png")}
+                  alt="Personal Details section with pencil icon for per-section editing."
                   description="Per-section editing - pencil icon triggers side drawer with snackbar on save"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
@@ -403,8 +404,8 @@ export default function EmployeeDossierPage() {
               </p>
               <div className="cs-feature-img-wrap">
                 <CaseImage
-                  src={IMG("bilingual.jpg")}
-                  alt="Bilingual field display"
+                  src={IMG("bilingual-display.png")}
+                  alt="Personal Details fields displayed in both English and Hindi with vertical stacking."
                   description="Bilingual labels - English and regional language stacked vertically per field"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
@@ -449,6 +450,16 @@ export default function EmployeeDossierPage() {
                 visible while scrolling through employment history or
                 qualifications.
               </p>
+              <div className="cs-feature-img-wrap">
+                <CaseImage
+                  src={IMG("sidebar.png")}
+                  alt="Right sidebar showing skills, career highlights, and language proficiency."
+                  description="Right sidebar - persistent skills, career highlights, and language proficiency"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 72rem"
+                  className="cs-hero-img"
+                />
+              </div>
             </div>
           </ScrollReveal>
 
@@ -471,6 +482,16 @@ export default function EmployeeDossierPage() {
                 from four tabs to fifteen without breaking the navigation
                 pattern.
               </p>
+              <div className="cs-feature-img-wrap">
+                <CaseImage
+                  src={IMG("bank-family.png")}
+                  alt="Bank Details with account type badges and Family Members section with card-based layout."
+                  description="Bank Details and Family Members - configurable section examples with badges and cards"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 72rem"
+                  className="cs-hero-img"
+                />
+              </div>
             </div>
           </ScrollReveal>
         </section>
