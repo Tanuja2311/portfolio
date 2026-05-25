@@ -2262,71 +2262,62 @@ video {
   color: var(--text-secondary);
 }
 
-/* Tools grid */
-.about-tools-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-}
-
-@media (max-width: 500px) {
-  .about-tools-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.about-tool-group {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-}
-
-.about-tool-category {
-  display: block;
+/* Personal section */
+.about-personal-title {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--text-faint);
-  margin-bottom: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.875rem;
 }
 
-.about-tool-items {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
+.about-personal-blurb {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text);
+  max-width: 56ch;
+  margin-bottom: 1.5rem;
 }
 
-.about-tool-item {
-  display: flex;
-  align-items: center;
+.about-personal-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 0.75rem;
 }
 
-.about-tool-icon {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.4rem;
-  background: color-mix(in srgb, var(--accent) 10%, var(--bg) 90%);
-  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border) 80%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 0.6rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: -0.02em;
-  flex-shrink: 0;
+/* 3+2 layout: top row 3 equal photos, bottom row 2 wider photos */
+.about-personal-photo-wrap:nth-child(1),
+.about-personal-photo-wrap:nth-child(2),
+.about-personal-photo-wrap:nth-child(3) {
+  grid-column: span 2;
+  aspect-ratio: 4 / 3;
 }
 
-.about-tool-name {
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text);
+.about-personal-photo-wrap:nth-child(4),
+.about-personal-photo-wrap:nth-child(5) {
+  grid-column: span 3;
+  aspect-ratio: 3 / 2;
+}
+
+.about-personal-photo-wrap {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  .about-personal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-personal-photo-wrap:nth-child(n) {
+    grid-column: span 1;
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* Contact section */

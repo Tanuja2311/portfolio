@@ -24,66 +24,20 @@ const EXPERIENCE = [
     role: "Product Designer",
     duration: "Mar 2025 – Present",
     description:
-      "Mentoring designers, managing client stakeholders, and leading continuous improvement of the Triibe website. Currently leading design and requirements for the annual Wren Gala project for American Friends of St James.",
-    href: null,
+      "Mentoring designers, managing client stakeholders, and leading design for the annual Wren Gala project for American Friends of St James.",
+    href: "/built-with-ai/wren-gala",
   },
   {
     company: "ZingHR",
     role: "UX Designer",
     duration: "Jan 2020 – Aug 2023",
     description:
-      "Redesigned the recognition and performance modules used by HR teams across 200+ enterprise clients.",
+      "Sole designer on the Rewards & Recognition module and Employee Dossier, serving 200+ enterprise clients. Built the component library and design system for the HR platform.",
     href: "/work/rewards-and-recognition",
   },
 ];
 
-const TOOLS = [
-  {
-    category: "Design",
-    items: [
-      { name: "Figma",   icon: "figma"   },
-      { name: "Framer",  icon: "framer"  },
-      { name: "Miro",    icon: "miro"    },
-    ],
-  },
-  {
-    category: "Development",
-    items: [
-      { name: "VS Code",  icon: "vscode"  },
-      { name: "React",    icon: "react"   },
-      { name: "Tailwind", icon: "tailwind"},
-    ],
-  },
-  {
-    category: "AI",
-    items: [
-      { name: "Claude",   icon: "claude"  },
-      { name: "Lovable",  icon: "lovable" },
-    ],
-  },
-  {
-    category: "Collaboration",
-    items: [
-      { name: "Notion",   icon: "notion"  },
-      { name: "Linear",   icon: "linear"  },
-      { name: "Slack",    icon: "slack"   },
-    ],
-  },
-];
-
-const TOOL_ICONS: Record<string, string> = {
-  figma:    "F",
-  framer:   "Fr",
-  miro:     "Mi",
-  vscode:   "</>",
-  react:    "Re",
-  tailwind: "Tw",
-  claude:   "Cl",
-  lovable:  "Lv",
-  notion:   "No",
-  linear:   "Li",
-  slack:    "Sk",
-};
+const PERSONAL_PHOTOS = [1, 2, 3, 4, 5] as const;
 
 export default function AboutPage() {
   return (
@@ -109,17 +63,19 @@ export default function AboutPage() {
             <h1 className="about-name">Tanuja Bodas</h1>
             <p className="about-bio-text">
               I&apos;m a product designer who&apos;s spent the last few years
-              making enterprise software feel less like enterprise software. I
-              care about the moment a user stops thinking about the tool and
-              just does their work - that invisible threshold is where good
-              design lives.
+              making enterprise software feel less like enterprise software. At
+              ZingHR, I found an admin running a 500-person recognition system
+              out of a phone calendar and a diary. I turned that into a
+              structured platform that scaled across regions, roles, and award
+              types. That&apos;s the kind of problem I gravitate toward: messy
+              operational reality that needs a system, not just a screen.
             </p>
             <p className="about-bio-text">
-              I work best at the intersection of research, systems thinking,
-              and craft. I&apos;ve designed end-to-end for HR platforms,
-              built consumer mobile apps from scratch, and shipped websites
-              entirely with AI tooling. Currently open to remote roles where
-              the problems are genuinely hard.
+              I work at the intersection of research, systems thinking, and
+              craft. I&apos;ve designed enterprise HR modules used by 200+
+              companies, built consumer mobile apps from scratch, and shipped
+              websites entirely with AI tooling. I hold an MS in User Experience
+              and Interaction Design from Thomas Jefferson University.
             </p>
             <div className="about-contact-inline">
               <a
@@ -156,21 +112,15 @@ export default function AboutPage() {
                 <div className="about-timeline-content">
                   <div className="about-timeline-header">
                     <div className="about-timeline-left">
-                      {entry.href ? (
-                        <Link
-                          href={entry.href}
-                          className="about-timeline-company"
-                        >
-                          {entry.company}
-                          <span className="about-timeline-arrow" aria-hidden>
-                            ↗
-                          </span>
-                        </Link>
-                      ) : (
-                        <span className="about-timeline-company about-timeline-company--plain">
-                          {entry.company}
+                      <Link
+                        href={entry.href}
+                        className="about-timeline-company"
+                      >
+                        {entry.company}
+                        <span className="about-timeline-arrow" aria-hidden>
+                          ↗
                         </span>
-                      )}
+                      </Link>
                       <span className="about-timeline-role">{entry.role}</span>
                     </div>
                     <span className="about-timeline-duration">
@@ -185,31 +135,34 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Skills & Tools ──────────────────────────────────────────── */}
-      <section className="about-section">
+      {/* ── Personal ────────────────────────────────────────────────── */}
+      <section className="about-section about-personal">
         <Reveal>
-          <h2 className="about-section-title">Skills &amp; Tools</h2>
+          <h2 className="about-personal-title">Beyond work</h2>
         </Reveal>
-
-        <div className="about-tools-grid">
-          {TOOLS.map((group, gi) => (
-            <Reveal key={group.category} delay={gi * 60}>
-              <div className="about-tool-group">
-                <span className="about-tool-category">{group.category}</span>
-                <div className="about-tool-items">
-                  {group.items.map((tool) => (
-                    <div key={tool.name} className="about-tool-item">
-                      <div className="about-tool-icon" aria-hidden>
-                        {TOOL_ICONS[tool.icon] ?? tool.name.slice(0, 2)}
-                      </div>
-                      <span className="about-tool-name">{tool.name}</span>
-                    </div>
-                  ))}
-                </div>
+        <Reveal delay={40}>
+          <p className="about-personal-blurb">
+            When I&apos;m not designing, I&apos;m probably planning my next
+            trip, watching an F1 race with way too much emotional investment,
+            or hiking somewhere with a good view and bad cell service.
+          </p>
+        </Reveal>
+        <Reveal delay={80}>
+          <div className="about-personal-grid">
+            {PERSONAL_PHOTOS.map((n) => (
+              <div key={n} className="about-personal-photo-wrap">
+                <CaseImage
+                  src={`/images/about/personal-${n}.jpg`}
+                  alt={`Personal photo ${n}`}
+                  description="Photo coming soon"
+                  fill
+                  noCurtain
+                  sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 25vw"
+                />
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
