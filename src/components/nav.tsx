@@ -23,9 +23,12 @@ export function Nav() {
   return (
     <nav className="nav" aria-label="Main navigation">
       <div className="nav-inner">
-        {/* Name / home link */}
+        {/* Logo: TB monogram + name */}
         <Link href="/" className="nav-name">
-          Tanuja Bodas
+          <span className="nav-logo" aria-hidden="true">
+            <span className="nav-logo-t">T</span><span className="nav-logo-b">B</span>
+          </span>
+          <span className="nav-logo-wordmark">Tanuja Bodas</span>
         </Link>
 
         {/* Right side: page links + theme toggle */}
