@@ -48,7 +48,7 @@ export default function AboutPage() {
         <StaggerItem>
           <div className="about-photo-wrap">
             <CaseImage
-              src="/images/about/portrait.jpg"
+              src="/images/about/portrait.jpeg"
               alt="Photo of Tanuja Bodas"
               description="Professional portrait of Tanuja Bodas"
               fill
