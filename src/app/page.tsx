@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { FEATURED_PROJECTS, OTHER_PROJECTS } from "@/lib/projects";
-import { FeaturedCard } from "@/components/home/featured-card";
-import { WorkCard }     from "@/components/home/work-card";
-import { Reveal }       from "@/components/case-study/reveal";
-import { StaggerContainer, StaggerItem } from "@/components/stagger";
+import { FeaturedCard }  from "@/components/home/featured-card";
+import { WorkCard }      from "@/components/home/work-card";
+import { HeroSection }   from "@/components/home/hero-section";
+import { Reveal }        from "@/components/case-study/reveal";
 
 export const metadata: Metadata = {
   title: { absolute: "Tanuja Bodas | Senior Product Designer" },
@@ -69,28 +69,7 @@ export default function HomePage() {
       />
       <main className="home">
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="hero" aria-label="Introduction">
-        <StaggerContainer className="hero-inner">
-          <StaggerItem>
-            <div className="badge-available" aria-label="Availability status">
-              <span className="badge-dot" aria-hidden />
-              Available for work
-            </div>
-          </StaggerItem>
-          <StaggerItem>
-            <h1 className="hero-name">Tanuja Bodas</h1>
-          </StaggerItem>
-          <StaggerItem>
-            <p className="hero-role">Senior Product Designer</p>
-          </StaggerItem>
-          <StaggerItem>
-            <p className="hero-bio">
-              I turn complex enterprise problems into intuitive workflows
-              that people actually want to use.
-            </p>
-          </StaggerItem>
-        </StaggerContainer>
-      </section>
+      <HeroSection />
 
       {/* ── Featured Work ─────────────────────────────────────── */}
       <section className="home-section" aria-labelledby="featured-label">

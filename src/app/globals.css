@@ -35,6 +35,15 @@
   --cs-summary-divider:     rgba(255, 255, 255, 0.06);
   --diag-box-fill:          rgba(255, 255, 255, 0.05);
   --diag-box-stroke:        rgba(255, 255, 255, 0.15);
+
+  --hero-title-color:   rgba(240, 236, 228, 0.40);
+  --hero-tagline-color: rgba(240, 236, 228, 0.55);
+  --hero-card-bg:       rgba(255, 255, 255, 0.03);
+  --hero-card-border:   rgba(255, 255, 255, 0.07);
+  --hero-stats-border:  rgba(255, 255, 255, 0.06);
+  --hero-stat-label:    rgba(240, 236, 228, 0.28);
+  --hero-card-name:     rgba(240, 236, 228, 0.85);
+  --hero-card-desc:     rgba(240, 236, 228, 0.30);
 }
 
 /* ─── Light theme ──────────────────────────────────────────────────── */
@@ -71,6 +80,15 @@
   --cs-summary-divider:     rgba(0, 0, 0, 0.06);
   --diag-box-fill:          rgba(0, 0, 0, 0.04);
   --diag-box-stroke:        rgba(0, 0, 0, 0.13);
+
+  --hero-title-color:   rgba(26, 26, 24, 0.45);
+  --hero-tagline-color: rgba(26, 26, 24, 0.60);
+  --hero-card-bg:       rgba(0, 0, 0, 0.03);
+  --hero-card-border:   rgba(0, 0, 0, 0.08);
+  --hero-stats-border:  rgba(0, 0, 0, 0.08);
+  --hero-stat-label:    rgba(26, 26, 24, 0.40);
+  --hero-card-name:     rgba(26, 26, 24, 0.85);
+  --hero-card-desc:     rgba(26, 26, 24, 0.40);
 }
 
 /* ─── Layout tokens ────────────────────────────────────────────────── */
@@ -982,20 +1000,226 @@ video {
   color: var(--text-muted);
 }
 
-/* ─── Homepage: Hero ───────────────────────────────────────────────── */
-.hero {
-  padding: clamp(5rem, 14vh, 10rem) var(--gutter) clamp(4rem, 10vh, 8rem);
+/* ─── Homepage: Hero v2 ─────────────────────────────────────────────── */
+.hero-v2 {
+  position: relative;
+  padding: 120px var(--gutter) 0;
+  overflow: visible;
 }
 
-.hero-inner {
+.hero-v2-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
 }
 
-/* Available for work badge - reusable, also used in footer */
+.hero-v2-glow {
+  position: absolute;
+  top: -60px;
+  right: 30%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(183, 148, 244, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-v2-main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 60px;
+}
+
+.hero-v2-left {
+  flex: 1;
+}
+
+/* Badge */
+.hero-v2-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.08);
+  border: 0.5px solid rgba(74, 222, 128, 0.15);
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 32px;
+}
+
+@keyframes hero-dot-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.hero-v2-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: hero-dot-pulse 2s ease-in-out infinite;
+}
+
+/* Name */
+.hero-v2-name {
+  font-family: var(--font-instrument);
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 6px;
+}
+
+/* Title */
+.hero-v2-title {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--hero-title-color);
+  letter-spacing: 0.02em;
+  margin-bottom: 28px;
+}
+
+/* Tagline */
+.hero-v2-tagline {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--hero-tagline-color);
+  line-height: 1.65;
+  max-width: 400px;
+  margin-bottom: 36px;
+}
+
+/* Contact links */
+.hero-v2-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-v2-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: #B794F4;
+  padding: 8px 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.hero-v2-link:hover {
+  color: #d4bfff;
+}
+
+/* Right column */
+.hero-v2-right {
+  position: relative;
+  width: 320px;
+  height: 340px;
+  flex-shrink: 0;
+}
+
+/* Floating cards */
+.hero-v2-card {
+  position: relative;
+  width: 240px;
+  background: var(--hero-card-bg);
+  border: 0.5px solid var(--hero-card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-v2-card:hover {
+  border-color: rgba(183, 148, 244, 0.25);
+}
+
+.hero-v2-card-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  color: #B794F4;
+  background: rgba(10, 10, 10, 0.7);
+  padding: 3px 8px;
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-v2-card-body {
+  padding: 14px 16px;
+}
+
+.hero-v2-card-name {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--hero-card-name);
+  margin-bottom: 3px;
+}
+
+.hero-v2-card-desc {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--hero-card-desc);
+}
+
+/* Stats strip */
+.hero-v2-stats {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 0.5px solid var(--hero-stats-border);
+}
+
+.hero-v2-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 22px 32px;
+  border-right: 0.5px solid var(--hero-stats-border);
+}
+
+.hero-v2-stat:last-child {
+  border-right: none;
+}
+
+.hero-v2-stat-value {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.hero-v2-stat:hover .hero-v2-stat-value {
+  color: #B794F4;
+}
+
+.hero-v2-stat-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--hero-stat-label);
+}
+
+/* Available for work badge (reusable - also in footer) */
 .badge-available {
   display: inline-flex;
   align-items: center;
@@ -1009,7 +1233,6 @@ video {
   padding: 0.3rem 0.75rem;
   border-radius: 100px;
   width: fit-content;
-  margin-bottom: 2rem;
 }
 
 .badge-dot {
@@ -1022,30 +1245,38 @@ video {
   animation: pulse 2.5s ease-in-out infinite;
 }
 
-.hero-name {
-  font-family: var(--font-serif);
-  font-size: clamp(3.25rem, 7vw, 6.5rem);
-  font-weight: 400;
-  line-height: 1.0;
-  color: var(--text);
-  letter-spacing: -0.01em;
-  margin-bottom: 0.75rem;
-}
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-v2 {
+    padding-top: 100px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 
-.hero-role {
-  font-family: var(--font-sans);
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  font-weight: 400;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-}
+  .hero-v2-main {
+    flex-direction: column;
+    padding-bottom: 40px;
+  }
 
-.hero-bio {
-  font-family: var(--font-sans);
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
-  line-height: 1.7;
-  color: var(--text-muted);
-  max-width: 52ch;
+  .hero-v2-right {
+    display: none;
+  }
+
+  .hero-v2-name {
+    font-size: 40px;
+  }
+
+  .hero-v2-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-v2-stat {
+    padding: 16px 20px;
+  }
+
+  .hero-v2-stat:nth-child(2) {
+    border-right: none;
+  }
 }
 
 /* ─── Homepage: Section wrapper ────────────────────────────────────── */

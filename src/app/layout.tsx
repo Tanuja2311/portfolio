@@ -1,6 +1,6 @@
 // WCAG 2.1 AA compliance applied 2026-05-25
 import type { Metadata } from "next";
-import { DM_Serif_Display, DM_Sans } from "next/font/google";
+import { DM_Serif_Display, DM_Sans, Instrument_Serif } from "next/font/google";
 import { cookies } from "next/headers";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -18,6 +18,13 @@ const dmSans = DM_Sans({
   weight:   ["400", "500"],
   subsets:  ["latin"],
   variable: "--font-sans",
+  display:  "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  weight:   "400",
+  subsets:  ["latin"],
+  variable: "--font-instrument",
   display:  "swap",
 });
 
@@ -72,7 +79,7 @@ export default async function RootLayout({
     <html
       lang="en"
       data-theme={theme}
-      className={`${dmSerif.variable} ${dmSans.variable}`}
+      className={`${dmSerif.variable} ${dmSans.variable} ${instrumentSerif.variable}`}
       suppressHydrationWarning
     >
       <head>
