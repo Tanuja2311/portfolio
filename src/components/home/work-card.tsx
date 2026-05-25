@@ -5,15 +5,23 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Project } from "@/lib/projects";
 
+const COMING_SOON_BADGE: React.CSSProperties = {
+  position:      "absolute",
+  top:           "12px",
+  right:         "12px",
+  background:    "rgba(183,148,244,0.15)",
+  color:         "#B794F4",
+  fontSize:      "12px",
+  padding:       "4px 12px",
+  borderRadius:  "20px",
+  pointerEvents: "none",
+};
+
 export function WorkCard({ project }: { project: Project }) {
   const [imgLoaded, setImgLoaded] = useState(false);
 
-  return (
-    <Link
-      href={project.href}
-      className="work-card"
-      aria-label={`${project.title} - case study`}
-    >
+  const content = (
+    <>
       <div
         className="work-card-media"
         style={{ background: project.coverColor }}
@@ -26,6 +34,9 @@ export function WorkCard({ project }: { project: Project }) {
           className={`work-card-img img-fade${imgLoaded ? " img-loaded" : ""}`}
           onLoad={() => setImgLoaded(true)}
         />
+        {project.comingSoon && (
+          <span style={COMING_SOON_BADGE}>Coming Soon</span>
+        )}
       </div>
 
       <div className="work-card-info">
@@ -38,6 +49,27 @@ export function WorkCard({ project }: { project: Project }) {
           ))}
         </div>
       </div>
+    </>
+  );
+
+  if (project.comingSoon) {
+    return (
+      <div
+        className="work-card work-card--coming-soon"
+        aria-label={`${project.title} - coming soon`}
+      >
+        {content}
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={project.href}
+      className="work-card"
+      aria-label={`${project.title} - case study`}
+    >
+      {content}
     </Link>
   );
 }

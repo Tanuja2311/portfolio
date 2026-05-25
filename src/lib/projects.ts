@@ -10,6 +10,7 @@ export interface Project {
   role?: string;
   hidden?: boolean;
   homepageHidden?: boolean;
+  comingSoon?: boolean;
 }
 
 export const FEATURED_PROJECTS: Project[] = [
@@ -50,26 +51,15 @@ export const AI_PROJECTS: Project[] = [
 
 export const OTHER_PROJECTS: Project[] = [
   {
-    slug:       "urbanpark",
-    title:      "UrbanPark",
-    thumbnail:  "/images/urbanpark/hero.jpg",
-    coverColor: "#0d1a0f",
-    stat:       "End-to-end C2C platform with a 12-component design system.",
-    tags:       ["UX Design", "Mobile", "Design System"],
-    href:       "/work/urbanpark",
-    role:       "Product Designer",
-    homepageHidden: true,
-  },
-  {
-    slug:       "employee-dossier",
-    title:      "Employee Dossier",
+    slug:         "employee-dossier",
+    title:        "Employee Dossier",
     thumbnail:    "/images/employee-dossier/hero.png",
     thumbnailAlt: "Employee Dossier — project thumbnail",
-    coverColor: "#0e1520",
-    stat:       "Redesigned ZingHR's centralized employee record into a single, scannable page.",
-    tags:       ["Product Design", "Enterprise"],
-    href:       "/work/employee-dossier",
-    role:       "UX Designer",
+    coverColor:   "#0e1520",
+    stat:         "Redesigned ZingHR's centralized employee record into a single, scannable page.",
+    tags:         ["Product Design", "Enterprise"],
+    href:         "/work/employee-dossier",
+    role:         "UX Designer",
   },
   {
     slug:       "wren-gala",
@@ -82,6 +72,17 @@ export const OTHER_PROJECTS: Project[] = [
     role:       "Lead Designer & Developer",
   },
   {
+    slug:       "urbanpark",
+    title:      "UrbanPark",
+    thumbnail:  "/images/urbanpark/hero.jpg",
+    coverColor: "#0d1a0f",
+    stat:       "End-to-end C2C platform with a 12-component design system.",
+    tags:       ["UX Design", "Mobile", "Design System"],
+    href:       "/work/urbanpark",
+    role:       "Product Designer",
+    comingSoon: true,
+  },
+  {
     slug:       "genai-pharmacy",
     title:      "GenAI in Pharmacy Research",
     thumbnail:  "/images/genai-pharmacy/hero.jpg",
@@ -90,7 +91,7 @@ export const OTHER_PROJECTS: Project[] = [
     tags:       ["UX Research", "AI in Education"],
     href:       "/work/genai-pharmacy-research",
     role:       "UX Researcher",
-    homepageHidden: true,
+    comingSoon: true,
   },
   {
     slug:       "google-drive-emerging",

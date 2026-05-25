@@ -2350,6 +2350,16 @@ video {
   pointer-events: none;
 }
 
+.work-card--coming-soon {
+  opacity: 0.7;
+  cursor: default;
+}
+.work-card--coming-soon:hover {
+  transform: none;
+  border-color: var(--border);
+  background: var(--bg-elevated);
+}
+
 /* ─── Case study: live site link ────────────────────────────────────── */
 .cs-live-link {
   display: inline-flex;
