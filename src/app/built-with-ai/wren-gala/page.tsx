@@ -13,9 +13,17 @@ const SECTIONS = [
 ];
 
 export const metadata: Metadata = {
-  title: "The Wren Gala - Tanuja Bodas",
-  description:
-    "Designing and shipping a luxury charity event website in under a week, with zero hand-written code.",
+  title:       "The Wren Gala",
+  description: "Wren Gala case study by Tanuja Bodas. A luxury charity gala website designed and shipped in 5 days using AI-assisted development.",
+  alternates:  { canonical: "/built-with-ai/wren-gala" },
+  openGraph: {
+    type:        "article",
+    url:         "/built-with-ai/wren-gala",
+    description: "Wren Gala case study by Tanuja Bodas. A luxury charity gala website designed and shipped in 5 days using AI-assisted development.",
+  },
+  twitter: {
+    description: "Wren Gala case study by Tanuja Bodas. A luxury charity gala website designed and shipped in 5 days using AI-assisted development.",
+  },
 };
 
 const IMG = (name: string) => `/images/wren-gala/${name}`;

@@ -14,9 +14,17 @@ const SECTIONS = [
 ];
 
 export const metadata: Metadata = {
-  title: "MyRCloud",
-  description:
-    "Designing a recruitment marketplace from scratch, replacing a Google Sheets operation with a multi-sided platform serving 100+ clients and 600+ recruiting partners.",
+  title:       "MyRCloud",
+  description: "MyRCloud case study by Tanuja Bodas. Designing a multi-sided recruitment marketplace from Google Sheets to a live platform with 600+ partners.",
+  alternates:  { canonical: "/work/myrcloud" },
+  openGraph: {
+    type:        "article",
+    url:         "/work/myrcloud",
+    description: "MyRCloud case study by Tanuja Bodas. Designing a multi-sided recruitment marketplace from Google Sheets to a live platform with 600+ partners.",
+  },
+  twitter: {
+    description: "MyRCloud case study by Tanuja Bodas. Designing a multi-sided recruitment marketplace from Google Sheets to a live platform with 600+ partners.",
+  },
 };
 
 const IMG = (name: string) => `/images/myrcloud/${name}`;

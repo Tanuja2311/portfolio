@@ -17,9 +17,17 @@ const SECTIONS = [
 ];
 
 export const metadata: Metadata = {
-  title: "Rewards & Recognition",
-  description:
-    "Building a scalable award management system for enterprise HR teams at ZingHR.",
+  title:       "Rewards & Recognition",
+  description: "Rewards & Recognition case study by Tanuja Bodas. Designing a scalable award management system for enterprise HR teams.",
+  alternates:  { canonical: "/work/rewards-and-recognition" },
+  openGraph: {
+    type:        "article",
+    url:         "/work/rewards-and-recognition",
+    description: "Rewards & Recognition case study by Tanuja Bodas. Designing a scalable award management system for enterprise HR teams.",
+  },
+  twitter: {
+    description: "Rewards & Recognition case study by Tanuja Bodas. Designing a scalable award management system for enterprise HR teams.",
+  },
 };
 
 export default function RRCaseStudy() {

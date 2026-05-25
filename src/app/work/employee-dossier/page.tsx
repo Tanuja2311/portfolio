@@ -13,9 +13,17 @@ const SECTIONS = [
 ];
 
 export const metadata: Metadata = {
-  title: "Employee Dossier",
-  description:
-    "Redesigning ZingHR's centralized employee record into a single, scannable page.",
+  title:       "Employee Dossier",
+  description: "Employee Dossier case study by Tanuja Bodas. Redesigning ZingHR's centralized employee record for faster access and clearer navigation.",
+  alternates:  { canonical: "/work/employee-dossier" },
+  openGraph: {
+    type:        "article",
+    url:         "/work/employee-dossier",
+    description: "Employee Dossier case study by Tanuja Bodas. Redesigning ZingHR's centralized employee record for faster access and clearer navigation.",
+  },
+  twitter: {
+    description: "Employee Dossier case study by Tanuja Bodas. Redesigning ZingHR's centralized employee record for faster access and clearer navigation.",
+  },
 };
 
 const IMG = (name: string) => `/images/employee-dossier/${name}`;

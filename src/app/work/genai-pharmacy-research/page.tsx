@@ -12,9 +12,17 @@ const SECTIONS = [
 ];
 
 export const metadata: Metadata = {
-  title: "GenAI in Pharmacy Research - Tanuja Bodas",
-  description:
-    "Investigating why pharmacy students hesitate to use generative AI for academic research, and what it would take to change that.",
+  title:       "GenAI in Pharmacy Research",
+  description: "GenAI in Pharmacy Research case study by Tanuja Bodas. Investigating pharmacy students' hesitation to use GenAI chatbots for academic research.",
+  alternates:  { canonical: "/work/genai-pharmacy-research" },
+  openGraph: {
+    type:        "article",
+    url:         "/work/genai-pharmacy-research",
+    description: "GenAI in Pharmacy Research case study by Tanuja Bodas. Investigating pharmacy students' hesitation to use GenAI chatbots for academic research.",
+  },
+  twitter: {
+    description: "GenAI in Pharmacy Research case study by Tanuja Bodas. Investigating pharmacy students' hesitation to use GenAI chatbots for academic research.",
+  },
 };
 
 const IMG = (name: string) => `/images/genai-pharmacy/${name}`;

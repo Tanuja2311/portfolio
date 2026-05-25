@@ -5,8 +5,17 @@ import { CaseImage } from "@/components/case-study/case-image";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export const metadata: Metadata = {
-  title: "UrbanPark",
-  description: "A peer-to-peer marketplace for unused driveways.",
+  title:       "UrbanPark",
+  description: "UrbanPark case study by Tanuja Bodas. A C2C platform where homeowners rent driveways to drivers, including a dedicated design system.",
+  alternates:  { canonical: "/work/urbanpark" },
+  openGraph: {
+    type:        "article",
+    url:         "/work/urbanpark",
+    description: "UrbanPark case study by Tanuja Bodas. A C2C platform where homeowners rent driveways to drivers, including a dedicated design system.",
+  },
+  twitter: {
+    description: "UrbanPark case study by Tanuja Bodas. A C2C platform where homeowners rent driveways to drivers, including a dedicated design system.",
+  },
 };
 
 const IMG = (name: string) => `/images/urbanpark/${name}`;

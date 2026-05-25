@@ -6,14 +6,68 @@ import { Reveal }       from "@/components/case-study/reveal";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export const metadata: Metadata = {
-  title: "Tanuja Bodas - Senior Product Designer",
+  title: { absolute: "Tanuja Bodas | Senior Product Designer" },
   description:
-    "I turn complex enterprise problems into intuitive workflows that people actually want to use.",
+    "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, and more.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type:        "website",
+    url:         "/",
+    description: "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, and more.",
+  },
+  twitter: {
+    description: "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design.",
+  },
+};
+
+const SITE = "https://portfolio-olive-ten-27.vercel.app";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Tanuja Bodas",
+    "jobTitle": "Senior Product Designer",
+    "url": SITE,
+    "sameAs": ["https://www.linkedin.com/in/tanujabodas23/"],
+    "hasPart": [
+      {
+        "@type": "CreativeWork",
+        "name": "MyRCloud",
+        "url": `${SITE}/work/myrcloud`,
+        "description": "Designing a recruitment marketplace from scratch, replacing a Google Sheets operation with a multi-sided platform serving 100+ clients and 600+ recruiting partners.",
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Rewards & Recognition",
+        "url": `${SITE}/work/rewards-and-recognition`,
+        "description": "Designing a culture of visibility for enterprise teams where employee contributions were going unnoticed.",
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Employee Dossier",
+        "url": `${SITE}/work/employee-dossier`,
+        "description": "Redesigning ZingHR's centralized employee record into a single, scannable page.",
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "The Wren Gala",
+        "url": `${SITE}/built-with-ai/wren-gala`,
+        "description": "A luxury charity gala website for a historic London church, designed and shipped in under a week using AI-assisted development.",
+      },
+    ],
+  },
 };
 
 export default function HomePage() {
   return (
-    <main className="home">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="home">
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="hero" aria-label="Introduction">
         <StaggerContainer className="hero-inner">
@@ -76,5 +130,6 @@ export default function HomePage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

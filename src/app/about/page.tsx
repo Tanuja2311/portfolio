@@ -5,9 +5,17 @@ import { CaseImage } from "@/components/case-study/case-image";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export const metadata: Metadata = {
-  title: "About - Tanuja Bodas",
-  description:
-    "Senior Product Designer making enterprise software feel less like enterprise software.",
+  title:       "About",
+  description: "About Tanuja Bodas. Senior product designer with 3.5 years at ZingHR, specializing in enterprise B2B design and design systems. Based in Philadelphia.",
+  alternates:  { canonical: "/about" },
+  openGraph: {
+    type:        "website",
+    url:         "/about",
+    description: "About Tanuja Bodas. Senior product designer with 3.5 years at ZingHR, specializing in enterprise B2B design and design systems. Based in Philadelphia.",
+  },
+  twitter: {
+    description: "About Tanuja Bodas. Senior product designer with 3.5 years at ZingHR, specializing in enterprise B2B design and design systems. Based in Philadelphia.",
+  },
 };
 
 const EXPERIENCE = [

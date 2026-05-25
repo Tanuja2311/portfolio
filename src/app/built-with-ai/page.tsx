@@ -5,9 +5,17 @@ import { Reveal }      from "@/components/case-study/reveal";
 import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export const metadata: Metadata = {
-  title: "Built with AI - Tanuja Bodas",
-  description:
-    "Projects designed and shipped end-to-end using AI-assisted workflows.",
+  title:       "Built with AI",
+  description: "Projects built with AI tools by Tanuja Bodas. Exploring AI-assisted design and development workflows.",
+  alternates:  { canonical: "/built-with-ai" },
+  openGraph: {
+    type:        "website",
+    url:         "/built-with-ai",
+    description: "Projects built with AI tools by Tanuja Bodas. Exploring AI-assisted design and development workflows.",
+  },
+  twitter: {
+    description: "Projects built with AI tools by Tanuja Bodas. Exploring AI-assisted design and development workflows.",
+  },
 };
 
 export default function BuiltWithAIPage() {

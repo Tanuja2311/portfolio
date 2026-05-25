@@ -1,16 +1,49 @@
 import type { Metadata } from "next";
+import { DM_Serif_Display, DM_Sans } from "next/font/google";
 import { cookies } from "next/headers";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { PageTransition } from "@/components/page-transition";
 import "./globals.css";
 
+const dmSerif = DM_Serif_Display({
+  weight:   "400",
+  subsets:  ["latin"],
+  variable: "--font-serif",
+  display:  "swap",
+});
+
+const dmSans = DM_Sans({
+  weight:   ["400", "500"],
+  subsets:  ["latin"],
+  variable: "--font-sans",
+  display:  "swap",
+});
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-olive-ten-27.vercel.app"),
   title: {
-    template: "%s - Portfolio",
-    default: "Portfolio",
+    template: "%s | Tanuja Bodas",
+    default:  "Tanuja Bodas | Senior Product Designer",
   },
-  description: "Designer and developer building thoughtful digital experiences.",
+  description:
+    "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, and more.",
+  openGraph: {
+    siteName: "Tanuja Bodas",
+    type:     "website",
+    locale:   "en_US",
+    images: [
+      {
+        url:    "/images/og-default.png",
+        width:  1200,
+        height: 630,
+        alt:    "Tanuja Bodas – Senior Product Designer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 // Runs synchronously before first paint - prevents flash of wrong theme.
@@ -35,7 +68,12 @@ export default async function RootLayout({
   const theme = (cookieStore.get("theme")?.value ?? "dark") as "dark" | "light";
 
   return (
-    <html lang="en" data-theme={theme} suppressHydrationWarning>
+    <html
+      lang="en"
+      data-theme={theme}
+      className={`${dmSerif.variable} ${dmSans.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
