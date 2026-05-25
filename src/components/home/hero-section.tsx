@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Mail, FileText } from "lucide-react";
 
@@ -21,7 +22,7 @@ const CARDS = [
     tag: "Enterprise",
     desc: "Recruitment marketplace",
     href: "/work/myrcloud",
-    gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 55%, #0f3460 100%)",
+    image: "/images/hero-myrcloud.png",
     pos: { top: 0, left: 0 },
     rotate: -4,
     zIndex: 3,
@@ -33,7 +34,7 @@ const CARDS = [
     tag: "B2B SaaS",
     desc: "HR award management",
     href: "/work/rewards-and-recognition",
-    gradient: "linear-gradient(135deg, #1a0a2e 0%, #2d1b69 55%, #11998e 100%)",
+    image: "/images/hero-rnr.png",
     pos: { top: 50, right: -10 },
     rotate: 2.5,
     zIndex: 4,
@@ -45,7 +46,7 @@ const CARDS = [
     tag: "Redesign",
     desc: "Employee record page",
     href: "/work/employee-dossier",
-    gradient: "linear-gradient(135deg, #0a1628 0%, #1e3a5f 55%, #2a5298 100%)",
+    image: "/images/hero-dossier.png",
     pos: { bottom: 0, left: 20 },
     rotate: 1,
     zIndex: 2,
@@ -180,9 +181,16 @@ export function HeroSection() {
                   onHoverEnd={() => setHoveredIdx(null)}
                 >
                   {/* Card image area */}
-                  <div style={{ position: "relative", height: 120, background: card.gradient }}>
-                    <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.15)" }} />
-                    <span className="hero-v2-card-tag">{card.tag}</span>
+                  <div style={{ position: "relative", height: 120, overflow: "hidden" }}>
+                    <Image
+                      src={card.image}
+                      alt=""
+                      fill
+                      sizes="240px"
+                      style={{ objectFit: "cover" }}
+                    />
+                    <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.15)", zIndex: 1 }} />
+                    <span className="hero-v2-card-tag" style={{ zIndex: 2 }}>{card.tag}</span>
                   </div>
                   {/* Card info */}
                   <div className="hero-v2-card-body">
