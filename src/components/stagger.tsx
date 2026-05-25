@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { m, useReducedMotion, type Variants } from "framer-motion";
 
 const container: Variants = {
   hidden: {},
@@ -31,25 +31,25 @@ export function StaggerContainer({
 
   if (as === "section") {
     return (
-      <motion.section
+      <m.section
         className={className}
         variants={container}
         initial={initial}
         animate="visible"
       >
         {children}
-      </motion.section>
+      </m.section>
     );
   }
   return (
-    <motion.div
+    <m.div
       className={className}
       variants={container}
       initial={initial}
       animate="visible"
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -59,8 +59,8 @@ export function StaggerItem({
   style,
 }: BaseProps & { style?: React.CSSProperties }) {
   return (
-    <motion.div className={className} style={style} variants={item}>
+    <m.div className={className} style={style} variants={item}>
       {children}
-    </motion.div>
+    </m.div>
   );
 }

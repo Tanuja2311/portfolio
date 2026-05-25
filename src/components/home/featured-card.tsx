@@ -56,6 +56,7 @@ export function FeaturedCard({ project, index }: Props) {
             alt={project.thumbnailAlt ?? `${project.title} - project thumbnail`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
+            priority={index === 1}
             className={`feat-card-img img-fade${imgLoaded ? " img-loaded" : ""}`}
             onLoad={() => setImgLoaded(true)}
           />

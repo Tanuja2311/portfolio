@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 export interface CaseStudySummaryData {
   problem:  string;
@@ -23,7 +23,7 @@ export function CaseStudySummary({ summary }: { summary: CaseStudySummaryData })
     <div className="cs-summary">
       <dl className="cs-summary-grid">
         {CELLS.map(({ key, label }, i) => (
-          <motion.div
+          <m.div
             key={key}
             className="cs-summary-cell"
             initial={{ opacity: reduced ? 1 : 0, y: reduced ? 0 : 16 }}
@@ -32,7 +32,7 @@ export function CaseStudySummary({ summary }: { summary: CaseStudySummaryData })
           >
             <dt className="cs-summary-label">{label}</dt>
             <dd className="cs-summary-body">{summary[key]}</dd>
-          </motion.div>
+          </m.div>
         ))}
       </dl>
 

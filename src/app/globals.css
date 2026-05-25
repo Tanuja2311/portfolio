@@ -36,14 +36,14 @@
   --diag-box-fill:          rgba(255, 255, 255, 0.05);
   --diag-box-stroke:        rgba(255, 255, 255, 0.15);
 
-  --hero-title-color:   rgba(240, 236, 228, 0.40);
+  --hero-title-color:   rgba(240, 236, 228, 0.55);
   --hero-tagline-color: rgba(240, 236, 228, 0.55);
   --hero-card-bg:       rgba(255, 255, 255, 0.03);
   --hero-card-border:   rgba(255, 255, 255, 0.07);
   --hero-stats-border:  rgba(255, 255, 255, 0.06);
-  --hero-stat-label:    rgba(240, 236, 228, 0.28);
+  --hero-stat-label:    rgba(240, 236, 228, 0.55);
   --hero-card-name:     rgba(240, 236, 228, 0.85);
-  --hero-card-desc:     rgba(240, 236, 228, 0.30);
+  --hero-card-desc:     rgba(240, 236, 228, 0.55);
 }
 
 /* ─── Light theme ──────────────────────────────────────────────────── */
@@ -81,14 +81,14 @@
   --diag-box-fill:          rgba(0, 0, 0, 0.04);
   --diag-box-stroke:        rgba(0, 0, 0, 0.13);
 
-  --hero-title-color:   rgba(26, 26, 24, 0.45);
-  --hero-tagline-color: rgba(26, 26, 24, 0.60);
+  --hero-title-color:   rgba(26, 26, 24, 0.65);
+  --hero-tagline-color: rgba(26, 26, 24, 0.65);
   --hero-card-bg:       rgba(0, 0, 0, 0.03);
   --hero-card-border:   rgba(0, 0, 0, 0.08);
   --hero-stats-border:  rgba(0, 0, 0, 0.08);
-  --hero-stat-label:    rgba(26, 26, 24, 0.40);
+  --hero-stat-label:    rgba(26, 26, 24, 0.65);
   --hero-card-name:     rgba(26, 26, 24, 0.85);
-  --hero-card-desc:     rgba(26, 26, 24, 0.40);
+  --hero-card-desc:     rgba(26, 26, 24, 0.65);
 }
 
 /* ─── Layout tokens ────────────────────────────────────────────────── */
@@ -117,8 +117,8 @@
 
 /* ─── Skip to main content ──────────────────────────────────────────── */
 .skip-link {
-  position: absolute;
-  top: -100%;
+  position: fixed;
+  top: 0;
   left: 1rem;
   z-index: 9999;
   padding: 0.5rem 1rem;
@@ -130,11 +130,12 @@
   border-radius: 0 0 0.5rem 0.5rem;
   text-decoration: none;
   white-space: nowrap;
-  transition: top 0.1s ease;
+  transform: translateY(-100%);
+  transition: transform 0.1s ease;
 }
 
 .skip-link:focus {
-  top: 0;
+  transform: translateY(0);
   outline: 2px solid #9b72ef;
   outline-offset: 2px;
 }
@@ -365,7 +366,7 @@ video {
 .footer-copy {
   font-family: var(--font-sans);
   font-size: 0.8rem;
-  color: var(--text-faint);
+  color: var(--text-muted);
 }
 
 /* .badge-available and .badge-dot are defined in the Homepage section below */
@@ -1297,7 +1298,7 @@ video {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--text-faint);
+  color: var(--text-muted);
   margin-bottom: 2rem;
 }
 

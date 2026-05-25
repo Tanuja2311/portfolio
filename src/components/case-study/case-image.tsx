@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import type { ImageProps } from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 type Props = Omit<ImageProps, "onError" | "onLoad"> & {
   description?: string;
@@ -15,7 +15,7 @@ export function CaseImage({ src, alt, description, className, noCurtain = false,
   const [loaded, setLoaded] = useState(false);
 
   const curtain = !noCurtain && (
-    <motion.div
+    <m.div
       aria-hidden
       style={{ position: "absolute", inset: 0, background: "var(--bg)", zIndex: 2 }}
       initial={{ x: "0%" }}

@@ -1,8 +1,8 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { Mail, FileText } from "lucide-react";
 
 function LinkedInIcon({ size = 16 }: { size?: number }) {
@@ -88,49 +88,49 @@ export function HeroSection() {
       <div className="hero-v2-glow" aria-hidden />
 
       <div className="hero-v2-inner">
-        {/* ── Main two-column area ───────────────────────── */}
+        {/* â”€â”€ Main two-column area â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <div className="hero-v2-main">
 
           {/* Left column */}
           <div className="hero-v2-left">
 
             {/* Available badge */}
-            <motion.div
+            <m.div
               {...(reduced ? {} : leftItem(0))}
             >
               <div className="hero-v2-badge" aria-label="Availability status">
                 <span className="hero-v2-badge-dot" aria-hidden />
                 Available for work
               </div>
-            </motion.div>
+            </m.div>
 
             {/* Name */}
-            <motion.h1
+            <m.h1
               className="hero-v2-name"
               {...(reduced ? {} : leftItem(1))}
             >
               Tanuja Bodas
-            </motion.h1>
+            </m.h1>
 
             {/* Title */}
-            <motion.p
+            <m.p
               className="hero-v2-title"
               {...(reduced ? {} : leftItem(2))}
             >
               Senior Product Designer
-            </motion.p>
+            </m.p>
 
             {/* Tagline */}
-            <motion.p
+            <m.p
               className="hero-v2-tagline"
               {...(reduced ? {} : leftItem(3))}
             >
               I turn complex enterprise problems into intuitive workflows
               that people actually want to use.
-            </motion.p>
+            </m.p>
 
             {/* Contact links */}
-            <motion.div
+            <m.div
               className="hero-v2-links"
               {...(reduced ? {} : leftItem(4))}
             >
@@ -148,7 +148,7 @@ export function HeroSection() {
                   <span>{label}</span>
                 </a>
               ))}
-            </motion.div>
+            </m.div>
           </div>
 
           {/* Right column: floating cards (decorative, duplicates work section links) */}
@@ -164,7 +164,7 @@ export function HeroSection() {
                   transition: "opacity 0.3s ease",
                 }}
               >
-                <motion.a
+                <m.a
                   href={card.href}
                   className="hero-v2-card"
                   tabIndex={-1}
@@ -197,13 +197,13 @@ export function HeroSection() {
                     <p className="hero-v2-card-name">{card.name}</p>
                     <p className="hero-v2-card-desc">{card.desc}</p>
                   </div>
-                </motion.a>
+                </m.a>
               </div>
             ))}
           </div>
         </div>
 
-        {/* ── Stats strip ───────────────────────────────── */}
+        {/* â”€â”€ Stats strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <dl className="hero-v2-stats">
           {STATS.map(({ value, label }) => (
             <div key={label} className="hero-v2-stat">

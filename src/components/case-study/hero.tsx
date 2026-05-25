@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export interface HeroStudy {
   hero?: string;
@@ -37,7 +37,7 @@ export function CaseStudyHero({ study }: { study: HeroStudy }) {
         style={hasImage ? { background: study.coverColor } : undefined}
       >
         {hasImage ? (
-          <motion.div
+          <m.div
             className="cs-hero-img-wrap"
             initial={{ scale: 1.03 }}
             animate={{ scale: 1 }}
@@ -51,7 +51,7 @@ export function CaseStudyHero({ study }: { study: HeroStudy }) {
               sizes="100vw"
               className="cs-hero-img"
             />
-          </motion.div>
+          </m.div>
         ) : (
           <div className="cs-hero-placeholder" aria-hidden>
             <span className="cs-hero-placeholder-label">Project cover image</span>
@@ -63,29 +63,29 @@ export function CaseStudyHero({ study }: { study: HeroStudy }) {
       {/* ── Content ───────────────────────────────────────────── */}
       <div className="cs-hero-content">
         {(study.tags ?? []).length > 0 && (
-          <motion.div className="cs-hero-tags" {...fadeUp(0.1)}>
+          <m.div className="cs-hero-tags" {...fadeUp(0.1)}>
             {study.tags!.map((tag) => (
               <span key={tag} className="cs-hero-tag">{tag}</span>
             ))}
-          </motion.div>
+          </m.div>
         )}
 
-        <motion.h1 className="cs-hero-title" {...fadeUp(0.2)}>
+        <m.h1 className="cs-hero-title" {...fadeUp(0.2)}>
           {study.title}
-        </motion.h1>
+        </m.h1>
 
-        <motion.p className="cs-hero-desc" {...fadeUp(0.3)}>
+        <m.p className="cs-hero-desc" {...fadeUp(0.3)}>
           {study.subtitle}
-        </motion.p>
+        </m.p>
 
-        <motion.div className="cs-hero-meta" {...fadeUp(0.4)}>
+        <m.div className="cs-hero-meta" {...fadeUp(0.4)}>
           {metadata.map(({ label, value }) => (
             <div key={label} className="cs-hero-meta-item">
               <span className="cs-hero-meta-label">{label}</span>
               <span className="cs-hero-meta-value">{value}</span>
             </div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

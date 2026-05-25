@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { PageTransition } from "@/components/page-transition";
+import { MotionProvider } from "@/components/motion-provider";
 import "./globals.css";
 
 const dmSerif = DM_Serif_Display({
@@ -87,13 +88,15 @@ export default async function RootLayout({
       </head>
       <body style={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
-        <Nav />
-        <div id="main-content" tabIndex={-1} style={{ outline: "none" }}>
-          <PageTransition>
-            {children}
-          </PageTransition>
-        </div>
-        <Footer />
+        <MotionProvider>
+          <Nav />
+          <div id="main-content" tabIndex={-1} style={{ outline: "none" }}>
+            <PageTransition>
+              {children}
+            </PageTransition>
+          </div>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );
