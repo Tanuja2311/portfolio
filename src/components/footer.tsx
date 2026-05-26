@@ -39,7 +39,7 @@ export function Footer() {
 
         {/* Bottom row */}
         <div className="footer-bottom">
-          <span className="footer-copy">Designed in Figma. Built with Next.js and Claude Code.</span>
+          <span className="footer-copy">© 2026. Designed in Figma. Built with Next.js and Claude Code.</span>
           <span className="badge-available">
             <span className="badge-dot" aria-hidden />
             Available for work
