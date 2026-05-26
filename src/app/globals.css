@@ -2494,7 +2494,7 @@ video {
 
 /* ─── R&R Conceptual Diagrams ───────────────────────────────────────── */
 .rr-diagram {
-  margin: 2rem 0;
+  margin: 2rem auto;
   width: 100%;
   max-width: 720px;
 }
@@ -2589,7 +2589,7 @@ video {
 
 @media (max-width: 640px) {
   .rr-diagram {
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
   }
 }
 
