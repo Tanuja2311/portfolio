@@ -5,8 +5,6 @@ const SOCIAL_LINKS = [
 ] as const;
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="footer">
       <div className="footer-inner">
@@ -41,7 +39,7 @@ export function Footer() {
 
         {/* Bottom row */}
         <div className="footer-bottom">
-          <span className="footer-copy">© {year}</span>
+          <span className="footer-copy">Designed in Figma. Built with Next.js and Claude Code.</span>
           <span className="badge-available">
             <span className="badge-dot" aria-hidden />
             Available for work
