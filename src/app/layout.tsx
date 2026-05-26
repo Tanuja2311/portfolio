@@ -6,6 +6,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { PageTransition } from "@/components/page-transition";
 import { MotionProvider } from "@/components/motion-provider";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const dmSerif = DM_Serif_Display({
@@ -97,6 +98,7 @@ export default async function RootLayout({
           </div>
           <Footer />
         </MotionProvider>
+        <Analytics />
       </body>
     </html>
   );
