@@ -1,8 +1,10 @@
-﻿import type { Metadata } from "next";
-import { CsScrollLinks } from "@/components/case-study/scroll-links";
-import { ScrollReveal } from "@/components/scroll-reveal";
-import { CaseImage } from "@/components/case-study/case-image";
-import { StaggerContainer, StaggerItem } from "@/components/stagger";
+import type { Metadata } from "next";
+import { CaseStudyHero }    from "@/components/case-study/hero";
+import { CaseStudySummary } from "@/components/case-study/summary";
+import { CsScrollLinks }    from "@/components/case-study/scroll-links";
+import { ScrollReveal }     from "@/components/scroll-reveal";
+import { CaseImage }        from "@/components/case-study/case-image";
+import { TestingCollapsible } from "@/components/case-study/testing-collapsible";
 
 export const metadata: Metadata = {
   title:       "UrbanPark",
@@ -21,8 +23,9 @@ export const metadata: Metadata = {
 const IMG = (name: string) => `/images/urbanpark/${name}`;
 
 const SECTIONS = [
-  { id: "challenge",     label: "Challenge"     },
+  { id: "background",    label: "Background"    },
   { id: "research",      label: "Research"      },
+  { id: "problem",       label: "Problem"       },
   { id: "design-system", label: "Design System" },
   { id: "solution",      label: "Solution"      },
   { id: "reflection",    label: "Reflection"    },
@@ -32,74 +35,49 @@ export default function UrbanParkCaseStudy() {
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <StaggerContainer as="section" className="cs-hero">
-        <StaggerItem className="cs-hero-media" style={{ background: "#0d1a0f" }}>
-          <CaseImage
-            src={IMG("hero.jpg")}
-            alt="UrbanPark app screens"
-            description="UrbanPark - key app screens montage, 1440px"
-            fill
-            priority
-            noCurtain
-            sizes="100vw"
-            className="cs-hero-img"
-          />
-          <div className="cs-hero-overlay" aria-hidden />
-          <div className="cs-hero-text">
-            <h1 className="cs-hero-title">UrbanPark</h1>
-            <p className="cs-hero-subtitle">
-              A peer-to-peer marketplace for unused driveways.
-            </p>
-          </div>
-        </StaggerItem>
+      <CaseStudyHero study={{
+        hero:       IMG("hero.jpg"),
+        coverColor: "#0d1a0f",
+        tags:       ["0 to 1 Product", "C2C Product"],
+        title:      "UrbanPark.",
+        subtitle:   "Most driveway rental platforms optimize for bookings. UrbanPark was designed around what homeowners actually fear.",
+        meta: {
+          role: "Product Designer",
+          items: [
+            { label: "Role",    value: "Product Designer" },
+            { label: "Context", value: "Academic Project · MS Thesis" },
+            { label: "Scope",   value: "End-to-end design + design system" },
+          ],
+        },
+      }} />
 
-        <StaggerItem className="cs-meta-bar">
-          <div className="cs-meta-inner">
-            {[
-              ["Role",    "Product Designer"],
-              ["Context", "Academic Project · MS Coursework"],
-              ["Scope",   "End-to-end design + design system"],
-              ["Year",    "2025"],
-            ].map(([label, value]) => (
-              <div key={label} className="cs-meta-item">
-                <span className="cs-meta-label">{label}</span>
-                <span className="cs-meta-value">{value}</span>
-              </div>
-            ))}
-          </div>
-        </StaggerItem>
-      </StaggerContainer>
+      {/* ── Summary cards + scroll CTA ──────────────────────────────── */}
+      <CaseStudySummary summary={{
+        problem:  "Homeowners renting driveways had no reliable way to verify renters or vehicles, leaving them exposed to fraud, overstays, and high-risk situations with no platform support.",
+        role:     "Sole product designer: end-to-end research, pivot from wrong users to right users, information architecture, UI design, pretotyping experiments, and usability testing.",
+        timeline: "34 weeks as an MS thesis project, from initial observation through validated prototype.",
+        outcome:  "A 0 to 1 C2C platform combining a mobile app with camera-based verification, validated through pretotyping and usability testing with experienced homeowners.",
+      }} />
 
+      {/* ── Pill bar navigation ─────────────────────────────────────── */}
       <CsScrollLinks sections={SECTIONS} />
 
       <div className="cs-body">
-        {/* ── Challenge ──────────────────────────────────────────────── */}
-        <section id="challenge" className="cs-section" aria-labelledby="challenge-heading">
+
+        {/* ── Background ──────────────────────────────────────────────── */}
+        <section id="background" className="cs-section" aria-labelledby="background-heading">
           <ScrollReveal>
-            <h2 id="challenge-heading" className="cs-section-heading">Challenge</h2>
+            <h2 id="background-heading" className="cs-section-heading">Background</h2>
 
-            <p className="cs-stat-highlight">
-              Drivers spend an average of 17 minutes searching for parking per
-              trip in dense urban areas. That circling accounts for roughly 30%
-              of downtown traffic - and generates an estimated 900,000 tons of
-              CO₂ annually across U.S. cities.
-            </p>
+            <blockquote className="cs-hook">
+              A parking problem I could not ignore
+            </blockquote>
 
             <p className="cs-section-body">
-              UrbanPark starts with the other side of that equation: the empty
-              driveway. Most homeowners who commute by transit or work from home
-              have a concrete pad sitting unused from 8 AM to 6 PM. The
-              opportunity is a two-sided marketplace connecting the two - drivers
-              who need a reliable, reserved spot, and homeowners with idle space
-              and no friction-free way to monetize it.
-            </p>
-
-            <p className="cs-section-body">
-              The product challenge isn&rsquo;t matching supply to demand. That
-              part is a database query. The real challenge is building trust
-              between strangers over something as personal as their car and their
-              home - in real time, under time pressure, with money changing
-              hands.
+              Drivers circle neighborhoods looking for parking while residential
+              driveways sit empty a few feet away. The mismatch was obvious.
+              What was not obvious was why no platform had actually solved it.
+              That question is what started this project.
             </p>
           </ScrollReveal>
         </section>
@@ -110,168 +88,91 @@ export default function UrbanParkCaseStudy() {
             <h2 id="research-heading" className="cs-section-heading">Research</h2>
           </ScrollReveal>
 
-          {/* Interviews */}
           <ScrollReveal>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">01 - User Interviews</span>
+              <span className="cs-subsection-label">01 - Initial interviews</span>
               <h3 className="cs-subsection-heading">
-                16 interviews. Two completely different definitions of safety.
+                I started with the wrong users
               </h3>
               <p className="cs-subsection-body">
-                We ran 16 interviews split evenly between daily commuters and
-                homeowners in neighborhoods with known parking pressure. The
-                motivations were immediately asymmetric.
-              </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                <strong style={{ color: "var(--text)", fontWeight: 500 }}>
-                  Drivers:
-                </strong>{" "}
-                predictability was the core need, not price. &ldquo;I don&rsquo;t
-                mind paying more if I know the spot will be there.&rdquo; Drivers
-                who&rsquo;d used existing apps cited photos that didn&rsquo;t
-                match reality as the primary trust failure.
-              </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                <strong style={{ color: "var(--text)", fontWeight: 500 }}>
-                  Homeowners:
-                </strong>{" "}
-                the barrier wasn&rsquo;t platform trust - it was stranger trust.
-                &ldquo;What if they block my garage?&rdquo; &ldquo;What if
-                something happens to my property?&rdquo; Insurance,
-                accountability, and cancellation policies surfaced in 7 of 8
-                homeowner interviews before we asked about them.
+                I began by talking to both renters and homeowners to understand
+                the parking problem from both sides. Renters confirmed the
+                frustration of circling neighborhoods and worrying about theft.
+                But the homeowners I spoke to had never actually rented their
+                space. Their feedback was hypothetical, based on assumptions,
+                not lived experience. I realized I was talking to the wrong
+                group entirely. This was my first major pivot.
               </p>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
-              <CaseImage
-                src={IMG("research-interviews.jpg")}
-                alt="Interview synthesis board"
-                description="Interview synthesis - affinity map, 16 sessions"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
-          </ScrollReveal>
-
-          {/* Competitive Analysis */}
           <ScrollReveal>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">02 - Competitive Analysis</span>
+              <span className="cs-subsection-label">02 - Targeted recruitment</span>
               <h3 className="cs-subsection-heading">
-                Six apps. None solved the trust handoff.
+                Finding the right homeowners took real effort
               </h3>
               <p className="cs-subsection-body">
-                We mapped SpotHero, ParkWhiz, Neighbor, JustPark, Parkopedia,
-                and Rover (as an analogous trust model). The pattern: apps that
-                aggregated parking lots (B2B supply) handled search well but
-                didn&rsquo;t need to solve person-to-person trust. Apps with P2P
-                supply (JustPark, Neighbor) had the right model but shallow
-                verification and no in-app handoff communication. Rover&rsquo;s
-                trust architecture - background checks, review systems, in-app
-                messaging, and structured meet & greet flows - was the closest
-                analogue to what UrbanPark needed.
+                I shifted focus to homeowners who had actually rented out their
+                driveways or garages. I contacted roughly 150 homeowners across
+                Neighbor, CurbFlip, Facebook groups, and Reddit. 20 responded.
+                8 met my criteria and agreed to in depth interviews. These 8
+                became the foundation of the entire project. From their stories
+                I built interview debriefs, ran affinity mapping, mapped the
+                homeowner journey end to end, and used 5 Whys to trace each
+                major pain point back to its root cause.
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
-              <CaseImage
-                src={IMG("competitive-analysis.jpg")}
-                alt="Competitive analysis matrix"
-                description="Competitive matrix - 6 apps × 10 criteria"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
-          </ScrollReveal>
-
-          {/* Personas */}
-          <ScrollReveal>
-            <div className="cs-subsection">
-              <span className="cs-subsection-label">03 - Personas</span>
-              <h3 className="cs-subsection-heading">Two users. Opposite anxieties.</h3>
-              <p className="cs-subsection-body">
-                <strong style={{ color: "var(--text)", fontWeight: 500 }}>
-                  Maya, 31
-                </strong>{" "}
-                - software engineer, commutes to campus three days a week.
-                She&rsquo;s used parking apps before and abandoned spots that
-                didn&rsquo;t match their photos. Core need: reliability. Willing
-                to pay a premium for a guaranteed, confirmed spot.
-              </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                <strong style={{ color: "var(--text)", fontWeight: 500 }}>
-                  David, 55
-                </strong>{" "}
-                - homeowner, car in the shop two days a week, interested in
-                passive income. His driveway sits empty. Core barrier: liability
-                and damage. Needs to feel in control of who accesses his
-                property and what recourse he has if something goes wrong.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="cs-two-col" style={{ marginTop: "1.5rem" }}>
-              <div className="cs-portrait-img">
-                <CaseImage
-                  src={IMG("persona-maya.jpg")}
-                  alt="Maya persona card"
-                  description="Maya persona - driver, 31, software engineer"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                  className="cs-hero-img"
-                />
+            <div className="cs-metrics cs-metrics--3col" style={{ marginTop: "2.5rem" }}>
+              <div className="cs-metric">
+                <p className="cs-metric-label">No renter verification</p>
+                <p className="cs-metric-context">
+                  Homeowners had no reliable way to confirm who was parking on
+                  their property or what vehicle was being left.
+                </p>
               </div>
-              <div className="cs-portrait-img">
-                <CaseImage
-                  src={IMG("persona-david.jpg")}
-                  alt="David persona card"
-                  description="David persona - homeowner, 55, passive income seeker"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                  className="cs-hero-img"
-                />
+              <div className="cs-metric">
+                <p className="cs-metric-label">Unreliable notifications</p>
+                <p className="cs-metric-context">
+                  Missed alerts meant missed bookings, overstays, and situations
+                  homeowners only discovered after damage was done.
+                </p>
+              </div>
+              <div className="cs-metric">
+                <p className="cs-metric-label">No platform support</p>
+                <p className="cs-metric-context">
+                  When things went wrong, homeowners were left to handle fraud,
+                  disputes, and law enforcement on their own.
+                </p>
               </div>
             </div>
           </ScrollReveal>
+        </section>
 
-          {/* Journey Maps */}
+        {/* ── Problem ────────────────────────────────────────────────── */}
+        <section id="problem" className="cs-section" aria-labelledby="problem-heading">
           <ScrollReveal>
-            <div className="cs-subsection">
-              <span className="cs-subsection-label">04 - Journey Maps</span>
-              <h3 className="cs-subsection-heading">
-                The trust gap lives at the handoff moment.
-              </h3>
-              <p className="cs-subsection-body">
-                Mapping the full journey for both users surfaced a critical
-                insight: the highest-anxiety moment for both sides wasn&rsquo;t
-                payment - it was arrival. When a renter shows up and the
-                driveway is blocked, or when an owner hears someone on their
-                property without warning, neither party has a reliable channel
-                to resolve it. That single insight shaped the entire
-                verification and communication design.
-              </p>
-            </div>
-          </ScrollReveal>
+            <h2 id="problem-heading" className="cs-section-heading">Problem</h2>
 
-          <ScrollReveal>
-            <div className="cs-wide-img">
-              <CaseImage
-                src={IMG("journey-map.jpg")}
-                alt="Journey maps for Maya and David"
-                description="Journey maps - Maya (renter) and David (homeowner), end-to-end"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
+            <h3 className="cs-subsection-heading" style={{ marginBottom: "1.25rem" }}>
+              The real problem was not parking
+            </h3>
+
+            <p className="cs-section-body">
+              Existing platforms treat driveway rentals as a listings problem.
+              But homeowners are not afraid of empty driveways. They are afraid
+              of who shows up to fill them. When things go wrong, they absorb
+              the emotional, legal, and logistical burden alone.
+            </p>
+
+            <blockquote className="cs-hook">
+              How might we reduce high risk situations for homeowners by
+              verifying renters and vehicles before they arrive and confirming
+              them when they do?
+            </blockquote>
           </ScrollReveal>
         </section>
 
@@ -418,6 +319,23 @@ export default function UrbanParkCaseStudy() {
         <section id="solution" className="cs-section" aria-labelledby="solution-heading">
           <ScrollReveal>
             <h2 id="solution-heading" className="cs-section-heading">Solution</h2>
+
+            <div style={{ marginTop: "1.5rem", marginBottom: "2.5rem" }}>
+              <h3
+                className="cs-subsection-heading"
+                style={{ marginBottom: "0.75rem" }}
+              >
+                Designing for the person with more to lose
+              </h3>
+              <p className="cs-section-body">
+                Both homeowners and renters use UrbanPark, but the product is
+                designed homeowner first. Homeowners carry more risk. A bad
+                booking affects their property, safety, and peace of mind. A bad
+                parking spot is an inconvenience for a renter. That asymmetry
+                shaped every decision.
+              </p>
+            </div>
+
             <p className="cs-section-body">
               Three distinct flows - homeowner onboarding, renter search and
               booking, and the verification layer that sits beneath both - each
@@ -544,6 +462,11 @@ export default function UrbanParkCaseStudy() {
           </ScrollReveal>
         </section>
 
+        {/* ── Testing (collapsible) ───────────────────────────────────── */}
+        <div className="cs-section">
+          <TestingCollapsible />
+        </div>
+
         {/* ── Reflection ─────────────────────────────────────────────── */}
         <section id="reflection" className="cs-section" aria-labelledby="reflection-heading">
           <ScrollReveal>
@@ -623,7 +546,7 @@ export default function UrbanParkCaseStudy() {
                 The two-sided marketplace research also shaped how I approach
                 stakeholder alignment. Enterprise HR tools are two-sided
                 products: HR admins configure them, employees use them. The same
-                tension exists. The Rewards & Recognition project at ZingHR
+                tension exists. The Rewards &amp; Recognition project at ZingHR
                 required the same discipline - designing for the person filling
                 in the catalog and the person browsing it simultaneously, with
                 genuinely different needs and opposite anxieties.
@@ -631,6 +554,7 @@ export default function UrbanParkCaseStudy() {
             </div>
           </ScrollReveal>
         </section>
+
       </div>
     </main>
   );

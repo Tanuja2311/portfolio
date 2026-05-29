@@ -12,10 +12,12 @@ export interface HeroStudy {
   subtitle: string;
   meta: {
     role: string;
-    duration: string;
+    duration?: string;
     year?: string;
     team?: string;
     company?: string;
+    /** When provided, overrides the default meta row entirely. */
+    items?: { label: string; value: string }[];
   };
 }
 
@@ -92,9 +94,10 @@ export function CaseStudyHero({ study }: { study: HeroStudy }) {
 }
 
 function buildMeta(study: HeroStudy): { label: string; value: string }[] {
+  if (study.meta.items) return study.meta.items;
   const items: { label: string; value: string }[] = [
     { label: "Role",     value: study.meta.role },
-    { label: "Timeline", value: study.meta.duration },
+    { label: "Timeline", value: study.meta.duration ?? "" },
   ];
   if (study.meta.year)      items.push({ label: "Year",    value: study.meta.year });
   if (study.meta.company)   items.push({ label: "Company", value: study.meta.company });
