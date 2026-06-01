@@ -1,603 +1,464 @@
-﻿import type { Metadata } from "next";
-import { CsScrollLinks } from "@/components/case-study/scroll-links";
-import { Reveal }         from "@/components/case-study/reveal";
-import { CaseImage }      from "@/components/case-study/case-image";
-import { StaggerContainer, StaggerItem } from "@/components/stagger";
+import type { Metadata } from "next";
+import { CaseStudyHero }    from "@/components/case-study/hero";
+import { CaseStudySummary } from "@/components/case-study/summary";
+import { CsScrollLinks }    from "@/components/case-study/scroll-links";
+import { ScrollReveal }     from "@/components/scroll-reveal";
+import { CaseImage }        from "@/components/case-study/case-image";
 
 const SECTIONS = [
-  { id: "problem",    label: "Problem"    },
-  { id: "research",   label: "Research"   },
-  { id: "solution",   label: "Solution"   },
-  { id: "reflection", label: "Reflection" },
+  { id: "overview",      label: "Overview"      },
+  { id: "smart-tv",      label: "Smart TV"      },
+  { id: "tesla-display", label: "Tesla Display" },
+  { id: "reflection",    label: "Reflection"    },
 ];
 
 export const metadata: Metadata = {
-  title: "Google Drive for Emerging Interfaces",
-  description:
-    "Adapting cloud file management for a Tesla in-car display and a Smart TV, two platforms that break every assumption desktop interfaces rely on.",
+  title:       "Google Drive for Emerging Interfaces",
+  description: "Adapting cloud file management for Smart TV and Tesla in-car displays through context-aware, hardware-native design.",
+  robots:      { index: false, follow: false },
 };
 
 const IMG = (name: string) => `/images/google-drive-emerging/${name}`;
 
 export default function GoogleDriveEmergingPage() {
   return (
-    <>
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <StaggerContainer as="section" className="cs-hero">
-        <StaggerItem className="cs-hero-media" style={{ background: "#0e1018" }}>
-          <CaseImage
-            src={IMG("hero.jpg")}
-            alt="Google Drive for Emerging Interfaces"
-            description="Google Drive adapted for Tesla in-car display and Smart TV"
-            fill
-            priority
-            noCurtain
-            sizes="100vw"
-            className="cs-hero-img"
-          />
-          <div className="cs-hero-overlay" aria-hidden />
-          <div className="cs-hero-text">
-            <h1 className="cs-hero-title">Google Drive for Emerging Interfaces</h1>
-            <p className="cs-hero-subtitle">
-              Adapting cloud file management for a Tesla in-car display and a
-              Smart TV, two platforms that break every assumption desktop
-              interfaces rely on.
-            </p>
-          </div>
-        </StaggerItem>
+    <main>
+      <CaseStudyHero study={{
+        hero:       IMG("hero.jpg"),
+        coverColor: "#0e1018",
+        tags:       ["Emerging Interfaces", "Interaction Design", "Multi-Platform"],
+        title:      "Google Drive for Emerging Interfaces",
+        subtitle:   "Adapting cloud file management for Smart TV and Tesla in-car displays through context-aware, hardware-native design.",
+        meta: {
+          role:  "UX Designer",
+          items: [
+            { label: "Role",     value: "UX Designer"            },
+            { label: "Platform", value: "Smart TV, Tesla Display" },
+            { label: "Type",     value: "Speculative Design"      },
+            { label: "Context",  value: "MS Thesis Project"       },
+          ],
+        },
+      }} />
 
-        <StaggerItem className="cs-meta-bar">
-          <div className="cs-meta-inner">
-            {[
-              ["Role",     "UX Designer"],
-              ["Duration", "8 weeks"],
-              ["Context",  "Academic Project (MS coursework)"],
-              ["Scope",    "Speculative Design, Multimodal Interaction"],
-            ].map(([label, value]) => (
-              <div key={label} className="cs-meta-item">
-                <span className="cs-meta-label">{label}</span>
-                <span className="cs-meta-value">{value}</span>
-              </div>
-            ))}
-          </div>
-        </StaggerItem>
-      </StaggerContainer>
+      <CaseStudySummary summary={{
+        problem:  "Google Drive was designed for keyboard and mouse. Adapting it for a 65-inch TV operated by a remote control and a Tesla touchscreen mid-drive required a different design logic for each platform — not a responsive port.",
+        role:     "Sole UX designer: platform constraint analysis, MoSCoW feature prioritization, proto-persona work, and context-native interaction design across two radically different hardware environments.",
+        timeline: "MS Thesis Project — speculative design exploration.",
+        outcome:  "Two distinct context-native adaptations: a remote-first, voice-elevated Smart TV experience optimized for lean-back consumption, and a dual-mode Tesla interface that automatically restricts interaction based on vehicle state.",
+      }} />
 
       <CsScrollLinks sections={SECTIONS} />
 
       <div className="cs-body">
 
-        {/* ── Problem ────────────────────────────────────────────────── */}
-        <section id="problem" className="cs-section">
-          <Reveal>
-            <h2 className="cs-section-heading">The Problem</h2>
+        {/* ── Overview ──────────────────────────────────────────────────── */}
+        <section id="overview" className="cs-section" aria-labelledby="overview-heading">
+          <ScrollReveal>
+            <h2 id="overview-heading" className="cs-section-heading">The Brief</h2>
 
             <p className="cs-section-body">
-              Google Drive works because it was built for keyboards, mice, and
-              high-resolution screens. Remove any one of those inputs and the
-              experience starts to collapse. Remove all three and it becomes
-              unusable.
+              This project explored what it means to adapt an existing product to radically different
+              environments. Google Drive was designed for keyboard and mouse. The question was whether it
+              could work meaningfully on a 65-inch TV across the room and on a Tesla touchscreen at
+              60 miles per hour.
             </p>
 
             <p className="cs-section-body">
-              This project asked a specific question: what does file management
-              look like on platforms where the core interaction model is
-              fundamentally different?
+              The answer required a different design logic for each platform. Not responsive adaptation,
+              but context-native redesign: understanding what the hardware affords, what the user needs
+              in that environment, and what should be deliberately left out.
             </p>
 
-            <p className="cs-section-body">
-              Two platforms. Two sets of constraints. One shared challenge.
-            </p>
-
-            <p className="cs-section-body">
-              <strong>Tesla in-car display:</strong> A 15-inch touchscreen
-              operated by a driver whose primary task is not file management.
-              Interaction time is limited. Attention is split. Safety is the
-              dominant constraint, and every tap that pulls focus from the road
-              is a design failure.
-            </p>
-
-            <p className="cs-section-body">
-              <strong>Smart TV:</strong> A large screen controlled by a
-              directional remote with four arrow keys and a select button. No
-              keyboard. No precise pointer. No hover states. Navigation must be
-              entirely sequential, and every action that would normally require
-              a text input needs an alternative path.
-            </p>
-
-            <p className="cs-section-body">
-              The question was never &ldquo;how do we shrink Google Drive to fit
-              these screens.&rdquo; It was &ldquo;how do we rethink what file
-              access means when the input method changes this dramatically.&rdquo;
-            </p>
-          </Reveal>
-
-          <Reveal delay={80}>
             <div className="cs-nda-note">
               <span className="cs-nda-note-label">Honest framing</span>
               <p>
-                This is a speculative academic project. There are no real users,
-                no usability testing, and no validated outcomes. The value is in
-                the constraint-mapping process and the design rationale, not in
-                claiming these solutions would work in production.
+                This is a speculative thesis project. There are no real users, no usability testing,
+                and no validated outcomes. The value is in the constraint-mapping process and the design
+                rationale &mdash; treating each platform&rsquo;s constraints as the design brief rather
+                than problems to work around.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
-        {/* ── Research ───────────────────────────────────────────────── */}
-        <section id="research" className="cs-section">
-          <Reveal>
-            <h2 className="cs-section-heading">Research</h2>
-          </Reveal>
+        {/* ── Smart TV ──────────────────────────────────────────────────── */}
+        <section id="smart-tv" className="cs-section" aria-labelledby="smart-tv-heading">
+          <ScrollReveal>
+            <h2 id="smart-tv-heading" className="cs-section-heading">Smart TV Display</h2>
 
-          {/* 02.1 — Heuristic Evaluation */}
-          <Reveal delay={80}>
-            <div className="cs-subsection">
-              <span className="cs-subsection-label">02.1 — Heuristic Evaluation of Google Drive Mobile</span>
+            <div className="cs-subsection" style={{ marginBottom: "2rem" }}>
               <h3 className="cs-subsection-heading">
-                Auditing an existing product to understand what transfers and
-                what breaks.
+                Designing for distance, lean-back posture, and remote-first interaction
               </h3>
               <p className="cs-subsection-body">
-                Before designing for new platforms, I audited Google Drive&rsquo;s
-                existing mobile experience against Nielsen&rsquo;s 10 usability
-                heuristics. The goal was to identify which patterns could
-                transfer to constrained interfaces and which would break.
+                The Smart TV context flips most assumptions about how people interact with files. Users
+                are seated across the room. Input is a remote control with directional buttons. Precision
+                clicking is not available. The primary use cases split between work &mdash; reviewing
+                documents, running presentations &mdash; and personal: media playback, photo slideshows,
+                ambient screensavers.
               </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                The search-first architecture assumes a keyboard. On platforms
-                without text input, search becomes inaccessible, and the entire
-                information architecture needs to shift toward browsing, recency,
-                and contextual surfacing.
-              </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                Nested folder hierarchies require precision navigation. Each
-                level of depth adds cognitive load that is manageable with a
-                mouse but punishing with a d-pad or voice command.
-              </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                Sharing and permissions flows rely on email input fields and
-                multi-step dialogs. These are non-starters on both target
-                platforms.
-              </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                File previews are small and text-heavy. On a TV viewed from
-                10 feet away, or a car screen glanced at for 2 seconds, these
-                previews communicate nothing.
-              </p>
-              <div className="cs-feature-img-wrap" style={{ marginTop: "1.5rem" }}>
-                <CaseImage
-                  src={IMG("heuristic-eval.jpg")}
-                  alt="Heuristic evaluation of Google Drive mobile"
-                  description="Heuristic evaluation - Google Drive mobile audit against Nielsen's 10 heuristics"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
-                />
-              </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          {/* 02.2 — Competitive Analysis */}
-          <Reveal delay={80}>
+          {/* Research and scoping */}
+          <ScrollReveal>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">02.2 — Competitive Analysis</span>
+              <span className="cs-subsection-label">Research and Scoping</span>
               <h3 className="cs-subsection-heading">
-                The right comparators aren&rsquo;t competitors. They&rsquo;re
-                analogous platforms that already solved the same input problem.
+                MoSCoW prioritization to determine what the TV context could actually support
               </h3>
               <p className="cs-subsection-body">
-                I analyzed existing interfaces across both platform categories
-                to extract patterns that already work under similar constraints.
-              </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                <strong>In-car interfaces reviewed:</strong> Tesla&rsquo;s
-                native media player, Apple CarPlay, Android Auto, BMW iDrive.
-                The strongest pattern across all of them: mode-switching based
-                on vehicle state. CarPlay suppresses complex interactions while
-                driving. Tesla separates entertainment controls from vehicle
-                controls spatially. The principle is consistent: reduce
-                available actions when the driver&rsquo;s attention budget is
-                smallest.
-              </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                <strong>TV interfaces reviewed:</strong> Apple TV, Roku, Fire
-                TV, Google TV. The dominant pattern: card-based grids with
-                large preview thumbnails, minimal text, and d-pad-optimized
-                focus states. Every successful TV interface treats content as
-                something to be browsed visually, not searched textually. The
-                remote is a constraint these interfaces design around rather
-                than fight against.
-              </p>
-              <div className="cs-feature-img-wrap" style={{ marginTop: "1.5rem" }}>
-                <CaseImage
-                  src={IMG("competitive-analysis.jpg")}
-                  alt="Competitive analysis of in-car and TV interfaces"
-                  description="Competitive analysis - in-car and TV interface patterns compared"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
-                />
-              </div>
-            </div>
-          </Reveal>
-
-          {/* 02.3 — Constraint Mapping */}
-          <Reveal delay={80}>
-            <div className="cs-subsection">
-              <span className="cs-subsection-label">02.3 — Constraint Mapping</span>
-              <h3 className="cs-subsection-heading">
-                Every subsequent design decision was traceable back to one of
-                these constraints.
-              </h3>
-              <p className="cs-subsection-body">
-                I mapped the specific constraints of each platform into a
-                framework that drove every subsequent design decision.
+                I used a MoSCoW prioritization framework to determine which Google Drive capabilities
+                made sense for the TV context and which did not. Features like team collaboration tools,
+                new document creation, and third-party app integrations were placed in the Won&rsquo;t
+                Have category because the TV is a consumption and presentation surface, not a creation
+                surface.
               </p>
 
               <div className="cs-two-col" style={{ marginTop: "1.5rem" }}>
                 <div className="cs-ds-group">
                   <div className="cs-ds-group-header">
-                    <span className="cs-ds-group-name">Tesla In-Car Display</span>
+                    <span className="cs-ds-group-name">Must Have</span>
                   </div>
                   <div style={{ padding: "1rem 1.25rem" }}>
                     <p className="cs-subsection-body" style={{ marginTop: 0 }}>
-                      Primary user task is driving, not file management.
+                      Search and voice search
                     </p>
                     <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
-                      Interaction window: 2 to 3 seconds of safe glance time
-                      (NHTSA guideline).
+                      Quick file access for recently and frequently used files
                     </p>
                     <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
-                      Input: touch (parked) or voice (driving). No physical
-                      keyboard.
+                      Video and audio playback
                     </p>
                     <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
-                      Screen is shared with navigation, music, and vehicle
-                      controls.
+                      File previews in thumbnail format
                     </p>
                     <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
-                      Latency tolerance is near zero; the driver will not wait
-                      for a loading state.
+                      Slideshow mode for presentations
                     </p>
                   </div>
                 </div>
 
                 <div className="cs-ds-group">
                   <div className="cs-ds-group-header">
-                    <span className="cs-ds-group-name">Smart TV</span>
+                    <span className="cs-ds-group-name">Should Have</span>
                   </div>
                   <div style={{ padding: "1rem 1.25rem" }}>
                     <p className="cs-subsection-body" style={{ marginTop: 0 }}>
-                      Input: 4-directional remote with select button.
+                      File previews with broader format support
                     </p>
                     <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
-                      Viewing distance: 6 to 10 feet. No hover states, no
-                      right-click, no multi-select.
+                      Screensaver mode using image folders
                     </p>
                     <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
-                      Text input requires an on-screen keyboard navigated one
-                      character at a time.
-                    </p>
-                    <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
-                      Screen real estate is large but information density must
-                      be low.
-                    </p>
-                    <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
-                      Users expect lean-back, passive interaction patterns.
+                      Dark mode for low-light viewing comfort
                     </p>
                   </div>
                 </div>
               </div>
+            </div>
+          </ScrollReveal>
 
-              <div className="cs-feature-img-wrap" style={{ marginTop: "1.5rem" }}>
+          {/* Key design decisions */}
+          <ScrollReveal>
+            <div className="cs-subsection">
+              <span className="cs-subsection-label">Key Design Decisions</span>
+              <h3 className="cs-subsection-heading">
+                Voice search, slideshow mode, and ambient screensavers as primary patterns
+              </h3>
+
+              <div className="cs-feature" style={{ marginTop: "1.5rem" }}>
+                <span className="cs-feature-name">Decision 01</span>
+                <h3 className="cs-feature-title">Voice search as primary interaction, not accessibility add-on</h3>
+                <p className="cs-feature-body">
+                  On a TV, navigating through folders with directional buttons to find a file is
+                  friction-heavy. Saying a file name is always faster. Voice search was elevated as the
+                  primary interaction pattern &mdash; positioned centrally, activated by the remote&rsquo;s
+                  microphone button, and treated as the default way to find anything rather than a fallback
+                  for users who can&rsquo;t type.
+                </p>
+              </div>
+
+              <div className="cs-feature" style={{ marginTop: "1.5rem" }}>
+                <span className="cs-feature-name">Decision 02</span>
+                <h3 className="cs-feature-title">Slideshow mode for professional and personal use</h3>
+                <p className="cs-feature-body">
+                  Slideshow mode turns Google Slides presentations into a full-screen, remote-controlled
+                  experience. Users can advance slides, pause, and exit without touching a keyboard. This
+                  supports both professional use &mdash; presenting from the living room &mdash; and personal
+                  use: family photo slideshows driven by the same remote navigation.
+                </p>
+              </div>
+
+              <div className="cs-feature" style={{ marginTop: "1.5rem" }}>
+                <span className="cs-feature-name">Decision 03</span>
+                <h3 className="cs-feature-title">Image folders as cloud-connected screensavers</h3>
+                <p className="cs-feature-body">
+                  When the TV is idle, it pulls from a designated Drive folder and rotates images as a
+                  dynamic screensaver. This connects Drive to the TV&rsquo;s ambient state &mdash; adding
+                  a cloud-connected layer to a feature TVs already have, without requiring any active user
+                  interaction to set it up.
+                </p>
+              </div>
+
+              <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
                 <CaseImage
-                  src={IMG("constraint-mapping.jpg")}
-                  alt="Constraint mapping framework"
-                  description="Constraint mapping - Tesla vs Smart TV platform analysis"
+                  src={IMG("smart-tv-overview.jpg")}
+                  alt="Smart TV: home screen with quick access, voice search active state, slideshow mode, and screensaver"
+                  description="Smart TV designs — home screen, voice search, slideshow mode, screensaver"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
                 />
               </div>
             </div>
-          </Reveal>
-        </section>
+          </ScrollReveal>
 
-        {/* ── Solution ───────────────────────────────────────────────── */}
-        <section id="solution" className="cs-section">
-          <Reveal>
-            <h2 className="cs-section-heading">Solution</h2>
-            <p className="cs-section-body">
-              This section splits into two distinct design directions. Each
-              responds to its platform&rsquo;s constraints with a different
-              interaction model. They share one principle: reduce the available
-              feature set to match the input method, rather than porting the
-              full desktop experience.
-            </p>
-          </Reveal>
-
-          {/* 03.1 — Tesla */}
-          <Reveal delay={80}>
+          {/* Hardware leverage */}
+          <ScrollReveal>
             <div className="cs-subsection">
-              <span className="cs-subsection-label">03.1 — Tesla: Driving Mode and Parking Mode</span>
+              <span className="cs-subsection-label">Hardware Leverage</span>
               <h3 className="cs-subsection-heading">
-                The interface adapts to the vehicle state. Not the other way
-                around.
+                Treating the remote as the primary design constraint, not an afterthought
               </h3>
               <p className="cs-subsection-body">
-                The core design decision was a dual-mode system that adapts the
-                interface based on vehicle state.
+                The Smart TV remote was treated as the primary design constraint. Navigation relies on
+                directional pad scrolling between files. The microphone button activates voice search.
+                Media playback controls on the remote map directly to Drive&rsquo;s audio and video
+                player &mdash; meaning no on-screen controls are needed during playback, which would
+                require the user to pick up a keyboard or phone.
               </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                <strong>Driving Mode</strong> activates when the car is in
-                motion. It strips the interface down to three elements: a voice
-                command trigger, a list of the 5 most recently accessed files,
-                and a single-tap &ldquo;play&rdquo; action for
-                audio-compatible files (podcasts, audiobooks, voice memos).
-                There is no browsing, no folder navigation, and no file
-                management. The entire interaction can be completed in under 3
-                seconds without looking away from the road.
-              </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                Voice commands follow a simple grammar: &ldquo;Open
-                [filename],&rdquo; &ldquo;Play [filename],&rdquo; &ldquo;Show
-                recent files.&rdquo; No complex queries. No disambiguation
-                dialogs. If the system cannot match a command, it responds with
-                &ldquo;File not found&rdquo; and does not ask follow-up
-                questions while driving.
-              </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                <strong>Parking Mode</strong> activates when the vehicle is in
-                park. It unlocks the full interface: folder browsing, file
-                previews, search (via on-screen keyboard), and sharing. The
-                interaction model here is closer to a tablet experience,
-                optimized for the 15-inch screen. Touch targets are a minimum
-                of 48&times;48dp. The layout uses a two-column split: folder
-                tree on the left, file preview on the right.
-              </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                The mode switch is automatic and instantaneous. There is no
-                manual toggle. The system reads the vehicle state and adapts.
-                This removes a decision from the driver entirely.
-              </p>
-              <div className="cs-feature-img-wrap" style={{ marginTop: "1.5rem" }}>
-                <CaseImage
-                  src={IMG("tesla-driving-mode.jpg")}
-                  alt="Tesla Driving Mode: voice-first interface showing recent files only"
-                  description="Tesla Driving Mode - voice prompt and recent files, stripped-down interface"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
-                />
-              </div>
-              <div className="cs-feature-img-wrap" style={{ marginTop: "1.5rem" }}>
-                <CaseImage
-                  src={IMG("tesla-parking-mode.jpg")}
-                  alt="Tesla Parking Mode: full file browsing interface with two-column layout"
-                  description="Tesla Parking Mode - two-column layout with folder tree and file preview"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
-                />
-              </div>
-              <div className="cs-feature-decision" style={{ marginTop: "1.5rem" }}>
+              <div className="cs-feature-decision" style={{ marginTop: "1rem" }}>
                 <span className="cs-feature-decision-label">Design rationale</span>
                 <p className="cs-feature-decision-text">
-                  The dual-mode approach was borrowed from the competitive
-                  analysis of CarPlay&rsquo;s interaction suppression pattern,
-                  extended to a full interface bifurcation rather than just
-                  hiding buttons. Voice-first in driving mode is not a
-                  preference; it is a safety requirement. Limiting driving mode
-                  to recent files eliminates the need for search or navigation
-                  entirely. The assumption (untested, since this is speculative)
-                  is that the files a driver needs while driving are
-                  overwhelmingly files they accessed recently.
+                  Every successful TV interface treats the remote as a constraint to design around
+                  rather than fight against. Designing information architecture for one-axis sequential
+                  navigation forced simpler hierarchy and clearer visual affordances than a mouse-driven
+                  interface would require.
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
+        </section>
 
-          {/* 03.2 — Smart TV */}
-          <Reveal delay={80}>
-            <div className="cs-subsection">
-              <span className="cs-subsection-label">03.2 — Smart TV: Card-Based D-Pad Navigation</span>
+        {/* ── Tesla Display ─────────────────────────────────────────────── */}
+        <section id="tesla-display" className="cs-section" aria-labelledby="tesla-display-heading">
+          <ScrollReveal>
+            <h2 id="tesla-display-heading" className="cs-section-heading">Tesla Display</h2>
+
+            <div className="cs-subsection" style={{ marginBottom: "2rem" }}>
               <h3 className="cs-subsection-heading">
-                Replace text-heavy lists with visual cards. Replace search with
-                filters.
+                Designing for safety first, with two distinct modes for driving and parked states
               </h3>
               <p className="cs-subsection-body">
-                The core design decision was to replace Google Drive&rsquo;s
-                list-based, text-heavy layout with a card grid that communicates
-                file identity through visual previews rather than filenames.
+                The Tesla context introduces a constraint that does not exist on any other platform: the
+                user may be operating a vehicle. Every design decision has to be evaluated against the
+                question of whether it adds distraction or removes it.
               </p>
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                Each file is represented as a card showing: a large thumbnail
-                preview (for images, PDFs, slides, and docs), the file type
-                icon, a truncated filename (max 2 lines), and a &ldquo;last
-                opened&rdquo; timestamp. Cards are arranged in a
-                horizontal-scrolling grid grouped by category: Recent, Shared
-                with Me, Starred, and folders.
+                <strong>Driving Mode</strong> restricts all file interaction to read-aloud only.
+                Documents are converted to audio and played through the car&rsquo;s speaker system. No
+                visual file browsing is available while the vehicle is in motion. Files that cannot be
+                accessed in this mode show a clear lockout state rather than disappearing from the UI,
+                so users understand the restriction without confusion.
               </p>
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                Navigation is entirely sequential. The d-pad moves focus from
-                card to card. Each focused card scales up slightly (110%) and
-                displays a subtle border highlight. Pressing select opens a
-                context menu with three options: Open, Share Link, and Info.
-                There is no drag-and-drop, no multi-select, and no right-click
-                equivalent.
+                <strong>Parking Mode</strong> restores full access. Users can browse files, view
+                presentations in slideshow mode, preview documents, and interact with Drive as they
+                would on a tablet.
               </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                <strong>Search alternative:</strong> Rather than forcing users
-                through an on-screen keyboard, the TV interface offers voice
-                search (if the remote supports it) and a filter system
-                accessible via the remote&rsquo;s dedicated buttons. Filters
-                include: file type (Docs, Sheets, Slides, Images, Video), date
-                range (Today, This Week, This Month), and owner (My Files,
-                Shared). These filters are stackable and can narrow results to a
-                manageable set without typing a single character.
+            </div>
+
+            <div className="cs-feature-img-wrap" style={{ marginTop: "0.5rem" }}>
+              <CaseImage
+                src={IMG("tesla-modes-overview.jpg")}
+                alt="Tesla: parking mode home screen and driving mode lockout state"
+                description="Tesla designs — parking mode home, driving mode lockout, voice search, read-aloud, location-aware quick access"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          {/* Research and scoping */}
+          <ScrollReveal>
+            <div className="cs-subsection">
+              <span className="cs-subsection-label">Research and Scoping</span>
+              <h3 className="cs-subsection-heading">
+                A stricter MoSCoW pass than Smart TV &mdash; the in-car context tolerates less
+              </h3>
+              <p className="cs-subsection-body">
+                The MoSCoW process for Tesla was stricter than for Smart TV. Features involving
+                real-time collaboration, new document creation, and multiple user profiles were placed
+                in Won&rsquo;t Have because they introduce complexity and distraction that conflicts
+                with the in-car context.
               </p>
-              <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                <strong>Preview mode:</strong> Selecting &ldquo;Open&rdquo; on
-                a document does not launch a full editor. Instead, it opens a
-                read-only preview optimized for the viewing distance. Text is
-                rendered at a minimum of 24pt. Slides and PDFs display in a
-                full-screen view. The user can scroll through pages using the
-                up/down buttons on the remote. Editing is not supported; the TV
-                interface is strictly for accessing, previewing, and sharing.
-              </p>
-              <div className="cs-feature-img-wrap" style={{ marginTop: "1.5rem" }}>
-                <CaseImage
-                  src={IMG("smart-tv-card-grid.jpg")}
-                  alt="Smart TV: card-based file grid with d-pad focus state"
-                  description="Smart TV card grid - horizontal scroll with d-pad focus state at 110% scale"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
-                />
+
+              <div className="cs-two-col" style={{ marginTop: "1.5rem" }}>
+                <div className="cs-ds-group">
+                  <div className="cs-ds-group-header">
+                    <span className="cs-ds-group-name">Must Have</span>
+                  </div>
+                  <div style={{ padding: "1rem 1.25rem" }}>
+                    <p className="cs-subsection-body" style={{ marginTop: 0 }}>
+                      File preview and format support
+                    </p>
+                    <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
+                      Search and voice search
+                    </p>
+                    <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
+                      Quick file access (recent and frequent)
+                    </p>
+                    <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
+                      Audio playback
+                    </p>
+                  </div>
+                </div>
+
+                <div className="cs-ds-group">
+                  <div className="cs-ds-group-header">
+                    <span className="cs-ds-group-name">Should Have</span>
+                  </div>
+                  <div style={{ padding: "1rem 1.25rem" }}>
+                    <p className="cs-subsection-body" style={{ marginTop: 0 }}>
+                      Hands-free sharing
+                    </p>
+                    <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
+                      File reading mode (text-to-speech)
+                    </p>
+                    <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
+                      Car-specific file folders (insurance, registration)
+                    </p>
+                    <p className="cs-subsection-body" style={{ marginTop: "0.75rem" }}>
+                      Offline downloads to car storage
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="cs-feature-img-wrap" style={{ marginTop: "1.5rem" }}>
-                <CaseImage
-                  src={IMG("smart-tv-filters.jpg")}
-                  alt="Smart TV: filter panel replacing keyboard search"
-                  description="Smart TV filter panel - file type, date range, and owner filters without keyboard"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
-                />
+            </div>
+          </ScrollReveal>
+
+          {/* Key design decisions */}
+          <ScrollReveal>
+            <div className="cs-subsection">
+              <span className="cs-subsection-label">Key Design Decisions</span>
+              <h3 className="cs-subsection-heading">
+                Location-aware access, car-native offline storage, and voice-controlled navigation
+              </h3>
+
+              <div className="cs-feature" style={{ marginTop: "1.5rem" }}>
+                <span className="cs-feature-name">Decision 01</span>
+                <h3 className="cs-feature-title">Location-aware quick file access</h3>
+                <p className="cs-feature-body">
+                  Quick file access surfaces different files depending on where the car is. Near a
+                  workplace, the system prioritizes work documents and presentations. Near home, it
+                  surfaces personal files. This reduces the time users spend searching and keeps their
+                  eyes off the screen.
+                </p>
               </div>
-              <div className="cs-feature-decision" style={{ marginTop: "1.5rem" }}>
-                <span className="cs-feature-decision-label">Design rationale</span>
-                <p className="cs-feature-decision-text">
-                  Card-based layouts are the established pattern for TV
-                  interfaces (Netflix, Roku, Apple TV). Users already have a
-                  learned mental model for this interaction. Removing editing
-                  capabilities was a deliberate scope decision, not a
-                  limitation. The TV viewing context is lean-back, not
-                  productivity. The filter-first approach to search reflects the
-                  constraint analysis: on-screen keyboards on TVs are
-                  universally frustrating. Filters achieve the same narrowing
-                  effect without requiring character-by-character input.
+
+              <div className="cs-feature" style={{ marginTop: "1.5rem" }}>
+                <span className="cs-feature-name">Decision 02</span>
+                <h3 className="cs-feature-title">Offline downloads to car storage, not a connected phone</h3>
+                <p className="cs-feature-body">
+                  Rather than syncing to a phone, files download directly to Tesla&rsquo;s built-in
+                  storage. This means no dependency on a connected device and no reliance on cellular
+                  data in low-coverage areas &mdash; a meaningful difference from the mobile app&rsquo;s
+                  offline model.
+                </p>
+              </div>
+
+              <div className="cs-feature" style={{ marginTop: "1.5rem" }}>
+                <span className="cs-feature-name">Decision 03</span>
+                <h3 className="cs-feature-title">Voice-controlled access that triggers read-aloud automatically</h3>
+                <p className="cs-feature-body">
+                  Voice commands allow users to find and open files without touching the screen. In
+                  Driving Mode, opening a file via voice immediately triggers read-aloud playback rather
+                  than displaying the document &mdash; eliminating any visual attention cost entirely.
                 </p>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
+
+          {/* Hardware leverage */}
+          <ScrollReveal>
+            <div className="cs-subsection">
+              <span className="cs-subsection-label">Hardware Leverage</span>
+              <h3 className="cs-subsection-heading">
+                The Tesla display, voice recognition, and driving detection API
+              </h3>
+              <p className="cs-subsection-body">
+                The Tesla display is a large landscape touchscreen, which makes it suitable for rich
+                information display when parked. Tesla&rsquo;s built-in voice recognition system handles
+                file search and navigation commands. The driving detection API triggers the automatic
+                mode switch between Driving and Parking states without requiring user input.
+              </p>
+              <div className="cs-feature-decision" style={{ marginTop: "1rem" }}>
+                <span className="cs-feature-decision-label">Design rationale</span>
+                <p className="cs-feature-decision-text">
+                  The mode switch is automatic and instantaneous &mdash; there is no manual toggle. The
+                  system reads the vehicle state and adapts. This removes a decision from the driver
+                  entirely, which is the only acceptable outcome when the primary user task is
+                  operating a vehicle.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
         </section>
 
-        {/* ── Reflection ─────────────────────────────────────────────── */}
-        <section id="reflection" className="cs-section">
-          <Reveal>
-            <h2 className="cs-section-heading">Reflection</h2>
-          </Reveal>
+        {/* ── Reflection ────────────────────────────────────────────────── */}
+        <section id="reflection" className="cs-section" aria-labelledby="reflection-heading">
+          <ScrollReveal>
+            <h2 id="reflection-heading" className="cs-section-heading">
+              What This Project Taught Me About Constraints
+            </h2>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
-              <h3 className="cs-wid-heading">What this project demonstrates</h3>
-
               <p className="cs-wid-body">
-                The value here is not in the pixel-level fidelity of the
-                mockups. It is in the process of mapping platform constraints
-                to interaction models and making defensible design decisions
-                within those constraints.
+                The most useful design thinking in this project came from treating each
+                platform&rsquo;s constraints as the design brief rather than as problems to work
+                around.
               </p>
 
               <p className="cs-wid-body">
-                <strong>How to decompose an existing product into its core
-                user tasks and reassemble them for a different input
-                paradigm.</strong> Google Drive&rsquo;s essential
-                job-to-be-done is file access. Everything else &mdash; editing,
-                sharing workflows, folder organization &mdash; is secondary. On
-                constrained platforms, stripping back to the core job reveals
-                what actually needs to survive the port.
+                On Smart TV, the remote control is the primary input. Designing for the remote means
+                designing for one-axis navigation, which forced simpler information architecture and
+                clearer visual hierarchy than a mouse-driven interface requires.
               </p>
 
               <p className="cs-wid-body">
-                <strong>How to use competitive analysis of analogous platforms,
-                not just direct competitors, to extract transferable
-                patterns.</strong> CarPlay and Netflix are not Google Drive
-                competitors. They are platforms that already solved the same
-                input problem. Treating them as design references rather than
-                comparators produced more actionable insights than any direct
-                feature comparison would have.
-              </p>
-
-              <p className="cs-wid-body">
-                <strong>How to scope aggressively.</strong> Deciding what a
-                product should not do on a given platform is as important as
-                deciding what it should do. Every &ldquo;won&rsquo;t
-                have&rdquo; in this project was a decision grounded in the
-                constraint analysis, not a workaround for the available time.
+                On Tesla, the safety constraint is non-negotiable. Driving Mode is not a feature.
+                It is a design principle that shapes every other decision in the Tesla adaptation.
+                Any feature that could not survive the question &ldquo;does this work safely at 60
+                miles per hour?&rdquo; was either removed or restructured.
               </p>
             </div>
-          </Reveal>
+          </ScrollReveal>
 
-          <Reveal delay={80}>
+          <ScrollReveal>
             <div className="cs-wid">
-              <h3 className="cs-wid-heading">What would change with real research</h3>
+              <h3 className="cs-wid-heading">The proto-persona insight</h3>
 
               <p className="cs-wid-body">
-                This project is built entirely on heuristic reasoning and
-                competitive analysis. If this were a real product initiative,
-                the first step would be usability testing with actual drivers
-                and TV users to validate several assumptions.
+                The proto-persona work clarified that both platforms have users with fundamentally
+                different relationships to their files. Smart TV users are in a lean-back, consumption
+                mode. Tesla users are time-pressured and often in motion. The same file management
+                system needed to feel effortless in both contexts for entirely different reasons.
               </p>
 
               <p className="cs-wid-body">
-                The assumption that recent files are sufficient for driving mode.
-                A study tracking which files users actually access from their
-                cars would either confirm this or reveal a different access
-                pattern entirely.
-              </p>
-
-              <p className="cs-wid-body">
-                The assumption that TV users do not want to edit. Observation
-                of real TV-based file access behavior might reveal use cases not
-                anticipated here.
-              </p>
-
-              <p className="cs-wid-body">
-                The 2-to-3-second glance time guideline is well-established for
-                general in-car interfaces, but may not hold for
-                parked-but-idling states (waiting in a parking lot, charging).
-                The hard binary of driving mode vs. parking mode may need a
-                third state.
-              </p>
-
-              <p className="cs-wid-body">
-                None of these were tested. The project stands as a design
-                exploration grounded in constraint analysis, not as a validated
-                solution.
+                The failure mode in speculative design is producing solutions that solve a hypothetical
+                problem with a hypothetical solution. The constraint is keeping the rationale honest:
+                every decision here is grounded in the hardware, not in a wished-for use case.
               </p>
             </div>
-          </Reveal>
-
-          <Reveal delay={80}>
-            <div className="cs-wid">
-              <h3 className="cs-wid-heading">What I&rsquo;d do differently</h3>
-
-              <p className="cs-wid-body">
-                <strong>Narrow the scope to one platform instead of two.</strong>
-                Covering both Tesla and Smart TV meant neither direction got the
-                depth it deserved. A single-platform deep dive with scenario
-                mapping, prototype testing (even informal guerrilla testing with
-                5 participants), and iterative refinement would produce a
-                stronger case study than two surface-level explorations.
-              </p>
-
-              <p className="cs-wid-body">
-                <strong>Build interactive prototypes rather than static
-                screens.</strong> The Tesla voice interaction, in particular, is
-                impossible to evaluate without hearing it. A prototype using a
-                Wizard of Oz method (simulating voice responses manually) would
-                have revealed interaction breakdowns that static mockups cannot
-                surface.
-              </p>
-            </div>
-          </Reveal>
+          </ScrollReveal>
         </section>
 
       </div>
-    </>
+    </main>
   );
 }
