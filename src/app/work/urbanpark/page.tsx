@@ -198,29 +198,30 @@ export default function UrbanParkCaseStudy() {
             </p>
           </ScrollReveal>
 
-          {/* Design system images — single column, natural aspect ratio */}
+          {/* Design system images — horizontal scroll carousel */}
           <ScrollReveal>
             <div
               style={{
                 display: "flex",
-                flexDirection: "column",
-                gap: "3rem",
+                overflowX: "auto",
+                gap: "24px",
+                paddingBottom: "16px",
                 marginTop: "2rem",
               }}
             >
               {[
-                { src: "ds-primitives.png",   caption: "Color primitives — 9 ramps, 10 to 100 scale"  },
-                { src: "ds-semantic.png",     caption: "Semantic tokens aliased to primitives"          },
-                { src: "ds-typography.png",   caption: "Typography tokens — 2 families, 3 weights"      },
-                { src: "ds-components-1.png", caption: "Core components — buttons, controls, dropdowns" },
-                { src: "ds-components-2.png", caption: "Input fields and navigation — 6 states"         },
-                { src: "ds-components-3.png", caption: "Product specific components"                    },
+                { src: "/images/urbanpark/ds-primitives.png",   caption: "Color primitives — 9 ramps, 10 to 100 scale"  },
+                { src: "/images/urbanpark/ds-semantic.png",     caption: "Semantic tokens aliased to primitives"          },
+                { src: "/images/urbanpark/ds-typography.png",   caption: "Typography tokens — 2 families, 3 weights"      },
+                { src: "/images/urbanpark/ds-components-1.png", caption: "Core components — buttons, controls, dropdowns" },
+                { src: "/images/urbanpark/ds-components-2.png", caption: "Input fields and navigation — 6 states"         },
+                { src: "/images/urbanpark/ds-components-3.png", caption: "Product specific components"                    },
               ].map(({ src, caption }) => (
-                <div key={src}>
+                <div key={src} style={{ flexShrink: 0, width: "600px" }}>
                   <img
-                    src={IMG(src)}
+                    src={src}
                     alt={caption}
-                    style={{ width: "100%", height: "auto", display: "block", borderRadius: "8px" }}
+                    style={{ width: "600px", height: "auto", display: "block", borderRadius: "8px" }}
                   />
                   <p
                     style={{
