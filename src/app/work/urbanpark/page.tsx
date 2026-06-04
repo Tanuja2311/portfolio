@@ -37,11 +37,12 @@ export default function UrbanParkCaseStudy() {
     <main>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <CaseStudyHero study={{
-        hero:       IMG("hero.jpg"),
-        coverColor: "#0d1a0f",
-        tags:       ["0 to 1 Product", "C2C Product"],
-        title:      "UrbanPark.",
-        subtitle:   "Most driveway rental platforms optimize for bookings. UrbanPark was designed around what homeowners actually fear.",
+        hero:         IMG("hero.jpg"),
+        coverColor:   "#0d1a0f",
+        containHero:  true,
+        tags:         ["0 to 1 Product", "C2C Product"],
+        title:        "UrbanPark.",
+        subtitle:     "Most driveway rental platforms optimize for bookings. UrbanPark was designed around what homeowners actually fear.",
         meta: {
           role: "Product Designer",
           items: [

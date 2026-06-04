@@ -10,6 +10,8 @@ export interface HeroStudy {
   tags?: string[];
   title: string;
   subtitle: string;
+  /** Show the hero image at natural proportions instead of cropped cover fill. */
+  containHero?: boolean;
   meta: {
     role: string;
     duration?: string;
@@ -36,24 +38,36 @@ export function CaseStudyHero({ study }: { study: HeroStudy }) {
       {/* ── Cover ─────────────────────────────────────────────── */}
       <div
         className="cs-hero-cover"
-        style={hasImage ? { background: study.coverColor } : undefined}
+        style={{
+          ...(hasImage ? { background: study.coverColor } : undefined),
+          ...(study.containHero ? { height: "auto" } : undefined),
+        }}
       >
         {hasImage ? (
-          <m.div
-            className="cs-hero-img-wrap"
-            initial={{ scale: 1.03 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <Image
+          study.containHero ? (
+            // Natural-height path: full image, no cropping
+            <img
               src={study.hero!}
               alt={study.heroAlt ?? study.title}
-              fill
-              priority
-              sizes="100vw"
-              className="cs-hero-img"
+              style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}
             />
-          </m.div>
+          ) : (
+            <m.div
+              className="cs-hero-img-wrap"
+              initial={{ scale: 1.03 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <Image
+                src={study.hero!}
+                alt={study.heroAlt ?? study.title}
+                fill
+                priority
+                sizes="100vw"
+                className="cs-hero-img"
+              />
+            </m.div>
+          )
         ) : (
           <div className="cs-hero-placeholder" aria-hidden>
             <span className="cs-hero-placeholder-label">Project cover image</span>
