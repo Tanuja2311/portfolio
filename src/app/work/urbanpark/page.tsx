@@ -339,15 +339,42 @@ export default function UrbanParkCaseStudy() {
                 verified. A renter seeing a &ldquo;3-layer verified&rdquo; badge
                 on a listing knows specifically what that means.
               </p>
-              <div className="cs-feature-img-wrap">
-                <CaseImage
-                  src={IMG("verification-flow.jpg")}
-                  alt="Verification flow screens"
-                  description="Verification - ID upload, vehicle registration, property confirmation"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
-                />
+              <div style={{ display: "flex", gap: "24px", margin: "1.5rem 0" }}>
+                {[
+                  { src: "/images/urbanpark/verification-flow.gif", label: "Camera Setup"      },
+                  { src: "/images/urbanpark/notification-screen.jpg", label: "Verified on Arrival" },
+                ].map(({ src, label }) => (
+                  <div
+                    key={src}
+                    style={{
+                      flex: 1,
+                      background: "var(--bg-elevated)",
+                      border: "1px solid var(--border)",
+                      borderRadius: "0.75rem",
+                      overflow: "hidden",
+                      padding: "1rem",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontFamily: "var(--font-sans)",
+                        fontSize: "0.7rem",
+                        fontWeight: 700,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.09em",
+                        color: "var(--text-muted)",
+                        marginBottom: "0.75rem",
+                      }}
+                    >
+                      {label}
+                    </p>
+                    <img
+                      src={src}
+                      alt={label}
+                      style={{ width: "100%", height: "auto", display: "block", borderRadius: "0.5rem" }}
+                    />
+                  </div>
+                ))}
               </div>
               <div className="cs-feature-decision">
                 <span className="cs-feature-decision-label">Design decision</span>
