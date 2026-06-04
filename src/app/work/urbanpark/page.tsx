@@ -302,7 +302,7 @@ export default function UrbanParkCaseStudy() {
               </p>
               <div className="cs-feature-img-wrap">
                 <CaseImage
-                  src={IMG("renter-flow.jpg")}
+                  src={IMG("bookings-flow.jpg")}
                   alt="Renter search and booking flow"
                   description="Renter flow - map search, listing detail, booking, payment, navigation"
                   fill
