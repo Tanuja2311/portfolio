@@ -12,7 +12,7 @@ const SLIDES = [
 ];
 
 const TOTAL   = SLIDES.length;
-const AUTO_MS = 4000;
+const AUTO_MS = 6000;
 
 export function DesignSystemCarousel() {
   const [index, setIndex] = useState(0);
@@ -80,7 +80,7 @@ export function DesignSystemCarousel() {
             display: "flex",
             height: "100%",
             transform: `translateX(-${index * 100}%)`,
-            transition: "transform 0.5s ease",
+            transition: "transform 0.7s ease",
           }}
         >
           {SLIDES.map(({ src, caption }) => (
@@ -88,7 +88,7 @@ export function DesignSystemCarousel() {
               <img
                 src={src}
                 alt={caption}
-                style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
+                style={{ width: "100%", height: "100%", objectFit: "contain", display: "block", borderRadius: "20px" }}
               />
             </div>
           ))}
