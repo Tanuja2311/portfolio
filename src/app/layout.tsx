@@ -87,7 +87,7 @@ export default async function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body style={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
+      <body style={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }} suppressHydrationWarning={true}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <MotionProvider>
           <Nav />
