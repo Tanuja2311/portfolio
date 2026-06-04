@@ -339,7 +339,7 @@ export default function UrbanParkCaseStudy() {
                 verified. A renter seeing a &ldquo;3-layer verified&rdquo; badge
                 on a listing knows specifically what that means.
               </p>
-              <div style={{ display: "flex", gap: "24px", margin: "1.5rem 0" }}>
+              <div style={{ display: "flex", gap: "24px", margin: "1.5rem auto", maxWidth: "900px" }}>
                 {[
                   { src: "/images/urbanpark/verification-flow.gif", label: "Camera Setup"      },
                   { src: "/images/urbanpark/notification-screen.jpg", label: "Verified on Arrival" },
@@ -371,7 +371,7 @@ export default function UrbanParkCaseStudy() {
                     <img
                       src={src}
                       alt={label}
-                      style={{ width: "100%", height: "auto", display: "block", borderRadius: "0.5rem" }}
+                      style={{ maxHeight: "500px", width: "auto", display: "block", borderRadius: "0.5rem", margin: "0 auto" }}
                     />
                   </div>
                 ))}
