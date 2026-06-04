@@ -214,24 +214,24 @@ export default function UrbanParkCaseStudy() {
                 { src: "ds-typography.png",    caption: "Typography tokens — 2 families, 3 weights" },
                 { src: "ds-components-1.png",  caption: "Core components — buttons, controls, dropdowns" },
                 { src: "ds-components-2.png",  caption: "Input fields and navigation — 6 states" },
-                { src: "ds-components-3.png",  caption: "Product specific components — camera and renter flows" },
+                { src: "ds-components-3.png",  caption: "Product specific components" },
               ].map(({ src, caption }) => (
                 <div key={src}>
                   <div
                     style={{
-                      background: "var(--surface)",
-                      border: "1px solid var(--border)",
-                      borderRadius: "0.5rem",
+                      position: "relative",
+                      width: "100%",
                       aspectRatio: "16 / 10",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "var(--text-muted)",
-                      fontSize: "0.75rem",
-                      fontFamily: "var(--font-mono, monospace)",
+                      borderRadius: "0.5rem",
+                      overflow: "hidden",
                     }}
                   >
-                    {src}
+                    <CaseImage
+                      src={IMG(src)}
+                      alt={caption}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
                   <p
                     style={{
