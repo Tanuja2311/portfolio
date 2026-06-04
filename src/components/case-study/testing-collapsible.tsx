@@ -143,23 +143,18 @@ export function TestingCollapsible() {
               a booking, and interpreting verification signals.
             </p>
             <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-              Two issues surfaced consistently across sessions.
-            </p>
-            <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-              Homeowners could not find the availability calendar without
-              prompting. It was buried in the listing setup flow rather than
-              surfaced on the main dashboard. This was a significant problem
-              because calendar management is a recurring task, not a one time
-              setup step. The calendar was moved to a persistent dashboard
-              module.
+              Two issues surfaced consistently. Homeowners could not find the
+              availability calendar without prompting. It was buried in the
+              listing setup flow rather than surfaced on the main dashboard.
+              Calendar management is a recurring task, not a one time setup step.
+              The calendar was moved to a persistent dashboard module.
             </p>
             <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
               Renter profile information was not accessible at the point of
               decision. When homeowners reached the booking approval screen, the
-              renter details they needed to feel confident were one tap away but
-              not visible by default. The approval screen was redesigned to
-              surface verification status, vehicle details, and renter history
-              inline rather than behind a secondary tap.
+              renter details they needed were one tap away but not visible by
+              default. The approval screen was redesigned to surface verification
+              status, vehicle details, and renter history inline.
             </p>
           </div>
 
@@ -179,34 +174,24 @@ export function TestingCollapsible() {
             <p className="cs-subsection-body">
               Because the core problem was emotional, not functional, I defined
               success metrics before designing anything. This kept the work
-              anchored to the real problem rather than drifting toward optimizing
-              for engagement or speed.
+              anchored to the real problem rather than optimizing for engagement
+              or speed.
             </p>
             <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-              I split metrics into two categories.
+              Performance metrics measure whether the system is actually reducing
+              risk: reduction in incidents involving unverifiable renters,
+              increase in bookings flagged due to ID or plate mismatches, and
+              reduction in disputes requiring platform escalation. I set
+              directional targets as design guardrails, not post-launch
+              measurements.
             </p>
             <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-              <strong style={{ color: "var(--text)", fontWeight: 500 }}>
-                Performance metrics:
-              </strong>{" "}
-              These measure whether the system is actually reducing risk. Success
-              would look like a meaningful reduction in incidents involving
-              unverifiable renters, an increase in bookings flagged or blocked
-              due to ID or plate mismatches, and a reduction in disputes
-              requiring platform escalation. I set directional targets for each
-              to use as design guardrails, not post-launch measurements.
-            </p>
-            <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-              <strong style={{ color: "var(--text)", fontWeight: 500 }}>
-                Experience metrics:
-              </strong>{" "}
-              Because trust is the product, perception matters as much as
-              function. These measure how homeowners feel while using UrbanPark:
-              confidence before approving a renter, trust in the verification
-              process, sense of control over their property and schedule, and
-              satisfaction with platform support when something goes wrong.
-              Increasing scores across these signals that homeowners are relying
-              on the system rather than their anxiety.
+              Experience metrics measure how homeowners feel: confidence before
+              approving a renter, trust in the verification process, sense of
+              control over their property and schedule, and satisfaction with
+              platform support when something goes wrong. Increasing scores here
+              signals homeowners are relying on the system rather than their
+              anxiety.
             </p>
           </div>
 

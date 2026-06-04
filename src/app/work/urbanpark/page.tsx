@@ -181,136 +181,81 @@ export default function UrbanParkCaseStudy() {
           <ScrollReveal>
             <h2 id="design-system-heading" className="cs-section-heading">Design System</h2>
             <p className="cs-section-body">
-              Before designing screens, I built the component library. This
-              isn&rsquo;t how academic projects typically work - students usually
-              skip straight to high-fidelity. I did it first because
-              I&rsquo;d learned from a previous project that designing without a
-              system produces inconsistent work that&rsquo;s painful to maintain
-              and impossible to hand off. The system has six component categories,
-              documented with all states, interaction behavior, and edge cases,
-              built in Figma with auto-layout, component properties, and a
-              token-based color and type system.
+              Before designing a single screen, I built the token foundation.
+              Most student projects skip this entirely.
             </p>
+            <p className="cs-section-body" style={{ marginTop: "1rem" }}>
+              The system uses a two-tier architecture: 95 color primitive tokens
+              across nine ramps, each on a consistent 10 to 100 scale, and 29
+              semantic tokens that alias directly to those primitives. Changing
+              one primitive value propagates across the entire system
+              automatically.
+            </p>
+            <p className="cs-section-body" style={{ marginTop: "1rem" }}>
+              I learned this methodology independently after ZingHR, where
+              Figma&rsquo;s variable system did not yet exist at this level.
+              UrbanPark is where I applied it properly for the first time.
+            </p>
+          </ScrollReveal>
 
-            <div className="cs-nda-note">
-              <span className="cs-nda-note-label">Context</span>
-              <p>
-                I built a similar enterprise-grade design system at ZingHR for
-                their B2B HR platform serving 500,000+ daily transactions - but
-                that work is under NDA. UrbanPark demonstrates the same
-                methodology: component-level thinking, systematic state
-                documentation, and token-based design - applied to a consumer
-                product I can show.
-              </p>
+          {/* Token system image grid */}
+          <ScrollReveal>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "1.5rem",
+                marginTop: "2rem",
+              }}
+            >
+              {[
+                { src: "ds-primitives.jpg",  caption: "Color primitives — 9 ramps, 10 to 100 scale" },
+                { src: "ds-semantic.jpg",    caption: "Semantic tokens aliased to primitives" },
+                { src: "ds-typography.jpg",  caption: "Typography tokens — 2 families, 3 weights" },
+                { src: "ds-components.jpg",  caption: "Components built on the token foundation" },
+              ].map(({ src, caption }) => (
+                <div key={src}>
+                  <div
+                    style={{
+                      background: "var(--surface)",
+                      border: "1px solid var(--border)",
+                      borderRadius: "0.5rem",
+                      aspectRatio: "16 / 10",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "var(--text-muted)",
+                      fontSize: "0.75rem",
+                      fontFamily: "var(--font-mono, monospace)",
+                    }}
+                  >
+                    {src}
+                  </div>
+                  <p
+                    style={{
+                      marginTop: "0.5rem",
+                      fontSize: "0.75rem",
+                      color: "var(--text-muted)",
+                      fontFamily: "var(--font-sans)",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {caption}
+                  </p>
+                </div>
+              ))}
             </div>
           </ScrollReveal>
 
-          {/* Component grid */}
           <ScrollReveal>
-            <div className="cs-ds-grid">
-
-              <div className="cs-ds-group">
-                <div className="cs-ds-group-header">
-                  <span className="cs-ds-group-name">Buttons</span>
-                  <span className="cs-ds-group-spec">Primary · Secondary · Ghost · Disabled · Loading</span>
-                </div>
-                <div className="cs-ds-group-img">
-                  <CaseImage
-                    src={IMG("ds-buttons.jpg")}
-                    alt="Button component states"
-                    description="All button states - 5 variants × 3 sizes"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="cs-hero-img"
-                  />
-                </div>
-              </div>
-
-              <div className="cs-ds-group">
-                <div className="cs-ds-group-header">
-                  <span className="cs-ds-group-name">Inputs &amp; Fields</span>
-                  <span className="cs-ds-group-spec">Default · Focus · Error · Success · Disabled</span>
-                </div>
-                <div className="cs-ds-group-img">
-                  <CaseImage
-                    src={IMG("ds-inputs.jpg")}
-                    alt="Input field states"
-                    description="Input states - with accessible focus rings and validation"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="cs-hero-img"
-                  />
-                </div>
-              </div>
-
-              <div className="cs-ds-group">
-                <div className="cs-ds-group-header">
-                  <span className="cs-ds-group-name">Form Controls</span>
-                  <span className="cs-ds-group-spec">Select · Toggle · Checkbox · Radio · Slider</span>
-                </div>
-                <div className="cs-ds-group-img">
-                  <CaseImage
-                    src={IMG("ds-controls.jpg")}
-                    alt="Form control components"
-                    description="Selects, toggles, checkboxes - all states"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="cs-hero-img"
-                  />
-                </div>
-              </div>
-
-              <div className="cs-ds-group">
-                <div className="cs-ds-group-header">
-                  <span className="cs-ds-group-name">Cards</span>
-                  <span className="cs-ds-group-spec">Listing · Booking · Confirmation · Review</span>
-                </div>
-                <div className="cs-ds-group-img">
-                  <CaseImage
-                    src={IMG("ds-cards.jpg")}
-                    alt="Card component variants"
-                    description="Listing, booking, confirmation cards - hover + selected states"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="cs-hero-img"
-                  />
-                </div>
-              </div>
-
-              <div className="cs-ds-group">
-                <div className="cs-ds-group-header">
-                  <span className="cs-ds-group-name">Modals</span>
-                  <span className="cs-ds-group-spec">Confirmation · Error · Payment · Bottom sheet</span>
-                </div>
-                <div className="cs-ds-group-img">
-                  <CaseImage
-                    src={IMG("ds-modals.jpg")}
-                    alt="Modal component variants"
-                    description="Confirmation, error, payment modals - all states"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="cs-hero-img"
-                  />
-                </div>
-              </div>
-
-              <div className="cs-ds-group">
-                <div className="cs-ds-group-header">
-                  <span className="cs-ds-group-name">Feedback</span>
-                  <span className="cs-ds-group-spec">Toast success/warning/error · Tooltips · Empty states</span>
-                </div>
-                <div className="cs-ds-group-img">
-                  <CaseImage
-                    src={IMG("ds-feedback.jpg")}
-                    alt="Feedback components"
-                    description="Toasts, tooltips, empty states - all variants"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="cs-hero-img"
-                  />
-                </div>
-              </div>
-
+            <div className="cs-nda-note">
+              <span className="cs-nda-note-label">Context</span>
+              <p>
+                A more comprehensive enterprise design system was built at ZingHR
+                for a B2B platform serving 500,000 daily users, but that work is
+                under NDA. UrbanPark demonstrates the same foundational
+                methodology applied to a product I can show.
+              </p>
             </div>
           </ScrollReveal>
         </section>
