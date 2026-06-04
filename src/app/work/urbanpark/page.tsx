@@ -209,10 +209,12 @@ export default function UrbanParkCaseStudy() {
               }}
             >
               {[
-                { src: "ds-primitives.jpg",  caption: "Color primitives — 9 ramps, 10 to 100 scale" },
-                { src: "ds-semantic.jpg",    caption: "Semantic tokens aliased to primitives" },
-                { src: "ds-typography.jpg",  caption: "Typography tokens — 2 families, 3 weights" },
-                { src: "ds-components.jpg",  caption: "Components built on the token foundation" },
+                { src: "ds-primitives.png",    caption: "Color primitives — 9 ramps, 10 to 100 scale" },
+                { src: "ds-semantic.png",      caption: "Semantic tokens aliased to primitives" },
+                { src: "ds-typography.png",    caption: "Typography tokens — 2 families, 3 weights" },
+                { src: "ds-components-1.png",  caption: "Core components — buttons, controls, dropdowns" },
+                { src: "ds-components-2.png",  caption: "Input fields and navigation — 6 states" },
+                { src: "ds-components-3.png",  caption: "Product specific components — camera and renter flows" },
               ].map(({ src, caption }) => (
                 <div key={src}>
                   <div
