@@ -222,6 +222,7 @@ export default function UrbanParkCaseStudy() {
                     alt={caption}
                     width={width}
                     height={height}
+                    unoptimized
                     style={{ width: "100%", height: "auto", borderRadius: "0.5rem", display: "block" }}
                     sizes="(max-width: 768px) 100vw, calc(100vw - 4rem)"
                   />
