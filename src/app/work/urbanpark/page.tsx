@@ -4,7 +4,8 @@ import { CaseStudySummary } from "@/components/case-study/summary";
 import { CsScrollLinks }    from "@/components/case-study/scroll-links";
 import { ScrollReveal }     from "@/components/scroll-reveal";
 import { CaseImage }        from "@/components/case-study/case-image";
-import { TestingCollapsible } from "@/components/case-study/testing-collapsible";
+import { TestingCollapsible }      from "@/components/case-study/testing-collapsible";
+import { DesignSystemCarousel }    from "@/components/case-study/design-system-carousel";
 
 export const metadata: Metadata = {
   title:       "UrbanPark",
@@ -198,46 +199,8 @@ export default function UrbanParkCaseStudy() {
             </p>
           </ScrollReveal>
 
-          {/* Design system images — horizontal scroll carousel */}
-          <ScrollReveal>
-            <div
-              style={{
-                display: "flex",
-                overflowX: "auto",
-                gap: "24px",
-                paddingBottom: "16px",
-                marginTop: "2rem",
-              }}
-            >
-              {[
-                { src: "/images/urbanpark/ds-primitives.png",   caption: "Color primitives — 9 ramps, 10 to 100 scale"  },
-                { src: "/images/urbanpark/ds-semantic.png",     caption: "Semantic tokens aliased to primitives"          },
-                { src: "/images/urbanpark/ds-typography.png",   caption: "Typography tokens — 2 families, 3 weights"      },
-                { src: "/images/urbanpark/ds-components-1.png", caption: "Core components — buttons, controls, dropdowns" },
-                { src: "/images/urbanpark/ds-components-2.png", caption: "Input fields and navigation — 6 states"         },
-                { src: "/images/urbanpark/ds-components-3.png", caption: "Product specific components"                    },
-              ].map(({ src, caption }) => (
-                <div key={src} style={{ flexShrink: 0, width: "600px" }}>
-                  <img
-                    src={src}
-                    alt={caption}
-                    style={{ width: "600px", height: "auto", display: "block", borderRadius: "8px" }}
-                  />
-                  <p
-                    style={{
-                      marginTop: "2rem",
-                      fontSize: "0.75rem",
-                      color: "var(--text-muted)",
-                      fontFamily: "var(--font-sans)",
-                      lineHeight: 1.5,
-                    }}
-                  >
-                    {caption}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
+          {/* Design system carousel */}
+          <DesignSystemCarousel />
 
           <ScrollReveal>
             <div className="cs-nda-note">
