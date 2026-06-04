@@ -198,44 +198,36 @@ export default function UrbanParkCaseStudy() {
             </p>
           </ScrollReveal>
 
-          {/* Token system image grid */}
+          {/* Design system images — single column, natural aspect ratio */}
           <ScrollReveal>
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "1.5rem",
+                display: "flex",
+                flexDirection: "column",
+                gap: "3rem",
                 marginTop: "2rem",
               }}
             >
               {[
-                { src: "ds-primitives.png",    caption: "Color primitives — 9 ramps, 10 to 100 scale" },
-                { src: "ds-semantic.png",      caption: "Semantic tokens aliased to primitives" },
-                { src: "ds-typography.png",    caption: "Typography tokens — 2 families, 3 weights" },
-                { src: "ds-components-1.png",  caption: "Core components — buttons, controls, dropdowns" },
-                { src: "ds-components-2.png",  caption: "Input fields and navigation — 6 states" },
-                { src: "ds-components-3.png",  caption: "Product specific components" },
-              ].map(({ src, caption }) => (
-                <div key={src}>
-                  <div
-                    style={{
-                      position: "relative",
-                      width: "100%",
-                      aspectRatio: "16 / 10",
-                      borderRadius: "0.5rem",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <CaseImage
-                      src={IMG(src)}
-                      alt={caption}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
+                { src: "ds-primitives.png",   caption: "Color primitives — 9 ramps, 10 to 100 scale",  width: 3558, height: 1210 },
+                { src: "ds-semantic.png",     caption: "Semantic tokens aliased to primitives",          width: 1002, height: 4564 },
+                { src: "ds-typography.png",   caption: "Typography tokens — 2 families, 3 weights",      width: 3812, height: 3708 },
+                { src: "ds-components-1.png", caption: "Core components — buttons, controls, dropdowns", width: 6156, height: 2572 },
+                { src: "ds-components-2.png", caption: "Input fields and navigation — 6 states",         width: 3994, height: 2682 },
+                { src: "ds-components-3.png", caption: "Product specific components",                    width: 2712, height: 1488 },
+              ].map(({ src, caption, width, height }) => (
+                <div key={src} style={{ position: "relative", overflow: "hidden" }}>
+                  <CaseImage
+                    src={IMG(src)}
+                    alt={caption}
+                    width={width}
+                    height={height}
+                    style={{ width: "100%", height: "auto", borderRadius: "0.5rem", display: "block" }}
+                    sizes="(max-width: 768px) 100vw, calc(100vw - 4rem)"
+                  />
                   <p
                     style={{
-                      marginTop: "0.5rem",
+                      marginTop: "2rem",
                       fontSize: "0.75rem",
                       color: "var(--text-muted)",
                       fontFamily: "var(--font-sans)",
