@@ -127,6 +127,17 @@ export default function UrbanParkCaseStudy() {
           </ScrollReveal>
 
           <ScrollReveal>
+            <p className="cs-subsection-body" style={{ marginTop: "1.5rem" }}>
+              To avoid surface level conclusions, I used 5 Whys to trace each pain point back to its root cause.
+            </p>
+            <img
+              src="/images/urbanpark/research-5whys.jpg"
+              alt="5 Whys analysis mapping homeowner pain points to root causes"
+              style={{ width: "100%", height: "auto", display: "block", marginTop: "1rem" }}
+            />
+          </ScrollReveal>
+
+          <ScrollReveal>
             <div className="cs-metrics cs-metrics--3col" style={{ marginTop: "2.5rem" }}>
               <div className="cs-metric">
                 <p className="cs-metric-label">No renter verification</p>

@@ -89,6 +89,11 @@ export function TestingCollapsible() {
                 10% email signups. 36% of visitors signed up. That told me the
                 demand was real enough to design for.
               </p>
+              <img
+                src="/images/urbanpark/pretotype-fakefrontdoor.jpg"
+                alt="Fake Front Door pretotype landing page"
+                style={{ width: "100%", height: "auto", display: "block", borderRadius: "8px", marginTop: "1rem" }}
+              />
             </div>
 
             <div
@@ -120,6 +125,11 @@ export function TestingCollapsible() {
                 floodlight cameras as a default and offers alternate verification
                 through car color, make, and model as a fallback.
               </p>
+              <img
+                src="/images/urbanpark/pretotype-mechanicalturk.jpg"
+                alt="Mechanical Turk pretotype camera placement test"
+                style={{ width: "100%", height: "auto", display: "block", borderRadius: "8px", marginTop: "1rem" }}
+              />
             </div>
           </div>
 
@@ -156,6 +166,11 @@ export function TestingCollapsible() {
               default. The approval screen was redesigned to surface verification
               status, vehicle details, and renter history inline.
             </p>
+            <img
+              src="/images/urbanpark/usability-testing.jpg"
+              alt="Usability testing session with homeowner participants"
+              style={{ width: "100%", height: "auto", display: "block", borderRadius: "8px", marginTop: "1rem" }}
+            />
           </div>
 
           <hr
