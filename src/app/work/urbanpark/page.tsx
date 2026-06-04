@@ -3,7 +3,6 @@ import { CaseStudyHero }    from "@/components/case-study/hero";
 import { CaseStudySummary } from "@/components/case-study/summary";
 import { CsScrollLinks }    from "@/components/case-study/scroll-links";
 import { ScrollReveal }     from "@/components/scroll-reveal";
-import { CaseImage }        from "@/components/case-study/case-image";
 import { TestingCollapsible }      from "@/components/case-study/testing-collapsible";
 import { DesignSystemCarousel }    from "@/components/case-study/design-system-carousel";
 
@@ -260,14 +259,11 @@ export default function UrbanParkCaseStudy() {
                 clears - a gate that reduced fraudulent listings in our
                 prototype testing to zero.
               </p>
-              <div className="cs-feature-img-wrap">
-                <CaseImage
+              <div style={{ margin: "1.5rem 0" }}>
+                <img
                   src={IMG("homeowner-flow.jpg")}
                   alt="Homeowner listing flow"
-                  description="Homeowner flow - address, photos, schedule, pricing, verification"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
+                  style={{ width: "100%", height: "auto", display: "block", borderRadius: "0.75rem" }}
                 />
               </div>
               <div className="cs-feature-decision">
@@ -300,14 +296,11 @@ export default function UrbanParkCaseStudy() {
                 commits, because that&rsquo;s when both sides need the most
                 clarity.
               </p>
-              <div className="cs-feature-img-wrap">
-                <CaseImage
+              <div style={{ margin: "1.5rem 0" }}>
+                <img
                   src={IMG("bookings-flow.jpg")}
                   alt="Renter search and booking flow"
-                  description="Renter flow - map search, listing detail, booking, payment, navigation"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 72rem"
-                  className="cs-hero-img"
+                  style={{ width: "100%", height: "auto", display: "block", borderRadius: "0.75rem" }}
                 />
               </div>
               <div className="cs-feature-decision">
