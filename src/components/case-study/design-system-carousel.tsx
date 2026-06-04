@@ -72,22 +72,23 @@ export function DesignSystemCarousel() {
     <div style={{ marginTop: "2rem" }}>
 
       {/* Viewport — clips the slide track */}
-      <div style={{ position: "relative", overflow: "hidden", borderRadius: "8px" }}>
+      <div style={{ position: "relative", overflow: "hidden", borderRadius: "8px", height: "500px" }}>
 
         {/* Slide track — all slides in a flex row, shifted by translateX */}
         <div
           style={{
             display: "flex",
+            height: "100%",
             transform: `translateX(-${index * 100}%)`,
             transition: "transform 0.5s ease",
           }}
         >
           {SLIDES.map(({ src, caption }) => (
-            <div key={src} style={{ minWidth: "100%", flexShrink: 0 }}>
+            <div key={src} style={{ minWidth: "100%", flexShrink: 0, height: "100%" }}>
               <img
                 src={src}
                 alt={caption}
-                style={{ width: "100%", height: "auto", display: "block" }}
+                style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
               />
             </div>
           ))}
