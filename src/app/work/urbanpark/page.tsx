@@ -209,22 +209,18 @@ export default function UrbanParkCaseStudy() {
               }}
             >
               {[
-                { src: "ds-primitives.png",   caption: "Color primitives — 9 ramps, 10 to 100 scale",  width: 3558, height: 1210 },
-                { src: "ds-semantic.png",     caption: "Semantic tokens aliased to primitives",          width: 1002, height: 4564 },
-                { src: "ds-typography.png",   caption: "Typography tokens — 2 families, 3 weights",      width: 3812, height: 3708 },
-                { src: "ds-components-1.png", caption: "Core components — buttons, controls, dropdowns", width: 6156, height: 2572 },
-                { src: "ds-components-2.png", caption: "Input fields and navigation — 6 states",         width: 3994, height: 2682 },
-                { src: "ds-components-3.png", caption: "Product specific components",                    width: 2712, height: 1488 },
-              ].map(({ src, caption, width, height }) => (
-                <div key={src} style={{ position: "relative", overflow: "hidden" }}>
-                  <CaseImage
+                { src: "ds-primitives.png",   caption: "Color primitives — 9 ramps, 10 to 100 scale"  },
+                { src: "ds-semantic.png",     caption: "Semantic tokens aliased to primitives"          },
+                { src: "ds-typography.png",   caption: "Typography tokens — 2 families, 3 weights"      },
+                { src: "ds-components-1.png", caption: "Core components — buttons, controls, dropdowns" },
+                { src: "ds-components-2.png", caption: "Input fields and navigation — 6 states"         },
+                { src: "ds-components-3.png", caption: "Product specific components"                    },
+              ].map(({ src, caption }) => (
+                <div key={src}>
+                  <img
                     src={IMG(src)}
                     alt={caption}
-                    width={width}
-                    height={height}
-                    unoptimized
-                    style={{ width: "100%", height: "auto", borderRadius: "0.5rem", display: "block" }}
-                    sizes="(max-width: 768px) 100vw, calc(100vw - 4rem)"
+                    style={{ width: "100%", height: "auto", display: "block", borderRadius: "8px" }}
                   />
                   <p
                     style={{
