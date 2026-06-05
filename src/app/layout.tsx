@@ -32,6 +32,9 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-olive-ten-27.vercel.app"),
+  icons: {
+    icon: "/icon.svg",
+  },
   title: {
     template: "%s | Tanuja Bodas",
     default:  "Tanuja Bodas | Senior Product Designer",
