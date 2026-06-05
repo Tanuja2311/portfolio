@@ -2,12 +2,11 @@
   <rect width="512" height="512" fill="#0A0A0A"/>
   <text
     x="256"
-    y="256"
-    font-family="Satoshi, Inter, system-ui, -apple-system, sans-serif"
-    font-size="256"
+    y="357"
+    font-family="Satoshi, 'DM Sans', Inter, system-ui, -apple-system, sans-serif"
+    font-size="280"
     font-weight="400"
     text-anchor="middle"
-    dominant-baseline="central"
-    letter-spacing="-14"
+    letter-spacing="-18"
   ><tspan fill="#f0ece4">T</tspan><tspan fill="#B794F4">B</tspan></text>
 </svg>
