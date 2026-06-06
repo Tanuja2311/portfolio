@@ -55,7 +55,7 @@ const CARDS = [
 ] as const;
 
 const STATS = [
-  { value: "3.5+",  label: "Years enterprise" },
+  { value: "5+",    label: "Years experience"  },
   { value: "6",     label: "Shipped products"  },
   { value: "166K+", label: "Users impacted"    },
   { value: "B2B",   label: "Focus area"        },
