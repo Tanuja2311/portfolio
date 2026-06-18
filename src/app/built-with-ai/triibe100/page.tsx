@@ -36,6 +36,16 @@ export default function Triibe100Page() {
         coverColor: "#111111",
         tags:       ["AI Workflow", "Art Direction"],
         title:      "Triibe100",
+        titleTrailing: (
+          <a
+            href="https://triibe.org/100"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cs-live-link"
+          >
+            View the live list &#8599;
+          </a>
+        ),
         subtitle:   "Designed, art-directed, and built by me, with AI.",
         meta: {
           role:     "Visual direction, design, and build (solo)",
@@ -43,18 +53,6 @@ export default function Triibe100Page() {
           year:     "2025",
         },
       }} />
-
-      {/* Hero CTA */}
-      <div className="cs-hero-content" style={{ paddingTop: "2rem", paddingBottom: "2.5rem" }}>
-        <a
-          href="https://triibe.org/100"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cs-live-link"
-        >
-          View the live list &#8599;
-        </a>
-      </div>
 
       <CsScrollLinks sections={SECTIONS} />
 

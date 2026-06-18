@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { m } from "framer-motion";
 
@@ -12,6 +13,8 @@ export interface HeroStudy {
   subtitle: string;
   /** Show the hero image at natural proportions instead of cropped cover fill. */
   containHero?: boolean;
+  /** Optional element rendered to the right of the title on the same flex row. */
+  titleTrailing?: ReactNode;
   meta: {
     role: string;
     duration?: string;
@@ -86,9 +89,16 @@ export function CaseStudyHero({ study }: { study: HeroStudy }) {
           </m.div>
         )}
 
-        <m.h1 className="cs-hero-title" {...fadeUp(0.2)}>
-          {study.title}
-        </m.h1>
+        {study.titleTrailing ? (
+          <m.div className="cs-hero-title-row" {...fadeUp(0.2)}>
+            <h1 className="cs-hero-title">{study.title}</h1>
+            <div className="cs-hero-title-trailing">{study.titleTrailing}</div>
+          </m.div>
+        ) : (
+          <m.h1 className="cs-hero-title" {...fadeUp(0.2)}>
+            {study.title}
+          </m.h1>
+        )}
 
         <m.p className="cs-hero-desc" {...fadeUp(0.3)}>
           {study.subtitle}

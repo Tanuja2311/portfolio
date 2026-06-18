@@ -619,6 +619,26 @@ video {
   margin-top: 20px;
 }
 
+/* Title row: title + optional trailing element (e.g. a live link) */
+.cs-hero-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.cs-hero-title-row .cs-hero-title {
+  margin-top: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.cs-hero-title-trailing {
+  flex-shrink: 0;
+}
+
 /* One-line description */
 .cs-hero-desc {
   font-family: var(--font-sans);
