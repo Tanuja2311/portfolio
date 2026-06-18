@@ -50,14 +50,14 @@ export default function Triibe100Page() {
         subtitle:   "Designed, art-directed, and built by me, with AI.",
         meta: {
           role:     "Visual direction, design, and build (solo)",
-          duration: "Solo project",
-          year:     "2025",
+          duration: "3 days",
+          year:     "2026",
         },
       }} />
       <CaseStudySummary summary={{
         problem:  "A prestige list has to feel prestigious. The honoree photos looked flat on their own, and the experience had to feel fresh and unmistakably Triibe across both the website and social.",
         role:     "Solo across the project: visual direction, page design, and front-end build. I art-directed the honoree visuals, vibe-coded the page with Claude Code and VS Code, and carried the system into the social launch.",
-        timeline: "Two weeks, solo, from direction to launch.",
+        timeline: "Three days total, solo, covering both the page and the social designs.",
         outcome:  "Launched live at triibe.org/100 as one coordinated release. The leaf system unified the web page and the LinkedIn, Instagram, and TikTok announcement cards into a single launch.",
       }} />
 
