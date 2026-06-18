@@ -47,6 +47,16 @@ export const AI_PROJECTS: Project[] = [
     href:       "/built-with-ai/wren-gala",
     role:       "Lead Designer & Developer",
   },
+  {
+    slug:       "triibe100",
+    title:      "Triibe100",
+    thumbnail:  "/images/triibe100/hero.png",
+    coverColor: "#111111",
+    stat:       "Triibe's recognition list, our take on Forbes 30 Under 30. Designed, art-directed, and built end to end, with AI.",
+    tags:       ["AI Workflow", "Art Direction"],
+    href:       "/built-with-ai/triibe100",
+    role:       "Visual direction, design, and build (solo)",
+  },
 ];
 
 export const OTHER_PROJECTS: Project[] = [
