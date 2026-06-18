@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { CaseStudyHero }  from "@/components/case-study/hero";
-import { CsScrollLinks }  from "@/components/case-study/scroll-links";
-import { ScrollReveal }   from "@/components/scroll-reveal";
-import { CaseImage }      from "@/components/case-study/case-image";
+import { CaseStudyHero }    from "@/components/case-study/hero";
+import { CaseStudySummary } from "@/components/case-study/summary";
+import { CsScrollLinks }    from "@/components/case-study/scroll-links";
+import { ScrollReveal }     from "@/components/scroll-reveal";
+import { CaseImage }        from "@/components/case-study/case-image";
 
 const SECTIONS = [
   { id: "overview",      label: "Overview"      },
@@ -52,6 +53,12 @@ export default function Triibe100Page() {
           duration: "Solo project",
           year:     "2025",
         },
+      }} />
+      <CaseStudySummary summary={{
+        problem:  "A prestige list has to feel prestigious. The honoree photos looked flat on their own, and the experience had to feel fresh and unmistakably Triibe across both the website and social.",
+        role:     "Solo across the project: visual direction, page design, and front-end build. I art-directed the honoree visuals, vibe-coded the page with Claude Code and VS Code, and carried the system into the social launch.",
+        timeline: "Two weeks, solo, from direction to launch.",
+        outcome:  "Launched live at triibe.org/100 as one coordinated release. The leaf system unified the web page and the LinkedIn, Instagram, and TikTok announcement cards into a single launch.",
       }} />
 
       <CsScrollLinks sections={SECTIONS} />
