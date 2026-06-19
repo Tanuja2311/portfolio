@@ -8,7 +8,7 @@ import { CaseImage }        from "@/components/case-study/case-image";
 const SECTIONS = [
   { id: "overview",      label: "Overview"      },
   { id: "challenge",     label: "Challenge"     },
-  { id: "brand-move",    label: "Brand Move"    },
+  { id: "direction",     label: "Direction"     },
   { id: "launch",        label: "Launch"        },
   { id: "built-with-ai", label: "Built with AI" },
 ];
@@ -102,19 +102,98 @@ export default function Triibe100Page() {
           </ScrollReveal>
         </section>
 
-        {/* ── Brand Move ─────────────────────────────────────────────── */}
-        <section id="brand-move" className="cs-section" aria-labelledby="brand-move-heading">
+        {/* ── Direction ──────────────────────────────────────────────── */}
+        <section id="direction" className="cs-section" aria-labelledby="direction-heading">
           <ScrollReveal>
-            <h2 id="brand-move-heading" className="cs-section-heading">The brand move</h2>
+            <h2 id="direction-heading" className="cs-section-heading">Finding the visual direction</h2>
             <p className="cs-section-body">
-              Triibe&rsquo;s signature visual is a branches motif we use across all of our
-              posts. I extended it into floating-leaf visuals layered behind the honorees,
-              giving the page depth and a distinctly Triibe identity without competing with
-              the faces.
+              A prestige list lives by one rule: nothing competes with the people on it.
+              The honorees are the content. Everything else is supporting cast. The page
+              had to feel unmistakably Triibe and feel prestigious without any element
+              pulling focus from the names. Three directions tested that rule. Two broke it.
             </p>
           </ScrollReveal>
 
-          {/* Before / After */}
+          <ScrollReveal>
+            <div className="cs-subsection">
+              <span className="cs-subsection-label">01</span>
+              <h3 className="cs-subsection-heading">Themed category backgrounds</h3>
+              <p className="cs-subsection-body">
+                The list was first organized around five categories, each section carrying
+                its own environmental imagery generated with AI from Unsplash sources. The
+                backgrounds were busy and chaotic. They competed with the honorees and broke
+                Triibe&rsquo;s minimalism. When the five categories were cut company-wide,
+                the structure they supported went with them.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap">
+              <CaseImage
+                src={IMG("explore-backgrounds.png")}
+                alt="Direction 01: themed category backgrounds"
+                description="Direction 01: themed category backgrounds"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-subsection">
+              <span className="cs-subsection-label">02</span>
+              <h3 className="cs-subsection-heading">Animated branches</h3>
+              <p className="cs-subsection-body">
+                With the page now too plain, I tried Triibe&rsquo;s signature branches as
+                a scroll-driven animation, a trunk that grew new branches as the user moved
+                down the list. Made literal and animated, the branches read as twiggy
+                scaffolding. They competed with the names instead of supporting them.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap">
+              <CaseImage
+                src={IMG("explore-branches.gif")}
+                alt="Direction 02: scroll-driven branch animation (rejected)"
+                description="Direction 02: scroll-driven branch animation (rejected)"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-subsection">
+              <span className="cs-subsection-label">03</span>
+              <h3 className="cs-subsection-heading">Leaves behind the honorees</h3>
+              <p className="cs-subsection-body">
+                Both failures shared one cause: every element placed beside the honorees
+                fought them. So I took the most recognizable Triibe asset, the branch, and
+                moved it behind the people instead of around them, reduced to subtle floating
+                leaves that add depth without pulling focus. The brand stays present. The
+                names stay first.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="cs-feature-img-wrap">
+              <CaseImage
+                src={IMG("branch-motif.png")}
+                alt="Triibe's standard branch motif"
+                description="Triibe's standard branch motif"
+                fill
+                sizes="(max-width: 768px) 100vw, 72rem"
+                className="cs-hero-img"
+              />
+            </div>
+          </ScrollReveal>
+
           <ScrollReveal>
             <div className="cs-img-grid">
               <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
@@ -130,8 +209,8 @@ export default function Triibe100Page() {
               <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
                 <CaseImage
                   src={IMG("after.png")}
-                  alt="After: with floating leaves"
-                  description="After: with floating leaves"
+                  alt="After: subtle leaves behind the honorees"
+                  description="After: subtle leaves behind the honorees"
                   fill
                   sizes="(max-width: 640px) 100vw, 50vw"
                   className="cs-hero-img"
@@ -140,13 +219,12 @@ export default function Triibe100Page() {
             </div>
           </ScrollReveal>
 
-          {/* Leaves motion GIF */}
           <ScrollReveal>
             <div className="cs-feature-img-wrap">
               <CaseImage
                 src={IMG("leaves-motion.gif")}
-                alt="Screen recording: floating-leaf animation on the live page"
-                description="Screen recording: floating-leaf animation on the live page"
+                alt="The final leaf motion on the live page"
+                description="The final leaf motion on the live page"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -154,14 +232,13 @@ export default function Triibe100Page() {
             </div>
           </ScrollReveal>
 
-          {/* Design decision */}
           <ScrollReveal>
             <div className="cs-feature-decision">
               <span className="cs-feature-decision-label">Design decision</span>
               <p className="cs-feature-decision-text">
-                The leaves are layered behind, never in front of, the honoree faces.
-                The motif adds depth and a distinctly Triibe identity; the people remain
-                the focal point.
+                The brand frames the honorees, it never competes with them. Triibe&rsquo;s
+                signature branch earns its place on the page only when its volume is
+                turned down.
               </p>
             </div>
           </ScrollReveal>
