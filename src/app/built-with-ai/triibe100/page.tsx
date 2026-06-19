@@ -243,41 +243,39 @@ export default function Triibe100Page() {
           <ScrollReveal>
             <h2 id="launch-heading" className="cs-section-heading">One launch, every surface</h2>
             <p className="cs-section-body">
-              The list also went live on social. I carried the same leaf motif into the
-              announcement cards for LinkedIn, Instagram, and TikTok, so the web page and
-              the posts read as one coordinated launch.
+              The launch was not only the web page. I designed one announcement card on the
+              same leaf system and ran it across LinkedIn, Instagram, and TikTok, so the site
+              and the posts read as one coordinated launch rather than separate assets.
             </p>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="cs-img-grid">
-              {(["LinkedIn announcement card", "Instagram announcement card", "TikTok announcement card"] as const).map((label) => (
-                <div
-                  key={label}
-                  className="cs-feature-img-wrap"
-                  style={{ margin: 0 }}
-                >
-                  <span
-                    aria-hidden
-                    style={{
-                      position:       "absolute",
-                      inset:          0,
-                      display:        "flex",
-                      alignItems:     "center",
-                      justifyContent: "center",
-                      padding:        "1rem 1.5rem",
-                      fontFamily:     "var(--font-sans)",
-                      fontSize:       "0.8rem",
-                      lineHeight:     1.5,
-                      color:          "rgba(240, 236, 228, 0.28)",
-                      textAlign:      "center",
-                      pointerEvents:  "none",
-                    }}
-                  >
-                    {label}
-                  </span>
-                </div>
-              ))}
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "1.5rem 0" }}>
+              <img
+                src={IMG("social-card.png")}
+                alt="Triibe100 announcement card, vertical, built on the same leaf system as the web page"
+                style={{
+                  display:      "block",
+                  width:        "100%",
+                  maxWidth:     "380px",
+                  height:       "auto",
+                  objectFit:    "contain",
+                  borderRadius: "0.75rem",
+                  border:       "1px solid var(--border)",
+                }}
+              />
+              <p
+                style={{
+                  marginTop:   "0.75rem",
+                  fontFamily:  "var(--font-sans)",
+                  fontSize:    "0.75rem",
+                  color:       "var(--text-faint)",
+                  letterSpacing: "0.04em",
+                  textAlign:   "center",
+                }}
+              >
+                LinkedIn · Instagram · TikTok
+              </p>
             </div>
           </ScrollReveal>
         </section>
