@@ -29,39 +29,25 @@ export const metadata: Metadata = {
 
 const IMG = (name: string) => `/images/triibe100/${name}`;
 
-function ImgPH({ src, alt, label, style }: {
+function CsImg({ src, alt, style }: {
   src:    string;
   alt:    string;
-  label:  string;
   style?: CSSProperties;
 }) {
   return (
-    <div className="cs-feature-img-wrap" style={style}>
-      <img
-        src={src}
-        alt={alt}
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0 }}
-      />
-      <span
-        aria-hidden
-        style={{
-          position:       "absolute",
-          inset:          0,
-          display:        "flex",
-          alignItems:     "center",
-          justifyContent: "center",
-          padding:        "1rem 1.5rem",
-          fontFamily:     "var(--font-sans)",
-          fontSize:       "0.8rem",
-          lineHeight:     1.5,
-          color:          "rgba(240, 236, 228, 0.28)",
-          textAlign:      "center",
-          pointerEvents:  "none",
-        }}
-      >
-        {label}
-      </span>
-    </div>
+    <img
+      src={src}
+      alt={alt}
+      style={{
+        display:      "block",
+        width:        "100%",
+        height:       "auto",
+        borderRadius: "0.75rem",
+        border:       "1px solid var(--border)",
+        margin:       "1.5rem 0",
+        ...style,
+      }}
+    />
   );
 }
 
@@ -114,10 +100,9 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <ImgPH
+            <CsImg
               src={IMG("hero.png")}
               alt="Screenshot of the live Triibe100 page at triibe.org/100, the grid of 100 honorees shown in a browser frame"
-              label="Hero: live triibe.org/100 screenshot"
             />
           </ScrollReveal>
         </section>
@@ -161,10 +146,9 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <ImgPH
+            <CsImg
               src={IMG("explore-backgrounds.png")}
               alt="Early Triibe100 design split into five themed category sections, each with its own busy environmental photo background"
-              label="Direction 01: themed category backgrounds"
             />
           </ScrollReveal>
 
@@ -201,25 +185,6 @@ export default function Triibe100Page() {
                   style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
                 />
               </picture>
-              <span
-                aria-hidden
-                style={{
-                  position:       "absolute",
-                  inset:          0,
-                  display:        "flex",
-                  alignItems:     "center",
-                  justifyContent: "center",
-                  padding:        "1rem 1.5rem",
-                  fontFamily:     "var(--font-sans)",
-                  fontSize:       "0.8rem",
-                  lineHeight:     1.5,
-                  color:          "rgba(240, 236, 228, 0.28)",
-                  textAlign:      "center",
-                  pointerEvents:  "none",
-                }}
-              >
-                Direction 02: scroll-driven branch animation (rejected)
-              </span>
             </div>
           </ScrollReveal>
 
@@ -238,18 +203,16 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <ImgPH
+            <CsImg
               src={IMG("branch-motif.png")}
               alt="Triibe's standard branch motif, a minimal white line illustration of a branch on a dark background"
-              label="Triibe branch motif"
             />
           </ScrollReveal>
 
           <ScrollReveal>
-            <ImgPH
+            <CsImg
               src={IMG("before-after.png")}
               alt="Triibe100 layout shown before and after the leaf motif, plain on the left and subtle floating leaves behind the honorees on the right"
-              label="Before / after: plain layout versus subtle leaves"
             />
           </ScrollReveal>
 
