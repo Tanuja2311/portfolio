@@ -34,6 +34,7 @@ export default function Triibe100Page() {
     <main>
       <CaseStudyHero study={{
         hero:       "/images/triibe100/hero.png",
+        heroAlt:    "Screenshot of the live Triibe100 page at triibe.org/100, the grid of 100 honorees shown in a browser frame",
         coverColor: "#111111",
         tags:       ["AI Workflow", "Art Direction"],
         title:      "Triibe100",
@@ -80,8 +81,8 @@ export default function Triibe100Page() {
             <div className="cs-feature-img-wrap">
               <CaseImage
                 src={IMG("hero.png")}
-                alt="Hero: live screenshot of triibe.org/100 (browser mockup)"
-                description="Hero: live screenshot of triibe.org/100 (browser mockup)"
+                alt="Screenshot of the live Triibe100 page at triibe.org/100, the grid of 100 honorees shown in a browser frame"
+                description="Screenshot of the live Triibe100 page at triibe.org/100, the grid of 100 honorees shown in a browser frame"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -132,8 +133,8 @@ export default function Triibe100Page() {
             <div className="cs-feature-img-wrap">
               <CaseImage
                 src={IMG("explore-backgrounds.png")}
-                alt="Direction 01: themed category backgrounds"
-                description="Direction 01: themed category backgrounds"
+                alt="Early Triibe100 design split into five themed category sections, each with its own busy environmental photo background"
+                description="Early Triibe100 design split into five themed category sections, each with its own busy environmental photo background"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -158,8 +159,8 @@ export default function Triibe100Page() {
             <div className="cs-feature-img-wrap">
               <CaseImage
                 src={IMG("explore-branches.gif")}
-                alt="Direction 02: scroll-driven branch animation (rejected)"
-                description="Direction 02: scroll-driven branch animation (rejected)"
+                alt="Rejected direction, thin branches growing across the honoree grid as the user scrolls, reading as twiggy scaffolding"
+                description="Rejected direction, thin branches growing across the honoree grid as the user scrolls, reading as twiggy scaffolding"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -185,8 +186,8 @@ export default function Triibe100Page() {
             <div className="cs-feature-img-wrap">
               <CaseImage
                 src={IMG("branch-motif.png")}
-                alt="Triibe's standard branch motif"
-                description="Triibe's standard branch motif"
+                alt="Triibe's standard branch motif, a minimal white line illustration of a branch on a dark background"
+                description="Triibe's standard branch motif, a minimal white line illustration of a branch on a dark background"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -199,8 +200,8 @@ export default function Triibe100Page() {
               <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
                 <CaseImage
                   src={IMG("before.png")}
-                  alt="Before: plain layout"
-                  description="Before: plain layout"
+                  alt="Triibe100 honoree grid on a plain dark green background with no brand motif"
+                  description="Triibe100 honoree grid on a plain dark green background with no brand motif"
                   fill
                   sizes="(max-width: 640px) 100vw, 50vw"
                   className="cs-hero-img"
@@ -209,8 +210,8 @@ export default function Triibe100Page() {
               <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
                 <CaseImage
                   src={IMG("after.png")}
-                  alt="After: subtle leaves behind the honorees"
-                  description="After: subtle leaves behind the honorees"
+                  alt="The same honoree grid with subtle floating leaves layered behind the cards, adding depth without competing with the faces"
+                  description="The same honoree grid with subtle floating leaves layered behind the cards, adding depth without competing with the faces"
                   fill
                   sizes="(max-width: 640px) 100vw, 50vw"
                   className="cs-hero-img"
@@ -223,8 +224,8 @@ export default function Triibe100Page() {
             <div className="cs-feature-img-wrap">
               <CaseImage
                 src={IMG("leaves-motion.gif")}
-                alt="The final leaf motion on the live page"
-                description="The final leaf motion on the live page"
+                alt="The final subtle leaf motion drifting behind the honoree grid on the live page"
+                description="The final subtle leaf motion drifting behind the honoree grid on the live page"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -261,8 +262,8 @@ export default function Triibe100Page() {
               <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
                 <CaseImage
                   src={IMG("social-linkedin.png")}
-                  alt="LinkedIn announcement card"
-                  description="LinkedIn announcement card"
+                  alt="Triibe100 announcement card sized for LinkedIn, carrying the same leaf motif as the web page"
+                  description="Triibe100 announcement card sized for LinkedIn, carrying the same leaf motif as the web page"
                   fill
                   sizes="(max-width: 640px) 100vw, 33vw"
                   className="cs-hero-img"
@@ -271,8 +272,8 @@ export default function Triibe100Page() {
               <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
                 <CaseImage
                   src={IMG("social-instagram.png")}
-                  alt="Instagram announcement card"
-                  description="Instagram announcement card"
+                  alt="Triibe100 announcement card sized for Instagram, matching the launch system"
+                  description="Triibe100 announcement card sized for Instagram, matching the launch system"
                   fill
                   sizes="(max-width: 640px) 100vw, 33vw"
                   className="cs-hero-img"
@@ -281,8 +282,8 @@ export default function Triibe100Page() {
               <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
                 <CaseImage
                   src={IMG("social-tiktok.png")}
-                  alt="TikTok announcement card"
-                  description="TikTok announcement card"
+                  alt="Triibe100 announcement card sized for TikTok, matching the launch system"
+                  description="Triibe100 announcement card sized for TikTok, matching the launch system"
                   fill
                   sizes="(max-width: 640px) 100vw, 33vw"
                   className="cs-hero-img"
