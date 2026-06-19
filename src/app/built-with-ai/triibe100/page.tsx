@@ -254,14 +254,6 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <ImgPH
-              src={IMG("leaves-motion.gif")}
-              alt="The final subtle leaf motion drifting behind the honoree grid on the live page"
-              label="Final leaf motion"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal>
             <div className="cs-feature-decision">
               <span className="cs-feature-decision-label">Design decision</span>
               <p className="cs-feature-decision-text">
@@ -286,24 +278,33 @@ export default function Triibe100Page() {
 
           <ScrollReveal>
             <div className="cs-img-grid">
-              <ImgPH
-                src={IMG("social-linkedin.png")}
-                alt="Triibe100 announcement card sized for LinkedIn, carrying the same leaf motif as the web page"
-                label="LinkedIn announcement card"
-                style={{ margin: 0 }}
-              />
-              <ImgPH
-                src={IMG("social-instagram.png")}
-                alt="Triibe100 announcement card sized for Instagram, matching the launch system"
-                label="Instagram announcement card"
-                style={{ margin: 0 }}
-              />
-              <ImgPH
-                src={IMG("social-tiktok.png")}
-                alt="Triibe100 announcement card sized for TikTok, matching the launch system"
-                label="TikTok announcement card"
-                style={{ margin: 0 }}
-              />
+              {(["LinkedIn announcement card", "Instagram announcement card", "TikTok announcement card"] as const).map((label) => (
+                <div
+                  key={label}
+                  className="cs-feature-img-wrap"
+                  style={{ margin: 0 }}
+                >
+                  <span
+                    aria-hidden
+                    style={{
+                      position:       "absolute",
+                      inset:          0,
+                      display:        "flex",
+                      alignItems:     "center",
+                      justifyContent: "center",
+                      padding:        "1rem 1.5rem",
+                      fontFamily:     "var(--font-sans)",
+                      fontSize:       "0.8rem",
+                      lineHeight:     1.5,
+                      color:          "rgba(240, 236, 228, 0.28)",
+                      textAlign:      "center",
+                      pointerEvents:  "none",
+                    }}
+                  >
+                    {label}
+                  </span>
+                </div>
+              ))}
             </div>
           </ScrollReveal>
         </section>
