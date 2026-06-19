@@ -212,18 +212,23 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="cs-img-grid">
+            <div style={{ marginTop: "2rem" }}>
+              <span className="cs-feature-name">Before</span>
               <ImgPH
                 src={IMG("before.png")}
-                alt="Triibe100 honoree grid on a plain dark green background with no brand motif"
-                label="Before: plain layout"
-                style={{ margin: 0 }}
+                alt="Triibe100 page before the leaf motif, shown on desktop and mobile with a plain background"
+                label="Before: plain layout, desktop and mobile"
               />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div>
+              <span className="cs-feature-name">After</span>
               <ImgPH
                 src={IMG("after.png")}
-                alt="The same honoree grid with subtle floating leaves layered behind the cards, adding depth without competing with the faces"
-                label="After: subtle leaves behind honorees"
-                style={{ margin: 0 }}
+                alt="Triibe100 page after the leaf motif was added, shown on desktop and mobile with subtle floating leaves behind the honorees"
+                label="After: subtle leaves, desktop and mobile"
               />
             </div>
           </ScrollReveal>
