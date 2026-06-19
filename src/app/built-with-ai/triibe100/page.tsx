@@ -101,9 +101,18 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <CsImg
-              src={IMG("hero.png")}
-              alt="Screenshot of the live Triibe100 page at triibe.org/100, the grid of 100 honorees shown in a browser frame"
+            <img
+              src={IMG("overview-leaves.gif")}
+              alt="The live Triibe100 page with subtle leaves drifting behind the honoree grid"
+              style={{
+                display:    "block",
+                width:      "100%",
+                height:     "auto",
+                objectFit:  "contain",
+                borderRadius: "0.75rem",
+                border:     "1px solid var(--border)",
+                margin:     "1.5rem 0",
+              }}
             />
           </ScrollReveal>
         </section>
