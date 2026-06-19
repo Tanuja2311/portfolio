@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { CaseStudyHero }    from "@/components/case-study/hero";
-import { CaseStudySummary } from "@/components/case-study/summary";
-import { CsScrollLinks }    from "@/components/case-study/scroll-links";
-import { ScrollReveal }     from "@/components/scroll-reveal";
-import { CaseImage }        from "@/components/case-study/case-image";
+import type { Metadata }      from "next";
+import type { CSSProperties }  from "react";
+import { CaseStudyHero }       from "@/components/case-study/hero";
+import { CaseStudySummary }    from "@/components/case-study/summary";
+import { CsScrollLinks }       from "@/components/case-study/scroll-links";
+import { ScrollReveal }        from "@/components/scroll-reveal";
 
 const SECTIONS = [
   { id: "overview",      label: "Overview"      },
@@ -29,6 +29,42 @@ export const metadata: Metadata = {
 
 const IMG = (name: string) => `/images/triibe100/${name}`;
 
+function ImgPH({ src, alt, label, style }: {
+  src:    string;
+  alt:    string;
+  label:  string;
+  style?: CSSProperties;
+}) {
+  return (
+    <div className="cs-feature-img-wrap" style={style}>
+      <img
+        src={src}
+        alt={alt}
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0 }}
+      />
+      <span
+        aria-hidden
+        style={{
+          position:       "absolute",
+          inset:          0,
+          display:        "flex",
+          alignItems:     "center",
+          justifyContent: "center",
+          padding:        "1rem 1.5rem",
+          fontFamily:     "var(--font-sans)",
+          fontSize:       "0.8rem",
+          lineHeight:     1.5,
+          color:          "rgba(240, 236, 228, 0.28)",
+          textAlign:      "center",
+          pointerEvents:  "none",
+        }}
+      >
+        {label}
+      </span>
+    </div>
+  );
+}
+
 export default function Triibe100Page() {
   return (
     <main>
@@ -48,7 +84,7 @@ export default function Triibe100Page() {
             View the live list &#8599;
           </a>
         ),
-        subtitle:   "Designed, art-directed, and built by me, with AI.",
+        subtitle: "Designed, art-directed, and built by me, with AI.",
         meta: {
           role:     "Visual direction, design, and build (solo)",
           duration: "3 days",
@@ -78,16 +114,11 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="cs-feature-img-wrap">
-              <CaseImage
-                src={IMG("hero.png")}
-                alt="Screenshot of the live Triibe100 page at triibe.org/100, the grid of 100 honorees shown in a browser frame"
-                description="Screenshot of the live Triibe100 page at triibe.org/100, the grid of 100 honorees shown in a browser frame"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
+            <ImgPH
+              src={IMG("hero.png")}
+              alt="Screenshot of the live Triibe100 page at triibe.org/100, the grid of 100 honorees shown in a browser frame"
+              label="Hero: live triibe.org/100 screenshot"
+            />
           </ScrollReveal>
         </section>
 
@@ -130,16 +161,11 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="cs-feature-img-wrap">
-              <CaseImage
-                src={IMG("explore-backgrounds.png")}
-                alt="Early Triibe100 design split into five themed category sections, each with its own busy environmental photo background"
-                description="Early Triibe100 design split into five themed category sections, each with its own busy environmental photo background"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
+            <ImgPH
+              src={IMG("explore-backgrounds.png")}
+              alt="Early Triibe100 design split into five themed category sections, each with its own busy environmental photo background"
+              label="Direction 01: themed category backgrounds"
+            />
           </ScrollReveal>
 
           <ScrollReveal>
@@ -156,16 +182,11 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="cs-feature-img-wrap">
-              <CaseImage
-                src={IMG("explore-branches.gif")}
-                alt="Rejected direction, thin branches growing across the honoree grid as the user scrolls, reading as twiggy scaffolding"
-                description="Rejected direction, thin branches growing across the honoree grid as the user scrolls, reading as twiggy scaffolding"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
+            <ImgPH
+              src={IMG("explore-branches.gif")}
+              alt="Rejected direction, thin branches growing across the honoree grid as the user scrolls, reading as twiggy scaffolding"
+              label="Direction 02: scroll-driven branch animation (rejected)"
+            />
           </ScrollReveal>
 
           <ScrollReveal>
@@ -183,54 +204,36 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="cs-feature-img-wrap">
-              <CaseImage
-                src={IMG("branch-motif.png")}
-                alt="Triibe's standard branch motif, a minimal white line illustration of a branch on a dark background"
-                description="Triibe's standard branch motif, a minimal white line illustration of a branch on a dark background"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
+            <ImgPH
+              src={IMG("branch-motif.png")}
+              alt="Triibe's standard branch motif, a minimal white line illustration of a branch on a dark background"
+              label="Triibe branch motif"
+            />
           </ScrollReveal>
 
           <ScrollReveal>
             <div className="cs-img-grid">
-              <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
-                <CaseImage
-                  src={IMG("before.png")}
-                  alt="Triibe100 honoree grid on a plain dark green background with no brand motif"
-                  description="Triibe100 honoree grid on a plain dark green background with no brand motif"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                  className="cs-hero-img"
-                />
-              </div>
-              <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
-                <CaseImage
-                  src={IMG("after.png")}
-                  alt="The same honoree grid with subtle floating leaves layered behind the cards, adding depth without competing with the faces"
-                  description="The same honoree grid with subtle floating leaves layered behind the cards, adding depth without competing with the faces"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                  className="cs-hero-img"
-                />
-              </div>
+              <ImgPH
+                src={IMG("before.png")}
+                alt="Triibe100 honoree grid on a plain dark green background with no brand motif"
+                label="Before: plain layout"
+                style={{ margin: 0 }}
+              />
+              <ImgPH
+                src={IMG("after.png")}
+                alt="The same honoree grid with subtle floating leaves layered behind the cards, adding depth without competing with the faces"
+                label="After: subtle leaves behind honorees"
+                style={{ margin: 0 }}
+              />
             </div>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="cs-feature-img-wrap">
-              <CaseImage
-                src={IMG("leaves-motion.gif")}
-                alt="The final subtle leaf motion drifting behind the honoree grid on the live page"
-                description="The final subtle leaf motion drifting behind the honoree grid on the live page"
-                fill
-                sizes="(max-width: 768px) 100vw, 72rem"
-                className="cs-hero-img"
-              />
-            </div>
+            <ImgPH
+              src={IMG("leaves-motion.gif")}
+              alt="The final subtle leaf motion drifting behind the honoree grid on the live page"
+              label="Final leaf motion"
+            />
           </ScrollReveal>
 
           <ScrollReveal>
@@ -256,39 +259,26 @@ export default function Triibe100Page() {
             </p>
           </ScrollReveal>
 
-          {/* Social card grid */}
           <ScrollReveal>
             <div className="cs-img-grid">
-              <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
-                <CaseImage
-                  src={IMG("social-linkedin.png")}
-                  alt="Triibe100 announcement card sized for LinkedIn, carrying the same leaf motif as the web page"
-                  description="Triibe100 announcement card sized for LinkedIn, carrying the same leaf motif as the web page"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                  className="cs-hero-img"
-                />
-              </div>
-              <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
-                <CaseImage
-                  src={IMG("social-instagram.png")}
-                  alt="Triibe100 announcement card sized for Instagram, matching the launch system"
-                  description="Triibe100 announcement card sized for Instagram, matching the launch system"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                  className="cs-hero-img"
-                />
-              </div>
-              <div className="cs-feature-img-wrap" style={{ margin: 0 }}>
-                <CaseImage
-                  src={IMG("social-tiktok.png")}
-                  alt="Triibe100 announcement card sized for TikTok, matching the launch system"
-                  description="Triibe100 announcement card sized for TikTok, matching the launch system"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                  className="cs-hero-img"
-                />
-              </div>
+              <ImgPH
+                src={IMG("social-linkedin.png")}
+                alt="Triibe100 announcement card sized for LinkedIn, carrying the same leaf motif as the web page"
+                label="LinkedIn announcement card"
+                style={{ margin: 0 }}
+              />
+              <ImgPH
+                src={IMG("social-instagram.png")}
+                alt="Triibe100 announcement card sized for Instagram, matching the launch system"
+                label="Instagram announcement card"
+                style={{ margin: 0 }}
+              />
+              <ImgPH
+                src={IMG("social-tiktok.png")}
+                alt="Triibe100 announcement card sized for TikTok, matching the launch system"
+                label="TikTok announcement card"
+                style={{ margin: 0 }}
+              />
             </div>
           </ScrollReveal>
         </section>
@@ -303,7 +293,6 @@ export default function Triibe100Page() {
             </p>
           </ScrollReveal>
 
-          {/* Project meta footer */}
           <ScrollReveal>
             <div
               className="cs-hero-meta"
