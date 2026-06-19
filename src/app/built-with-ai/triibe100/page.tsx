@@ -285,8 +285,9 @@ export default function Triibe100Page() {
           <ScrollReveal>
             <h2 id="built-with-ai-heading" className="cs-section-heading">Built with AI</h2>
             <p className="cs-section-body">
-              I designed and built the page myself, vibe-coding it with Claude Code and
-              VS Code, then art-directed the visuals to final.
+              I designed the visual direction and the announcement card in Figma, then
+              vibe-coded the page myself with Claude Code and VS Code, art-directing the
+              build to final.
             </p>
           </ScrollReveal>
 
