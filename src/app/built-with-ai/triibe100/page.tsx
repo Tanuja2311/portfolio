@@ -55,12 +55,11 @@ export default function Triibe100Page() {
   return (
     <main>
       <CaseStudyHero study={{
-        hero:         "/images/triibe100/hero.png",
-        heroAlt:      "Screenshot of the live Triibe100 page at triibe.org/100, the grid of 100 honorees shown in a browser frame",
-        containHero:  true,
-        coverColor:   "#111111",
-        tags:         ["AI Workflow", "Art Direction"],
-        title:        "Triibe100",
+        hero:       "/images/triibe100/hero.png",
+        heroAlt:    "Screenshot of the live Triibe100 page at triibe.org/100, the grid of 100 honorees shown in a browser frame",
+        coverColor: "#111111",
+        tags:       ["AI Workflow", "Art Direction"],
+        title:      "Triibe100",
         titleTrailing: (
           <a
             href="https://triibe.org/100"
