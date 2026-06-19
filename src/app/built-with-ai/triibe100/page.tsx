@@ -57,6 +57,7 @@ export default function Triibe100Page() {
       <CaseStudyHero study={{
         hero:       "/images/triibe100/hero.png",
         heroAlt:    "Screenshot of the live Triibe100 page at triibe.org/100, the grid of 100 honorees shown in a browser frame",
+        nativeImg:  true,
         coverColor: "#111111",
         tags:       ["AI Workflow", "Art Direction"],
         title:      "Triibe100",

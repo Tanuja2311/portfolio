@@ -13,6 +13,8 @@ export interface HeroStudy {
   subtitle: string;
   /** Show the hero image at natural proportions instead of cropped cover fill. */
   containHero?: boolean;
+  /** Use a plain img tag instead of Next.js Image (bypasses optimization pipeline). */
+  nativeImg?: boolean;
   /** Optional element rendered to the right of the title on the same flex row. */
   titleTrailing?: ReactNode;
   meta: {
@@ -53,6 +55,20 @@ export function CaseStudyHero({ study }: { study: HeroStudy }) {
               src={study.hero!}
               alt={study.heroAlt ?? study.title}
               style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}
+            />
+          ) : study.nativeImg ? (
+            // Plain img path: fixed-height frame, bypasses Next.js image optimization
+            <img
+              src={study.hero!}
+              alt={study.heroAlt ?? study.title}
+              style={{
+                position:  "absolute",
+                inset:     0,
+                width:     "100%",
+                height:    "100%",
+                objectFit: "cover",
+                display:   "block",
+              }}
             />
           ) : (
             <m.div
