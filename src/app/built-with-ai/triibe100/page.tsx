@@ -182,11 +182,45 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <ImgPH
-              src={IMG("explore-branches.gif")}
-              alt="Rejected direction, thin branches growing across the honoree grid as the user scrolls, reading as twiggy scaffolding"
-              label="Direction 02: scroll-driven branch animation (rejected)"
-            />
+            <div
+              className="cs-feature-img-wrap"
+              style={{
+                backgroundImage:    `url(${IMG("explore-branches.png")})`,
+                backgroundSize:     "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <picture>
+                <source
+                  srcSet={IMG("explore-branches.gif")}
+                  media="(prefers-reduced-motion: no-preference)"
+                />
+                <img
+                  src={IMG("explore-branches.png")}
+                  alt="Rejected direction, thin branches growing across the honoree grid as the user scrolls, reading as twiggy scaffolding"
+                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </picture>
+              <span
+                aria-hidden
+                style={{
+                  position:       "absolute",
+                  inset:          0,
+                  display:        "flex",
+                  alignItems:     "center",
+                  justifyContent: "center",
+                  padding:        "1rem 1.5rem",
+                  fontFamily:     "var(--font-sans)",
+                  fontSize:       "0.8rem",
+                  lineHeight:     1.5,
+                  color:          "rgba(240, 236, 228, 0.28)",
+                  textAlign:      "center",
+                  pointerEvents:  "none",
+                }}
+              >
+                Direction 02: scroll-driven branch animation (rejected)
+              </span>
+            </div>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -212,25 +246,11 @@ export default function Triibe100Page() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div style={{ marginTop: "2rem" }}>
-              <span className="cs-feature-name">Before</span>
-              <ImgPH
-                src={IMG("before.png")}
-                alt="Triibe100 page before the leaf motif, shown on desktop and mobile with a plain background"
-                label="Before: plain layout, desktop and mobile"
-              />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div>
-              <span className="cs-feature-name">After</span>
-              <ImgPH
-                src={IMG("after.png")}
-                alt="Triibe100 page after the leaf motif was added, shown on desktop and mobile with subtle floating leaves behind the honorees"
-                label="After: subtle leaves, desktop and mobile"
-              />
-            </div>
+            <ImgPH
+              src={IMG("before-after.png")}
+              alt="Triibe100 layout shown before and after the leaf motif, plain on the left and subtle floating leaves behind the honorees on the right"
+              label="Before / after: plain layout versus subtle leaves"
+            />
           </ScrollReveal>
 
           <ScrollReveal>
