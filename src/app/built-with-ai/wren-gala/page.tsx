@@ -47,7 +47,7 @@ export default function WrenGalaPage() {
         problem:  "A historic London church needed a high-end digital presence for their annual New York fundraising gala. The team was distributed across London, Singapore, and New York with no dedicated digital operations resource on the US side.",
         role:     "Solo designer-developer and de facto product owner: visual direction, content strategy, AI tool evaluation, payment infrastructure, data management, email workflows, client communication, and mentoring a junior designer.",
         timeline: "Under 1 week from first client call to deployed site, evaluating three AI development approaches along the way.",
-        outcome:  "A 4-page luxury event website with custom ACH payment flow, automated email workflows, and guest data management, deployed on Vercel. Zero hand-written code.",
+        outcome:  "A 4-page luxury event website with Stripe payment integration, automated email workflows, and guest data management, deployed on Vercel. Zero hand-written code.",
       }} />
 
       <CsScrollLinks sections={SECTIONS} />
@@ -80,8 +80,7 @@ export default function WrenGalaPage() {
               identity, a Changemaker Cohort page spotlighting the honorees, a
               Story of St James page connecting the church&rsquo;s history to
               its mission, and a Tickets page with a purchase flow. Payment
-              processing runs through ACH, with attendee data stored in
-              Airtable.
+              processing runs through Stripe for instant transactions.
             </p>
 
             <p className="cs-section-body">
@@ -387,11 +386,14 @@ export default function WrenGalaPage() {
                 this category, it was not.
               </p>
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                The final solution is ACH transfers, with attendee data stored
-                in Airtable. This trades the convenience of a pre-built ticketing
-                platform for full control over the purchase experience. Every
-                element of the form, the confirmation, and the receipt matches
-                the site&rsquo;s visual language.
+                The initial replacement was ACH transfers with Airtable for
+                data storage. This restored full visual control over the
+                purchase experience. However, the client later required
+                instant payment processing rather than waiting for bank
+                transfers to clear. The final solution was Stripe integration,
+                which delivered both instant payments and a checkout
+                experience that could be styled to match the site&rsquo;s
+                visual language.
               </p>
             </div>
           </ScrollReveal>
@@ -400,10 +402,12 @@ export default function WrenGalaPage() {
             <div className="cs-feature-decision">
               <span className="cs-feature-decision-label">Design decision</span>
               <p className="cs-feature-decision-text">
-                This was not a technical failure. Givebutter worked. The decision
-                to move away from it was a design decision: brand coherence
-                across the entire experience matters more than integration
-                convenience. A luxury event cannot have a generic checkout.
+                Each transition was driven by a specific, defensible reason:
+                Rayze did not support ticketing, Givebutter could not match
+                the visual standard, ACH could not process payments instantly.
+                The final move to Stripe resolved every constraint: visual
+                control, instant processing, and a seamless checkout
+                experience.
               </p>
             </div>
           </ScrollReveal>
@@ -412,8 +416,8 @@ export default function WrenGalaPage() {
             <div className="cs-feature-img-wrap" style={{ marginTop: "2rem" }}>
               <CaseImage
                 src={IMG("payment-comparison.png")}
-                alt="Payment comparison: Givebutter embed versus custom ACH flow"
-                description="Payment comparison: Givebutter embed versus custom ACH flow"
+                alt="Payment comparison: Givebutter embed versus custom Stripe flow"
+                description="Payment comparison: Givebutter embed versus custom Stripe flow"
                 fill
                 sizes="(max-width: 768px) 100vw, 72rem"
                 className="cs-hero-img"
@@ -569,10 +573,11 @@ export default function WrenGalaPage() {
                 the payment platform changes. The initial Givebutter integration
                 was functional but visually dissonant. The embedded UI introduced
                 colors, typography, and spacing that broke from the site&rsquo;s
-                established language. Replacing it with a custom flow built on
-                ACH transfers (with Airtable for data storage) restored full
-                visual control. Every element of the form, confirmation state,
-                and receipt now matches the gala&rsquo;s design system.
+                established language. The final integration with Stripe
+                delivered both instant payment processing and full visual
+                control over the checkout experience. Every element of the
+                form, confirmation state, and receipt now matches the
+                gala&rsquo;s design system.
               </p>
               <p className="cs-feature-body" style={{ marginTop: "0.75rem" }}>
                 The page design eliminates all secondary content. No sidebar, no
@@ -584,8 +589,8 @@ export default function WrenGalaPage() {
               <div className="cs-feature-img-wrap">
                 <CaseImage
                   src={IMG("tickets-page.png")}
-                  alt="Tickets page with custom ACH purchase flow"
-                  description="Tickets page with custom ACH purchase flow"
+                  alt="Tickets page with custom Stripe purchase flow"
+                  description="Tickets page with custom Stripe purchase flow"
                   fill
                   sizes="(max-width: 768px) 100vw, 72rem"
                   className="cs-hero-img"
@@ -672,12 +677,12 @@ export default function WrenGalaPage() {
           <ScrollReveal>
             <div style={{ marginTop: "3rem" }}>
               <a
-                href="https://sjpgalany.org"
+                href="https://wrengala.org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cs-live-link"
               >
-                View live site: sjpgalany.org &#8599;
+                View live site: wrengala.org &#8599;
               </a>
             </div>
 
