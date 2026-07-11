@@ -52,28 +52,6 @@ export default function BuiltWithAIPage() {
                 <WorkCard project={project} />
               </Reveal>
             ))}
-
-            {/* Coming soon card — not a link, visually greyed out */}
-            <Reveal delay={AI_PROJECTS.filter(p => !p.hidden).length * 80}>
-              <div
-                className="work-card work-card--disabled"
-                aria-label="Rise & Shine Foundation — coming soon"
-              >
-                <div
-                  className="work-card-media"
-                  style={{ background: "#0a1510" }}
-                />
-                <div className="work-card-info">
-                  <h3 className="work-card-title">Rise &amp; Shine Foundation</h3>
-                  <p className="work-card-stat">Coming soon.</p>
-                  <div className="work-card-tags" aria-label="Tags">
-                    {["AI Workflow", "Nonprofit"].map((tag) => (
-                      <span key={tag} className="tag">{tag}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Reveal>
           </div>
         </div>
       </section>

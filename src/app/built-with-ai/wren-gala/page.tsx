@@ -673,7 +673,7 @@ export default function WrenGalaPage() {
             </div>
           </ScrollReveal>
 
-          {/* Live site + next project */}
+          {/* Live site */}
           <ScrollReveal>
             <div style={{ marginTop: "3rem" }}>
               <a
@@ -684,14 +684,6 @@ export default function WrenGalaPage() {
               >
                 View live site: wrengala.org &#8599;
               </a>
-            </div>
-
-            <div className="cs-next-project cs-next-project--disabled" aria-disabled="true">
-              <div>
-                <span className="cs-next-project-label">Next project</span>
-                <span className="cs-next-project-title">Rise &amp; Shine Foundation</span>
-              </div>
-              <span style={{ fontSize: "1.25rem", color: "var(--text-faint)" }}>&#8594;</span>
             </div>
           </ScrollReveal>
         </section>
