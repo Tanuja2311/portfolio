@@ -31,7 +31,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-olive-ten-27.vercel.app"),
+  metadataBase: new URL("https://www.tanujabodas.com"),
   icons: {
     icon: "/icon.svg",
   },

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-const SITE = "https://portfolio-olive-ten-27.vercel.app";
+const SITE = "https://www.tanujabodas.com";
 
 const jsonLd = {
   "@context": "https://schema.org",
