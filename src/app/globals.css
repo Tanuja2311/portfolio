@@ -2950,3 +2950,54 @@ video {
   max-width: 52ch;
   margin: 0 auto;
 }
+
+/* ─── Resume page ────────────────────────────────────────────────────── */
+.resume-page {
+  min-height: 100vh;
+  background: #0A0A0A;
+  color: #f5f3ee;
+  padding: 5rem 1.5rem 2rem;
+}
+
+@media (max-width: 767px) {
+  .resume-page {
+    padding-top: 6.5rem; /* extra clearance for fixed nav pill on mobile */
+  }
+}
+
+.resume-embed {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 7rem);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .resume-embed {
+    height: calc(100vh - 8.5rem);
+  }
+}
+
+.resume-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #f5f3ee;
+  text-align: center;
+}
+
+.resume-fallback-link {
+  color: #f5f3ee;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.resume-fallback-link:hover {
+  color: #B794F4;
+}

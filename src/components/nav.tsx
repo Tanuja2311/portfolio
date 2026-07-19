@@ -10,7 +10,7 @@ const NAV_LINKS: { href: string; label: string; external?: true }[] = [
   { href: "/work",          label: "Work" },
   { href: "/built-with-ai", label: "Built with AI" },
   { href: "/about",         label: "About" },
-  { href: "/resume.pdf",    label: "Resume", external: true },
+  { href: "/resume",        label: "Resume" },
 ];
 
 function isActive(href: string, pathname: string): boolean {
