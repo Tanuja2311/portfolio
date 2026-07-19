@@ -45,17 +45,12 @@ export const metadata: Metadata = {
     siteName: "Tanuja Bodas",
     type:     "website",
     locale:   "en_US",
-    images: [
-      {
-        url:    "/images/og-default.png",
-        width:  1200,
-        height: 630,
-        alt:    "Tanuja Bodas – Senior Product Designer",
-      },
-    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card:        "summary_large_image",
+    title:       "Tanuja Bodas | Senior Product Designer",
+    description:
+      "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, and more.",
   },
 };
 

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Selected work by Tanuja Bodas. Enterprise product design, design systems, and AI-assisted development projects.",
   },
   twitter: {
+    card: "summary_large_image",
     description: "Selected work by Tanuja Bodas. Enterprise product design, design systems, and AI-assisted development projects.",
   },
 };

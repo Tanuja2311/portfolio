@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description: "Triibe100 case study by Tanuja Bodas. Triibe's recognition list, designed, art-directed, and built end to end with AI.",
   },
   twitter: {
+    card: "summary_large_image",
     description: "Triibe100 case study by Tanuja Bodas. Triibe's recognition list, designed, art-directed, and built end to end with AI.",
   },
 };

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description: "MyRCloud case study by Tanuja Bodas. Designing a multi-sided recruitment marketplace from Google Sheets to a live platform with 600+ partners.",
   },
   twitter: {
+    card: "summary_large_image",
     description: "MyRCloud case study by Tanuja Bodas. Designing a multi-sided recruitment marketplace from Google Sheets to a live platform with 600+ partners.",
   },
 };

@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "About Tanuja Bodas. Senior product designer with 3.5 years at ZingHR, specializing in enterprise B2B design and design systems. Based in Philadelphia.",
   },
   twitter: {
+    card: "summary_large_image",
     description: "About Tanuja Bodas. Senior product designer with 3.5 years at ZingHR, specializing in enterprise B2B design and design systems. Based in Philadelphia.",
   },
 };

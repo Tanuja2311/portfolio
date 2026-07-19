@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     description: "Wren Gala case study by Tanuja Bodas. A luxury charity gala website designed and shipped in 5 days using AI-assisted development.",
   },
   twitter: {
+    card: "summary_large_image",
     description: "Wren Gala case study by Tanuja Bodas. A luxury charity gala website designed and shipped in 5 days using AI-assisted development.",
   },
 };

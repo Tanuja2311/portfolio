@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     description: "Employee Dossier case study by Tanuja Bodas. Redesigning ZingHR's centralized employee record for faster access and clearer navigation.",
   },
   twitter: {
+    card: "summary_large_image",
     description: "Employee Dossier case study by Tanuja Bodas. Redesigning ZingHR's centralized employee record for faster access and clearer navigation.",
   },
 };

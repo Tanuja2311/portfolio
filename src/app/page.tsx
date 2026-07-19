@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     description: "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, and more.",
   },
   twitter: {
+    card: "summary_large_image",
     description: "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design.",
   },
 };

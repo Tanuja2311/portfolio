@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     description: "GenAI in Pharmacy Research case study by Tanuja Bodas. Investigating pharmacy students' hesitation to use GenAI chatbots for academic research.",
   },
   twitter: {
+    card: "summary_large_image",
     description: "GenAI in Pharmacy Research case study by Tanuja Bodas. Investigating pharmacy students' hesitation to use GenAI chatbots for academic research.",
   },
 };

@@ -78,7 +78,7 @@ export function Nav() {
               {NAV_LINKS.map(({ href, label, external }) => (
                 <li key={href}>
                   {external ? (
-                    <a href={href} target="_blank" rel="noopener noreferrer"
+                    <a href={href} target="_blank" rel="noopener noreferrer" download="Tanuja-Bodas-Resume.pdf"
                       className="nav-link" aria-label={`${label} (opens in new tab)`}>
                       {label}
                       <span className="nav-link-arrow" aria-hidden>↗</span>
@@ -129,7 +129,7 @@ export function Nav() {
                   transition={{ delay: i * 0.06, duration: 0.22, ease: "easeOut" }}
                 >
                   {external ? (
-                    <a href={href} target="_blank" rel="noopener noreferrer"
+                    <a href={href} target="_blank" rel="noopener noreferrer" download="Tanuja-Bodas-Resume.pdf"
                       className="nav-mobile-link"
                       aria-label={`${label} (opens in new tab)`}
                       onClick={() => setIsOpen(false)}>

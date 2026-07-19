@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     description: "Rewards & Recognition case study by Tanuja Bodas. Designing a scalable award management system for enterprise HR teams.",
   },
   twitter: {
+    card: "summary_large_image",
     description: "Rewards & Recognition case study by Tanuja Bodas. Designing a scalable award management system for enterprise HR teams.",
   },
 };

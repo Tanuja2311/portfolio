@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     description: "UrbanPark case study by Tanuja Bodas. A C2C platform where homeowners rent driveways to drivers, including a dedicated design system.",
   },
   twitter: {
+    card: "summary_large_image",
     description: "UrbanPark case study by Tanuja Bodas. A C2C platform where homeowners rent driveways to drivers, including a dedicated design system.",
   },
 };

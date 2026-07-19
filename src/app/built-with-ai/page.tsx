@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Projects built with AI tools by Tanuja Bodas. Exploring AI-assisted design and development workflows.",
   },
   twitter: {
+    card: "summary_large_image",
     description: "Projects built with AI tools by Tanuja Bodas. Exploring AI-assisted design and development workflows.",
   },
 };
