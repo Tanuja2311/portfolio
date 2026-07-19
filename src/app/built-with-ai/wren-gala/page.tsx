@@ -37,6 +37,16 @@ export default function WrenGalaPage() {
         coverColor: "#100d14",
         tags:       ["Web Design", "Built with AI"],
         title:      "The Wren Gala",
+        titleTrailing: (
+          <a
+            href="https://wrengala.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cs-live-link"
+          >
+            View live site &#8599;
+          </a>
+        ),
         subtitle:   "A luxury charity gala website for a historic London church, designed and shipped in under a week using AI-assisted development.",
         meta: {
           role:     "Lead Designer & Developer",
