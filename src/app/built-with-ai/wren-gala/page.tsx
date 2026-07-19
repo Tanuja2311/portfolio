@@ -614,6 +614,43 @@ export default function WrenGalaPage() {
           </ScrollReveal>
         </section>
 
+        {/* ── Client Testimonial ──────────────────────────────────────── */}
+        <ScrollReveal>
+          <figure className="cs-testimonial">
+            <span className="cs-testimonial-mark" aria-hidden>&ldquo;</span>
+            <blockquote>
+              <p className="cs-testimonial-text">
+                Tanuja has an exceptional eye for design and created a website
+                that is both elegant and intuitive, perfectly capturing the
+                feel of our event. Beyond the aesthetics, she also brought the
+                technical expertise needed to seamlessly integrate our Stripe
+                payment system, making the entire donor and ticket purchasing
+                experience effortless.
+              </p>
+              <p className="cs-testimonial-text">
+                Throughout the project, we went through many rounds of
+                feedback and refinements, and Tanuja was consistently patient,
+                thoughtful, and incredibly responsive. She listened carefully
+                to every comment, offered practical solutions, and approached
+                each revision with professionalism and grace.
+              </p>
+            </blockquote>
+            <figcaption className="cs-testimonial-attribution">
+              <a
+                href="https://www.linkedin.com/in/anna-auchter-08487616b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cs-testimonial-name"
+              >
+                Anna Auchter
+              </a>
+              <span className="cs-testimonial-role">
+                Fundraising Officer, St James&rsquo;s Piccadilly
+              </span>
+            </figcaption>
+          </figure>
+        </ScrollReveal>
+
         {/* ── Reflection ───────────────────────────────────────────────── */}
         <section id="reflection" className="cs-section" aria-labelledby="reflection-heading">
           <ScrollReveal>

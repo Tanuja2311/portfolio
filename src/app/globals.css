@@ -2615,6 +2615,68 @@ video {
   letter-spacing: 0.08em;
 }
 
+/* ─── Case study: Client testimonial ─────────────────────────────────── */
+.cs-testimonial {
+  position: relative;
+  max-width: 62ch;
+  margin: 1rem 0 2.5rem;
+  padding: 2rem 2.25rem 1.75rem;
+  background: var(--bg-elevated);
+  border-left: 3px solid #B794F4;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.cs-testimonial-mark {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  line-height: 1;
+  color: #B794F4;
+  margin-bottom: 0.25rem;
+}
+
+.cs-testimonial blockquote {
+  margin: 0;
+}
+
+.cs-testimonial-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.cs-testimonial-text:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.cs-testimonial-attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-family: var(--font-sans);
+  font-style: normal;
+}
+
+.cs-testimonial-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.cs-testimonial-name:hover {
+  color: #B794F4;
+}
+
+.cs-testimonial-role {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
 /* ─── Research questions numbered callout ───────────────────────────── */
 .cs-questions {
   margin: 1.5rem 0 2rem;
