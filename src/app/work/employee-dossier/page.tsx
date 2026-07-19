@@ -3,6 +3,7 @@ import { CaseStudyHero }    from "@/components/case-study/hero";
 import { CaseStudySummary } from "@/components/case-study/summary";
 import { CsScrollLinks }    from "@/components/case-study/scroll-links";
 import { ScrollReveal }     from "@/components/scroll-reveal";
+import { ScrollToTop }      from "@/components/ScrollToTop";
 import { CaseImage }        from "@/components/case-study/case-image";
 
 const SECTIONS = [
@@ -592,6 +593,8 @@ export default function EmployeeDossierPage() {
         </section>
 
       </div>
+
+      <ScrollToTop />
     </main>
   );
 }

@@ -3,6 +3,7 @@ import { CaseStudyHero }    from "@/components/case-study/hero";
 import { CaseStudySummary } from "@/components/case-study/summary";
 import { CsScrollLinks }    from "@/components/case-study/scroll-links";
 import { ScrollReveal }     from "@/components/scroll-reveal";
+import { ScrollToTop }      from "@/components/ScrollToTop";
 import { TestingCollapsible }      from "@/components/case-study/testing-collapsible";
 import { DesignSystemCarousel }    from "@/components/case-study/design-system-carousel";
 
@@ -489,6 +490,8 @@ export default function UrbanParkCaseStudy() {
         </section>
 
       </div>
+
+      <ScrollToTop />
     </main>
   );
 }

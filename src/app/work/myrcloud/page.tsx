@@ -3,6 +3,7 @@ import { CaseStudyHero }    from "@/components/case-study/hero";
 import { CaseStudySummary } from "@/components/case-study/summary";
 import { CsScrollLinks }    from "@/components/case-study/scroll-links";
 import { ScrollReveal }     from "@/components/scroll-reveal";
+import { ScrollToTop }      from "@/components/ScrollToTop";
 import { MetricCard }       from "@/components/case-study/metric-card";
 import { CaseImage }        from "@/components/case-study/case-image";
 
@@ -567,6 +568,8 @@ export default function MyRCloudCaseStudy() {
           </ScrollReveal>
         </section>
       </div>
+
+      <ScrollToTop />
     </main>
   );
 }

@@ -3,6 +3,7 @@ import { CaseStudyHero }      from "@/components/case-study/hero";
 import { CaseStudySummary }   from "@/components/case-study/summary";
 import { CsScrollLinks }      from "@/components/case-study/scroll-links";
 import { ScrollReveal }       from "@/components/scroll-reveal";
+import { ScrollToTop }        from "@/components/ScrollToTop";
 import { BeforeStateDiagram } from "@/components/case-study/before-state-diagram";
 import { JuryModelDiagram }   from "@/components/case-study/jury-model-diagram";
 import { GroupConfigDiagram } from "@/components/case-study/group-config-diagram";
@@ -372,6 +373,8 @@ export default function RRCaseStudy() {
         </section>
 
       </div>
+
+      <ScrollToTop />
     </main>
   );
 }
