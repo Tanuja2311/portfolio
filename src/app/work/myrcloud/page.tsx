@@ -572,10 +572,10 @@ export default function MyRCloudCaseStudy() {
               <p className="cs-wid-body">
                 This project was designed while I was employed at ZingHR, which
                 served as the technology partner for MyRCloud (Reccloud
-                Technologies Private Limited). Select screens shown here
-                represent publicly accessible portions of the platform. Internal
-                portal screens have been represented through process diagrams,
-                sitemaps, and flow documentation where applicable.
+                Technologies Private Limited). The prototype above shows the
+                CSM login and dashboard flow, one of several interconnected
+                flows across six user personas. Select screens shown here use
+                demo data for design purposes.
               </p>
             </div>
           </ScrollReveal>
