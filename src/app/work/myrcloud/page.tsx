@@ -31,6 +31,9 @@ export const metadata: Metadata = {
 
 const IMG = (name: string) => `/images/myrcloud/${name}`;
 
+const PROTOTYPE_URL =
+  "https://www.figma.com/proto/ApEeQPqNNnN8mU5KSkmx2p/RCloud-2.1?node-id=4627-252882&viewport=2803%2C-4877%2C0.2&t=7GwxwXsjLwJMVnFk-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4627%3A252882&page-id=4557%3A250094";
+
 export default function MyRCloudCaseStudy() {
   return (
     <main>
@@ -39,6 +42,16 @@ export default function MyRCloudCaseStudy() {
         coverColor: "#0d1118",
         tags:       ["Enterprise", "Recruitment", "Marketplace"],
         title:      "MyRCloud.",
+        titleTrailing: (
+          <a
+            href={PROTOTYPE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cs-live-link"
+          >
+            View Prototype &#8599;
+          </a>
+        ),
         subtitle:   "Designing a recruitment marketplace from scratch, replacing a Google Sheets operation with a multi-sided platform serving 100+ clients and 600+ recruiting partners.",
         meta: {
           role:     "Solo UX Designer",
@@ -488,7 +501,7 @@ export default function MyRCloudCaseStudy() {
         </section>
 
         {/* ── Impact ─────────────────────────────────────────────────── */}
-        <section id="impact" className="cs-section" aria-labelledby="impact-heading">
+        <section id="impact" className="cs-section" aria-labelledby="impact-heading" style={{ borderBottom: "none" }}>
           <ScrollReveal>
             <h2 id="impact-heading" className="cs-section-heading">Impact</h2>
           </ScrollReveal>
@@ -567,6 +580,27 @@ export default function MyRCloudCaseStudy() {
             </div>
           </ScrollReveal>
         </section>
+
+        {/* ── Prototype CTA (closing) ──────────────────────────────────── */}
+        <ScrollReveal>
+          <div
+            style={{
+              paddingTop: "2.5rem",
+              textAlign: "center",
+            }}
+          >
+            <a
+              href={PROTOTYPE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cs-live-link"
+              style={{ fontSize: "1rem" }}
+            >
+              View Prototype &#8599;
+            </a>
+          </div>
+        </ScrollReveal>
+
       </div>
 
       <ScrollToTop />
