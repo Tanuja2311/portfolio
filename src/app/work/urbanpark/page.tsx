@@ -24,6 +24,9 @@ export const metadata: Metadata = {
 
 const IMG = (name: string) => `/images/urbanpark/${name}`;
 
+const PROTOTYPE_URL =
+  "https://www.figma.com/proto/p0KVUBNuejny1XyzA9srRR/UrbanPark?node-id=1-2911&viewport=147%2C149%2C0.12&t=wnvRsiHXvLBS9KVn-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A2903&page-id=0%3A1";
+
 const SECTIONS = [
   { id: "background",    label: "Background"    },
   { id: "research",      label: "Research"      },
@@ -43,6 +46,33 @@ export default function UrbanParkCaseStudy() {
         containHero:  true,
         tags:         ["0 to 1 Product", "C2C Product"],
         title:        "UrbanPark.",
+        titleTrailing: (
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "0.5rem" }}>
+            <a
+              href={PROTOTYPE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cs-live-link"
+            >
+              View interactive prototype &#8599;
+            </a>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize:   "0.75rem",
+                lineHeight: 1.5,
+                color:      "var(--text-muted)",
+                textAlign:  "right",
+                maxWidth:   "280px",
+                margin:     0,
+              }}
+            >
+              This interactive prototype covers onboarding &amp; camera setup,
+              listing creation &amp; pricing, booking management, the UPark
+              Assist overstay-detection flow, in-app messaging, and reviews.
+            </p>
+          </div>
+        ),
         subtitle:     "Most driveway rental platforms optimize for bookings. UrbanPark was designed around what homeowners actually fear.",
         meta: {
           role: "Product Designer",
@@ -394,6 +424,62 @@ export default function UrbanParkCaseStudy() {
               </div>
             </div>
           </ScrollReveal>
+
+          {/* Communication flow */}
+          <ScrollReveal>
+            <div className="cs-feature">
+              <span className="cs-feature-name">Flow 04</span>
+              <h3 className="cs-feature-title">Communication: From first message to problem resolution</h3>
+              <p className="cs-feature-body">
+                Trust doesn&rsquo;t end when a booking is confirmed. It&rsquo;s
+                tested during the handoff, and again if something goes wrong.
+                UrbanPark handles this in two layers: direct messaging between
+                homeowner and renter, and UPark Assist, an automated layer for
+                the specific situations that don&rsquo;t need a full
+                conversation to resolve.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                Messaging unlocks once the homeowner accepts a booking.
+                It&rsquo;s a straightforward thread; renters ask about access,
+                timing, or payment logistics, and homeowners respond directly.
+                This is deliberately human. Handoff questions are often
+                specific to the property and don&rsquo;t benefit from
+                automation.
+              </p>
+              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
+                UPark Assist handles a narrower category: situations with a
+                clear resolution path that doesn&rsquo;t require
+                back-and-forth. The one I built out in full is overstay
+                handling. If a renter&rsquo;s booking window ends and their
+                car is still in the driveway, the homeowner can open UPark
+                Assist, pull up the booking, and get a live camera snapshot
+                instead of walking outside to check. Once the driveway is
+                confirmed empty in a follow-up photo, the system calculates
+                the overstay duration and applies a penalty automatically,
+                charged to the renter, not the homeowner.
+              </p>
+              <div style={{ margin: "1.5rem 0" }}>
+                <img
+                  src={IMG("upark-assist-flow.jpg")}
+                  alt="UPark Assist overstay flow"
+                  style={{ width: "100%", height: "auto", display: "block", borderRadius: "0.75rem" }}
+                />
+              </div>
+              <div className="cs-feature-decision">
+                <span className="cs-feature-decision-label">Design decision</span>
+                <p className="cs-feature-decision-text">
+                  The system doesn&rsquo;t ask the homeowner to decide whether
+                  to charge a penalty. It asks them to confirm what the camera
+                  detected, then acts automatically. This was intentional:
+                  manual judgment calls on every overstay would be tedious for
+                  hosts and inconsistent across cases. The one place a human
+                  stays in the loop is verifying the driveway is actually
+                  empty, since a wrong camera read is the one failure mode
+                  worth catching before money moves.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
         </section>
 
         {/* ── Testing (collapsible) ───────────────────────────────────── */}
@@ -402,7 +488,7 @@ export default function UrbanParkCaseStudy() {
         </div>
 
         {/* ── Reflection ─────────────────────────────────────────────── */}
-        <section id="reflection" className="cs-section" aria-labelledby="reflection-heading">
+        <section id="reflection" className="cs-section" aria-labelledby="reflection-heading" style={{ borderBottom: "none" }}>
           <ScrollReveal>
             <h2 id="reflection-heading" className="cs-section-heading">Reflection</h2>
           </ScrollReveal>
@@ -435,17 +521,6 @@ export default function UrbanParkCaseStudy() {
           <ScrollReveal>
             <div className="cs-wid">
               <h3 className="cs-wid-heading">What I&rsquo;d change</h3>
-
-              <p className="cs-wid-body">
-                <strong>The in-app messaging feature was designed but not
-                prototyped.</strong> That was a mistake. In testing, the
-                highest-anxiety moment for both sides was the physical
-                handoff - the renter arriving, the owner not sure what car to
-                expect. A simple message thread with vehicle photo confirmation
-                would have addressed this directly. I ran out of time to build
-                it properly and shipped the conceptual spec without the
-                interaction design. I&rsquo;d go back and do that first.
-              </p>
 
               <p className="cs-wid-body">
                 <strong>I&rsquo;d test with actual strangers earlier.</strong>
@@ -488,6 +563,28 @@ export default function UrbanParkCaseStudy() {
             </div>
           </ScrollReveal>
         </section>
+
+        {/* ── Prototype CTA (closing) ──────────────────────────────────── */}
+        <ScrollReveal>
+          <div
+            style={{
+              paddingTop: "0",
+              paddingBottom: "3rem",
+              marginTop: "8px",
+              textAlign: "left",
+            }}
+          >
+            <a
+              href={PROTOTYPE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cs-live-link"
+              style={{ fontSize: "1rem" }}
+            >
+              View interactive prototype &#8599;
+            </a>
+          </div>
+        </ScrollReveal>
 
       </div>
 
