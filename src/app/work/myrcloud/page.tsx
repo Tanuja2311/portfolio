@@ -586,7 +586,8 @@ export default function MyRCloudCaseStudy() {
           <div
             style={{
               paddingTop: "2.5rem",
-              textAlign: "center",
+              paddingBottom: "3rem",
+              textAlign: "left",
             }}
           >
             <a
