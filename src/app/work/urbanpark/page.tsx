@@ -240,6 +240,17 @@ export default function UrbanParkCaseStudy() {
               Figma&rsquo;s variable system did not yet exist at this level.
               UrbanPark is where I applied it properly for the first time.
             </p>
+
+            <div style={{ marginTop: "1.5rem" }}>
+              <a
+                href="https://www.figma.com/design/Y5yoTcGv13iXOd46dixoFD/Design-System?node-id=3-60509&t=oNCV6QtJWAhMJjYL-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cs-live-link"
+              >
+                View Figma design system &#8599;
+              </a>
+            </div>
           </ScrollReveal>
 
           {/* Design system carousel */}
