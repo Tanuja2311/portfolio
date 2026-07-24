@@ -24,9 +24,6 @@ export const metadata: Metadata = {
 
 const IMG = (name: string) => `/images/urbanpark/${name}`;
 
-const PROTOTYPE_URL =
-  "https://www.figma.com/proto/p0KVUBNuejny1XyzA9srRR/UrbanPark?node-id=1-2911&viewport=147%2C149%2C0.12&t=wnvRsiHXvLBS9KVn-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A2903&page-id=0%3A1";
-
 const SECTIONS = [
   { id: "background",    label: "Background"    },
   { id: "research",      label: "Research"      },
@@ -49,12 +46,10 @@ export default function UrbanParkCaseStudy() {
         titleTrailing: (
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "0.5rem" }}>
             <a
-              href={PROTOTYPE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#prototype-embed"
               className="cs-live-link"
             >
-              View interactive prototype &#8599;
+              Jump to interactive prototype
             </a>
             <p
               style={{
@@ -575,9 +570,10 @@ export default function UrbanParkCaseStudy() {
           </ScrollReveal>
         </section>
 
-        {/* ── Prototype CTA (closing) ──────────────────────────────────── */}
+        {/* ── Prototype embed (closing) ──────────────────────────────────── */}
         <ScrollReveal>
           <div
+            id="prototype-embed"
             style={{
               paddingTop: "0",
               paddingBottom: "3rem",
@@ -585,15 +581,39 @@ export default function UrbanParkCaseStudy() {
               textAlign: "left",
             }}
           >
-            <a
-              href={PROTOTYPE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cs-live-link"
-              style={{ fontSize: "1rem" }}
+            <h3 className="cs-subsection-heading" style={{ marginBottom: "1rem" }}>
+              Explore the interactive prototype
+            </h3>
+
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize:   "0.75rem",
+                lineHeight: 1.5,
+                color:      "var(--text-muted)",
+                maxWidth:   "480px",
+                margin:     "0 0 1.25rem",
+              }}
             >
-              View interactive prototype &#8599;
-            </a>
+              This interactive prototype covers onboarding &amp; camera setup,
+              listing creation &amp; pricing, booking management, the UPark
+              Assist overstay-detection flow, in-app messaging, and reviews.
+            </p>
+
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: 0,
+                paddingBottom: "75%",
+              }}
+            >
+              <iframe
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fp0KVUBNuejny1XyzA9srRR%2FUrbanPark%3Fnode-id%3D1-2911%26viewport%3D147%252C149%252C0.12%26scaling%3Dmin-zoom%26content-scaling%3Dfixed%26starting-point-node-id%3D1%253A2903%26page-id%3D0%253A1"
+                allowFullScreen
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none", borderRadius: "8px" }}
+              />
+            </div>
           </div>
         </ScrollReveal>
 
