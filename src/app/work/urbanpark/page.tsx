@@ -218,7 +218,17 @@ export default function UrbanParkCaseStudy() {
         {/* ── Design System ──────────────────────────────────────────── */}
         <section id="design-system" className="cs-section" aria-labelledby="design-system-heading">
           <ScrollReveal>
-            <h2 id="design-system-heading" className="cs-section-heading">Design System</h2>
+            <div className="cs-section-heading-row">
+              <h2 id="design-system-heading" className="cs-section-heading">Design System</h2>
+              <a
+                href="https://www.figma.com/design/Y5yoTcGv13iXOd46dixoFD/Design-System?node-id=3-60509&t=oNCV6QtJWAhMJjYL-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cs-live-link"
+              >
+                View Figma design system &#8599;
+              </a>
+            </div>
             <p className="cs-section-body">
               Before designing a single screen, I built the token foundation.
               Most student projects skip this entirely.
@@ -235,17 +245,6 @@ export default function UrbanParkCaseStudy() {
               Figma&rsquo;s variable system did not yet exist at this level.
               UrbanPark is where I applied it properly for the first time.
             </p>
-
-            <div style={{ marginTop: "1.5rem" }}>
-              <a
-                href="https://www.figma.com/design/Y5yoTcGv13iXOd46dixoFD/Design-System?node-id=3-60509&t=oNCV6QtJWAhMJjYL-1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cs-live-link"
-              >
-                View Figma design system &#8599;
-              </a>
-            </div>
           </ScrollReveal>
 
           {/* Design system carousel */}
@@ -439,38 +438,26 @@ export default function UrbanParkCaseStudy() {
               <p className="cs-feature-body">
                 Trust doesn&rsquo;t end when a booking is confirmed. It&rsquo;s
                 tested during the handoff, and again if something goes wrong.
-                UrbanPark handles this in two layers: direct messaging between
-                homeowner and renter, and UPark Assist, an automated layer for
-                the specific situations that don&rsquo;t need a full
-                conversation to resolve.
+                Direct messaging between homeowner and renter covers routine
+                handoff questions like access, timing, and payment logistics.
+                But some situations have a clear resolution path that
+                doesn&rsquo;t need a back-and-forth conversation at all, and
+                that&rsquo;s what <strong>UPark Assist</strong>{" "}
+                handles.
               </p>
               <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
-                Messaging unlocks once the homeowner accepts a booking.
-                It&rsquo;s a straightforward thread; renters ask about access,
-                timing, or payment logistics, and homeowners respond directly.
-                This is deliberately human. Handoff questions are often
-                specific to the property and don&rsquo;t benefit from
-                automation.
-              </p>
-              <p className="cs-feature-body" style={{ marginTop: "1rem" }}>
-                UPark Assist handles a narrower category: situations with a
+                <strong>UPark Assist</strong>{" "}
+                handles a narrower category: situations with a
                 clear resolution path that doesn&rsquo;t require
                 back-and-forth. The one I built out in full is overstay
                 handling. If a renter&rsquo;s booking window ends and their
-                car is still in the driveway, the homeowner can open UPark
-                Assist, pull up the booking, and get a live camera snapshot
+                car is still in the driveway, the homeowner can open <strong>UPark Assist</strong>,
+                pull up the booking, and get a live camera snapshot
                 instead of walking outside to check. Once the driveway is
                 confirmed empty in a follow-up photo, the system calculates
                 the overstay duration and applies a penalty automatically,
                 charged to the renter, not the homeowner.
               </p>
-              <div style={{ margin: "1.5rem 0" }}>
-                <img
-                  src={IMG("upark-assist-flow.jpg")}
-                  alt="UPark Assist overstay flow"
-                  style={{ width: "100%", height: "auto", display: "block", borderRadius: "0.75rem" }}
-                />
-              </div>
               <div className="cs-feature-decision">
                 <span className="cs-feature-decision-label">Design decision</span>
                 <p className="cs-feature-decision-text">
@@ -483,6 +470,59 @@ export default function UrbanParkCaseStudy() {
                   empty, since a wrong camera read is the one failure mode
                   worth catching before money moves.
                 </p>
+              </div>
+              <p className="cs-feature-body" style={{ marginTop: "1.5rem" }}>
+                I later extended this flow into a working prototype - booking
+                lookup, live camera confirmation, automatic penalty
+                calculation - to test whether the logic held up outside of
+                static screens, not just how it looked in Figma.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* ── Prototype embed (closing) ──────────────────────────────────── */}
+          <ScrollReveal>
+            <div
+              id="prototype-embed"
+              style={{
+                paddingTop: "0",
+                paddingBottom: "3rem",
+                marginTop: "8px",
+                textAlign: "left",
+              }}
+            >
+              <h3 className="cs-subsection-heading" style={{ marginBottom: "1rem" }}>
+                Explore the interactive prototype
+              </h3>
+
+              <p
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize:   "0.75rem",
+                  lineHeight: 1.5,
+                  color:      "var(--text-muted)",
+                  maxWidth:   "480px",
+                  margin:     "0 0 1.25rem",
+                }}
+              >
+                This interactive prototype covers onboarding &amp; camera setup,
+                listing creation &amp; pricing, booking management, the UPark
+                Assist overstay-detection flow, in-app messaging, and reviews.
+              </p>
+
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: 0,
+                  paddingBottom: "75%",
+                }}
+              >
+                <iframe
+                  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fp0KVUBNuejny1XyzA9srRR%2FUrbanPark%3Fnode-id%3D1-2911%26viewport%3D147%252C149%252C0.12%26scaling%3Dmin-zoom%26content-scaling%3Dfixed%26starting-point-node-id%3D1%253A2903%26page-id%3D0%253A1"
+                  allowFullScreen
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none", borderRadius: "8px" }}
+                />
               </div>
             </div>
           </ScrollReveal>
@@ -505,8 +545,8 @@ export default function UrbanParkCaseStudy() {
 
               <p className="cs-wid-body">
                 <strong>Designing for two user types simultaneously teaches you
-                that personas are constraints, not portraits.</strong> Every
-                feature decision had to hold for both sides. A cancellation
+                that personas are constraints, not portraits.</strong>{" "}
+                Every feature decision had to hold for both sides. A cancellation
                 policy that&rsquo;s generous for renters creates anxiety for
                 homeowners. A verification step that builds trust for renters
                 feels invasive to homeowners if it&rsquo;s not framed carefully.
@@ -516,8 +556,8 @@ export default function UrbanParkCaseStudy() {
 
               <p className="cs-wid-body">
                 <strong>Building the design system before the screens fundamentally
-                changed the quality of the work.</strong> Working from components
-                produces designs that cohere. Working free-form produces screens
+                changed the quality of the work.</strong>{" "}
+                Working from components produces designs that cohere. Working free-form produces screens
                 that look fine individually but don&rsquo;t read as a
                 product. This was the most transferable lesson from the project.
               </p>
@@ -529,7 +569,7 @@ export default function UrbanParkCaseStudy() {
               <h3 className="cs-wid-heading">What I&rsquo;d change</h3>
 
               <p className="cs-wid-body">
-                <strong>I&rsquo;d test with actual strangers earlier.</strong>
+                <strong>I&rsquo;d test with actual strangers earlier.</strong>{" "}
                 Our usability participants were recruited from the university
                 community - people who know each other, share campus, and have
                 an implicit baseline of trust. The trust barriers for true
@@ -569,53 +609,6 @@ export default function UrbanParkCaseStudy() {
             </div>
           </ScrollReveal>
         </section>
-
-        {/* ── Prototype embed (closing) ──────────────────────────────────── */}
-        <ScrollReveal>
-          <div
-            id="prototype-embed"
-            style={{
-              paddingTop: "0",
-              paddingBottom: "3rem",
-              marginTop: "8px",
-              textAlign: "left",
-            }}
-          >
-            <h3 className="cs-subsection-heading" style={{ marginBottom: "1rem" }}>
-              Explore the interactive prototype
-            </h3>
-
-            <p
-              style={{
-                fontFamily: "var(--font-sans)",
-                fontSize:   "0.75rem",
-                lineHeight: 1.5,
-                color:      "var(--text-muted)",
-                maxWidth:   "480px",
-                margin:     "0 0 1.25rem",
-              }}
-            >
-              This interactive prototype covers onboarding &amp; camera setup,
-              listing creation &amp; pricing, booking management, the UPark
-              Assist overstay-detection flow, in-app messaging, and reviews.
-            </p>
-
-            <div
-              style={{
-                position: "relative",
-                width: "100%",
-                height: 0,
-                paddingBottom: "75%",
-              }}
-            >
-              <iframe
-                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fp0KVUBNuejny1XyzA9srRR%2FUrbanPark%3Fnode-id%3D1-2911%26viewport%3D147%252C149%252C0.12%26scaling%3Dmin-zoom%26content-scaling%3Dfixed%26starting-point-node-id%3D1%253A2903%26page-id%3D0%253A1"
-                allowFullScreen
-                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none", borderRadius: "8px" }}
-              />
-            </div>
-          </div>
-        </ScrollReveal>
 
       </div>
 
