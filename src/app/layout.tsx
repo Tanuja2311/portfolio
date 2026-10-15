@@ -1,7 +1,6 @@
 // WCAG 2.1 AA compliance applied 2026-05-25
 import type { Metadata } from "next";
 import { DM_Serif_Display, DM_Sans, Instrument_Serif } from "next/font/google";
-import { cookies } from "next/headers";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { PageTransition } from "@/components/page-transition";
@@ -54,37 +53,16 @@ export const metadata: Metadata = {
   },
 };
 
-// Runs synchronously before first paint - prevents flash of wrong theme.
-const themeScript = `
-(function () {
-  try {
-    var ls = localStorage.getItem("theme");
-    var ck = document.cookie.split(";").reduce(function (acc, c) {
-      var p = c.trim().split("=");
-      return p[0] === "theme" ? p[1] : acc;
-    }, "");
-    var theme = ls || ck || "dark";
-    document.documentElement.setAttribute("data-theme", theme);
-  } catch (_) {}
-})();
-`.trim();
-
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const cookieStore = await cookies();
-  const theme = (cookieStore.get("theme")?.value ?? "dark") as "dark" | "light";
-
   return (
     <html
       lang="en"
-      data-theme={theme}
+      data-theme="dark"
       className={`${dmSerif.variable} ${dmSans.variable} ${instrumentSerif.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
       <body style={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }} suppressHydrationWarning={true}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <MotionProvider>

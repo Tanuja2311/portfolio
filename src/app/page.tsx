@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
-import { FEATURED_PROJECTS, OTHER_PROJECTS } from "@/lib/projects";
+import { WORK_PROJECTS, HOME_AI_PROJECTS } from "@/lib/projects";
 import { FeaturedCard }  from "@/components/home/featured-card";
-import { WorkCard }      from "@/components/home/work-card";
 import { HeroSection }   from "@/components/home/hero-section";
 import { Reveal }        from "@/components/case-study/reveal";
 
 export const metadata: Metadata = {
   title: { absolute: "Tanuja Bodas | Senior Product Designer" },
   description:
-    "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, and more.",
+    "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, UrbanPark, and more.",
   alternates: { canonical: "/" },
   openGraph: {
     type:        "website",
     url:         "/",
-    description: "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, and more.",
+    description: "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, UrbanPark, and more.",
   },
   twitter: {
     card: "summary_large_image",
@@ -53,6 +52,12 @@ const jsonLd = {
       },
       {
         "@type": "CreativeWork",
+        "name": "UrbanPark",
+        "url": `${SITE}/work/urbanpark`,
+        "description": "A 0 to 1 C2C driveway rental marketplace designed around what homeowners actually fear.",
+      },
+      {
+        "@type": "CreativeWork",
         "name": "The Wren Gala",
         "url": `${SITE}/built-with-ai/wren-gala`,
         "description": "A luxury charity gala website for a historic London church, designed and shipped in under a week using AI-assisted development.",
@@ -72,17 +77,17 @@ export default function HomePage() {
       {/* ── Hero ─────────────────────────────────────────────── */}
       <HeroSection />
 
-      {/* ── Featured Work ─────────────────────────────────────── */}
-      <section className="home-section" aria-labelledby="featured-label">
+      {/* ── Work ──────────────────────────────────────────────── */}
+      <section className="home-section" id="work" aria-labelledby="work-label">
         <div className="home-section-inner">
           <Reveal>
-            <h2 className="section-label" id="featured-label">
-              Featured Work
+            <h2 className="section-label" id="work-label">
+              Work
             </h2>
           </Reveal>
 
           <div className="featured-grid">
-            {FEATURED_PROJECTS.filter(p => !p.hidden).map((project, i) => (
+            {WORK_PROJECTS.map((project, i) => (
               <Reveal key={project.slug} delay={i * 90}>
                 <FeaturedCard project={project} index={i + 1} />
               </Reveal>
@@ -91,19 +96,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Other Work ────────────────────────────────────────── */}
-      <section className="home-section" aria-labelledby="other-label">
+      {/* ── Built with AI ─────────────────────────────────────── */}
+      <section className="home-section" id="built-with-ai" aria-labelledby="ai-label">
         <div className="home-section-inner">
           <Reveal>
-            <h2 className="section-label" id="other-label">
-              Other Work
+            <h2 className="section-label" id="ai-label">
+              Built with AI
             </h2>
           </Reveal>
 
-          <div className="work-grid">
-            {OTHER_PROJECTS.filter(p => !p.hidden && !p.homepageHidden).map((project, i) => (
-              <Reveal key={project.slug} delay={i * 80}>
-                <WorkCard project={project} />
+          <div className="featured-grid">
+            {HOME_AI_PROJECTS.map((project, i) => (
+              <Reveal key={project.slug} delay={i * 90}>
+                <FeaturedCard project={project} index={WORK_PROJECTS.length + i + 1} />
               </Reveal>
             ))}
           </div>

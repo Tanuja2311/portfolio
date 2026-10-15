@@ -4,18 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const NAV_LINKS: { href: string; label: string; external?: true }[] = [
-  { href: "/work",          label: "Work" },
-  { href: "/built-with-ai", label: "Built with AI" },
   { href: "/about",         label: "About" },
   { href: "/resume",        label: "Resume" },
 ];
 
+const CALENDLY_URL = "https://calendly.com/tanuja375/30min";
+
 function isActive(href: string, pathname: string): boolean {
-  if (href === "/work") return pathname === "/work" || pathname.startsWith("/work/");
-  if (href === "/built-with-ai") return pathname === "/built-with-ai" || pathname.startsWith("/built-with-ai/");
   return pathname === href;
 }
 
@@ -94,7 +91,16 @@ export function Nav() {
               ))}
             </ul>
 
-            <ThemeToggle className="nav-toggle" />
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-cta"
+              aria-label="Book a call (opens in new tab)"
+            >
+              Book a call
+              <span className="nav-link-arrow" aria-hidden>↗</span>
+            </a>
 
             {/* Mobile hamburger */}
             <button
@@ -146,6 +152,23 @@ export function Nav() {
                   )}
                 </motion.li>
               ))}
+              <motion.li
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: NAV_LINKS.length * 0.06, duration: 0.22, ease: "easeOut" }}
+              >
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nav-mobile-cta"
+                  aria-label="Book a call (opens in new tab)"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Book a call
+                  <span className="nav-link-arrow" aria-hidden>↗</span>
+                </a>
+              </motion.li>
             </ul>
           </motion.div>
         )}

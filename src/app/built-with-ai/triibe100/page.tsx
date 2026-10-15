@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   title:       "Triibe100",
   description: "Triibe100 case study by Tanuja Bodas. Triibe's recognition list, designed, art-directed, and built end to end with AI.",
   alternates:  { canonical: "/built-with-ai/triibe100" },
+  // Unlisted: reachable by direct link only, kept out of search results.
+  robots:      { index: false, follow: false },
   openGraph: {
     type:        "article",
     url:         "/built-with-ai/triibe100",

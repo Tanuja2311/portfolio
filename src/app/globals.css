@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ─── Dark theme (default) ─────────────────────────────────────────── */
+/* ─── Theme (dark only) ─────────────────────────────────────────── */
 :root,
 [data-theme="dark"] {
   color-scheme: dark;
@@ -47,54 +47,6 @@
 
   --mono-t: #f0ece4;
   --mono-b: #B794F4;
-}
-
-/* ─── Light theme ──────────────────────────────────────────────────── */
-[data-theme="light"] {
-  color-scheme: light;
-
-  --bg:          #faf7f2;
-  --bg-subtle:   #f2ede4;
-  --bg-elevated: #ffffff;
-  --bg-nav:      rgba(250, 247, 242, 0.85);
-  --border:      #e4ddd2;
-
-  --text:        #1a1a18;
-  --text-muted:  #6b6358;
-  --text-faint:  #c0b8ae;
-
-  --accent:      #8b6840;
-  --accent-warm: #a07840;
-
-  --green:        #15803d;
-  --green-bg:     rgba(21, 128, 61, 0.08);
-  --green-border: rgba(21, 128, 61, 0.20);
-
-  --shadow-card:  rgba(0, 0, 0, 0.10);
-
-  --cs-hero-desc:        rgba(26, 26, 24, 0.65);
-  --cs-hero-meta-label:  rgba(26, 26, 24, 0.55);
-  --cs-hero-meta-value:  rgba(26, 26, 24, 0.80);
-
-  --cs-summary-cell-bg:     rgba(0, 0, 0, 0.03);
-  --cs-summary-cell-border: rgba(0, 0, 0, 0.06);
-  --cs-summary-body:        rgba(26, 26, 24, 0.70);
-  --cs-summary-hint:        rgba(26, 26, 24, 0.55);
-  --cs-summary-divider:     rgba(0, 0, 0, 0.06);
-  --diag-box-fill:          rgba(0, 0, 0, 0.04);
-  --diag-box-stroke:        rgba(0, 0, 0, 0.13);
-
-  --hero-title-color:   rgba(26, 26, 24, 0.65);
-  --hero-tagline-color: rgba(26, 26, 24, 0.65);
-  --hero-card-bg:       rgba(0, 0, 0, 0.03);
-  --hero-card-border:   rgba(0, 0, 0, 0.08);
-  --hero-stats-border:  rgba(0, 0, 0, 0.08);
-  --hero-stat-label:    rgba(26, 26, 24, 0.65);
-  --hero-card-name:     rgba(26, 26, 24, 0.85);
-  --hero-card-desc:     rgba(26, 26, 24, 0.65);
-
-  --mono-t: #1a1a18;
-  --mono-b: #7C3AED;
 }
 
 /* ─── Layout tokens ────────────────────────────────────────────────── */
@@ -206,12 +158,6 @@ video {
   --nav-bg:     rgba(35, 35, 35, 0.6);
   --nav-border: #2c2c2c;
   --nav-link:   #d9d9d9;
-}
-
-[data-theme="light"] {
-  --nav-bg:     rgba(255, 255, 255, 0.6);
-  --nav-border: rgba(0, 0, 0, 0.1);
-  --nav-link:   #666666;
 }
 
 .nav {
@@ -339,10 +285,6 @@ video {
 .nav-cta:hover {
   opacity: 0.8;
   text-decoration-color: var(--mono-b);
-}
-
-.nav-toggle {
-  flex-shrink: 0;
 }
 
 /* Hamburger button — hidden on desktop */

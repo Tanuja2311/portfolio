@@ -57,6 +57,7 @@ export const AI_PROJECTS: Project[] = [
     tags:       ["AI Workflow", "Art Direction"],
     href:       "/built-with-ai/triibe100",
     role:       "Visual direction, design, and build (solo)",
+    hidden:     true, // live by direct link only
   },
 ];
 
@@ -91,7 +92,6 @@ export const OTHER_PROJECTS: Project[] = [
     tags:           ["0 to 1 Product", "C2C Product"],
     href:           "/work/urbanpark",
     role:           "Product Designer",
-    homepageHidden: true,
   },
   {
     slug:       "genai-pharmacy",
@@ -103,7 +103,7 @@ export const OTHER_PROJECTS: Project[] = [
     href:       "/work/genai-pharmacy-research",
     role:       "UX Researcher",
     comingSoon:     true,
-    homepageHidden: true,
+    hidden:         true,
   },
   {
     slug:       "google-drive-emerging",
@@ -128,3 +128,18 @@ export const OTHER_PROJECTS: Project[] = [
     hidden:     true,
   },
 ];
+
+// Single ordered list for the home page "Work" section.
+const WORK_ORDER = [
+  "rewards-recognition",
+  "myrcloud",
+  "urbanpark",
+  "employee-dossier",
+];
+
+export const WORK_PROJECTS: Project[] = WORK_ORDER
+  .map((slug) => [...FEATURED_PROJECTS, ...OTHER_PROJECTS].find((p) => p.slug === slug))
+  .filter((p): p is Project => !!p && !p.hidden);
+
+// Home page "Built with AI" section.
+export const HOME_AI_PROJECTS: Project[] = AI_PROJECTS.filter((p) => !p.hidden);

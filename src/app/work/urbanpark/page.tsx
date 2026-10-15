@@ -304,8 +304,9 @@ export default function UrbanParkCaseStudy() {
                 override by date), set your price (with a suggested range
                 derived from nearby verified listings), and complete identity
                 verification. The listing goes live only after ID verification
-                clears - a gate that reduced fraudulent listings in our
-                prototype testing to zero.
+                clears, so every driveway renters see is tied to a verified
+                owner. Fake listings are stopped before they go live instead of
+                being reported after a bad booking.
               </p>
               <div style={{ margin: "1.5rem 0" }}>
                 <img
@@ -319,10 +320,9 @@ export default function UrbanParkCaseStudy() {
                 <p className="cs-feature-decision-text">
                   The pricing step shows a suggested range before asking the
                   owner to enter a number. Anchoring against real data from
-                  nearby listings increased confidence and reduced
-                  &ldquo;analysis paralysis&rdquo; in testing - owners who saw
-                  the range set a price 40% faster than owners shown a blank
-                  input.
+                  nearby listings gave owners a starting point. In testing,
+                  participants who saw the range settled on a price with less
+                  hesitation than those facing a blank input.
                 </p>
               </div>
             </div>
