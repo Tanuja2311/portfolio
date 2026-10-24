@@ -6,7 +6,7 @@ import { SeriesCard } from "@/components/side-quests/series-card";
 import { Reveal } from "@/components/case-study/reveal";
 
 const DESCRIPTION =
-  "Side Quests by Tanuja Bodas: weekend side projects, published weekly. Half-done is allowed.";
+  "Side Quests by Tanuja Bodas: weekend side projects, published on F1 race weekends. Half-done is allowed.";
 
 export const metadata: Metadata = {
   title:       "Side Quests",
@@ -28,7 +28,7 @@ export default function SideQuestsPage() {
           <h1 className="sq-title">Side Quests</h1>
           <p className="sq-intro">
             Things I build on weekends because I want to, not because a job
-            description asked. A new episode every week. Some of it is
+            description asked. New episodes drop on F1 race weekends. Some of it is
             unfinished, and every episode says what&apos;s next.
           </p>
         </Reveal>

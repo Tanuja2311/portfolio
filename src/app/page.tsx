@@ -146,7 +146,7 @@ export default function HomePage() {
                 Side Quests
               </h2>
               <p className="sq-home-intro">
-                Weekend projects, one episode a week. Not always finished, never boring.
+                Weekend projects, new episodes on F1 race weekends. Not always finished, never boring.
               </p>
             </Reveal>
 
