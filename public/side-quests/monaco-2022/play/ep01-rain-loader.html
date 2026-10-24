@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Monaco 2022 Rain Loader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap">
+<style>
+/* Layout: a broadcast "monitor" (16:9 stage) on a dark desk, review controls and the beat sheet beneath it.
+   Single deliberate look: dark only, matching the Monaco 2022 Foundations tokens. */
+:root {
+  color-scheme: dark;
+  --canvas: #0B0C10;
+  --panel: #121319;
+  --raised: #181A21;
+  --row-hi: #20222B;
+  --border: #2C2F3A;
+  --text: #F4F4F6;
+  --text-2: #A3A7B2;
+  --text-3: #6B6F7B;
+  --accent: #ED1C24;
+  --red-flag: #E10600;
+  --wet: #0067AD;
+  --rbr: #1E5BC6; --fer: #ED1C24; --mcl: #F58020; --mer: #6CD3BF;
+  --font: "Titillium Web", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --snap: cubic-bezier(0.16, 1, 0.3, 1);
+  --wipe: 360ms;
+  --base: 280ms;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--canvas); color: var(--text); }
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px 48px;
+}
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 20px; }
+
+header.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+h1.page { margin: 2px 0 0; font-size: clamp(22px, 3vw, 30px); font-weight: 700; line-height: 1.15; text-wrap: balance; }
+.note { color: var(--text-2); font-size: 13px; max-width: 62ch; margin: 0; }
+
+/* ---------- Stage ---------- */
+.stage {
+  position: relative; width: 100%; max-width: 100%; aspect-ratio: 16 / 9;
+  background: var(--canvas); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  container-type: inline-size;
+}
+canvas#rain { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.layer { position: absolute; }
+
+.title { left: 6%; top: 29%; display: grid; gap: 0.6cqw; transition: opacity var(--base) ease, transform var(--base) var(--snap); }
+.title .kicker { font-size: max(8px, 1.15cqw); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.title .name { font-size: 6.6cqw; font-weight: 700; font-style: italic; line-height: 1; letter-spacing: -0.01em; }
+.title .sub { font-size: max(9px, 2cqw); font-weight: 600; color: var(--text-2); }
+.title.gone { opacity: 0; transform: translateY(-1.5cqw); }
+
+.badge { left: 3%; top: 4.2%; display: grid; gap: 0.2cqw; opacity: 0; transition: opacity var(--base) ease; }
+.badge .kicker { font-size: max(7px, 1cqw); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.badge .name { font-size: max(10px, 2.2cqw); font-weight: 700; font-style: italic; line-height: 1.05; }
+.badge.on { opacity: 1; }
+
+.banner { left: 50%; top: 5.5%; transform: translateX(-50%); display: flex; max-width: 74%; border-radius: 4px; overflow: hidden; opacity: 0; }
+.banner.cue { left: 50%; top: 13%; }
+.banner.low { top: auto; bottom: 7%; }
+.banner .tag { background: var(--raised); color: var(--text); font-size: max(7px, 1.1cqw); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.9cqw 1.4cqw; white-space: nowrap; display: flex; align-items: center; transition: background-color var(--base) ease; }
+.banner.red .tag { background: var(--red-flag); }
+.banner .msg { background: var(--text); color: var(--canvas); font-size: max(7px, 1.2cqw); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.9cqw 1.4cqw; display: flex; align-items: center; }
+.banner.in { opacity: 1; animation: wipe var(--wipe) var(--snap) both; }
+@keyframes wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+.pill { right: 3%; top: 4.2%; background: var(--canvas); border-top: 0.35cqw solid var(--accent); padding: 0.8cqw 1.6cqw; font-size: max(8px, 1.55cqw); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0; transition: opacity var(--base) ease; }
+.pill.on { opacity: 1; }
+
+.clock { left: 6%; bottom: 13%; display: grid; gap: 0.4cqw; transition: opacity var(--base) ease; }
+.clock .label { font-size: max(7px, 1.15cqw); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); }
+.clock .times { display: flex; align-items: baseline; gap: 1.6cqw; font-variant-numeric: tabular-nums; }
+.clock .old { font-size: 3.6cqw; font-weight: 600; font-style: italic; color: var(--text-3); text-decoration: line-through; text-decoration-thickness: 0.25cqw; }
+.clock .new { font-size: 5.8cqw; font-weight: 700; font-style: italic; line-height: 1; }
+.clock .new.red { color: var(--red-flag); }
+.clock .new.flip { animation: flip var(--base) var(--snap) both; }
+@keyframes flip { from { transform: translateY(45%); opacity: 0; } to { transform: none; opacity: 1; } }
+.clock.gone { opacity: 0; }
+
+.chip { right: 27%; bottom: 20%; display: flex; align-items: center; gap: 0.9cqw; opacity: 0; transition: opacity var(--base) ease; }
+.chip .tyre { width: 2.9cqw; height: 2.9cqw; min-width: 16px; min-height: 16px; border-radius: 50%; border: max(1.5px, 0.22cqw) solid var(--wet); color: var(--wet); display: grid; place-items: center; font-size: max(7px, 1.2cqw); font-weight: 700; }
+.chip .txt { font-size: max(7px, 1.15cqw); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-2); }
+.chip.on { opacity: 1; }
+
+.tower { left: 3%; top: 21%; width: 24%; min-width: 120px; background: rgba(18, 19, 25, 0.94); border-radius: 1cqw; overflow: hidden; }
+.tower .lap { padding: 0.9cqw 1.6cqw; font-size: max(7px, 1.15cqw); font-weight: 600; letter-spacing: 0.12em; color: var(--text-2); border-bottom: 1px solid var(--border); }
+.tower .row { display: grid; grid-template-columns: 1.8em 3px 2.6em 1fr; align-items: center; gap: 0.9cqw; padding: 0.6cqw 1.6cqw; font-size: max(9px, 1.7cqw); opacity: 0; transform: translateX(-8%); transition: opacity var(--base) ease, transform var(--base) var(--snap); }
+.tower .row .pos { color: var(--text-3); font-style: italic; font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+.tower .row .bar { width: 3px; height: 1.2em; border-radius: 1px; }
+.tower .row .team { color: var(--text-2); font-size: 0.62em; font-weight: 600; letter-spacing: 0.1em; }
+.tower .row .code { font-weight: 700; letter-spacing: 0.02em; }
+.tower:not(.on) { visibility: hidden; }
+.tower.on .row { opacity: 1; transform: none; }
+
+.feed { left: 6%; top: 18%; right: 34%; display: none; gap: 1.4cqw; }
+.feed p { margin: 0; font-size: max(9px, 1.9cqw); line-height: 1.35; color: var(--text); opacity: 0; transition: opacity 400ms ease; }
+.feed p .t { color: var(--text-3); font-variant-numeric: tabular-nums; margin-right: 0.6em; }
+.feed p.on { opacity: 1; }
+.feed p.red { color: var(--red-flag); }
+
+.stage.calm .banner, .stage.calm .clock, .stage.calm .chip, .stage.calm .pill, .stage.calm .title { display: none; }
+.stage.calm .feed { display: grid; }
+.stage.calm .feed.done { opacity: 0; transition: opacity 400ms ease; }
+.stage.calm .tower { left: auto; right: 6%; top: 18%; }
+.stage.calm .tower .row { transform: none; }
+
+.skip {
+  position: absolute;
+  right: calc(2.2% + env(safe-area-inset-right, 0px) * 0);
+  bottom: 4%;
+  font: inherit; font-size: max(10px, 1.3cqw); font-weight: 600; letter-spacing: 0.06em;
+  color: var(--text); background: rgba(11, 12, 16, 0.6); border: 1px solid var(--border); border-radius: 999px;
+  padding: 0.5em 1.1em; cursor: pointer;
+}
+.skip:hover { border-color: var(--text-2); }
+.skip:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.skip[hidden] { display: none !important; }
+
+/* ---------- Review controls ---------- */
+.controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+.btn { font: inherit; font-weight: 600; font-size: 14px; color: var(--text); background: var(--raised); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+.btn.primary { background: var(--accent); border-color: var(--accent); }
+.btn:hover { border-color: var(--text-2); }
+.seg { display: inline-flex; align-items: center; gap: 8px; }
+.seg .lbl { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+.seg .opts { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.seg button { font: inherit; font-size: 13px; font-weight: 600; color: var(--text-2); background: transparent; border: 0; padding: 7px 12px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--row-hi); color: var(--text); }
+
+/* ---------- Beat sheet ---------- */
+.beats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+.beats button {
+  width: 100%; height: 100%; text-align: left; font: inherit; color: var(--text);
+  background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px; cursor: pointer;
+  display: grid; gap: 4px; align-content: start;
+}
+.beats button[aria-current="true"] { border-color: var(--accent); background: var(--raised); }
+.beats .when { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.beats .what { font-size: 14px; font-weight: 700; line-height: 1.25; }
+.beats .msg { font-size: 12px; color: var(--text-2); line-height: 1.4; min-width: 0; overflow-wrap: anywhere; }
+footer.foot { color: var(--text-3); font-size: 12px; }
+</style>
+<style>
+html.embedded body { padding-top: 12px; padding-bottom: 16px; }
+html.embedded header.top, html.embedded .notes, html.embedded footer.foot, html.embedded .phone-note { display: none !important; }
+</style>
+<script>
+(function () {
+  var on = false;
+  try { on = new URLSearchParams(location.search).has("embed"); } catch (e) {}
+  if (!on) return;
+  document.documentElement.classList.add("embedded");
+  // Tell the episode page how tall the content is, so its frame fits without inner scrolling.
+  function send() {
+    var w = document.querySelector(".wrap");
+    var h = Math.ceil((w ? w.getBoundingClientRect().bottom + window.scrollY : document.body.scrollHeight) + 16);
+    try { parent.postMessage({ type: "sq-embed-height", h: h }, location.origin); } catch (e) {}
+  }
+  window.addEventListener("load", send);
+  window.addEventListener("DOMContentLoaded", function () {
+    send();
+    if (window.ResizeObserver) new ResizeObserver(send).observe(document.querySelector(".wrap") || document.body);
+  });
+})();
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Side Quests · Episode 1</div>
+      <h1 class="page">The rain loader</h1>
+    </div>
+    <p class="note">An hour of delay in six seconds. Every message and time is real, from race control on 29&nbsp;May&nbsp;2022.</p>
+  </header>
+
+  <div class="stage" id="stage" aria-label="Rain loader preview">
+    <canvas id="rain" aria-hidden="true"></canvas>
+
+    <div class="layer title" id="title">
+      <div class="kicker">Replay · Personal concept</div>
+      <div class="name">Monaco Grand Prix</div>
+      <div class="sub">Sunday 29 May 2022 · Monte Carlo</div>
+    </div>
+    <div class="layer badge" id="badge">
+      <div class="kicker">Replay · Personal concept</div>
+      <div class="name">Monaco Grand Prix</div>
+    </div>
+
+    <div class="layer banner" id="banner" role="status"><div class="tag">Race control</div><div class="msg" id="bannerMsg"></div></div>
+    <div class="layer pill" id="pill"></div>
+
+    <div class="layer clock" id="clock">
+      <div class="label" id="clockLabel">Lights out</div>
+      <div class="times"><span class="old" id="clockOld"></span><span class="new" id="clockNew">15:00</span></div>
+    </div>
+
+    <div class="layer chip" id="chip"><span class="tyre">W</span><span class="txt">All cars · extreme wet</span></div>
+
+    <div class="layer tower" id="tower">
+      <div class="lap">LAP 0/77</div>
+      <div class="row" style="transition-delay:0ms"><span class="pos">1</span><span class="bar" style="background:var(--fer)"></span><span class="team">FER</span><span class="code">LEC</span></div>
+      <div class="row" style="transition-delay:40ms"><span class="pos">2</span><span class="bar" style="background:var(--fer)"></span><span class="team">FER</span><span class="code">SAI</span></div>
+      <div class="row" style="transition-delay:80ms"><span class="pos">3</span><span class="bar" style="background:var(--rbr)"></span><span class="team">RBR</span><span class="code">PER</span></div>
+      <div class="row" style="transition-delay:120ms"><span class="pos">4</span><span class="bar" style="background:var(--rbr)"></span><span class="team">RBR</span><span class="code">VER</span></div>
+      <div class="row" style="transition-delay:160ms"><span class="pos">5</span><span class="bar" style="background:var(--mcl)"></span><span class="team">MCL</span><span class="code">NOR</span></div>
+      <div class="row" style="transition-delay:200ms"><span class="pos">6</span><span class="bar" style="background:var(--mer)"></span><span class="team">MER</span><span class="code">RUS</span></div>
+    </div>
+
+    <div class="layer feed" id="feed" aria-live="polite"></div>
+
+    <button class="skip" id="skip" type="button">Skip intro</button>
+  </div>
+
+  <div class="controls">
+    <button class="btn primary" id="replay" type="button">Replay</button>
+    <button class="btn" id="returning" type="button">Play as a return visit</button>
+    <div class="seg"><span class="lbl">Motion</span><span class="opts" role="group" aria-label="Motion">
+      <button type="button" id="mFull" aria-pressed="true">Full</button><button type="button" id="mCalm" aria-pressed="false">Calm</button></span></div>
+  </div>
+
+  <ol class="beats" id="beats"></ol>
+
+  <footer class="foot">Rain is a 2D canvas sketch of the haze and lens drops from the 2022 footage; the build will use a shader for real water distortion. Not affiliated with Formula&nbsp;1 or Scuderia Ferrari.</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+(() => {
+  // ---------- Beats (all strings from data/race_control.json) ----------
+  const BEATS = [
+    { what: "Rain on the lens", clockLabel: "Lights out", old: "", now: "15:00",
+      banner: null, pill: null, chip: false, final: false,
+      feed: "15:00 · Monaco, 29 May 2022. Heavy rain before the start.",
+      rain: { haze: 0.12, drops: 16, specks: 34, dim: 0 } },
+    { what: "Start procedure suspended", clockLabel: "Formation lap", old: "15:00", now: "15:09",
+      banner: "Start procedure suspended", pill: null, chip: false, final: false,
+      feed: "Start procedure suspended. Formation lap now 15:09.",
+      rain: { haze: 0.16, drops: 26, specks: 48, dim: 0 } },
+    { what: "Behind the Safety Car, on full wets", clockLabel: "Formation lap", old: "15:09", now: "15:16",
+      banner: "Formation lap will start at 15:16 behind safety car on extreme wet tyres", pill: "Formation lap", chip: true, final: false,
+      feed: "Formation lap at 15:16 behind the Safety Car, all cars on extreme wets.",
+      rain: { haze: 0.20, drops: 34, specks: 64, dim: 0 } },
+    { what: "Red flag", clockLabel: "Race start", old: "15:16", now: "Suspended", red: true,
+      banner: "Red flag", pill: null, chip: false, final: false,
+      feed: "Red flag.",
+      rain: { haze: 0.24, drops: 52, specks: 90, dim: 0.35 } },
+    { what: "The rain eases. New time 16:05", clockLabel: "Race start", old: "15:16", now: "16:05",
+      banner: "Race will resume at 16:05 behind safety car", pill: null, chip: true, final: false,
+      feed: "Race will resume at 16:05 behind the Safety Car.",
+      rain: { haze: 0.15, drops: 20, specks: 30, dim: 0 } },
+    { what: "Handoff to the race", clockLabel: "", old: "", now: "",
+      banner: "Safety car will enter pits: rolling start", pill: "Safety car", chip: false, final: true,
+      feed: null,
+      rain: { haze: 0.10, drops: 10, specks: 16, dim: 0 } },
+  ];
+
+  const $ = (id) => document.getElementById(id);
+  const stage = $("stage"), canvas = $("rain"), ctx = canvas.getContext("2d");
+  const el = { title: $("title"), badge: $("badge"), banner: $("banner"), bannerMsg: $("bannerMsg"), pill: $("pill"),
+    clock: $("clock"), clockLabel: $("clockLabel"), clockOld: $("clockOld"), clockNew: $("clockNew"),
+    chip: $("chip"), tower: $("tower"), feed: $("feed"), skip: $("skip") };
+
+  // ---------- Settings ----------
+  let reduced = false;
+  try { reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+  let calm = reduced;
+  let step = 1.2; // seconds between beats: about 6 s for the whole intro. Picked Oct 18 (3 s was too fast to read).
+
+  // ---------- Rain state (tweened by GSAP) ----------
+  const R = { haze: 0.12, drops: 16, specks: 34, dim: 0, beat: 0 };
+
+  // ---------- Canvas rain: haze, specks, lens drops ----------
+  let W = 0, H = 0, dpr = 1;
+  function resize() {
+    const r = stage.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = r.width; H = r.height;
+    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  new ResizeObserver(resize).observe(stage);
+  resize();
+
+  let seed = 11;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const drops = [], specks = [];
+  function newDrop() {
+    const r = (6 + rnd() * 20) * (W / 960);
+    return { x: rnd() * W, y: rnd() * H, r: Math.max(3, r), a: 0, target: 1, vy: rnd() < 0.15 ? 4 + rnd() * 10 : 0 };
+  }
+  function newSpeck(top) {
+    return { x: rnd() * W * 1.1, y: top ? -20 - rnd() * H * 0.2 : rnd() * H, len: (10 + rnd() * 16) * (W / 960), v: (500 + rnd() * 400) * (W / 960), a: 0.12 + rnd() * 0.14 };
+  }
+
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    ctx.clearRect(0, 0, W, H);
+    if (!calm) {
+      // haze veil: cool grey-green, strongest at the top
+      const g = ctx.createLinearGradient(0, 0, 0, H);
+      g.addColorStop(0, `rgba(143,163,158,${R.haze})`);
+      g.addColorStop(1, `rgba(143,163,158,${R.haze * 0.25})`);
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+
+      // fine falling specks
+      const wantS = Math.round(R.specks * (W / 960));
+      while (specks.length < wantS) specks.push(newSpeck(false));
+      if (specks.length > wantS) specks.length = wantS;
+      ctx.lineCap = "round";
+      for (const s of specks) {
+        s.y += s.v * dt; s.x -= s.v * dt * 0.14;
+        if (s.y > H + 20) Object.assign(s, newSpeck(true));
+        ctx.strokeStyle = `rgba(228,236,255,${s.a})`; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(s.x, s.y); ctx.lineTo(s.x + s.len * 0.14, s.y - s.len); ctx.stroke();
+      }
+
+      // drops sitting on the lens
+      const wantD = Math.round(R.drops * Math.max(0.6, W / 960));
+      let live = drops.filter(d => d.target === 1).length;
+      if (live < wantD && rnd() < 0.5) drops.push(newDrop());
+      if (live > wantD) { for (const d of drops) { if (live <= wantD) break; if (d.target === 1) { d.target = 0; live--; } } }
+      for (let i = drops.length - 1; i >= 0; i--) {
+        const d = drops[i];
+        d.a += (d.target - d.a) * Math.min(1, dt * 5);
+        if (d.vy) { d.y += d.vy * dt; if (d.y > H + d.r) d.target = 0; }
+        if (d.target === 0 && d.a < 0.02) { drops.splice(i, 1); continue; }
+        const body = ctx.createRadialGradient(d.x - d.r * 0.25, d.y - d.r * 0.3, d.r * 0.1, d.x, d.y, d.r);
+        body.addColorStop(0, `rgba(210,222,220,${0.03 * d.a})`);
+        body.addColorStop(0.8, `rgba(225,235,235,${0.09 * d.a})`);
+        body.addColorStop(1, `rgba(240,248,248,${0.16 * d.a})`);
+        ctx.fillStyle = body; ctx.beginPath(); ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = `rgba(255,255,255,${0.22 * d.a})`; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.arc(d.x, d.y, d.r * 0.92, Math.PI * 0.15, Math.PI * 0.85); ctx.stroke();
+      }
+      if (R.dim > 0.005) { ctx.fillStyle = `rgba(0,0,0,${R.dim})`; ctx.fillRect(0, 0, W, H); }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  // ---------- DOM per beat ----------
+  let shown = -1;
+  function retrigger(node, cls) { node.classList.remove(cls); void node.offsetWidth; node.classList.add(cls); }
+  function render(i, force) {
+    if (i === shown && !force) return;
+    const prev = shown; shown = i;
+    const b = BEATS[i];
+    // title vs corner badge
+    el.title.classList.toggle("gone", b.final);
+    el.badge.classList.toggle("on", b.final);
+    // banner
+    if (b.banner) {
+      el.bannerMsg.textContent = b.banner;
+      el.banner.classList.toggle("red", !!b.red);
+      el.banner.classList.toggle("cue", !!b.pill && !b.final);
+      el.banner.classList.toggle("low", !!b.final);
+      if (calm) el.banner.classList.add("in"); else retrigger(el.banner, "in");
+    } else { el.banner.classList.remove("in"); }
+    // status pill
+    el.pill.textContent = b.pill || "";
+    el.pill.classList.toggle("on", !!b.pill);
+    // clock
+    el.clock.classList.toggle("gone", b.final);
+    if (!b.final) {
+      el.clockLabel.textContent = b.clockLabel;
+      el.clockOld.textContent = b.old;
+      el.clockNew.textContent = b.now;
+      el.clockNew.classList.toggle("red", !!b.red);
+      if (!calm && (prev !== i)) retrigger(el.clockNew, "flip");
+    }
+    // tyre chip
+    el.chip.classList.toggle("on", b.chip);
+    // tower
+    el.tower.classList.toggle("on", b.final);
+    // calm feed: lines up to this beat
+    [...el.feed.children].forEach((p, k) => p.classList.toggle("on", k <= i));
+    el.feed.classList.toggle("done", b.final);
+    // beat sheet
+    beatButtons.forEach((btn, k) => btn.setAttribute("aria-current", k === i ? "true" : "false"));
+    el.skip.hidden = b.final;
+  }
+
+  // calm feed lines
+  BEATS.forEach((b) => {
+    const p = document.createElement("p");
+    if (b.feed) { p.textContent = b.feed; if (b.what === "Red flag") p.classList.add("red"); }
+    el.feed.appendChild(p);
+  });
+
+  // beat sheet
+  const beatList = $("beats");
+  const beatButtons = BEATS.map((b, i) => {
+    const li = document.createElement("li");
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.innerHTML = `<span class="when"></span><span class="what"></span><span class="msg"></span>`;
+    btn.querySelector(".what").textContent = b.what;
+    btn.querySelector(".msg").textContent = b.banner ? "“" + b.banner.toUpperCase() + "”" : "Lights out was due at 15:00";
+    btn.addEventListener("click", () => play(i));
+    li.appendChild(btn); beatList.appendChild(li);
+    return btn;
+  });
+  function labelTimes() { beatButtons.forEach((btn, i) => btn.querySelector(".when").textContent = `${String(i + 1).padStart(2, "0")} · ${(i * step).toFixed(1)} s`); }
+
+  // ---------- Timeline ----------
+  let tl = null;
+  function build() {
+    if (tl) tl.kill();
+    tl = gsap.timeline({ paused: true, onUpdate: () => render(Math.round(R.beat)) });
+    BEATS.forEach((b, i) => {
+      const at = i * step;
+      tl.to(R, { beat: i, duration: 0.001 }, at);
+      tl.to(R, { ...b.rain, duration: calm ? 0.001 : step * 0.85, ease: "sine.inOut" }, at);
+    });
+    tl.to({}, { duration: 0.8 }); // hold on the handoff frame
+    labelTimes();
+  }
+  function play(fromBeat = 0) {
+    build();
+    Object.assign(R, BEATS[fromBeat].rain, { beat: fromBeat });
+    tl.seek(fromBeat * step, true);
+    render(fromBeat, true);
+    tl.play();
+  }
+  function skip() {
+    if (!tl) return;
+    tl.progress(1); Object.assign(R, BEATS[BEATS.length - 1].rain, { beat: BEATS.length - 1 });
+    render(BEATS.length - 1, true);
+  }
+
+  // ---------- Controls ----------
+  function setCalm(v) {
+    calm = v;
+    stage.classList.toggle("calm", calm);
+    $("mFull").setAttribute("aria-pressed", String(!calm));
+    $("mCalm").setAttribute("aria-pressed", String(calm));
+    play(0);
+  }
+  $("replay").addEventListener("click", () => play(0));
+  $("returning").addEventListener("click", () => play(4));
+  $("mFull").addEventListener("click", () => setCalm(false));
+  $("mCalm").addEventListener("click", () => setCalm(true));
+  el.skip.addEventListener("click", skip);
+
+  stage.classList.toggle("calm", calm);
+  $("mFull").setAttribute("aria-pressed", String(!calm));
+  $("mCalm").setAttribute("aria-pressed", String(calm));
+  if (typeof gsap === "undefined") { render(BEATS.length - 1, true); return; }
+  play(0);
+})();
+</script>
+</body>
+</html>

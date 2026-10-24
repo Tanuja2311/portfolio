@@ -6,16 +6,16 @@ import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export const metadata: Metadata = {
   title:       "About",
-  description: "About Tanuja Bodas. Senior product designer with 3.5 years at ZingHR, specializing in enterprise B2B design and design systems. Based in Philadelphia.",
+  description: "About Tanuja Bodas. Senior product designer and builder with 3.5 years at ZingHR, specializing in enterprise B2B design and design systems, who also builds and ships her own code. Based in Portland.",
   alternates:  { canonical: "/about" },
   openGraph: {
     type:        "website",
     url:         "/about",
-    description: "About Tanuja Bodas. Senior product designer with 3.5 years at ZingHR, specializing in enterprise B2B design and design systems. Based in Philadelphia.",
+    description: "About Tanuja Bodas. Senior product designer and builder with 3.5 years at ZingHR, specializing in enterprise B2B design and design systems, who also builds and ships her own code. Based in Portland.",
   },
   twitter: {
     card: "summary_large_image",
-    description: "About Tanuja Bodas. Senior product designer with 3.5 years at ZingHR, specializing in enterprise B2B design and design systems. Based in Philadelphia.",
+    description: "About Tanuja Bodas. Senior product designer and builder with 3.5 years at ZingHR, specializing in enterprise B2B design and design systems, who also builds and ships her own code. Based in Portland.",
   },
 };
 

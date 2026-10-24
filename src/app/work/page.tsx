@@ -7,16 +7,16 @@ import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export const metadata: Metadata = {
   title:       "Work",
-  description: "Selected work by Tanuja Bodas. Enterprise product design, design systems, and AI-assisted development projects.",
+  description: "Selected work by Tanuja Bodas, senior product designer and builder. Enterprise product design, design systems, and AI-assisted development projects.",
   alternates:  { canonical: "/work" },
   openGraph: {
     type:        "website",
     url:         "/work",
-    description: "Selected work by Tanuja Bodas. Enterprise product design, design systems, and AI-assisted development projects.",
+    description: "Selected work by Tanuja Bodas, senior product designer and builder. Enterprise product design, design systems, and AI-assisted development projects.",
   },
   twitter: {
     card: "summary_large_image",
-    description: "Selected work by Tanuja Bodas. Enterprise product design, design systems, and AI-assisted development projects.",
+    description: "Selected work by Tanuja Bodas, senior product designer and builder. Enterprise product design, design systems, and AI-assisted development projects.",
   },
 };
 

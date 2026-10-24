@@ -6,16 +6,16 @@ import { StaggerContainer, StaggerItem } from "@/components/stagger";
 
 export const metadata: Metadata = {
   title:       "Built with AI",
-  description: "Projects built with AI tools by Tanuja Bodas. Exploring AI-assisted design and development workflows.",
+  description: "Projects designed and built by Tanuja Bodas, senior product designer and builder. Exploring AI-assisted design and development workflows.",
   alternates:  { canonical: "/built-with-ai" },
   openGraph: {
     type:        "website",
     url:         "/built-with-ai",
-    description: "Projects built with AI tools by Tanuja Bodas. Exploring AI-assisted design and development workflows.",
+    description: "Projects designed and built by Tanuja Bodas, senior product designer and builder. Exploring AI-assisted design and development workflows.",
   },
   twitter: {
     card: "summary_large_image",
-    description: "Projects built with AI tools by Tanuja Bodas. Exploring AI-assisted design and development workflows.",
+    description: "Projects designed and built by Tanuja Bodas, senior product designer and builder. Exploring AI-assisted design and development workflows.",
   },
 };
 

@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:       "Resume",
-  description: "Resume of Tanuja Bodas, product designer.",
+  description: "Resume of Tanuja Bodas, senior product designer and builder.",
   alternates:  { canonical: "/resume" },
   openGraph: {
     type:        "website",
     url:         "/resume",
-    description: "Resume of Tanuja Bodas, product designer.",
+    description: "Resume of Tanuja Bodas, senior product designer and builder.",
   },
   twitter: {
     card:        "summary_large_image",
-    description: "Resume of Tanuja Bodas, product designer.",
+    description: "Resume of Tanuja Bodas, senior product designer and builder.",
   },
 };
 

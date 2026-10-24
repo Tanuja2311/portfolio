@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 // monogram below reuses the same inline "T" + "B" text mark that icon.tsx
 // and apple-icon.tsx already draw, instead of loading an image file.
 
-export const alt = "Tanuja Bodas – Senior Product Designer";
+export const alt = "Tanuja Bodas, Senior Product Designer & Builder";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -26,7 +26,7 @@ async function loadGoogleFont(family: string, weight: number, text: string) {
 
 export default async function Image() {
   const name = "Tanuja Bodas";
-  const subtitle = "Senior Product Designer";
+  const subtitle = "Senior Product Designer & Builder";
   const footer = "TANUJABODAS.COM";
 
   const [instrumentSerif, dmSans] = await Promise.all([

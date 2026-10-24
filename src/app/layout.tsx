@@ -36,10 +36,27 @@ export const metadata: Metadata = {
   },
   title: {
     template: "%s | Tanuja Bodas",
-    default:  "Tanuja Bodas | Senior Product Designer",
+    default:  "Tanuja Bodas | Senior Product Designer & Builder",
   },
   description:
-    "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, and more.",
+    "Tanuja Bodas is a senior product designer and builder who designs and ships her own production code: enterprise B2B platforms, design systems, and complex workflows.",
+  applicationName: "Tanuja Bodas",
+  authors: [{ name: "Tanuja Bodas", url: "https://www.tanujabodas.com" }],
+  creator: "Tanuja Bodas",
+  keywords: [
+    "Tanuja Bodas",
+    "Senior Product Designer",
+    "Product Designer and Builder",
+    "Design Engineer",
+    "Designer who codes",
+    "Design to code",
+    "Design systems",
+    "Enterprise B2B UX",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "AI-assisted development",
+  ],
   openGraph: {
     siteName: "Tanuja Bodas",
     type:     "website",
@@ -47,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card:        "summary_large_image",
-    title:       "Tanuja Bodas | Senior Product Designer",
+    title:       "Tanuja Bodas | Senior Product Designer & Builder",
     description:
-      "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, and more.",
+      "Tanuja Bodas is a senior product designer and builder who designs and ships her own production code: enterprise B2B platforms, design systems, and complex workflows.",
   },
 };
 

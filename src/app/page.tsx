@@ -3,20 +3,25 @@ import { WORK_PROJECTS, HOME_AI_PROJECTS } from "@/lib/projects";
 import { FeaturedCard }  from "@/components/home/featured-card";
 import { HeroSection }   from "@/components/home/hero-section";
 import { Reveal }        from "@/components/case-study/reveal";
+import Link              from "next/link";
+import { SIDE_QUESTS_LIVE, getAllSeries } from "@/lib/side-quests";
+import { SeriesCard }    from "@/components/side-quests/series-card";
 
 export const metadata: Metadata = {
-  title: { absolute: "Tanuja Bodas | Senior Product Designer" },
+  title: { absolute: "Tanuja Bodas | Senior Product Designer & Builder" },
   description:
-    "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, UrbanPark, and more.",
+    "Tanuja Bodas is a senior product designer and builder who designs and ships her own production code: enterprise B2B platforms, design systems, and complex workflows.",
   alternates: { canonical: "/" },
   openGraph: {
     type:        "website",
     url:         "/",
-    description: "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design. View selected work including MyRCloud, Rewards & Recognition, UrbanPark, and more.",
+    title:       "Tanuja Bodas | Senior Product Designer & Builder",
+    description: "Tanuja Bodas is a senior product designer and builder who designs and ships her own production code: enterprise B2B platforms, design systems, and complex workflows.",
   },
   twitter: {
     card: "summary_large_image",
-    description: "Tanuja Bodas is a senior product designer specializing in enterprise B2B platforms, design systems, and complex workflow design.",
+    title:       "Tanuja Bodas | Senior Product Designer & Builder",
+    description: "Senior product designer and builder. I design enterprise B2B products and design systems, then build and ship them myself.",
   },
 };
 
@@ -28,7 +33,24 @@ const jsonLd = {
   "mainEntity": {
     "@type": "Person",
     "name": "Tanuja Bodas",
-    "jobTitle": "Senior Product Designer",
+    "jobTitle": ["Senior Product Designer", "Builder"],
+    "description": "Tanuja Bodas is a senior product designer and builder. She designs enterprise B2B products and design systems, then builds and ships them herself in React, TypeScript, and Next.js, with no handoff between design and code.",
+    "hasOccupation": [
+      { "@type": "Occupation", "name": "Senior Product Designer" },
+      { "@type": "Occupation", "name": "Builder (design engineer)" },
+    ],
+    "knowsAbout": [
+      "Product design",
+      "Design systems",
+      "Enterprise B2B UX",
+      "Design to code",
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Figma",
+      "AI-assisted development with Claude Code and Cursor",
+    ],
     "url": SITE,
     "sameAs": ["https://www.linkedin.com/in/tanujabodas23/"],
     "hasPart": [
@@ -114,6 +136,36 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Side Quests (hidden until SIDE_QUESTS_LIVE is true) ──── */}
+      {SIDE_QUESTS_LIVE && (
+        <section className="home-section" id="side-quests" aria-labelledby="sq-label">
+          <div className="home-section-inner">
+            <Reveal>
+              <h2 className="section-label" id="sq-label">
+                Side Quests
+              </h2>
+              <p className="sq-home-intro">
+                Weekend projects, one episode a week. Not always finished, never boring.
+              </p>
+            </Reveal>
+
+            <div className="sq-series-grid">
+              {getAllSeries().slice(0, 2).map((s, i) => (
+                <Reveal key={s.slug} delay={i * 90}>
+                  <SeriesCard series={s} />
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal>
+              <Link href="/side-quests" className="sq-home-more">
+                See all side quests ↗
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+      )}
     </main>
     </>
   );

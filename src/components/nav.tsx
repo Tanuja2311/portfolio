@@ -4,8 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { SIDE_QUESTS_LIVE } from "@/lib/side-quests";
+
+// Side Quests appears on launch day (SIDE_QUESTS_LIVE), and always in `npm run dev` so it can be checked.
+const SHOW_SIDE_QUESTS = SIDE_QUESTS_LIVE || process.env.NODE_ENV === "development";
 
 const NAV_LINKS: { href: string; label: string; external?: true }[] = [
+  ...(SHOW_SIDE_QUESTS ? [{ href: "/side-quests", label: "Side Quests" }] : []),
   { href: "/about",         label: "About" },
   { href: "/resume",        label: "Resume" },
 ];
@@ -13,7 +18,8 @@ const NAV_LINKS: { href: string; label: string; external?: true }[] = [
 const CALENDLY_URL = "https://calendly.com/tanuja375/30min";
 
 function isActive(href: string, pathname: string): boolean {
-  return pathname === href;
+  // Episode pages (/side-quests/...) keep the Side Quests tab highlighted.
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
 
 function HamburgerIcon({ open }: { open: boolean }) {

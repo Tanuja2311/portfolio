@@ -117,7 +117,7 @@ export function HeroSection() {
               className="hero-v2-title"
               {...(reduced ? {} : leftItem(2))}
             >
-              Senior Product Designer
+              Senior Product Designer &amp; Builder
             </m.p>
 
             {/* Tagline */}
@@ -126,7 +126,7 @@ export function HeroSection() {
               {...(reduced ? {} : leftItem(3))}
             >
               I turn complex enterprise problems into intuitive workflows
-              that people actually want to use.
+              people actually want to use, then I build and ship them myself.
             </m.p>
 
             {/* Contact links */}
