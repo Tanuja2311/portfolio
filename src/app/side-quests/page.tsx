@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllSeries, getDrops, QUESTIONS } from "@/lib/side-quests";
+import { getAllSeries, getDrops, QUESTIONS, OG_IMAGES } from "@/lib/side-quests";
 import { EpisodeRow } from "@/components/side-quests/episode-row";
 import { SeriesCard } from "@/components/side-quests/series-card";
 import { Reveal } from "@/components/case-study/reveal";
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   title:       "Side Quests",
   description: DESCRIPTION,
   alternates:  { canonical: "/side-quests" },
-  openGraph:   { type: "website", url: "/side-quests", description: DESCRIPTION },
-  twitter:     { card: "summary_large_image", description: DESCRIPTION },
+  openGraph:   { type: "website", url: "/side-quests", description: DESCRIPTION, images: OG_IMAGES },
+  twitter:     { card: "summary_large_image", description: DESCRIPTION, images: OG_IMAGES },
 };
 
 export default function SideQuestsPage() {

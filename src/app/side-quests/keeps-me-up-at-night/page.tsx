@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { QUESTIONS, formatDate } from "@/lib/side-quests";
+import { QUESTIONS, formatDate, OG_IMAGES } from "@/lib/side-quests";
 import { Reveal } from "@/components/case-study/reveal";
 
 const DESCRIPTION =
@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   title:       "What keeps me up at night",
   description: DESCRIPTION,
   alternates:  { canonical: "/side-quests/keeps-me-up-at-night" },
-  openGraph:   { type: "article", url: "/side-quests/keeps-me-up-at-night", description: DESCRIPTION },
+  openGraph:   { type: "article", url: "/side-quests/keeps-me-up-at-night", description: DESCRIPTION, images: OG_IMAGES },
+  twitter:     { card: "summary_large_image", description: DESCRIPTION, images: OG_IMAGES },
 };
 
 export default function KeepsMeUpPage() {

@@ -12,6 +12,7 @@ import {
   getSeriesNeighbours,
   episodeLabel,
   formatDate,
+  OG_IMAGES,
 } from "@/lib/side-quests";
 import { EmbedFrame } from "@/components/side-quests/embed-frame";
 import { EpisodeRow } from "@/components/side-quests/episode-row";
@@ -36,7 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title:       series.title,
       description: series.tagline,
       alternates:  { canonical: `/side-quests/${series.slug}` },
-      openGraph:   { type: "website", url: `/side-quests/${series.slug}`, description: series.tagline },
+      openGraph:   { type: "website", url: `/side-quests/${series.slug}`, description: series.tagline, images: OG_IMAGES },
+      twitter:     { card: "summary_large_image", description: series.tagline, images: OG_IMAGES },
     };
   }
   const ep = getEpisode(slug);
@@ -45,7 +47,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title:       ep.title,
     description: ep.summary,
     alternates:  { canonical: `/side-quests/${ep.slug}` },
-    openGraph:   { type: "article", url: `/side-quests/${ep.slug}`, description: ep.summary },
+    openGraph:   { type: "article", url: `/side-quests/${ep.slug}`, description: ep.summary, images: OG_IMAGES },
+    twitter:     { card: "summary_large_image", description: ep.summary, images: OG_IMAGES },
   };
 }
 

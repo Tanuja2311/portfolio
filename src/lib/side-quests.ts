@@ -14,6 +14,11 @@ export const SIDE_QUESTS_LIVE = true;
 
 const SHOW_DRAFTS = process.env.NODE_ENV === "development";
 
+// Link preview (X, LinkedIn, iMessage) for every Side Quests page. 1200x630.
+export const OG_IMAGES = [
+  { url: "/side-quests/og-side-quests.png", width: 1200, height: 630, alt: "Side Quests: Monaco 2022, rebuilt from Ferrari's pit wall" },
+];
+
 // ─── Content blocks ─────────────────────────────────────────────────────────
 // Episodes are written as a list of blocks so each one stays plain data.
 export type Block =
@@ -136,7 +141,6 @@ export const EPISODES: Episode[] = [
       image: "/side-quests/monaco-2022/thumbs/ep01-rain-loader-thumb.jpg",
       video: "/side-quests/monaco-2022/thumbs/ep01-rain-loader-thumb.mp4",
     },
-    draft:   true, // remove this line on Sun Oct 25
     body: [
       { type: "p", text: "Every race replay needs a way in. My first idea was the obvious one: five red lights, then lights out. Then I checked the data. There was no lights out in Monaco in 2022." },
       { type: "h2", text: "What actually happened" },
