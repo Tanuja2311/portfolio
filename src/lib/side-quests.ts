@@ -174,6 +174,41 @@ export const EPISODES: Episode[] = [
     ],
     nextUp: "The rolling start: laps 1 to 8, all 20 cars behind the Safety Car, and my favourite corner from above.",
   },
+  {
+    slug:    "in-car-drive-simulator",
+    kind:    "drop",
+    title:   "A cloud drive for the car",
+    date:    "2026-10-27",
+    summary: "One car screen, two modes. Shift into D and the same app turns listen-only, live.",
+    tags:    ["Automotive", "Interface motion", "Voice"],
+    thumb:   { image: "/side-quests/in-car-drive/thumbs/in-car-drive-thumb.jpg" },
+    body: [
+      { type: "p", text: "In my MS, I designed Google Drive for a smart TV and a car's center screen. It stayed at wireframes. This drop is the car half, rebuilt in code, so you can actually shift gears and watch it change." },
+      { type: "link", href: "https://in-car-drive-simulator.vercel.app", label: "Try the simulator" },
+      { type: "img", src: "/side-quests/in-car-drive/sim-cabin-parked.jpg", alt: "A drawn car cabin at dusk with a center screen on the dashboard showing a file app: car documents and work files with previews. Simulator controls below set gear to P.", caption: "Parked: the full app, with previews of car papers and work files." },
+      { type: "h2", text: "One screen, two modes" },
+      { type: "p", text: "Parked, it's a normal file app. Browse, preview, play a slideshow, read a document aloud. In drive, it only lets you do what's safe with your eyes on the road: tap a file and listen to it." },
+      { type: "p", text: "The switch is the gear, not the speed. NHTSA counts stopping at a red light as driving unless the car is in Park, so the screen never relaxes at a light." },
+      { type: "img", src: "/side-quests/in-car-drive/sim-cabin-driving.jpg", alt: "The same cabin in D at 40 km/h. The road's lane lines are moving and the screen shows four large listen tiles, with the remaining files in a small row marked available when parked.", caption: "Shift into D: the files you can listen to become big targets, and everything else waits for Park." },
+      { type: "h2", text: "What changed from my wireframes" },
+      { type: "list", items: [
+        "Regroup, don't cover up. My 2025 wireframes put a \"you can't open this\" overlay on each blocked file. Now the usable files grow, the rest shrink into one quiet row, and the tiles glide to their new places.",
+        "No document text while driving. My wireframes showed the document one line at a time. Those lines move with the speech, not the driver, and NHTSA recommends locking out text that scrolls at a pace you don't control. So driving is audio only.",
+        "Locked things still answer. Tap a file that needs Park and it tells you why, instead of doing nothing.",
+        "It keeps your place. A file you had open when you shifted into D comes back when you shift to P.",
+      ] },
+      { type: "img", src: "/side-quests/in-car-drive/sim-driving-player.jpg", alt: "The center screen in Driving mode reading a document aloud: a green sound wave, Section 1 of 6, the note text appears when parked, and three large playback buttons.", caption: "Reading aloud while driving: a section count and big buttons, no text to read." },
+      { type: "h2", text: "Voice and bad signal" },
+      { type: "list", items: [
+        "Ask for a file. Voice search uses the browser's speech recognition. While driving it shows that it's listening, but not the words, because Android Automotive restricts showing transcribed speech on the move.",
+        "No connection. Files saved to the car still play and move to the top. Anything that needs a signal says so.",
+        "Didn't catch that. Voice offers Try again, and example phrases when the microphone isn't available.",
+      ] },
+      { type: "h2", text: "Honest numbers" },
+      { type: "p", text: "By my count, every driving task takes one tap and one or two glances of about 1.5 seconds each, inside NHTSA's 2 second glance and 12 second task limits. These are my estimates from the flows, not measured with drivers. Testing them is the next step." },
+      { type: "p", text: "Concept, not affiliated with Google. Sample files only." },
+    ],
+  },
 ];
 
 // ─── What keeps me up at night (standing page) ─────────────────────────────
