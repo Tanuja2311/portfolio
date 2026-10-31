@@ -3646,3 +3646,14 @@ video {
     margin: 0.5rem 0;
   }
 }
+
+/* Small reaction images inside an episode (e.g. a sticker after a line), not full-width figures */
+.sq-figure--small {
+  max-width: 13rem;
+}
+
+.sq-figure--small .sq-img {
+  border: none;
+  border-radius: 0;
+  background: none;
+}

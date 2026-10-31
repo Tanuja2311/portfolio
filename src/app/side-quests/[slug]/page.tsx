@@ -60,7 +60,7 @@ function BlockView({ block }: { block: Block }) {
       return <h2 className="sq-h2">{block.text}</h2>;
     case "img":
       return (
-        <figure className="sq-figure">
+        <figure className={`sq-figure${block.size === "small" ? " sq-figure--small" : ""}`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={block.src} alt={block.alt} className="sq-img" loading="lazy" />
           {block.caption && <figcaption className="sq-caption">{block.caption}</figcaption>}

@@ -24,7 +24,7 @@ export const OG_IMAGES = [
 export type Block =
   | { type: "p";     text: string }
   | { type: "h2";    text: string }
-  | { type: "img";   src: string; alt: string; caption?: string }
+  | { type: "img";   src: string; alt: string; caption?: string; size?: "small" } // small: a reaction image, not a full-width figure
   | { type: "list";  items: string[] }
   | { type: "quote"; text: string }
   | { type: "link";  href: string; label: string }
@@ -173,6 +173,94 @@ export const EPISODES: Episode[] = [
       { type: "p", text: "Personal concept. Not affiliated with Formula 1 or Scuderia Ferrari." },
     ],
     nextUp: "The rolling start: laps 1 to 8, all 20 cars behind the Safety Car, and my favourite corner from above.",
+  },
+  {
+    slug:    "monaco-2022-ep-02-rolling-start",
+    kind:    "episode",
+    series:  "monaco-2022",
+    number:  2,
+    title:   "The rolling start",
+    date:    "2026-10-31",
+    summary: "Eight quiet laps of Monaco, all 20 cars, and the corner where the whole field bunches up.",
+    tags:    ["F1", "Interface motion", "Data"],
+    thumb:   {
+      image: "/side-quests/monaco-2022/thumbs/ep02-rolling-start-thumb.jpg",
+      video: "/side-quests/monaco-2022/thumbs/ep02-rolling-start-thumb.mp4",
+    },
+    body: [
+      { type: "p", text: "Episode 1 ended where the race finally began. At 16:05 the Safety Car led the field away, and on lap 2 race control sent the message everyone had waited an hour for: safety car will enter pits, rolling start." },
+      { type: "p", text: "This episode is the first eight laps. Nothing dramatic happens in them. Nobody at the front passes anybody. That's exactly why I picked them: if a race replay can make eight quiet laps of Monaco worth watching, it can handle anything." },
+      { type: "embed", src: "/side-quests/monaco-2022/play/ep02-rolling-start.html", title: "The rolling start, Monaco 2022 episode 2", height: 900, caption: "Press Hairpin cam to zoom onto my favourite corner." },
+      { type: "h2", text: "What's on screen" },
+      { type: "p", text: "All 20 cars, from their real positions twice a second. The timing tower is worked out live from where the cars are on track." },
+      { type: "list", items: [
+        "Two laps behind the Safety Car, then the rolling start.",
+        "Charles leads, Carlos is second, Pérez third, Verstappen fourth. That order holds for all eight laps.",
+        "After lap 8, Charles is 3.0 seconds ahead of Carlos, 5.0 ahead of Pérez and 6.6 ahead of Verstappen.",
+        "The track is drying. Charles's lap times drop from 1:43.2 on lap 3 to 1:37.4 on lap 8, almost six seconds in five laps.",
+        "The front four all stay on full wets. Schumacher (lap 4), then Vettel and Tsunoda (lap 6), gamble on intermediates early.",
+      ] },
+      { type: "h2", text: "The accordion" },
+      { type: "p", text: "Monaco's hairpin is the slowest corner in Formula 1, about 44 km/h. I wanted you to feel that without reading a number. So every car leaves a short trail of where it was a moment ago. On the straights the trails stretch out. At the hairpin they shrink to almost nothing, and the field visibly bunches up, every single lap." },
+      { type: "p", text: "It's my favourite corner, so it also gets its own camera. Hairpin cam zooms the map right onto it, and car codes appear once you're close enough to read them." },
+      { type: "h2", text: "Making eight laps watchable" },
+      { type: "list", items: [
+        "Auto speed. While the Safety Car leads, playback runs at 4× so you can follow the rolling start. From the green flag it ramps up to 16×, the lap skip, so all eight laps take under two minutes.",
+        "The Safety Car is a guess. Its position isn't in the data, so I draw it just ahead of the leader and label it as an estimate. A labelled guess is better than pretending.",
+        "Calm mode turns off the camera moves and the trails. The cars and the tower still update, they just don't slide.",
+      ] },
+      { type: "p", text: "My favourite race control message from that afternoon has nothing to do with racing: \"Pink head padding material must be used.\" It's real, and it's in the log." },
+      { type: "p", text: "Personal concept. Not affiliated with Formula 1 or Scuderia Ferrari." },
+    ],
+    nextUp: "The pit cycle: laps 16 to 23, where Carlos takes the lead on old wets and Ferrari lose it in the pit lane.",
+  },
+  {
+    slug:    "monaco-2022-ep-03-pit-cycle",
+    kind:    "episode",
+    series:  "monaco-2022",
+    number:  3,
+    title:   "The pit cycle",
+    date:    "2026-11-01",
+    summary: "Eight laps, one double stack, one lapped Williams. How Carlos went from leading Monaco to second.",
+    tags:    ["F1", "Interface motion", "Strategy"],
+    thumb:   {
+      image: "/side-quests/monaco-2022/thumbs/ep03-pit-cycle-thumb.jpg",
+      video: "/side-quests/monaco-2022/thumbs/ep03-pit-cycle-thumb.mp4",
+    },
+    draft:   true, // remove this line on Sun Nov 1
+    body: [
+      { type: "p", text: "This is the episode I've been building towards. In eight laps, Carlos goes from leading the Monaco Grand Prix to second place, and he never gets the lead back. Nothing broke and nobody crashed. It happened in the pit lane, and on one slow out-lap." },
+      { type: "embed", src: "/side-quests/monaco-2022/play/ep03-pit-cycle.html", title: "The pit cycle, Monaco 2022 episode 3", height: 1000, caption: "Tap any line in the pit wall log to jump to that moment." },
+      { type: "h2", text: "Laps 16 to 18: the track dries" },
+      { type: "p", text: "Pérez is first of the front runners to switch from full wets to intermediates, on lap 16. Charles follows on lap 18 and comes out third: Pérez has jumped him. Carlos stays out on his wets." },
+      { type: "h2", text: "Laps 19 and 20: Carlos leads Monaco" },
+      { type: "p", text: "For two laps, Carlos leads the race. But wets on a drying track are slow. Pérez's lap 18 on intermediates was a 1:25.2. Carlos's was a 1:32.0. His lead melts: 11.6 seconds after lap 18, 6.9 after lap 19, 4.0 after lap 20." },
+      { type: "h2", text: "Lap 21: the double stack" },
+      { type: "p", text: "Ferrari bring both cars in on the same lap. Carlos goes from wets straight to hards, skipping intermediates completely, in 24.6 seconds through the pit lane. Charles arrives 3.1 seconds behind him, while the box is still occupied. He waits. His stop takes 28.0 seconds, and about 3.4 of them are spent queuing behind his teammate." },
+      { type: "p", text: "The pit lane panel shows this as it happens, with a state the broadcast doesn't have: QUEUE. His timer keeps running while he isn't moving." },
+      { type: "h2", text: "Still lap 21: the out-lap" },
+      { type: "p", text: "Carlos rejoins right behind Latifi, a lapped Williams. On cold hard tyres, on the tightest track of the year, he spends about 40 seconds of his out-lap stuck behind him. Race control waves blue flags at Latifi three times on that lap. All three are in the log." },
+      { type: "p", text: "Latifi got no penalty. The stewards didn't even look at it. That same weekend, Ferrari was fined €25,000 for Carlos holding up a car in practice." },
+      { type: "p", text: "My honest reaction to this lap, every time I watch it:" },
+      { type: "img", src: "/side-quests/monaco-2022/ep03-aaaah-sticker.png", alt: "A white cartoon blob screaming with its mouth wide open, pulling its hair out with both hands.", size: "small" },
+      { type: "h2", text: "Lap 22: Red Bull's turn" },
+      { type: "p", text: "Pérez pits a lap later, with a 20.7 second lead over Carlos. The stop costs him about 18.5 seconds, and he rejoins 2.2 seconds ahead. His time in the pit lane is 24.6 seconds, exactly the same as Carlos's. Red Bull didn't win this in the pit lane. They won it with one more fast lap on intermediates, while Carlos was stuck behind Latifi." },
+      { type: "p", text: "Red Bull double stacked too. Verstappen came in 3.7 seconds behind Pérez and lost about 2.3 seconds waiting. He still rejoined about a second ahead of Charles. On these numbers, Ferrari's double stack cost Charles third place." },
+      { type: "quote", text: "On lap 19, Carlos led the Monaco Grand Prix. By lap 23 he was second, and he finished there, 1.154 seconds behind." },
+      { type: "h2", text: "Lap 23: the order that never changes" },
+      { type: "p", text: "Pérez, Carlos, Verstappen, Charles. From here to the chequered flag, through a crash, a red flag and a restart, nobody in the top four changes places." },
+      { type: "h2", text: "What I designed for this" },
+      { type: "p", text: "In episode zero I wrote about six broadcast frames from these laps. Every piece of the story was on screen, and nothing connected them. This prototype is my answer:" },
+      { type: "list", items: [
+        "Pit wall cards that say what's about to happen: who is about to queue, who is about to jump whom, and by how much. They're my reading of the data, not real team radio.",
+        "A pit lane panel with the states the broadcast doesn't show, like QUEUE.",
+        "Auto speed: 10× between moments, slowing to 1.5× for the double stack and 2× for Pérez's stop. The chip in the corner always shows the current speed.",
+        "An auto camera that zooms into the pit lane for both stops, then follows Carlos while he's stuck behind Latifi.",
+        "A pit wall log you can tap to jump to any moment. In Calm mode, the whole story reads as plain text there.",
+      ] },
+      { type: "p", text: "Personal concept. Not affiliated with Formula 1 or Scuderia Ferrari." },
+    ],
+    nextUp: "The red flag: Schumacher's crash, a 16 minute stoppage, and the one moment Ferrari could change something without losing a place.",
   },
   {
     slug:    "in-car-drive-simulator",
