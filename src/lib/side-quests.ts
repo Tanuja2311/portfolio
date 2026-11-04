@@ -227,7 +227,6 @@ export const EPISODES: Episode[] = [
       image: "/side-quests/monaco-2022/thumbs/ep03-pit-cycle-thumb.jpg",
       video: "/side-quests/monaco-2022/thumbs/ep03-pit-cycle-thumb.mp4",
     },
-    draft:   true, // remove this line on Sun Nov 1
     body: [
       { type: "p", text: "This is the episode I've been building towards. In eight laps, Carlos goes from leading the Monaco Grand Prix to second place, and he never gets the lead back. Nothing broke and nobody crashed. It happened in the pit lane, and on one slow out-lap." },
       { type: "embed", src: "/side-quests/monaco-2022/play/ep03-pit-cycle.html", title: "The pit cycle, Monaco 2022 episode 3", height: 1000, caption: "Tap any line in the pit wall log to jump to that moment." },
