@@ -48,7 +48,7 @@ export function Footer() {
                 <path d="M4.5 0.5A3.5 3.5 0 0 0 1 4c0 2.5 3.5 6.5 3.5 6.5S8 6.5 8 4A3.5 3.5 0 0 0 4.5 0.5Z"/>
                 <circle cx="4.5" cy="4" r="1.2"/>
               </svg>
-              Based in the United States
+              Based in India
             </span>
           </div>
           <span className="badge-available">
