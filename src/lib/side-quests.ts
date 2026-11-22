@@ -381,6 +381,45 @@ export const EPISODES: Episode[] = [
     ],
     nextUp: "The debrief: the whole race on one screen, for after the chequered flag.",
   },
+  {
+    slug:    "monaco-2022-ep-06-debrief",
+    kind:    "episode",
+    series:  "monaco-2022",
+    number:  6,
+    title:   "The debrief",
+    date:    "2026-11-21",
+    summary: "The whole race on one screen, after the flag. Every Ferrari call next to what it cost, and Rosso's final answer.",
+    tags:    ["F1", "Data visualisation", "Dashboards"],
+    thumb:   {
+      image: "/side-quests/monaco-2022/thumbs/ep06-debrief-thumb.jpg",
+      video: "/side-quests/monaco-2022/thumbs/ep06-debrief-thumb.mp4",
+    },
+    body: [
+      { type: "p", text: "Five episodes of split seconds. This one is for after the chequered flag, when the pit wall sits down and asks what actually happened. It's the whole race on one screen, from the real data." },
+      { type: "embed", src: "/side-quests/monaco-2022/play/ep06-debrief.html", title: "The debrief, Monaco 2022 episode 6", height: 1150, caption: "Point at any lap and every chart follows." },
+      { type: "h2", text: "One cursor for everything" },
+      { type: "p", text: "Every chart on the page shares the same lap. Point at lap 21 in the gap chart, and the tyre strips, the Carlos vs Pérez bars and the readout all jump to lap 21 too. A debrief is about cause and effect, so cause and effect should sit side by side." },
+      { type: "h2", text: "What the charts say" },
+      { type: "list", items: [
+        "The race in gaps: seconds behind the leader for both Ferraris and both Red Bulls, every lap. The spikes are pit stops. From lap 23, the order never changes again.",
+        "Carlos vs Pérez: one bar per lap, red above the line when Carlos is ahead, blue below when Pérez is. After lap 21 there isn't a single red bar.",
+        "Tyres: who ran what, and when, with the red flag drawn through it. The decision shows at a glance: Red Bull's last stint is yellow, Ferrari's is white.",
+        "The four calls: our calls on the day, what each one cost in seconds, and what Rosso said at the time.",
+      ] },
+      { type: "h2", text: "Rosso's final answer" },
+      { type: "quote", text: "Could it have been a 1-2? Not after lap 22." },
+      { type: "p", text: "From lap 23 to the flag, the top four never changed places. The race was decided in the pit cycle, and every call after that only changed the gaps. That's the answer to the question this whole series started with." },
+      { type: "h2", text: "Built to be read" },
+      { type: "p", text: "The race episodes are designed for split seconds: one screen, no scrolling, nothing to read twice. A debrief is the opposite. It happens after the race, sitting down, so it can hold more and ask you to read. It still fits a laptop screen, but it trades speed for detail." },
+      { type: "list", items: [
+        "Colour is never alone. Ferrari is red and Red Bull is blue, but every line also has a name, and teammates are solid or dashed.",
+        "Every number is also in a table, one click away, for anyone who'd rather not read charts.",
+        "Arrow keys move through the laps, for anyone not using a mouse.",
+      ] },
+      { type: "p", text: "Personal concept. Not affiliated with Formula 1 or Scuderia Ferrari." },
+    ],
+    nextUp: "The ghost car: one what-if, built only from real pit lane and lap times. What if Ferrari hadn't double stacked?",
+  },
 ];
 
 // ─── What keeps me up at night (standing page) ─────────────────────────────

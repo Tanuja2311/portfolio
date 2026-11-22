@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Monaco 2022 Debrief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap">
+<style>
+/* Ep 6, the debrief. The whole race after the flag, from the Ferrari pit wall. One shared lap cursor runs through every chart. */
+:root {
+  color-scheme: dark;
+  --canvas: #0B0C10; --panel: #121319; --raised: #181A21; --row-hi: #20222B; --border: #2C2F3A; --grid: #22252E;
+  --text: #F4F4F6; --text-2: #A3A7B2; --text-3: #6B6F7B;
+  --fer: #ED1C24; --rbr: #3671C6; --red-flag: #E10600; --sc: #FFC906;
+  --wet: #0067AD; --inter: #43B02A; --hard: #F4F4F6; --medium: #FFD12E;
+  --font: "Titillium Web", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--canvas); color: var(--text); }
+body { font-family: var(--font); font-size: 15px; line-height: 1.5; margin: 0; padding: 24px max(16px, env(safe-area-inset-left, 0px)) 48px; }
+.wrap { max-width: 1440px; margin: 0 auto; display: grid; gap: 16px; }
+header.top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fer); }
+h1.page { margin: 2px 0 0; font-size: clamp(22px, 3vw, 30px); font-weight: 700; line-height: 1.15; }
+.note { color: var(--text-2); font-size: 13px; max-width: 62ch; margin: 0; }
+
+.dash { display: grid; gap: 12px; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; min-width: 0; }
+.card h2 { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); }
+.card .sub { margin: 2px 0 10px; font-size: 13px; color: var(--text-3); }
+
+/* Result tiles */
+.tiles { grid-column: span 8; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.tile { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; }
+.tile .k { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+.tile .v { font-size: 30px; font-weight: 700; line-height: 1.1; margin-top: 4px; }
+.tile .v small { font-size: 15px; font-weight: 600; color: var(--text-2); margin-left: 6px; }
+.tile .d { font-size: 13px; color: var(--text-2); }
+.tile.fer { box-shadow: inset 3px 0 0 var(--fer); }
+
+/* Rosso's verdict */
+.verdict { grid-column: span 4; display: grid; gap: 4px; align-content: start; }
+.verdict .who { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); }
+.verdict .who b { color: var(--text); }
+.verdict .q { font-size: 20px; font-weight: 700; line-height: 1.2; }
+.verdict p { margin: 0; font-size: 13px; color: var(--text-2); }
+
+.race { grid-column: span 8; }
+.versus { grid-column: span 4; }
+.tyres { grid-column: span 5; }
+.calls { grid-column: span 7; }
+@media (max-width: 1100px) {
+  .tiles, .verdict, .race, .versus, .tyres, .calls { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Charts */
+.chart { position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; border-radius: 6px; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; color: var(--text-2); margin-bottom: 6px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 18px; height: 0; border-top: 2px solid; display: inline-block; }
+.legend i.dash { border-top-style: dashed; }
+.readout { display: grid; grid-template-columns: auto repeat(4, minmax(0, 1fr)); gap: 2px 12px; font-size: 13px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+.readout .lap { font-weight: 700; color: var(--text); grid-row: span 2; align-self: center; font-size: 15px; font-style: italic; }
+.readout .who { color: var(--text-2); }
+.readout .who b { color: var(--text); }
+.readout .gap { color: var(--text-2); }
+.readout .ev { grid-column: 2 / -1; color: var(--text-3); font-size: 12px; }
+.tyre { display: inline-grid; place-items: center; width: 16px; height: 16px; border-radius: 50%; border: 2px solid; font-size: 9px; font-weight: 700; margin-left: 4px; vertical-align: -3px; }
+.t-W { border-color: var(--wet); color: var(--wet); } .t-I { border-color: var(--inter); color: var(--inter); }
+.t-H { border-color: var(--hard); color: var(--hard); } .t-M { border-color: var(--medium); color: var(--medium); }
+.hint { font-size: 12px; color: var(--text-3); margin: 6px 0 0; }
+
+/* The calls */
+.calltable { width: 100%; border-collapse: collapse; font-size: 13px; }
+.calltable th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); padding: 0 8px 6px 0; border-bottom: 1px solid var(--border); }
+.calltable td { vertical-align: top; padding: 8px 8px 8px 0; border-bottom: 1px solid var(--grid); color: var(--text-2); }
+.calltable tr:last-child td { border-bottom: 0; }
+.calltable td.l { color: var(--text); font-weight: 700; font-style: italic; white-space: nowrap; }
+.calltable td b { color: var(--text); font-weight: 600; }
+.calltable tr { cursor: pointer; }
+.calltable tr:hover td, .calltable tr.on td { background: var(--row-hi); }
+.badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--border); color: var(--text-2); white-space: nowrap; margin-top: 4px; }
+.badge.diff { border-color: var(--text); color: var(--text); }
+
+details.numbers { font-size: 13px; color: var(--text-2); }
+details.numbers summary { cursor: pointer; color: var(--text-2); }
+.numtable { border-collapse: collapse; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.numtable th, .numtable td { padding: 2px 12px 2px 0; text-align: right; }
+.numtable th { color: var(--text-3); font-weight: 600; }
+.numscroll { max-height: 320px; overflow: auto; }
+
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.notes div { font-size: 13px; color: var(--text-2); }
+.notes b { display: block; color: var(--text); font-size: 14px; margin-bottom: 2px; }
+footer.foot { font-size: 12px; color: var(--text-3); max-width: 100ch; }
+.phone-note { display: none; }
+@media (prefers-reduced-motion: no-preference) { .cursor { transition: x 120ms ease-out; } }
+</style>
+<style>
+html.embedded body { padding-top: 12px; padding-bottom: 16px; }
+html.embedded header.top, html.embedded .notes, html.embedded footer.foot, html.embedded .phone-note { display: none !important; }
+</style>
+<script>
+(function () {
+  var on = false;
+  try { on = new URLSearchParams(location.search).has("embed"); } catch (e) {}
+  if (!on) return;
+  document.documentElement.classList.add("embedded");
+  // Tell the episode page how tall the content is, so its frame fits without inner scrolling.
+  function send() {
+    var w = document.querySelector(".wrap");
+    var h = Math.ceil((w ? w.getBoundingClientRect().bottom + window.scrollY : document.body.scrollHeight) + 16);
+    try { parent.postMessage({ type: "sq-embed-height", h: h }, location.origin); } catch (e) {}
+  }
+  window.addEventListener("load", send);
+  window.addEventListener("DOMContentLoaded", function () {
+    send();
+    if (window.ResizeObserver) new ResizeObserver(send).observe(document.querySelector(".wrap") || document.body);
+  });
+})();
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Side Quests · Episode 6</div>
+      <h1 class="page">The debrief</h1>
+    </div>
+    <p class="note">After the flag, on the Ferrari pit wall. The whole race on one screen, from the real data. Point at any lap and every chart follows.</p>
+  </header>
+
+  <div class="dash">
+    <div class="tiles" aria-label="Result">
+      <div class="tile fer"><div class="k">Carlos</div><div class="v">P2<small>+1.154 s</small></div><div class="d">Started P2. Led for three laps in the pit cycle.</div></div>
+      <div class="tile fer"><div class="k">Charles</div><div class="v">P4<small>+2.9 s</small></div><div class="d">Started on pole. Led until his first stop.</div></div>
+      <div class="tile"><div class="k">Distance</div><div class="v">64<small>of 77 laps</small></div><div class="d">Ended by the time limit.</div></div>
+      <div class="tile"><div class="k">Red flag</div><div class="v">16<small>min stopped</small></div><div class="d">Lap 30. A free tyre change for everyone.</div></div>
+    </div>
+
+    <div class="card verdict">
+      <div class="who"><b>Rosso</b> · strategist, final answer</div>
+      <div class="q">Could it have been a 1-2? Not after lap 22.</div>
+      <p>From lap 23 to the flag the top four never changed places. The race was decided in the pit cycle, on laps 21 and 22. Every other call only changed the gaps.</p>
+    </div>
+
+    <section class="card race" aria-labelledby="race-h">
+      <h2 id="race-h">The race in gaps</h2>
+      <p class="sub">Seconds behind the leader at the end of each lap. The spikes are pit stops.</p>
+      <div class="legend" aria-hidden="true">
+        <span><i style="border-color:var(--fer)"></i>Carlos</span>
+        <span><i class="dash" style="border-color:var(--fer)"></i>Charles</span>
+        <span><i style="border-color:var(--rbr)"></i>Pérez</span>
+        <span><i class="dash" style="border-color:var(--rbr)"></i>Verstappen</span>
+      </div>
+      <div class="chart" id="gapChart" tabindex="0" role="img" aria-label="Gap to the leader for Carlos, Charles, Pérez and Verstappen, laps 1 to 64. Use the left and right arrow keys to move through the laps."></div>
+      <div class="readout" id="readout" aria-live="polite"></div>
+      <p class="hint">Point at a lap, or focus the chart and use ← →.</p>
+    </section>
+
+    <section class="card versus" aria-labelledby="vs-h">
+      <h2 id="vs-h">Carlos vs Pérez, every lap</h2>
+      <p class="sub">Above the line: Carlos ahead. Below: Pérez ahead. Bars stop at 15 s.</p>
+      <div class="chart" id="vsChart" role="img" aria-label="Gap between Carlos and Pérez at the end of every lap."></div>
+      <p class="hint" id="vsNote"></p>
+    </section>
+
+    <section class="card tyres" aria-labelledby="ty-h">
+      <h2 id="ty-h">Tyres</h2>
+      <p class="sub">Who ran what, and when. W wet, I intermediate, H hard, M medium.</p>
+      <div class="chart" id="tyChart" role="img" aria-label="Tyre stints for the top four."></div>
+    </section>
+
+    <section class="card calls" aria-labelledby="calls-h">
+      <h2 id="calls-h">The four calls that decided it</h2>
+      <p class="sub">Our call on the day, what it cost, and what Rosso said. Click a row to jump to that lap.</p>
+      <table class="calltable">
+        <thead><tr><th>Lap</th><th>Our call on the day</th><th>What it cost</th><th>Rosso</th></tr></thead>
+        <tbody id="calls"></tbody>
+      </table>
+    </section>
+  </div>
+
+  <details class="numbers card">
+    <summary>Show every lap as a table</summary>
+    <div class="numscroll"><table class="numtable" id="numtable"></table></div>
+  </details>
+
+  <section class="notes" aria-label="Design notes">
+    <div><b>One cursor for everything</b>Every chart shares the same lap. Point at lap 21 in one place and all of them show lap 21, so cause and effect sit side by side.</div>
+    <div><b>Read once, after the flag</b>The race pages are built for split seconds. This one is built for the debrief, so it can hold more and ask you to read.</div>
+    <div><b>Calls next to costs</b>Every decision sits next to what it cost in seconds, measured from the data, and next to what Rosso said at the time.</div>
+    <div><b>Colour is never alone</b>Ferrari is red and Red Bull is blue, but every line also has a name, and teammates are solid or dashed.</div>
+  </section>
+
+  <footer class="foot">Lap times, positions, pit lane times and tyres from FastF1. Gaps are taken at the line at the end of each lap, so they can differ from the official timing by a few tenths, and from the gaps at pit exit used in earlier episodes. Rosso is scripted: its calls are my reading of the data, not real team radio. Personal concept, not affiliated with Formula 1 or Scuderia Ferrari.</footer>
+</div>
+
+<script>
+const DATA = {"laps":[{"lap":1,"PER":{"gap":3.368,"pos":3,"tyre":"W"},"SAI":{"gap":1.609,"pos":2,"tyre":"W"},"VER":{"gap":4.569,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":1.759},{"lap":2,"PER":{"gap":1.532,"pos":3,"tyre":"W"},"SAI":{"gap":0.7,"pos":2,"tyre":"W"},"VER":{"gap":2.204,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":0.832},{"lap":3,"PER":{"gap":2.884,"pos":3,"tyre":"W"},"SAI":{"gap":1.805,"pos":2,"tyre":"W"},"VER":{"gap":4.589,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":1.079},{"lap":4,"PER":{"gap":3.376,"pos":3,"tyre":"W"},"SAI":{"gap":1.915,"pos":2,"tyre":"W"},"VER":{"gap":4.13,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":1.461},{"lap":5,"PER":{"gap":3.926,"pos":3,"tyre":"W"},"SAI":{"gap":2.441,"pos":2,"tyre":"W"},"VER":{"gap":5.369,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":1.485},{"lap":6,"PER":{"gap":4.15,"pos":3,"tyre":"W"},"SAI":{"gap":2.393,"pos":2,"tyre":"W"},"VER":{"gap":5.474,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":1.757},{"lap":7,"PER":{"gap":5.103,"pos":3,"tyre":"W"},"SAI":{"gap":3.145,"pos":2,"tyre":"W"},"VER":{"gap":6.321,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":1.958},{"lap":8,"PER":{"gap":4.962,"pos":3,"tyre":"W"},"SAI":{"gap":2.988,"pos":2,"tyre":"W"},"VER":{"gap":6.61,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":1.974},{"lap":9,"PER":{"gap":5.228,"pos":3,"tyre":"W"},"SAI":{"gap":3.58,"pos":2,"tyre":"W"},"VER":{"gap":6.973,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":1.648},{"lap":10,"PER":{"gap":5.812,"pos":3,"tyre":"W"},"SAI":{"gap":4.162,"pos":2,"tyre":"W"},"VER":{"gap":7.508,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":1.65},{"lap":11,"PER":{"gap":6.476,"pos":3,"tyre":"W"},"SAI":{"gap":4.726,"pos":2,"tyre":"W"},"VER":{"gap":7.993,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":1.75},{"lap":12,"PER":{"gap":6.996,"pos":3,"tyre":"W"},"SAI":{"gap":5.024,"pos":2,"tyre":"W"},"VER":{"gap":8.33,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":1.972},{"lap":13,"PER":{"gap":7.435,"pos":3,"tyre":"W"},"SAI":{"gap":5.038,"pos":2,"tyre":"W"},"VER":{"gap":8.922,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":2.397},{"lap":14,"PER":{"gap":7.366,"pos":3,"tyre":"W"},"SAI":{"gap":4.719,"pos":2,"tyre":"W"},"VER":{"gap":9.639,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":2.647},{"lap":15,"PER":{"gap":8.083,"pos":3,"tyre":"W"},"SAI":{"gap":5.226,"pos":2,"tyre":"W"},"VER":{"gap":10.243,"pos":4,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":2.857},{"lap":16,"PER":{"gap":24.057,"pos":5,"tyre":"W"},"SAI":{"gap":5.398,"pos":2,"tyre":"W"},"VER":{"gap":10.223,"pos":3,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":18.659},{"lap":17,"PER":{"gap":24.708,"pos":4,"tyre":"I"},"SAI":{"gap":6.268,"pos":2,"tyre":"W"},"VER":{"gap":10.113,"pos":3,"tyre":"W"},"LEC":{"gap":0.0,"pos":1,"tyre":"W"},"sp":18.44},{"lap":18,"PER":{"gap":11.653,"pos":2,"tyre":"I"},"SAI":{"gap":0.0,"pos":1,"tyre":"W"},"VER":{"gap":20.961,"pos":4,"tyre":"W"},"LEC":{"gap":12.578,"pos":3,"tyre":"W"},"sp":11.653},{"lap":19,"PER":{"gap":6.844,"pos":2,"tyre":"I"},"SAI":{"gap":0.0,"pos":1,"tyre":"W"},"VER":{"gap":17.853,"pos":4,"tyre":"I"},"LEC":{"gap":10.952,"pos":3,"tyre":"I"},"sp":6.844},{"lap":20,"PER":{"gap":3.985,"pos":2,"tyre":"I"},"SAI":{"gap":0.0,"pos":1,"tyre":"W"},"VER":{"gap":11.007,"pos":4,"tyre":"I"},"LEC":{"gap":7.457,"pos":3,"tyre":"I"},"sp":3.985},{"lap":21,"PER":{"gap":0.0,"pos":1,"tyre":"I"},"SAI":{"gap":14.195,"pos":3,"tyre":"W"},"VER":{"gap":4.91,"pos":2,"tyre":"I"},"LEC":{"gap":20.661,"pos":4,"tyre":"I"},"sp":-14.195},{"lap":22,"PER":{"gap":0.0,"pos":1,"tyre":"I"},"SAI":{"gap":4.828,"pos":2,"tyre":"H"},"VER":{"gap":6.158,"pos":3,"tyre":"I"},"LEC":{"gap":9.81,"pos":4,"tyre":"H"},"sp":-4.828},{"lap":23,"PER":{"gap":0.0,"pos":1,"tyre":"H"},"SAI":{"gap":0.839,"pos":2,"tyre":"H"},"VER":{"gap":3.293,"pos":3,"tyre":"H"},"LEC":{"gap":4.44,"pos":4,"tyre":"H"},"sp":-0.839},{"lap":24,"PER":{"gap":0.0,"pos":1,"tyre":"H"},"SAI":{"gap":1.453,"pos":2,"tyre":"H"},"VER":{"gap":2.338,"pos":3,"tyre":"H"},"LEC":{"gap":3.06,"pos":4,"tyre":"H"},"sp":-1.453},{"lap":25,"PER":{"gap":0.0,"pos":1,"tyre":"H"},"SAI":{"gap":1.945,"pos":2,"tyre":"H"},"VER":{"gap":3.097,"pos":3,"tyre":"H"},"LEC":{"gap":3.99,"pos":4,"tyre":"H"},"sp":-1.945},{"lap":26,"PER":{"gap":0.0,"pos":1,"tyre":"H"},"SAI":{"gap":1.509,"pos":2,"tyre":"H"},"VER":{"gap":1.711,"pos":3,"tyre":"H"},"LEC":{"gap":2.658,"pos":4,"tyre":"H"},"sp":-1.509},{"lap":27,"PER":{"gap":0.0,"pos":1,"tyre":"H"},"SAI":{"gap":2.386,"pos":2,"tyre":"H"},"VER":{"gap":4.631,"pos":3,"tyre":"H"},"LEC":{"gap":7.879,"pos":4,"tyre":"H"},"sp":-2.386},{"lap":28,"PER":{"gap":0.0,"pos":1,"tyre":"H"},"SAI":{"gap":1.067,"pos":2,"tyre":"H"},"VER":{"gap":2.756,"pos":3,"tyre":"H"},"LEC":{"gap":6.723,"pos":4,"tyre":"H"},"sp":-1.067},{"lap":29,"PER":{"gap":0.0,"pos":1,"tyre":"H"},"SAI":{"gap":1.53,"pos":2,"tyre":"H"},"VER":{"gap":2.523,"pos":3,"tyre":"H"},"LEC":{"gap":5.43,"pos":4,"tyre":"H"},"sp":-1.53},{"lap":30,"PER":{"gap":0.0,"pos":1,"tyre":"H"},"SAI":{"gap":3.726,"pos":2,"tyre":"H"},"VER":{"gap":6.182,"pos":3,"tyre":"H"},"LEC":{"gap":11.441,"pos":4,"tyre":"H"},"sp":-3.726},{"lap":31,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":1.309,"pos":2,"tyre":"H"},"VER":{"gap":2.416,"pos":3,"tyre":"M"},"LEC":{"gap":5.489,"pos":4,"tyre":"H"},"sp":-1.309},{"lap":32,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.662,"pos":2,"tyre":"H"},"VER":{"gap":1.424,"pos":3,"tyre":"M"},"LEC":{"gap":2.704,"pos":4,"tyre":"H"},"sp":-0.662},{"lap":33,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":1.023,"pos":2,"tyre":"H"},"VER":{"gap":1.612,"pos":3,"tyre":"M"},"LEC":{"gap":2.612,"pos":4,"tyre":"H"},"sp":-1.023},{"lap":34,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":1.132,"pos":2,"tyre":"H"},"VER":{"gap":2.104,"pos":3,"tyre":"M"},"LEC":{"gap":3.604,"pos":4,"tyre":"H"},"sp":-1.132},{"lap":35,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":1.169,"pos":2,"tyre":"H"},"VER":{"gap":2.153,"pos":3,"tyre":"M"},"LEC":{"gap":2.915,"pos":4,"tyre":"H"},"sp":-1.169},{"lap":36,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":1.104,"pos":2,"tyre":"H"},"VER":{"gap":2.144,"pos":3,"tyre":"M"},"LEC":{"gap":3.282,"pos":4,"tyre":"H"},"sp":-1.104},{"lap":37,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.907,"pos":2,"tyre":"H"},"VER":{"gap":2.278,"pos":3,"tyre":"M"},"LEC":{"gap":3.696,"pos":4,"tyre":"H"},"sp":-0.907},{"lap":38,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":1.211,"pos":2,"tyre":"H"},"VER":{"gap":2.739,"pos":3,"tyre":"M"},"LEC":{"gap":4.158,"pos":4,"tyre":"H"},"sp":-1.211},{"lap":39,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":1.18,"pos":2,"tyre":"H"},"VER":{"gap":2.64,"pos":3,"tyre":"M"},"LEC":{"gap":3.995,"pos":4,"tyre":"H"},"sp":-1.18},{"lap":40,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":1.446,"pos":2,"tyre":"H"},"VER":{"gap":2.71,"pos":3,"tyre":"M"},"LEC":{"gap":4.969,"pos":4,"tyre":"H"},"sp":-1.446},{"lap":41,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":1.595,"pos":2,"tyre":"H"},"VER":{"gap":2.549,"pos":3,"tyre":"M"},"LEC":{"gap":5.396,"pos":4,"tyre":"H"},"sp":-1.595},{"lap":42,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":2.099,"pos":2,"tyre":"H"},"VER":{"gap":3.251,"pos":3,"tyre":"M"},"LEC":{"gap":6.123,"pos":4,"tyre":"H"},"sp":-2.099},{"lap":43,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":2.321,"pos":2,"tyre":"H"},"VER":{"gap":4.198,"pos":3,"tyre":"M"},"LEC":{"gap":6.65,"pos":4,"tyre":"H"},"sp":-2.321},{"lap":44,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":2.21,"pos":2,"tyre":"H"},"VER":{"gap":4.56,"pos":3,"tyre":"M"},"LEC":{"gap":6.839,"pos":4,"tyre":"H"},"sp":-2.21},{"lap":45,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":2.265,"pos":2,"tyre":"H"},"VER":{"gap":4.548,"pos":3,"tyre":"M"},"LEC":{"gap":6.545,"pos":4,"tyre":"H"},"sp":-2.265},{"lap":46,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":2.702,"pos":2,"tyre":"H"},"VER":{"gap":5.278,"pos":3,"tyre":"M"},"LEC":{"gap":6.766,"pos":4,"tyre":"H"},"sp":-2.702},{"lap":47,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":2.441,"pos":2,"tyre":"H"},"VER":{"gap":4.648,"pos":3,"tyre":"M"},"LEC":{"gap":6.576,"pos":4,"tyre":"H"},"sp":-2.441},{"lap":48,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":3.653,"pos":2,"tyre":"H"},"VER":{"gap":4.616,"pos":3,"tyre":"M"},"LEC":{"gap":7.245,"pos":4,"tyre":"H"},"sp":-3.653},{"lap":49,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":3.691,"pos":2,"tyre":"H"},"VER":{"gap":4.92,"pos":3,"tyre":"M"},"LEC":{"gap":7.132,"pos":4,"tyre":"H"},"sp":-3.691},{"lap":50,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":2.637,"pos":2,"tyre":"H"},"VER":{"gap":3.83,"pos":3,"tyre":"M"},"LEC":{"gap":6.732,"pos":4,"tyre":"H"},"sp":-2.637},{"lap":51,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":2.104,"pos":2,"tyre":"H"},"VER":{"gap":3.555,"pos":3,"tyre":"M"},"LEC":{"gap":5.727,"pos":4,"tyre":"H"},"sp":-2.104},{"lap":52,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":1.591,"pos":2,"tyre":"H"},"VER":{"gap":2.768,"pos":3,"tyre":"M"},"LEC":{"gap":4.51,"pos":4,"tyre":"H"},"sp":-1.591},{"lap":53,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.993,"pos":2,"tyre":"H"},"VER":{"gap":2.239,"pos":3,"tyre":"M"},"LEC":{"gap":3.448,"pos":4,"tyre":"H"},"sp":-0.993},{"lap":54,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.758,"pos":2,"tyre":"H"},"VER":{"gap":1.726,"pos":3,"tyre":"M"},"LEC":{"gap":2.952,"pos":4,"tyre":"H"},"sp":-0.758},{"lap":55,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.743,"pos":2,"tyre":"H"},"VER":{"gap":1.462,"pos":3,"tyre":"M"},"LEC":{"gap":2.401,"pos":4,"tyre":"H"},"sp":-0.743},{"lap":56,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.773,"pos":2,"tyre":"H"},"VER":{"gap":1.295,"pos":3,"tyre":"M"},"LEC":{"gap":2.125,"pos":4,"tyre":"H"},"sp":-0.773},{"lap":57,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.614,"pos":2,"tyre":"H"},"VER":{"gap":1.338,"pos":3,"tyre":"M"},"LEC":{"gap":2.312,"pos":4,"tyre":"H"},"sp":-0.614},{"lap":58,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.563,"pos":2,"tyre":"H"},"VER":{"gap":1.031,"pos":3,"tyre":"M"},"LEC":{"gap":1.807,"pos":4,"tyre":"H"},"sp":-0.563},{"lap":59,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.689,"pos":2,"tyre":"H"},"VER":{"gap":1.276,"pos":3,"tyre":"M"},"LEC":{"gap":2.061,"pos":4,"tyre":"H"},"sp":-0.689},{"lap":60,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.459,"pos":2,"tyre":"H"},"VER":{"gap":0.969,"pos":3,"tyre":"M"},"LEC":{"gap":1.762,"pos":4,"tyre":"H"},"sp":-0.459},{"lap":61,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.72,"pos":2,"tyre":"H"},"VER":{"gap":1.238,"pos":3,"tyre":"M"},"LEC":{"gap":1.959,"pos":4,"tyre":"H"},"sp":-0.72},{"lap":62,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.759,"pos":2,"tyre":"H"},"VER":{"gap":1.364,"pos":3,"tyre":"M"},"LEC":{"gap":2.501,"pos":4,"tyre":"H"},"sp":-0.759},{"lap":63,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":0.975,"pos":2,"tyre":"H"},"VER":{"gap":1.432,"pos":3,"tyre":"M"},"LEC":{"gap":2.53,"pos":4,"tyre":"H"},"sp":-0.975},{"lap":64,"PER":{"gap":0.0,"pos":1,"tyre":"M"},"SAI":{"gap":1.19,"pos":2,"tyre":"H"},"VER":{"gap":1.48,"pos":3,"tyre":"M"},"LEC":{"gap":2.951,"pos":4,"tyre":"H"},"sp":-1.19}],"stints":{"PER":[{"c":"W","from":1,"to":16},{"c":"I","from":17,"to":22},{"c":"H","from":23,"to":30},{"c":"M","from":31,"to":64}],"SAI":[{"c":"W","from":1,"to":21},{"c":"H","from":22,"to":64}],"VER":[{"c":"W","from":1,"to":18},{"c":"I","from":19,"to":22},{"c":"H","from":23,"to":30},{"c":"M","from":31,"to":64}],"LEC":[{"c":"W","from":1,"to":18},{"c":"I","from":19,"to":21},{"c":"H","from":22,"to":64}]}};
+(function () {
+  const laps = DATA.laps, N = laps.length;
+  const CARS = [
+    { code: "SAI", name: "Carlos", col: "var(--fer)", dash: "" },
+    { code: "LEC", name: "Charles", col: "var(--fer)", dash: "5 4" },
+    { code: "PER", name: "Pérez", col: "var(--rbr)", dash: "" },
+    { code: "VER", name: "Verstappen", col: "var(--rbr)", dash: "5 4" },
+  ];
+  const EVENTS = [
+    { from: 1, to: 2, label: "SC", tone: "sc", text: "Rolling start behind the Safety Car." },
+    { from: 16, to: 23, label: "Pit cycle", tone: "pit", text: "Wets to inters to slicks. The lead changes hands." },
+    { from: 26, to: 29, label: "Crash · red flag", tone: "sc", text: "Schumacher crashes at the Swimming Pool. VSC, then Safety Car." },
+    { from: 30, to: 30, label: "", tone: "red", text: "Race stopped for 16 minutes. Free tyre change." },
+    { from: 31, to: 32, label: "", tone: "sc", text: "Rolling restart behind the Safety Car." },
+    { from: 50, to: 55, label: "Carlos closes in", tone: "pit", text: "Pérez's lap times drift up. Carlos takes 2.9 s out of him but never passes." },
+  ];
+  const CALLS = [
+    { lap: 18, call: "Keep Carlos out on full wets while Pérez and Charles switch to inters.", cost: "Carlos leads for three laps, but on a drying track the lead melts: <b>11.7 s</b> after lap 18, <b>4.0 s</b> after lap 20.", rosso: "Keep him out, skip inters.", badge: "Same as the day", diff: false },
+    { lap: 21, call: "Double stack: both cars in on the same lap.", cost: "Charles queues behind Carlos, about <b>3.4 s</b>. Verstappen rejoins about a second ahead of him: <b>P3 lost</b>.", rosso: "Don't double stack.", badge: "Different from the day", diff: true },
+    { lap: 22, call: "Carlos rejoins on cold hards, right behind a lapped Latifi.", cost: "About <b>40 s</b> of his out-lap stuck behind him. Three blue flags, no penalty. Pérez pits and comes out ahead: <b>the lead</b>.", rosso: "Ask race control for blue flags.", badge: "Same as the day", diff: false },
+    { lap: 30, call: "Red flag: keep the 9-lap-old hards. Red Bull takes new mediums.", cost: "Carlos restarts <b>0.7 s</b> behind Pérez. After the first green lap it's <b>1.0 s</b>. He finishes <b>1.154 s</b> behind.", rosso: "Mediums for Carlos only. Still probably not enough.", badge: "Different from the day", diff: true },
+  ];
+  const NS = "http://www.w3.org/2000/svg";
+  const el = (n, a = {}, p) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+  let cur = 21;
+  const views = [];
+
+  function lapX(w, padL, padR) { return (lap) => padL + (lap - 1) / (N - 1) * (w - padL - padR); }
+  function lapFromX(w, padL, padR, px) { return Math.max(1, Math.min(N, Math.round((px - padL) / (w - padL - padR) * (N - 1) + 1))); }
+  function evTone(t) { return t === "red" ? "rgba(225,6,0,0.16)" : t === "sc" ? "rgba(255,201,6,0.08)" : "rgba(244,244,246,0.04)"; }
+
+  // ---------- gap chart ----------
+  function drawGap() {
+    const box = document.getElementById("gapChart"); box.innerHTML = "";
+    const W = Math.max(320, box.clientWidth), H = Math.round(Math.min(360, Math.max(240, W * 0.42)));
+    const padL = 36, padR = 78, padT = 22, padB = 26;
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, "aria-hidden": "true" }, box);
+    const X = lapX(W, padL, padR);
+    const maxG = 26, Y = (g) => padT + Math.min(g, maxG) / maxG * (H - padT - padB);
+    for (const e of EVENTS) {
+      const x0 = X(e.from) - 4, x1 = X(e.to) + 4;
+      el("rect", { x: x0, y: padT, width: x1 - x0, height: H - padT - padB, fill: evTone(e.tone) }, svg);
+      const t = el("text", { x: x0 + 3, y: padT - 7, fill: e.tone === "red" ? "#FF5A52" : e.tone === "sc" ? "var(--sc)" : "var(--text-3)", "font-size": 10, "font-weight": 700, "letter-spacing": "0.06em" }, svg);
+      if (e.label) t.textContent = e.label.toUpperCase();
+    }
+    for (const g of [0, 5, 10, 15, 20, 25]) {
+      el("line", { x1: padL, x2: W - padR, y1: Y(g), y2: Y(g), stroke: "var(--grid)", "stroke-width": 1 }, svg);
+      const t = el("text", { x: padL - 6, y: Y(g) + 4, fill: "var(--text-3)", "font-size": 11, "text-anchor": "end" }, svg); t.textContent = g === 0 ? "Lead" : "+" + g;
+    }
+    for (const l of [1, 10, 20, 30, 40, 50, 64]) { const t = el("text", { x: X(l), y: H - 6, fill: "var(--text-3)", "font-size": 11, "text-anchor": "middle" }, svg); t.textContent = "L" + l; }
+    // draw Red Bull first, Ferrari on top
+    const order = [CARS[3], CARS[2], CARS[1], CARS[0]];
+    const ends = [];
+    for (const c of order) {
+      let d = ""; laps.forEach((r, i) => { const g = r[c.code].gap; d += (i ? "L" : "M") + X(r.lap).toFixed(1) + " " + Y(g).toFixed(1); });
+      el("path", { d, fill: "none", stroke: "var(--panel)", "stroke-width": 5, "stroke-linejoin": "round" }, svg);
+      el("path", { d, fill: "none", stroke: c.col, "stroke-width": 2, "stroke-dasharray": c.dash, "stroke-linejoin": "round", "stroke-linecap": "round" }, svg);
+      ends.push({ c, y: Y(laps[N - 1][c.code].gap) });
+    }
+    // direct labels at the end, nudged apart
+    ends.sort((a, b) => a.y - b.y); let last = -99;
+    for (const e of ends) { const y = Math.max(e.y, last + 13); last = y; const t = el("text", { x: X(N) + 8, y: y + 4, fill: "var(--text)", "font-size": 12, "font-weight": 600 }, svg); t.textContent = e.c.name; }
+    const cursor = el("line", { class: "cursor", y1: padT, y2: H - padB, stroke: "var(--text)", "stroke-width": 1 }, svg);
+    const dots = CARS.map(c => el("circle", { r: 4, fill: c.col, stroke: "var(--panel)", "stroke-width": 2 }, svg));
+    const hit = el("rect", { x: padL, y: 0, width: W - padL - padR, height: H, fill: "transparent", style: "cursor:crosshair" }, svg);
+    const pick = (ev) => { const r = svg.getBoundingClientRect(); setLap(lapFromX(W, padL, padR, (ev.clientX - r.left) * W / r.width)); };
+    hit.addEventListener("pointermove", pick); hit.addEventListener("pointerdown", pick);
+    views.push((lap) => {
+      const x = X(lap); cursor.setAttribute("x1", x); cursor.setAttribute("x2", x);
+      CARS.forEach((c, i) => { dots[i].setAttribute("cx", x); dots[i].setAttribute("cy", Y(laps[lap - 1][c.code].gap)); });
+    });
+  }
+
+  // ---------- Carlos vs Pérez ----------
+  function drawVs() {
+    const box = document.getElementById("vsChart"); box.innerHTML = "";
+    const W = Math.max(280, box.clientWidth), H = 220, padL = 30, padR = 6, padT = 8, padB = 22;
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, "aria-hidden": "true" }, box);
+    const X = lapX(W, padL + 3, padR + 3), bw = Math.max(1.5, (W - padL - padR) / N - 2);
+    const lim = 15, mid = padT + (H - padT - padB) / 2, Y = (v) => mid - Math.max(-lim, Math.min(lim, v)) / lim * ((H - padT - padB) / 2);
+    for (const v of [-15, -10, -5, 5, 10, 15]) {
+      el("line", { x1: padL, x2: W - padR, y1: Y(v), y2: Y(v), stroke: "var(--grid)", "stroke-width": 1 }, svg);
+      const t = el("text", { x: padL - 5, y: Y(v) + 4, fill: "var(--text-3)", "font-size": 10, "text-anchor": "end" }, svg); t.textContent = Math.abs(v);
+    }
+    const bars = laps.map(r => {
+      const v = r.sp, y0 = Y(0), y1 = Y(v), top = Math.min(y0, y1), h = Math.max(1, Math.abs(y1 - y0));
+      return el("rect", { x: X(r.lap) - bw / 2, y: top, width: bw, height: h, rx: Math.min(2, bw / 2), fill: v >= 0 ? "var(--fer)" : "var(--rbr)" }, svg);
+    });
+    el("line", { x1: padL, x2: W - padR, y1: mid, y2: mid, stroke: "var(--text-3)", "stroke-width": 1 }, svg);
+    for (const l of [1, 20, 40, 64]) { const t = el("text", { x: X(l), y: H - 6, fill: "var(--text-3)", "font-size": 10, "text-anchor": "middle" }, svg); t.textContent = "L" + l; }
+    const lbl = (txt, y, col) => { const t = el("text", { x: W - padR, y, fill: "var(--text-2)", "font-size": 11, "text-anchor": "end" }, svg); t.textContent = txt; };
+    lbl("Carlos ahead", padT + 10); lbl("Pérez ahead", H - padB - 4);
+    const hit = el("rect", { x: padL, y: 0, width: W - padL - padR, height: H, fill: "transparent", style: "cursor:crosshair" }, svg);
+    const pick = (ev) => { const r = svg.getBoundingClientRect(); setLap(lapFromX(W, padL + 3, padR + 3, (ev.clientX - r.left) * W / r.width)); };
+    hit.addEventListener("pointermove", pick); hit.addEventListener("pointerdown", pick);
+    views.push((lap) => { bars.forEach((b, i) => b.setAttribute("opacity", i === lap - 1 ? 1 : 0.45)); });
+  }
+
+  // ---------- tyres ----------
+  function drawTyres() {
+    const box = document.getElementById("tyChart"); box.innerHTML = "";
+    const W = Math.max(280, box.clientWidth), rowH = 30, padL = 78, padR = 8, padT = 4, H = padT + CARS.length * rowH + 22;
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, "aria-hidden": "true" }, box);
+    const X = lapX(W, padL, padR), step = (W - padL - padR) / (N - 1);
+    const fill = { W: "var(--wet)", I: "var(--inter)", H: "var(--hard)", M: "var(--medium)" };
+    const ink = { W: "#fff", I: "#0B0C10", H: "#0B0C10", M: "#0B0C10" };
+    CARS.forEach((c, i) => {
+      const y = padT + i * rowH;
+      const t = el("text", { x: 0, y: y + 18, fill: "var(--text)", "font-size": 13, "font-weight": 600 }, svg); t.textContent = c.name;
+      for (const s of DATA.stints[c.code]) {
+        const x0 = X(s.from) - step / 2 + 1, x1 = X(s.to) + step / 2 - 1;
+        el("rect", { x: x0, y: y + 6, width: Math.max(2, x1 - x0), height: 16, rx: 4, fill: fill[s.c] }, svg);
+        if (x1 - x0 > 16) { const tt = el("text", { x: (x0 + x1) / 2, y: y + 18, fill: ink[s.c], "font-size": 10, "font-weight": 700, "text-anchor": "middle" }, svg); tt.textContent = s.c; }
+      }
+    });
+    const rf = X(30); el("line", { x1: rf, x2: rf, y1: 0, y2: padT + CARS.length * rowH, stroke: "var(--red-flag)", "stroke-width": 2 }, svg);
+    const rt = el("text", { x: rf + 4, y: H - 6, fill: "#FF5A52", "font-size": 10, "font-weight": 700 }, svg); rt.textContent = "RED FLAG";
+    for (const l of [1, 64]) { const t = el("text", { x: X(l), y: H - 6, fill: "var(--text-3)", "font-size": 10, "text-anchor": l === 1 ? "start" : "end" }, svg); t.textContent = "L" + l; }
+    const cursor = el("line", { class: "cursor", y1: 0, y2: padT + CARS.length * rowH, stroke: "var(--text)", "stroke-width": 1 }, svg);
+    const hit = el("rect", { x: padL, y: 0, width: W - padL - padR, height: H, fill: "transparent", style: "cursor:crosshair" }, svg);
+    const pick = (ev) => { const r = svg.getBoundingClientRect(); setLap(lapFromX(W, padL, padR, (ev.clientX - r.left) * W / r.width)); };
+    hit.addEventListener("pointermove", pick); hit.addEventListener("pointerdown", pick);
+    views.push((lap) => { const x = X(lap); cursor.setAttribute("x1", x); cursor.setAttribute("x2", x); });
+  }
+
+  // ---------- readout, calls, table ----------
+  const readout = document.getElementById("readout");
+  function fmtGap(g, pos) { return pos === 1 ? "Leader" : "+" + g.toFixed(1); }
+  views.push((lap) => {
+    const r = laps[lap - 1];
+    const rows = CARS.map(c => ({ c, ...r[c.code] })).sort((a, b) => (a.pos || 99) - (b.pos || 99));
+    const ev = EVENTS.find(e => lap >= e.from && lap <= e.to);
+    readout.innerHTML = `<div class="lap">Lap ${lap}</div>` +
+      rows.map(x => `<div class="who">P${x.pos} <b>${x.c.name}</b><span class="tyre t-${x.tyre}">${x.tyre}</span></div>`).join("") +
+      rows.map(x => `<div class="gap">${fmtGap(x.gap, x.pos)}</div>`).join("") +
+      `<div class="ev">${ev ? ev.text : ""}</div>`;
+    const v = r.sp; document.getElementById("vsNote").textContent = `Lap ${lap}: ${v >= 0 ? "Carlos" : "Pérez"} ${Math.abs(v).toFixed(1)} s ahead at the line.`;
+    document.querySelectorAll("#calls tr").forEach(tr => tr.classList.toggle("on", +tr.dataset.lap === lap));
+  });
+  document.getElementById("calls").innerHTML = CALLS.map(c => `<tr data-lap="${c.lap}" tabindex="0"><td class="l">L${c.lap}</td><td>${c.call}</td><td>${c.cost}</td><td>${c.rosso}<br><span class="badge${c.diff ? " diff" : ""}">${c.badge}</span></td></tr>`).join("");
+  document.querySelectorAll("#calls tr").forEach(tr => {
+    const go = () => setLap(+tr.dataset.lap);
+    tr.addEventListener("click", go); tr.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+  });
+  document.getElementById("numtable").innerHTML = "<tr><th>Lap</th>" + CARS.map(c => `<th>${c.name}</th>`).join("") + "<th>Carlos vs Pérez</th></tr>" +
+    laps.map(r => `<tr><td>${r.lap}</td>` + CARS.map(c => `<td>P${r[c.code].pos} ${fmtGap(r[c.code].gap, r[c.code].pos)} ${r[c.code].tyre}</td>`).join("") + `<td>${r.sp >= 0 ? "+" : ""}${r.sp.toFixed(1)}</td></tr>`).join("");
+
+  function setLap(lap) { cur = lap; views.forEach(v => v(lap)); }
+  const gc = document.getElementById("gapChart");
+  gc.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") { e.preventDefault(); setLap(Math.min(N, cur + 1)); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); setLap(Math.max(1, cur - 1)); }
+    if (e.key === "Home") { e.preventDefault(); setLap(1); }
+    if (e.key === "End") { e.preventDefault(); setLap(N); }
+  });
+  function drawAll() { views.length = 0; drawGap(); drawVs(); drawTyres(); views.push(...[]); rebindReadout(); setLap(cur); }
+  // the readout and calls view are registered once; keep them across redraws
+  const fixed = views.slice();
+  function rebindReadout() { views.push(...fixed); }
+  views.length = 0;
+  drawAll();
+  let t; new ResizeObserver(() => { clearTimeout(t); t = setTimeout(drawAll, 80); }).observe(document.querySelector(".dash"));
+})();
+</script>
+</body>
+</html>
