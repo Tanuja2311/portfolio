@@ -142,10 +142,11 @@ export default function UrbanParkCaseStudy() {
               </h3>
               <p className="cs-subsection-body">
                 I shifted focus to homeowners who had actually rented out their
-                driveways or garages. I contacted roughly 150 homeowners across
-                Neighbor, CurbFlip, Facebook groups, and Reddit. 20 responded.
-                8 met my criteria and agreed to in depth interviews. These 8
-                became the foundation of the entire project. From their stories
+                driveways or garages, recruiting through Neighbor, CurbFlip,
+                Facebook groups, and Reddit. I ran 10 in depth interviews with
+                homeowners who had rented out their space, plus 5 interviews
+                with renters. These conversations became the foundation of the
+                entire project. From the homeowners&rsquo; stories
                 I built interview debriefs, ran affinity mapping, mapped the
                 homeowner journey end to end, and used 5 Whys to trace each
                 major pain point back to its root cause.
@@ -231,7 +232,6 @@ export default function UrbanParkCaseStudy() {
             </div>
             <p className="cs-section-body">
               Before designing a single screen, I built the token foundation.
-              Most student projects skip this entirely.
             </p>
             <p className="cs-section-body" style={{ marginTop: "1rem" }}>
               The system uses a two-tier architecture: 95 color primitive tokens
@@ -254,10 +254,10 @@ export default function UrbanParkCaseStudy() {
             <div className="cs-nda-note">
               <span className="cs-nda-note-label">Context</span>
               <p>
-                A more comprehensive enterprise design system was built at ZingHR
-                for a B2B platform serving 500,000 daily users, but that work is
-                under NDA. UrbanPark demonstrates the same foundational
-                methodology applied to a product I can show.
+                I also built a component library and design system at ZingHR,
+                for modules reaching 166K+ users, but that work is under NDA.
+                UrbanPark shows how I build one from the ground up, in a product
+                I can show.
               </p>
             </div>
           </ScrollReveal>
@@ -320,9 +320,9 @@ export default function UrbanParkCaseStudy() {
                 <p className="cs-feature-decision-text">
                   The pricing step shows a suggested range before asking the
                   owner to enter a number. Anchoring against real data from
-                  nearby listings gave owners a starting point. In testing,
-                  participants who saw the range settled on a price with less
-                  hesitation than those facing a blank input.
+                  nearby listings gave owners a starting point. In testing, I
+                  observed that participants used the range as a reference
+                  point when settling on a price.
                 </p>
               </div>
             </div>
@@ -422,9 +422,9 @@ export default function UrbanParkCaseStudy() {
                 <p className="cs-feature-decision-text">
                   The verification badge is broken into three visible tiers on
                   the listing page - not a single binary &ldquo;Verified&rdquo;
-                  checkmark. Transparency about what each layer verifies
-                  increased renter confidence in testing more than the
-                  verification itself did. People trust what they understand.
+                  checkmark. The intent is for renters to see exactly what
+                  each layer verifies, not just that something was checked.
+                  People trust what they understand.
                 </p>
               </div>
             </div>
@@ -569,13 +569,12 @@ export default function UrbanParkCaseStudy() {
               <h3 className="cs-wid-heading">What I&rsquo;d change</h3>
 
               <p className="cs-wid-body">
-                <strong>I&rsquo;d test with actual strangers earlier.</strong>{" "}
-                Our usability participants were recruited from the university
-                community - people who know each other, share campus, and have
-                an implicit baseline of trust. The trust barriers for true
-                strangers in a dense city are higher. I suspect the verification
-                flow would have looked different if we&rsquo;d tested with
-                participants who had no social overlap.
+                <strong>I&rsquo;d usability test the renter side too.</strong>{" "}
+                My usability testing was with 5 homeowners who had real
+                experience renting out their driveways. Renters shaped the
+                research through interviews, and I&rsquo;d bring them into the
+                next round of testing, since how they read the verification
+                badges is still untested.
               </p>
             </div>
           </ScrollReveal>
@@ -588,13 +587,9 @@ export default function UrbanParkCaseStudy() {
 
               <p className="cs-wid-body">
                 UrbanPark was the first time I built a design system from the
-                ground up. At ZingHR, I applied the same methodology at
-                enterprise scale - systematic tokens, exhaustive state
-                documentation, and edge case coverage for a platform handling
-                500,000+ HR transactions daily. That system is under NDA, but
-                the thinking is the same. Consumer and enterprise design systems
-                differ in scope, not philosophy: both require you to think in
-                states, not screens.
+                ground up, with tokens structured as primitives and semantic
+                aliases. The lesson I carry forward: start from the system, and
+                think in states, not screens.
               </p>
 
               <p className="cs-wid-body">

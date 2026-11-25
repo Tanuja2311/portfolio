@@ -33,7 +33,7 @@ const EXPERIENCE = [
     role: "UX Designer",
     duration: "Jan 2020 – Aug 2023",
     description:
-      "Sole designer on the Rewards & Recognition module and Employee Dossier, serving 200+ enterprise clients. Built the component library and design system for the HR platform.",
+      "Sole designer on the Rewards & Recognition module and Employee Dossier, part of the 3 modules I designed that reached 166K+ users. Built the component library and design system for the HR platform.",
     href: "/work/rewards-and-recognition",
   },
 ];
@@ -73,8 +73,8 @@ export default function AboutPage() {
             </p>
             <p className="about-bio-text">
               I work at the intersection of research, systems thinking, and
-              craft. I&apos;ve designed enterprise HR modules used by 200+
-              companies, built consumer mobile apps from scratch, and shipped
+              craft. I&apos;ve designed enterprise HR modules used by 166K+
+              people, designed consumer mobile apps from scratch, and shipped
               websites entirely with AI tooling. I hold an MS in User Experience
               and Interaction Design from Thomas Jefferson University.
             </p>

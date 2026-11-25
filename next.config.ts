@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
     return [
       { source: "/work",          destination: "/",               permanent: true },
       { source: "/built-with-ai", destination: "/#built-with-ai", permanent: true },
+      // Retired placeholder route; send old links to the real case study.
+      { source: "/work/rewards-recognition", destination: "/work/rewards-and-recognition", permanent: true },
     ];
   },
 };

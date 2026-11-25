@@ -55,15 +55,15 @@ export default function MyRCloudCaseStudy() {
         subtitle:   "Designing a recruitment marketplace from scratch, replacing a Google Sheets operation with a multi-sided platform serving 100+ clients and 600+ recruiting partners.",
         meta: {
           role:     "Solo UX Designer",
-          duration: "8 months",
+          duration: "9 months",
           year:     "2022-23",
           company:  "ZingHR",
         },
       }} />
       <CaseStudySummary summary={{
         problem:  "An entire recruitment marketplace was running on Google Sheets and phone calls. 6+ user personas across clients, recruiters, and internal ops had no shared system, leading to lost candidates, duplicate outreach, and zero visibility into pipeline status.",
-        role:     "Solo UX designer working directly with CXO stakeholders: discovery workshops, live co-design sessions, information architecture for 6+ personas, interaction design, and embedded collaboration with the dev team during implementation.",
-        timeline: "8-month engagement from discovery through launch, including a 3-month beta. Timeline extended 6 months from original estimate after design questions uncovered missing flows the business hadn't anticipated.",
+        role:     "Solo UX designer working directly with CXO stakeholders: writing the research questions answered by the C-suite, follow-up calls with the people who could answer directly, discovery workshops, live co-design sessions, information architecture for 6+ personas, interaction design, and embedded collaboration with the dev team during implementation.",
+        timeline: "9-month engagement from discovery through launch, including a 3-month beta. Timeline extended 6 months from original estimate after design questions uncovered missing flows the business hadn't anticipated.",
         outcome:  "A live multi-sided recruitment platform at myrcloud.com with 100+ clients, 600+ recruiting partners, and 3,000+ positions closed. Shipped March 2023.",
       }} />
 
@@ -168,11 +168,13 @@ export default function MyRCloudCaseStudy() {
             <div className="cs-subsection">
               <span className="cs-subsection-label">01 - Research</span>
               <h3 className="cs-subsection-heading">
-                Research Through Workshops
+                Research Through Questions and Workshops
               </h3>
               <p className="cs-subsection-body">
                 I did not have the luxury of a traditional research phase with
-                user interviews and surveys. The research happened through
+                user interviews and surveys. Instead, I wrote the research
+                questions and submitted them to the C-suite, who came back with
+                answers and the numbers behind them. Alongside that, there were
                 intensive workshops at the MyRCloud office, where the operations
                 team showed me how everything was managed with Google Sheets. We
                 mapped flows on whiteboards in the conference room, tracing how
@@ -181,9 +183,9 @@ export default function MyRCloudCaseStudy() {
                 sitemaps that guided the entire design process.
               </p>
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                When the project manager&rsquo;s briefs were not enough to
-                understand the business logic, I got on calls directly with the
-                COO and CFO. There were sessions that lasted 4 hours, where a
+                When gaps remained after those answers, the C-suite set up calls
+                with me and the people who could answer directly. There were
+                sessions that lasted 4 hours, where a
                 CXO would explain a flow and I would design screens live on
                 screenshare. This eliminated weeks of back-and-forth and ensured
                 the designs reflected how the business actually worked, not how
@@ -516,7 +518,7 @@ export default function MyRCloudCaseStudy() {
                   { value: "3,000+",   label: "Positions Closed"   },
                   { value: "6",        label: "User Personas"      },
                   { value: "~400",     label: "Screens Designed"   },
-                  { value: "8 months", label: "Design Timeline"    },
+                  { value: "9 months", label: "Design Timeline"    },
                 ].map((m, i) => (
                   <MetricCard key={m.label} metric={m} index={i} />
                 ))}
@@ -543,8 +545,7 @@ export default function MyRCloudCaseStudy() {
               <p className="cs-wid-body">
                 If I were to do this project again, I would invest time in
                 independent research on how recruitment agencies operate before
-                the first workshop. This was my first major project out of
-                college, and I was entirely dependent on stakeholder
+                the first workshop. I was entirely dependent on stakeholder
                 explanations to build my mental model of the domain. If I had
                 spoken to recruiters outside of MyRCloud or studied how
                 platforms like Naukri or LinkedIn Recruiter handle similar

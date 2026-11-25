@@ -7,7 +7,7 @@
 - Senior Product Designer with 5+ years of experience, and a builder who writes and ships production code
 - Designs and builds equally well: research, UX, and design systems through to deployed front-end code
 - Background in code (MCA) before design; MS in User Experience and Interaction Design, Thomas Jefferson University
-- 3.5 years at ZingHR as the primary designer on enterprise HR modules serving 200+ clients
+- 3.5 years at ZingHR as the primary designer on 3 enterprise HR modules reaching 166K+ users
 - Tools: Figma, React, TypeScript, Next.js, Tailwind CSS, Vercel, Claude Code, Cursor
 - Interested in senior IC and founding designer roles, B2B SaaS, and AI-first products
 
@@ -17,7 +17,7 @@
 - [Rewards & Recognition](https://www.tanujabodas.com/work/rewards-and-recognition): Enterprise recognition platform for teams whose contributions were going unnoticed
 - [Employee Dossier](https://www.tanujabodas.com/work/employee-dossier): Redesign of ZingHR's employee record into a single, scannable page
 - [UrbanPark](https://www.tanujabodas.com/work/urbanpark): A 0 to 1 C2C driveway rental marketplace, including its design system
-- [The Wren Gala](https://www.tanujabodas.com/built-with-ai/wren-gala): A charity gala website designed and built solo in under a week
+- [The Wren Gala](https://www.tanujabodas.com/built-with-ai/wren-gala): A charity gala website designed and built in under two weeks, as lead designer-developer
 
 ## Contact
 

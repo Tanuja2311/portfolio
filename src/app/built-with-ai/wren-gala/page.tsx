@@ -15,16 +15,16 @@ const SECTIONS = [
 
 export const metadata: Metadata = {
   title:       "The Wren Gala",
-  description: "Wren Gala case study by Tanuja Bodas. A luxury charity gala website designed and shipped in 5 days using AI-assisted development.",
+  description: "Wren Gala case study by Tanuja Bodas. A luxury charity gala website designed and shipped in under two weeks using AI-assisted development.",
   alternates:  { canonical: "/built-with-ai/wren-gala" },
   openGraph: {
     type:        "article",
     url:         "/built-with-ai/wren-gala",
-    description: "Wren Gala case study by Tanuja Bodas. A luxury charity gala website designed and shipped in 5 days using AI-assisted development.",
+    description: "Wren Gala case study by Tanuja Bodas. A luxury charity gala website designed and shipped in under two weeks using AI-assisted development.",
   },
   twitter: {
     card: "summary_large_image",
-    description: "Wren Gala case study by Tanuja Bodas. A luxury charity gala website designed and shipped in 5 days using AI-assisted development.",
+    description: "Wren Gala case study by Tanuja Bodas. A luxury charity gala website designed and shipped in under two weeks using AI-assisted development.",
   },
 };
 
@@ -48,18 +48,18 @@ export default function WrenGalaPage() {
             View live site &#8599;
           </a>
         ),
-        subtitle:   "A luxury charity gala website for a historic London church, designed and shipped in under a week using AI-assisted development.",
+        subtitle:   "A luxury charity gala website for a historic London church, designed and shipped in under two weeks using AI-assisted development.",
         meta: {
           role:     "Lead Designer & Developer",
-          duration: "Under 1 week",
+          duration: "Under 2 weeks",
           year:     "2026",
         },
       }} />
       <CaseStudySummary summary={{
-        problem:  "A historic London church needed a high-end digital presence for their annual New York fundraising gala. The team was distributed across London, Singapore, and New York with no dedicated digital operations resource on the US side.",
-        role:     "Solo designer-developer and de facto product owner: visual direction, content strategy, AI tool evaluation, payment infrastructure, data management, email workflows, client communication, and mentoring a junior designer.",
-        timeline: "Under 1 week from first client call to deployed site, evaluating three AI development approaches along the way.",
-        outcome:  "A 4-page luxury event website with Stripe payment integration, automated email workflows, and guest data management, deployed on Vercel. Zero hand-written code.",
+        problem:  "A historic London church needed a high-end digital presence for their annual New York fundraising gala.",
+        role:     "Lead designer-developer and de facto product owner: visual direction, content strategy, AI tool evaluation, payment infrastructure, data management, email workflows, and client communication. I also mentored a junior designer, who built one page under my guidance.",
+        timeline: "Under two weeks from first client call to deployed site, evaluating three AI development approaches along the way.",
+        outcome:  "A 4-page luxury event website with Stripe payment integration, automated email workflows, and guest data management, deployed on Vercel. Zero hand-written code. The Stripe ticket flow sold 300 tickets.",
       }} />
 
       <CsScrollLinks sections={SECTIONS} />
@@ -92,12 +92,12 @@ export default function WrenGalaPage() {
               identity, a Changemaker Cohort page spotlighting the honorees, a
               Story of St James page connecting the church&rsquo;s history to
               its mission, and a Tickets page with a purchase flow. Payment
-              processing runs through Stripe for instant transactions.
+              processing runs through Stripe.
             </p>
 
             <p className="cs-section-body">
               The constraint was time. The entire site needed to ship in under
-              a week.
+              two weeks.
             </p>
           </ScrollReveal>
 
@@ -285,7 +285,7 @@ export default function WrenGalaPage() {
                     </li>
                     <li className="ai-check ai-check--pro">
                       <span className="ai-check-icon">&#10003;</span>
-                      Zero hand-typed code — shipped in under a week
+                      Zero hand-typed code, shipped in under two weeks
                     </li>
                   </ul>
                   <div className="ai-phase-verdict ai-phase-verdict--final">Final workflow &#10003;</div>
@@ -352,11 +352,11 @@ export default function WrenGalaPage() {
               <span className="cs-subsection-label">04</span>
               <h3 className="cs-subsection-heading">Mentoring Through the Process</h3>
               <p className="cs-subsection-body">
-                I brought a junior designer into the project as a learning
-                opportunity. Rather than assigning isolated tasks, I structured
-                the mentorship around the AI workflow itself. The junior designer
-                observed how I evaluated tools, wrote prompts, reviewed output,
-                and made iteration decisions.
+                I mentored a junior designer through the project. Rather than
+                assigning isolated tasks, I structured the mentorship around the
+                AI workflow itself. The junior designer saw how I evaluated
+                tools, wrote prompts, reviewed output, and made iteration
+                decisions, then built one page of the site under my guidance.
               </p>
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
                 The key lesson was that AI tools do not replace design judgment.
@@ -400,12 +400,15 @@ export default function WrenGalaPage() {
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
                 The initial replacement was ACH transfers with Airtable for
                 data storage. This restored full visual control over the
-                purchase experience. However, the client later required
-                instant payment processing rather than waiting for bank
-                transfers to clear. The final solution was Stripe integration,
-                which delivered both instant payments and a checkout
-                experience that could be styled to match the site&rsquo;s
-                visual language.
+                purchase experience, but ACH transfers reached St James with no
+                guest information attached. To capture it, I had to connect
+                Airtable to store guest data, which made me responsible for
+                securing the personal data of 300 people. The final solution
+                was Stripe integration. Stripe captures each buyer&rsquo;s name,
+                phone, and email and holds that data itself, which removed that
+                burden. St James then emailed attendees for guest counts and
+                dietary needs. Stripe also gave a checkout experience that could
+                be styled to match the site&rsquo;s visual language.
               </p>
             </div>
           </ScrollReveal>
@@ -416,10 +419,11 @@ export default function WrenGalaPage() {
               <p className="cs-feature-decision-text">
                 Each transition was driven by a specific, defensible reason:
                 Rayze did not support ticketing, Givebutter could not match
-                the visual standard, ACH could not process payments instantly.
-                The final move to Stripe resolved every constraint: visual
-                control, instant processing, and a seamless checkout
-                experience.
+                the visual standard, and ACH arrived with no guest information,
+                which left me holding 300 people&rsquo;s personal data in
+                Airtable. The final move to Stripe resolved every constraint:
+                visual control, guest data captured and held by Stripe, and a
+                seamless checkout experience.
               </p>
             </div>
           </ScrollReveal>
@@ -586,7 +590,7 @@ export default function WrenGalaPage() {
                 was functional but visually dissonant. The embedded UI introduced
                 colors, typography, and spacing that broke from the site&rsquo;s
                 established language. The final integration with Stripe
-                delivered both instant payment processing and full visual
+                captured guest details at checkout and gave full visual
                 control over the checkout experience. Every element of the
                 form, confirmation state, and receipt now matches the
                 gala&rsquo;s design system.
@@ -682,8 +686,8 @@ export default function WrenGalaPage() {
               </p>
 
               <p className="cs-wid-body">
-                <strong>Speed is a design decision.</strong> Shipping in under a
-                week was not about cutting corners. It was about using AI to
+                <strong>Speed is a design decision.</strong> Shipping in under two
+                weeks was not about cutting corners. It was about using AI to
                 compress the build phase so I could spend more time on design
                 thinking, content strategy, and client alignment. The time saved
                 on code was reinvested in the decisions that actually shape the
@@ -715,9 +719,9 @@ export default function WrenGalaPage() {
               <p className="cs-wid-body">
                 I would also build a lightweight analytics setup from the start
                 to capture site traffic, ticket page visits, and conversion data.
-                The gala has not yet taken place, so there are no outcome metrics
-                to report. Having analytics in place from launch would have made
-                it possible to share meaningful data regardless of timing.
+                The outcome I can report is that the Stripe ticket flow sold 300
+                tickets. Analytics from launch would have shown how visitors
+                moved through the site on the way to buying them.
               </p>
             </div>
           </ScrollReveal>

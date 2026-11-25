@@ -49,9 +49,9 @@ export default function RRCaseStudy() {
       }} />
       <CaseStudySummary summary={{
         problem:  "ZingHR's entire recognition system lived in one admin's phone calendar, a physical diary, and 13 years of memory — one resignation away from total collapse.",
-        role:     "Sole UX designer: discovery research, user flows for five distinct roles, information architecture, interaction design, and stakeholder alignment across a 1.5-month engagement.",
+        role:     "Sole UX designer: discovery research, user flows for four distinct roles, information architecture, interaction design, and stakeholder alignment across a 1.5-month engagement.",
         timeline: "1.5 months, running alongside a parallel project, from initial brief through handoff.",
-        outcome:  "A structured award management module with 6 award types, 5 user roles, a configurable group-based permission model, and an Award Calendar — adopted across ZingHR's enterprise customer base.",
+        outcome:  "A structured award management module with 6 award types, 4 user roles, a configurable group-based permission model, and an Award Calendar — adopted across ZingHR's enterprise customer base.",
       }} />
 
       <CsScrollLinks sections={SECTIONS} />
@@ -140,8 +140,8 @@ export default function RRCaseStudy() {
                 the project. The phone calendar and physical diary revealed that
                 there was no system at all in a transferable sense — only
                 institutional knowledge accumulated over 13 years. I then mapped
-                the workflows of all five user roles (Admin, Regular Employee,
-                Nominator, Department Head, CHRO) to understand what each person
+                the workflows of all four user roles (Admin, Nominator,
+                Department Head, CHRO) to understand what each person
                 needed the system to do.
               </p>
             </div>
@@ -180,7 +180,7 @@ export default function RRCaseStudy() {
               The module was designed around six award types — nomination-based,
               value-based, behavioral, team-based, CEO On-Spot, and
               tenure-based (triggered automatically by joining date milestones)
-              — and five distinct user roles, each with a dedicated interface
+              — and four distinct user roles, each with a dedicated interface
               and workflow.
             </p>
           </ScrollReveal>
@@ -215,7 +215,7 @@ export default function RRCaseStudy() {
               <h3 className="cs-feature-title">The Jury Mental Model</h3>
               <p className="cs-feature-body">
                 The most complex design challenge was making a multi-role
-                permission system feel intuitive. The module had five award
+                permission system feel intuitive. The module had six award
                 types, three levels of nominators, and a CHRO as the final
                 approver.
               </p>
@@ -327,12 +327,6 @@ export default function RRCaseStudy() {
               feature modifications to suit the client&rsquo;s organizational
               structure, but the core architecture, permission model, and design
               system held.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <p className="cs-section-body">
-              Quantitative adoption metrics are being sought from the module owners.
             </p>
           </ScrollReveal>
         </section>

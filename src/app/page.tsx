@@ -82,7 +82,7 @@ const jsonLd = {
         "@type": "CreativeWork",
         "name": "The Wren Gala",
         "url": `${SITE}/built-with-ai/wren-gala`,
-        "description": "A luxury charity gala website for a historic London church, designed and shipped in under a week using AI-assisted development.",
+        "description": "A luxury charity gala website for a historic London church, designed and shipped in under two weeks using AI-assisted development.",
       },
     ],
   },

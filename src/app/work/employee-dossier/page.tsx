@@ -51,7 +51,7 @@ export default function EmployeeDossierPage() {
         problem:  "HR teams were navigating through multiple tabs and nested menus to access basic employee information. Critical data was buried, causing delays in everyday HR workflows and frustration across the organization.",
         role:     "Product designer responsible for restructuring the information architecture, redesigning the page layout, and simplifying navigation for ZingHR's most-used module.",
         timeline: "8-week redesign sprint from audit and user interviews through high-fidelity prototypes and developer handoff.",
-        outcome:  "A single, scannable employee record page that consolidated previously fragmented data, reducing the number of clicks to access key information and improving daily HR workflow efficiency.",
+        outcome:  "A single, scannable employee record page that consolidated previously fragmented data into one place.",
       }} />
 
       <CsScrollLinks sections={SECTIONS} />
