@@ -121,9 +121,9 @@ export function TestingCollapsible() {
                 security camera to capture a readable license plate without
                 technical guidance. 2 out of 3 participants captured a readable
                 plate under daylight. The third could not in low light. That
-                limitation directly informed the design: the app now prompts
-                floodlight cameras as a default and offers alternate verification
-                through car color, make, and model as a fallback.
+                limitation directly informed the design: the app offers
+                alternate verification through car color, make, and model as a
+                fallback.
               </p>
               <img
                 src="/images/urbanpark/pretotype-mechanicalturk.jpg"

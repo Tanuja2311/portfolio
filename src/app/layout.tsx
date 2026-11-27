@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     default:  "Tanuja Bodas | Senior Product Designer & Builder",
   },
   description:
-    "Tanuja Bodas is a senior product designer and builder who designs and ships her own production code: enterprise B2B platforms, design systems, and complex workflows.",
+    "Tanuja Bodas is a senior product designer and builder who designs enterprise B2B platforms, design systems, and complex workflows, and builds and ships her own products in code.",
   applicationName: "Tanuja Bodas",
   authors: [{ name: "Tanuja Bodas", url: "https://www.tanujabodas.com" }],
   creator: "Tanuja Bodas",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card:        "summary_large_image",
     title:       "Tanuja Bodas | Senior Product Designer & Builder",
     description:
-      "Tanuja Bodas is a senior product designer and builder who designs and ships her own production code: enterprise B2B platforms, design systems, and complex workflows.",
+      "Tanuja Bodas is a senior product designer and builder who designs enterprise B2B platforms, design systems, and complex workflows, and builds and ships her own products in code.",
   },
 };
 

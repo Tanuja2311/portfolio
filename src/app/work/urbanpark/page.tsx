@@ -285,10 +285,11 @@ export default function UrbanParkCaseStudy() {
             </div>
 
             <p className="cs-section-body">
-              Three distinct flows - homeowner onboarding, renter search and
-              booking, and the verification layer that sits beneath both - each
-              designed as a standalone journey that shares a common trust
-              architecture.
+              The thesis scope was the homeowner persona, so the prototype and
+              usability testing cover the homeowner side only. The flows below
+              are homeowner onboarding, the verification layer, and
+              communication, plus early renter concepts that were sketched but
+              never prototyped or tested.
             </p>
           </ScrollReveal>
 
@@ -332,10 +333,12 @@ export default function UrbanParkCaseStudy() {
           <ScrollReveal>
             <div className="cs-feature">
               <span className="cs-feature-name">Flow 02</span>
-              <h3 className="cs-feature-title">Renter: Search, book, and navigate</h3>
+              <h3 className="cs-feature-title">Early renter concepts: Search, book, and navigate</h3>
               <p className="cs-feature-body">
-                Search is map-first. The filter panel surfaces the three
-                criteria our research identified as primary: price range,
+                These are early concepts, sketched to understand what the
+                homeowner side had to support. They were never prototyped or
+                tested. Search is map-first. The filter panel surfaces the three
+                criteria I expected to matter most to renters: price range,
                 walking distance from destination, and verification status.
                 Ratings and amenities are secondary filters collapsed by
                 default. The booking confirmation screen is the longest in the
@@ -347,7 +350,7 @@ export default function UrbanParkCaseStudy() {
               <div style={{ margin: "1.5rem 0" }}>
                 <img
                   src={IMG("bookings-flow.jpg")}
-                  alt="Renter search and booking flow"
+                  alt="Early renter search and booking concepts"
                   style={{ width: "100%", height: "auto", display: "block", borderRadius: "0.75rem" }}
                 />
               </div>
@@ -358,8 +361,8 @@ export default function UrbanParkCaseStudy() {
                   renter&rsquo;s default maps app, not an in-app map. This was
                   a deliberate reduction in scope. Renters already trust their
                   maps app. Building a navigation layer would have added
-                  complexity without adding trust, and our research showed
-                  that renters switch to their maps app at arrival regardless.
+                  complexity without adding trust, and renters are likely to
+                  switch to their maps app at arrival regardless.
                 </p>
               </div>
             </div>
@@ -544,14 +547,15 @@ export default function UrbanParkCaseStudy() {
               <h3 className="cs-wid-heading">What I learned</h3>
 
               <p className="cs-wid-body">
-                <strong>Designing for two user types simultaneously teaches you
-                that personas are constraints, not portraits.</strong>{" "}
-                Every feature decision had to hold for both sides. A cancellation
-                policy that&rsquo;s generous for renters creates anxiety for
-                homeowners. A verification step that builds trust for renters
-                feels invasive to homeowners if it&rsquo;s not framed carefully.
-                The tension between the two sides was the actual design problem
-                - not the individual screens.
+                <strong>Designing for one persona while the other side exists
+                teaches you that personas are constraints, not portraits.</strong>{" "}
+                The thesis scoped the design to homeowners, but every homeowner
+                decision still had to hold for renters. A cancellation policy
+                that&rsquo;s generous for renters creates anxiety for
+                homeowners. A verification step that reassures homeowners can
+                feel invasive to renters if it&rsquo;s not framed carefully.
+                Keeping the renter in view without designing for them was the
+                actual design problem, not the individual screens.
               </p>
 
               <p className="cs-wid-body">
@@ -569,12 +573,13 @@ export default function UrbanParkCaseStudy() {
               <h3 className="cs-wid-heading">What I&rsquo;d change</h3>
 
               <p className="cs-wid-body">
-                <strong>I&rsquo;d usability test the renter side too.</strong>{" "}
-                My usability testing was with 5 homeowners who had real
-                experience renting out their driveways. Renters shaped the
-                research through interviews, and I&rsquo;d bring them into the
-                next round of testing, since how they read the verification
-                badges is still untested.
+                <strong>I&rsquo;d design and test the renter side next.</strong>{" "}
+                The thesis scope was the homeowner persona, so the prototype
+                and my usability testing with 5 homeowners who had real
+                experience renting out their driveways cover that side only.
+                Renters shaped the research through 5 interviews, but the
+                renter flows are still early concepts. How renters read the
+                verification badges is the biggest open question.
               </p>
             </div>
           </ScrollReveal>
@@ -593,13 +598,12 @@ export default function UrbanParkCaseStudy() {
               </p>
 
               <p className="cs-wid-body">
-                The two-sided marketplace research also shaped how I approach
-                stakeholder alignment. Enterprise HR tools are two-sided
-                products: HR admins configure them, employees use them. The same
-                tension exists. The Rewards &amp; Recognition project at ZingHR
-                required the same discipline - designing for the person filling
-                in the catalog and the person browsing it simultaneously, with
-                genuinely different needs and opposite anxieties.
+                Scoping to one persona while keeping the other in view also
+                shaped how I approach enterprise work. HR tools are two-sided
+                too: HR admins configure them, employees use them. The Rewards
+                &amp; Recognition project at ZingHR required the same
+                discipline, designing for the admin configuring awards while
+                keeping the employees who receive them in view.
               </p>
             </div>
           </ScrollReveal>

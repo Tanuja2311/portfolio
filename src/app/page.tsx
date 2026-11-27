@@ -10,18 +10,18 @@ import { SeriesCard }    from "@/components/side-quests/series-card";
 export const metadata: Metadata = {
   title: { absolute: "Tanuja Bodas | Senior Product Designer & Builder" },
   description:
-    "Tanuja Bodas is a senior product designer and builder who designs and ships her own production code: enterprise B2B platforms, design systems, and complex workflows.",
+    "Tanuja Bodas is a senior product designer and builder who designs enterprise B2B platforms, design systems, and complex workflows, and builds and ships her own products in code.",
   alternates: { canonical: "/" },
   openGraph: {
     type:        "website",
     url:         "/",
     title:       "Tanuja Bodas | Senior Product Designer & Builder",
-    description: "Tanuja Bodas is a senior product designer and builder who designs and ships her own production code: enterprise B2B platforms, design systems, and complex workflows.",
+    description: "Tanuja Bodas is a senior product designer and builder who designs enterprise B2B platforms, design systems, and complex workflows, and builds and ships her own products in code.",
   },
   twitter: {
     card: "summary_large_image",
     title:       "Tanuja Bodas | Senior Product Designer & Builder",
-    description: "Senior product designer and builder. I design enterprise B2B products and design systems, then build and ship them myself.",
+    description: "Senior product designer and builder. I design enterprise B2B products and design systems, and I build and ship my own products in code.",
   },
 };
 
@@ -34,7 +34,7 @@ const jsonLd = {
     "@type": "Person",
     "name": "Tanuja Bodas",
     "jobTitle": ["Senior Product Designer", "Builder"],
-    "description": "Tanuja Bodas is a senior product designer and builder. She designs enterprise B2B products and design systems, then builds and ships them herself in React, TypeScript, and Next.js, with no handoff between design and code.",
+    "description": "Tanuja Bodas is a senior product designer and builder. She designs enterprise B2B products and design systems, and builds and ships her own products in React, TypeScript, and Next.js.",
     "hasOccupation": [
       { "@type": "Occupation", "name": "Senior Product Designer" },
       { "@type": "Occupation", "name": "Builder (design engineer)" },
@@ -64,7 +64,7 @@ const jsonLd = {
         "@type": "CreativeWork",
         "name": "Rewards & Recognition",
         "url": `${SITE}/work/rewards-and-recognition`,
-        "description": "Designing a culture of visibility for enterprise teams where employee contributions were going unnoticed.",
+        "description": "Building a scalable award management system for enterprise HR teams.",
       },
       {
         "@type": "CreativeWork",

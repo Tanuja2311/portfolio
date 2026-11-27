@@ -48,7 +48,7 @@ export default function EmployeeDossierPage() {
         },
       }} />
       <CaseStudySummary summary={{
-        problem:  "HR teams were navigating through multiple tabs and nested menus to access basic employee information. Critical data was buried, causing delays in everyday HR workflows and frustration across the organization.",
+        problem:  "HR teams were navigating through multiple tabs and nested menus to access basic employee information, and critical data was buried.",
         role:     "Product designer responsible for restructuring the information architecture, redesigning the page layout, and simplifying navigation for ZingHR's most-used module.",
         timeline: "8-week redesign sprint from audit and user interviews through high-fidelity prototypes and developer handoff.",
         outcome:  "A single, scannable employee record page that consolidated previously fragmented data into one place.",
@@ -244,13 +244,10 @@ export default function EmployeeDossierPage() {
             <div className="cs-subsection">
               <span className="cs-subsection-label">04 - Final Direction: Single-Page Scroll</span>
               <h3 className="cs-subsection-heading">
-                A conversation about LinkedIn profiles reframed the problem.
+                LinkedIn profiles reframed the problem.
               </h3>
               <p className="cs-subsection-body">
-                The connection came sideways. A colleague was updating his
-                LinkedIn profile ahead of a job search and asked me for
-                feedback on how to optimize it. That conversation surfaced
-                something obvious in hindsight: a LinkedIn profile and an
+                The connection was obvious in hindsight: a LinkedIn profile and an
                 employee dossier are structurally the same thing. Both are
                 single-person records with variable sections, each
                 independently editable, designed to be scanned rather than
@@ -377,10 +374,10 @@ export default function EmployeeDossierPage() {
                 <p className="cs-feature-decision-text">
                   We considered showing a locked icon on read-only sections
                   to communicate that editing exists but isn&rsquo;t
-                  available to the current user. In practice, that created
-                  more confusion than clarity. Employees seeing a lock on
-                  their own profile assumed something was wrong or that they
-                  needed to request access. Removing the affordance entirely
+                  available to the current user. We expected that to create
+                  more confusion than clarity: an employee seeing a lock on
+                  their own profile could assume something was wrong or that
+                  they needed to request access. Removing the affordance entirely
                   was cleaner: if you can edit it, you see the pencil. If
                   you can&rsquo;t, the section looks like a display, which
                   is exactly what it is.
@@ -585,8 +582,7 @@ export default function EmployeeDossierPage() {
                 with pencil icon, the primary/secondary badge system, the
                 bilingual stacking, the sidebar reference panel - that other
                 modules at ZingHR could have adopted. I documented the final
-                designs but didn&rsquo;t formalize them as a pattern library
-                until later.
+                designs but never formalized them as a pattern library.
               </p>
             </div>
           </ScrollReveal>

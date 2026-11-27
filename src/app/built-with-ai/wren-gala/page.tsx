@@ -59,7 +59,7 @@ export default function WrenGalaPage() {
         problem:  "A historic London church needed a high-end digital presence for their annual New York fundraising gala.",
         role:     "Lead designer-developer and de facto product owner: visual direction, content strategy, AI tool evaluation, payment infrastructure, data management, email workflows, and client communication. I also mentored a junior designer, who built one page under my guidance.",
         timeline: "Under two weeks from first client call to deployed site, evaluating three AI development approaches along the way.",
-        outcome:  "A 4-page luxury event website with Stripe payment integration, automated email workflows, and guest data management, deployed on Vercel. Zero hand-written code. The Stripe ticket flow sold 300 tickets.",
+        outcome:  "A 4-page luxury event website with Stripe payment integration and automated email workflows, deployed on Vercel. Zero hand-written code. The Stripe ticket flow sold 300 tickets.",
       }} />
 
       <CsScrollLinks sections={SECTIONS} />
@@ -363,9 +363,7 @@ export default function WrenGalaPage() {
                 They compress execution time. The decisions about visual
                 hierarchy, content structure, interaction patterns, and
                 responsive behavior still require a designer who understands why
-                those decisions matter. The junior designer left the project with
-                a working mental model for when AI tools are useful and when they
-                introduce risk.
+                those decisions matter.
               </p>
             </div>
           </ScrollReveal>
@@ -591,9 +589,8 @@ export default function WrenGalaPage() {
                 colors, typography, and spacing that broke from the site&rsquo;s
                 established language. The final integration with Stripe
                 captured guest details at checkout and gave full visual
-                control over the checkout experience. Every element of the
-                form, confirmation state, and receipt now matches the
-                gala&rsquo;s design system.
+                control over the checkout experience. The checkout is styled
+                to match the site.
               </p>
               <p className="cs-feature-body" style={{ marginTop: "0.75rem" }}>
                 The page design eliminates all secondary content. No sidebar, no

@@ -126,7 +126,8 @@ export function HeroSection() {
               {...(reduced ? {} : leftItem(3))}
             >
               I turn complex enterprise problems into intuitive workflows
-              people actually want to use, then I build and ship them myself.
+              people actually want to use. I also build and ship my own
+              products in code.
             </m.p>
 
             {/* Contact links */}

@@ -35,7 +35,7 @@ export default function GoogleDriveEmergingPage() {
             { label: "Role",     value: "UX Designer"            },
             { label: "Platform", value: "Smart TV, Tesla Display" },
             { label: "Type",     value: "Speculative Design"      },
-            { label: "Context",  value: "MS Thesis Project"       },
+            { label: "Context",  value: "MS Coursework Project"   },
           ],
         },
       }} />
@@ -43,7 +43,7 @@ export default function GoogleDriveEmergingPage() {
       <CaseStudySummary summary={{
         problem:  "Google Drive was designed for keyboard and mouse. Adapting it for a 65-inch TV operated by a remote control and a Tesla touchscreen mid-drive required a different design logic for each platform — not a responsive port.",
         role:     "Sole UX designer: platform constraint analysis, MoSCoW feature prioritization, proto-persona work, and context-native interaction design across two radically different hardware environments.",
-        timeline: "MS Thesis Project — speculative design exploration.",
+        timeline: "MS coursework project, a speculative design exploration.",
         outcome:  "Two distinct context-native adaptations: a remote-first, voice-elevated Smart TV experience optimized for lean-back consumption, and a dual-mode Tesla interface that automatically restricts interaction based on vehicle state.",
       }} />
 

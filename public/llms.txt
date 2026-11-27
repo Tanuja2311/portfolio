@@ -1,6 +1,6 @@
 # Tanuja Bodas
 
-> Tanuja Bodas is a Senior Product Designer & Builder. She designs enterprise B2B products and design systems, then builds and ships them herself in React, TypeScript, and Next.js, with no handoff between design and code.
+> Tanuja Bodas is a Senior Product Designer & Builder. She designs enterprise B2B products and design systems, and builds and ships her own products in React, TypeScript, and Next.js.
 
 ## Who she is
 
@@ -14,7 +14,7 @@
 ## Selected work
 
 - [MyRCloud](https://www.tanujabodas.com/work/myrcloud): A recruitment marketplace designed from scratch, replacing a Google Sheets operation with a multi-sided platform for 100+ clients and 600+ recruiting partners
-- [Rewards & Recognition](https://www.tanujabodas.com/work/rewards-and-recognition): Enterprise recognition platform for teams whose contributions were going unnoticed
+- [Rewards & Recognition](https://www.tanujabodas.com/work/rewards-and-recognition): Building a scalable award management system for enterprise HR teams
 - [Employee Dossier](https://www.tanujabodas.com/work/employee-dossier): Redesign of ZingHR's employee record into a single, scannable page
 - [UrbanPark](https://www.tanujabodas.com/work/urbanpark): A 0 to 1 C2C driveway rental marketplace, including its design system
 - [The Wren Gala](https://www.tanujabodas.com/built-with-ai/wren-gala): A charity gala website designed and built in under two weeks, as lead designer-developer

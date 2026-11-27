@@ -70,9 +70,8 @@ export default function RRCaseStudy() {
 
             <p className="cs-section-body">
               When I began researching the admin workflow, I had to navigate
-              internal resistance just to identify who the admin was. The
-              admin&rsquo;s identity was deliberately obscured within the company
-              for security reasons. After escalating through HR and my manager,
+              internal resistance just to identify who the admin was. After
+              escalating through HR and my manager,
               I finally spoke to the person who had been managing ZingHR&rsquo;s
               internal recognition system for 13 years.
             </p>
@@ -130,9 +129,8 @@ export default function RRCaseStudy() {
               <p className="cs-subsection-body">
                 I started from scratch with a brief asking me to replicate how
                 award functions work in a corporate setting. My first task was
-                finding the person who actually ran the system. The admin&rsquo;s
-                identity was deliberately obscured within the company for
-                security reasons. I had to escalate through HR and my manager
+                finding the person who actually ran the system. I had to
+                escalate through HR and my manager
                 before I could arrange a conversation.
               </p>
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
@@ -226,8 +224,8 @@ export default function RRCaseStudy() {
                 the final jury. This grounded the hierarchy in a real-world
                 analogy rather than an abstract permission tree. For users who
                 had never configured an HRIS module before, that mental model
-                reduced the cognitive load of understanding a complex multi-role
-                workflow.
+                was designed to make a complex multi-role workflow easier to
+                understand.
               </p>
             </div>
           </ScrollReveal>
@@ -359,8 +357,8 @@ export default function RRCaseStudy() {
                 understanding how recognition works in the real world, then
                 translating that into a permission architecture that felt natural
                 rather than technical. For users who had never configured an HRIS
-                module before, that mental model reduced the cognitive load of
-                understanding a complex multi-role workflow.
+                module before, that mental model was designed to make a complex
+                multi-role workflow easier to understand.
               </p>
             </div>
           </ScrollReveal>

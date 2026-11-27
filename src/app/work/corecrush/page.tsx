@@ -178,9 +178,7 @@ export default function CoreCrushPage() {
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
                 First, the knowledge gap was paralyzing. Participants described
                 arriving at the gym without a plan and spending more time
-                watching others than working out. Two participants admitted to
-                leaving within 15 minutes on multiple occasions because they
-                didn&rsquo;t know what to do next.
+                watching others than working out, unsure what to do next.
               </p>
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
                 Second, social anxiety was a real barrier, not a minor
@@ -191,10 +189,9 @@ export default function CoreCrushPage() {
                 at all.
               </p>
               <p className="cs-subsection-body" style={{ marginTop: "1rem" }}>
-                Third, motivation decay was predictable. Every participant
-                described a pattern: high enthusiasm in week one, declining
-                attendance by week three, full dropout by week six. The absence
-                of visible progress was the most-cited reason.
+                Third, motivation decay was predictable. Most participants
+                described losing motivation within the first few weeks. The
+                absence of visible progress was the most-cited reason.
               </p>
               <div className="cs-feature-img-wrap" style={{ marginTop: "1.5rem" }}>
                 <CaseImage
